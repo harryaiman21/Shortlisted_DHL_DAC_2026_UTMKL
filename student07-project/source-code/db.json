@@ -1,0 +1,27 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "email": "admin@dhl.com",
+      "password": "1234"
+    }
+  ],
+  "articles": [
+    {
+      "id": "1",
+      "title": "Test KB",
+      "content": "This is a test article",
+      "status": "Published",
+      "date": "2026-04-21 10:00:00"
+    },
+    {
+      "title": "RPA Test Article",
+      "content": "This is from UiPath",
+      "status": "Draft",
+      "date": "2026-04-22 12:00:00",
+      "id": "hCrEjIA1-XI"
+    }
+
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
