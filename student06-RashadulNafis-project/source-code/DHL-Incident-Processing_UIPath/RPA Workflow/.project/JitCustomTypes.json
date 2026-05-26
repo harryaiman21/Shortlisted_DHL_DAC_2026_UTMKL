@@ -1,0 +1,96 @@
+{
+  "version": "3.0.0.0",
+  "bundleHash": "rIJ7gMOvcqzjTsbamNCEr5BoGWQaLgr7pbhDE9VY",
+  "addedAssemblyNames": [],
+  "discardedAssemblyNames": [],
+  "discardedAssemblyReplacements": {},
+  "assembliesJitInfo": {
+    "C02AEC1701C_v1_sub_c.5ROza3GD9HD1Dn24348OvKr2": {
+      "createdAt": "2026-05-11T07:08:10.4707374+00:00",
+      "providerName": "CustomEntities",
+      "rootNamespace": "UiPath.IntegrationService.Activities.SWEntities.C02AEC1701C_v1_sub_chat_sub_completion_Create.Bundle",
+      "typeNames": [
+        "message",
+        "choices",
+        "usage",
+        "v1_sub_chat_sub_completion_Create"
+      ]
+    },
+    "C02AEC1701C_language.vsOwA45DvjB1vLMFk33SaYT1": {
+      "createdAt": "2026-05-11T07:18:52.1124632+00:00",
+      "providerName": "CustomEntities",
+      "rootNamespace": "UiPath.IntegrationService.Activities.SWEntities.C02AEC1701C_languageminus_signdetection_Create.Bundle",
+      "typeNames": [
+        "languageminus_signdetection_Create"
+      ]
+    },
+    "C02AEC1701C_piiminus.CGjKO2CNcPM10nvPfkOOE04": {
+      "createdAt": "2026-05-11T17:03:40.25+08:00",
+      "providerName": "CustomEntities",
+      "rootNamespace": "UiPath.IntegrationService.Activities.SWEntities.C02AEC1701C_piiminus_signdetection_Create.Bundle",
+      "typeNames": [
+        "detectedEntities",
+        "piiminus_signdetection_Create"
+      ]
+    },
+    "C02AEC1701C_ner_Crea.z2SV732Ya2Q1XzS082O800M4": {
+      "createdAt": "2026-05-11T17:15:30.473+08:00",
+      "providerName": "CustomEntities",
+      "rootNamespace": "UiPath.IntegrationService.Activities.SWEntities.C02AEC1701C_ner_Create.Bundle",
+      "typeNames": [
+        "entitiesOutputObject",
+        "ner_Create"
+      ]
+    },
+    "C02AEC1701C_v1_sub_s.uZVIU3jcyUL12DBoc45CBnm2": {
+      "createdAt": "2026-05-11T17:48:07.152+08:00",
+      "providerName": "CustomEntities",
+      "rootNamespace": "UiPath.IntegrationService.Activities.SWEntities.C02AEC1701C_v1_sub_sentimentminus_signanalysis_Create.Bundle",
+      "typeNames": [
+        "sentimentBreakdown",
+        "overallSentiment",
+        "sentimentAnalysis",
+        "usage",
+        "v1_sub_sentimentminus_signanalysis_Create"
+      ]
+    },
+    "C02AEC1701C_summaris.5YLbB4Wj8IQ1lrDIF30Bia1": {
+      "createdAt": "2026-05-11T18:26:39.1+08:00",
+      "providerName": "CustomEntities",
+      "rootNamespace": "UiPath.IntegrationService.Activities.SWEntities.C02AEC1701C_summarise_Create.Bundle",
+      "typeNames": [
+        "summarise_Create"
+      ]
+    },
+    "C02AEC1701C_semantic.d0YxA3zrQWH1RNdom15byq23": {
+      "createdAt": "2026-05-11T18:46:34.473+08:00",
+      "providerName": "CustomEntities",
+      "rootNamespace": "UiPath.IntegrationService.Activities.SWEntities.C02AEC1701C_semanticminus_signsimilarity_Create.Bundle",
+      "typeNames": [
+        "semanticSimilarity",
+        "semanticminus_signsimilarity_Create"
+      ]
+    },
+    "C02AEC1701C_categori.E5zhyJhGGP1NHIlR1vI3942": {
+      "createdAt": "2026-05-11T19:22:56.497+08:00",
+      "providerName": "CustomEntities",
+      "rootNamespace": "UiPath.IntegrationService.Activities.SWEntities.C02AEC1701C_categorize_Create.Bundle",
+      "typeNames": [
+        "categorize_Create"
+      ]
+    },
+    "C02AEC1701C_v2_sub_g.zpSEO2mO1nH1i7y83nkLz1": {
+      "createdAt": "2026-05-11T19:54:05.433+08:00",
+      "providerName": "CustomEntities",
+      "rootNamespace": "UiPath.IntegrationService.Activities.SWEntities.C02AEC1701C_v2_sub_generateChatCompletion_Create.Bundle",
+      "typeNames": [
+        "message",
+        "choices",
+        "usage",
+        "detectedEntities",
+        "contextGroundingCitations",
+        "v2_sub_generateChatCompletion_Create"
+      ]
+    }
+  }
+}

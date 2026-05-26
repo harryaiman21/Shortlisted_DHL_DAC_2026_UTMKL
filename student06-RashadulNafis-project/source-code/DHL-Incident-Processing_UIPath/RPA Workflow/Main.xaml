@@ -1,0 +1,1131 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Main"
+ xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities"
+ xmlns:isactr="http://schemas.uipath.com/workflow/integration-service-activities/isactr"
+ xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+ xmlns:njl="clr-namespace:Newtonsoft.Json.Linq;assembly=Newtonsoft.Json"
+ xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib"
+ xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation"
+ xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation"
+ xmlns:sc="clr-namespace:System.Collections;assembly=System.Private.CoreLib"
+ xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib"
+ xmlns:uga="clr-namespace:UiPath.GSuite.Activities;assembly=UiPath.GSuite.Activities"
+ xmlns:ugage="clr-namespace:UiPath.GSuite.Activities.Gmail.Enums;assembly=UiPath.GSuite.Activities"
+ xmlns:ui="http://schemas.uipath.com/workflow/activities"
+ xmlns:uiascb="clr-namespace:UiPath.IntegrationService.Activities.SWEntities.C02AEC1701C_v1_sub_chat_sub_completion_Create.Bundle;assembly=C02AEC1701C_v1_sub_c.5ROza3GD9HD1Dn24348OvKr2"
+ xmlns:uiascb1="clr-namespace:UiPath.IntegrationService.Activities.SWEntities.C02AEC1701C_languageminus_signdetection_Create.Bundle;assembly=C02AEC1701C_language.vsOwA45DvjB1vLMFk33SaYT1"
+ xmlns:uiascb2="clr-namespace:UiPath.IntegrationService.Activities.SWEntities.C02AEC1701C_ner_Create.Bundle;assembly=C02AEC1701C_ner_Crea.z2SV732Ya2Q1XzS082O800M4"
+ xmlns:uiascb3="clr-namespace:UiPath.IntegrationService.Activities.SWEntities.C02AEC1701C_v1_sub_sentimentminus_signanalysis_Create.Bundle;assembly=C02AEC1701C_v1_sub_s.uZVIU3jcyUL12DBoc45CBnm2"
+ xmlns:uiascb4="clr-namespace:UiPath.IntegrationService.Activities.SWEntities.C02AEC1701C_summarise_Create.Bundle;assembly=C02AEC1701C_summaris.5YLbB4Wj8IQ1lrDIF30Bia1"
+ xmlns:uiascb5="clr-namespace:UiPath.IntegrationService.Activities.SWEntities.C02AEC1701C_semanticminus_signsimilarity_Create.Bundle;assembly=C02AEC1701C_semantic.d0YxA3zrQWH1RNdom15byq23"
+ xmlns:uiascb6="clr-namespace:UiPath.IntegrationService.Activities.SWEntities.C02AEC1701C_categorize_Create.Bundle;assembly=C02AEC1701C_categori.E5zhyJhGGP1NHIlR1vI3942"
+ xmlns:uiascb7="clr-namespace:UiPath.IntegrationService.Activities.SWEntities.C02AEC1701C_v2_sub_generateChatCompletion_Create.Bundle;assembly=C02AEC1701C_v2_sub_g.zpSEO2mO1nH1i7y83nkLz1"
+ xmlns:usau="clr-namespace:UiPath.Shared.Activities.Utils;assembly=UiPath.GSuite.Activities"
+ xmlns:uwah="clr-namespace:UiPath.Web.Activities.Http;assembly=UiPath.Web.Activities"
+ xmlns:uwahm="clr-namespace:UiPath.Web.Activities.Http.Models;assembly=UiPath.Web.Activities"
+ xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="50">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>UiPath.GSuite.Activities.Gmail.Enums</x:String>
+      <x:String>UiPath.Shared.Activities.Utils</x:String>
+      <x:String>UiPath.GSuite.Activities</x:String>
+      <x:String>UiPath.Shared.Activities.ConnectionService.Contracts</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Web.Activities.Http.Models</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.Net</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.Web.Activities.Http</x:String>
+      <x:String>UiPath.Sdk.Activities</x:String>
+      <x:String>UiPath.Sdk.Activities.DependencyInjection.Contracts</x:String>
+      <x:String>UiPath.Sdk.Activities.DependencyInjection</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>UiPath.IntegrationService.Activities.Runtime.Models.FilterBuilder</x:String>
+      <x:String>UiPath.IntegrationService.Activities.Runtime.Models</x:String>
+      <x:String>UiPath.IntegrationService.Activities.Runtime.Activities</x:String>
+      <x:String>UiPath.Platform.Activities</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>Newtonsoft.Json</x:String>
+      <x:String>Newtonsoft.Json.Linq</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Collections.Specialized</x:String>
+      <x:String>UiPath.IntegrationService.Activities.SWEntities.C02AEC1701C_v1_sub_chat_sub_completion_Create.Bundle</x:String>
+      <x:String>UiPath.IntegrationService.Activities.SWEntities.C02AEC1701C_languageminus_signdetection_Create.Bundle</x:String>
+      <x:String>UiPath.IntegrationService.Activities.SWEntities.C02AEC1701C_piiminus_signdetection_Create.Bundle</x:String>
+      <x:String>UiPath.IntegrationService.Activities.SWEntities.C02AEC1701C_ner_Create.Bundle</x:String>
+      <x:String>UiPath.IntegrationService.Activities.SWEntities.C02AEC1701C_v1_sub_sentimentminus_signanalysis_Create.Bundle</x:String>
+      <x:String>UiPath.IntegrationService.Activities.SWEntities.C02AEC1701C_summarise_Create.Bundle</x:String>
+      <x:String>UiPath.IntegrationService.Activities.SWEntities.C02AEC1701C_semanticminus_signsimilarity_Create.Bundle</x:String>
+      <x:String>UiPath.IntegrationService.Activities.SWEntities.C02AEC1701C_categorize_Create.Bundle</x:String>
+      <x:String>UiPath.IntegrationService.Activities.SWEntities.C02AEC1701C_v2_sub_generateChatCompletion_Create.Bundle</x:String>
+      <x:String>Microsoft.VisualBasic.CompilerServices</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="32">
+      <AssemblyReference>C02AEC1701C_v2_sub_g.zpSEO2mO1nH1i7y83nkLz1</AssemblyReference>
+      <AssemblyReference>C02AEC1701C_categori.E5zhyJhGGP1NHIlR1vI3942</AssemblyReference>
+      <AssemblyReference>C02AEC1701C_semantic.d0YxA3zrQWH1RNdom15byq23</AssemblyReference>
+      <AssemblyReference>C02AEC1701C_summaris.5YLbB4Wj8IQ1lrDIF30Bia1</AssemblyReference>
+      <AssemblyReference>C02AEC1701C_v1_sub_s.uZVIU3jcyUL12DBoc45CBnm2</AssemblyReference>
+      <AssemblyReference>C02AEC1701C_ner_Crea.z2SV732Ya2Q1XzS082O800M4</AssemblyReference>
+      <AssemblyReference>C02AEC1701C_piiminus.CGjKO2CNcPM10nvPfkOOE04</AssemblyReference>
+      <AssemblyReference>C02AEC1701C_language.vsOwA45DvjB1vLMFk33SaYT1</AssemblyReference>
+      <AssemblyReference>C02AEC1701C_v1_sub_c.5ROza3GD9HD1Dn24348OvKr2</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Net.Primitives</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>Newtonsoft.Json</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>UiPath.IntegrationService.Activities.Runtime</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
+      <AssemblyReference>UiPath.GSuite.Activities</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap:VirtualizedContainerService.HintSize="356,732" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="sc:IEnumerable" Name="record" />
+      <Variable x:TypeArguments="x:Object" Default="[new System.Object]" Name="currentId" />
+      <Variable x:TypeArguments="x:Object" Default="[new System.Object]" Name="currentFilePath" />
+      <Variable x:TypeArguments="x:Object" Default="[new System.Object]" Name="currentContentType" />
+      <Variable x:TypeArguments="x:String" Name="responseBody" />
+      <Variable x:TypeArguments="uwahm:HttpResponseSummary" Name="pendingRecordsResponse" />
+      <Variable x:TypeArguments="uwahm:HttpResponseSummary" Name="fileResponse" />
+      <Variable x:TypeArguments="x:String" Name="fileResponseBody" />
+      <Variable x:TypeArguments="x:String" Name="extractedText" />
+      <Variable x:TypeArguments="x:String" Name="currentFileName" />
+      <Variable x:TypeArguments="x:String" Name="base64Content" />
+      <Variable x:TypeArguments="x:String" Name="tempFilePath" />
+      <Variable x:TypeArguments="x:String" Name="detectedLanguage" />
+      <Variable x:TypeArguments="x:String" Name="entities" />
+      <Variable x:TypeArguments="x:String" Name="sentimentScore" />
+      <Variable x:TypeArguments="x:String" Name="rewrittenText" />
+      <Variable x:TypeArguments="x:String" Name="cleanSummary" />
+      <Variable x:TypeArguments="uwahm:HttpResponseSummary" Name="recentSummariesResponse" />
+      <Variable x:TypeArguments="x:String" Name="recentSummaries" />
+      <Variable x:TypeArguments="uiascb5:semanticminus_signsimilarity_Create" Default="[new UiPath.IntegrationService.Activities.SWEntities.C02AEC1701C_semanticminus_signsimilarity_Create.Bundle.semanticminus_signsimilarity_Create]" Name="semanticSimilarity">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:String x:Key="SourceIdRef">ConnectorActivity_8</x:String>
+            <x:String x:Key="SourcePropertyName">Jit_semanticminus_signsimilarity</x:String>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </Variable>
+      <Variable x:TypeArguments="x:String" Name="similarityResult" />
+      <Variable x:TypeArguments="s:Nullable(x:Double)" Name="similarityScore">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:String x:Key="SourceIdRef">ConnectorActivity_8</x:String>
+            <x:String x:Key="SourcePropertyName">out_semanticSimilarity_sub_similarityScore</x:String>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </Variable>
+      <Variable x:TypeArguments="uiascb6:categorize_Create" Default="[new UiPath.IntegrationService.Activities.SWEntities.C02AEC1701C_categorize_Create.Bundle.categorize_Create]" Name="categorize">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:String x:Key="SourceIdRef">ConnectorActivity_9</x:String>
+            <x:String x:Key="SourcePropertyName">Jit_categorize</x:String>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </Variable>
+      <Variable x:TypeArguments="x:String" Name="contentCategory" />
+      <Variable x:TypeArguments="x:String" Name="incidentCardJson" />
+      <Variable x:TypeArguments="x:String" Name="postBody" />
+      <Variable x:TypeArguments="uwahm:HttpResponseSummary" Name="postResponse" />
+      <Variable x:TypeArguments="x:String" Name="postResponseBody" />
+      <Variable x:TypeArguments="x:String" Name="detectedLanguage_1">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:String x:Key="SourceIdRef">ConnectorActivity_2</x:String>
+            <x:String x:Key="SourcePropertyName">out_language</x:String>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </Variable>
+      <Variable x:TypeArguments="x:Boolean" Default="[False]" Name="fallbackActivated" />
+      <Variable x:TypeArguments="x:String" Name="fallbackCategory" />
+      <Variable x:TypeArguments="x:String" Name="fallbackSeverity" />
+      <Variable x:TypeArguments="x:String" Name="fallbackDepartment" />
+      <Variable x:TypeArguments="x:String" Name="fallbackSummary" />
+      <Variable x:TypeArguments="x:String" Name="fallbackSupportingDepts" />
+      <Variable x:TypeArguments="x:String" Name="fallbackEvidence" />
+      <Variable x:TypeArguments="x:String" Name="fallbackHypothesis" />
+      <Variable x:TypeArguments="x:Int32" Name="countCreated" />
+      <Variable x:TypeArguments="x:Int32" Name="countDuplicate" />
+      <Variable x:TypeArguments="x:Int32" Name="countFallback" />
+      <Variable x:TypeArguments="x:Int32" Name="countFailed" />
+      <Variable x:TypeArguments="x:String" Name="logFilePath" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:TimeTrigger DailyRepeat="{x:Null}" DailyStartingTime="{x:Null}" DaysOfMonthToRunOn="{x:Null}" HourlyRepeat="{x:Null}" HourlyStartingMinutes="{x:Null}" MonthlyDaysToRunOn="{x:Null}" MonthlyRepeat="{x:Null}" MonthlyStartingTime="{x:Null}" Result="{x:Null}" TimeZone="{x:Null}" WeeklyDaysToRunOn="{x:Null}" WeeklyStartingTime="{x:Null}" CronExpression="0 */1 * * * ? *" DisplayName="Time Trigger" Frequency="MinuteByMinute" sap2010:WorkflowViewState.IdRef="TimeTrigger_1" MinuteByMinuteRepeat="1" MonthDaySelection="DayOfMonth" />
+    <Assign DisplayName="Assign 3" sap2010:WorkflowViewState.IdRef="Assign_47">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:Int32">[countCreated]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:Int32">[0]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign DisplayName="Assign 5" sap2010:WorkflowViewState.IdRef="Assign_49">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:Int32">[countDuplicate]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:Int32">[0]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign DisplayName="Assign 6" sap2010:WorkflowViewState.IdRef="Assign_50">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:Int32">[countFallback]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:Int32">[0]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign DisplayName="Assign 7" sap2010:WorkflowViewState.IdRef="Assign_51">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:Int32">[countFailed]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:Int32">[0]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <uwah:NetHttpRequest BasicAuthPassword="{x:Null}" BasicAuthSecurePassword="{x:Null}" BasicAuthUsername="{x:Null}" BinaryPayload="{x:Null}" ClientCertPassword="{x:Null}" ClientCertPath="{x:Null}" ClientCertSecurePassword="{x:Null}" Cookies="{x:Null}" CustomNegotiatedAuthCredentials="{x:Null}" FilePath="{x:Null}" FormData="{x:Null}" LocalFiles="{x:Null}" OAuthToken="{x:Null}" OutputFileName="{x:Null}" OutputFileTargetFolder="{x:Null}" Parameters="{x:Null}" PathResource="{x:Null}" ProxyConfiguration="{x:Null}" ResourceFiles="{x:Null}" AuthenticationType="None" ContinueOnError="True" DisableSslVerification="False" DisplayName="HTTP Request" EnableCookies="True" FileOverwrite="AutoRename" FollowRedirects="True" FormDataParts="[New List (Of FormDataPart) From _&#xA;{&#xA; New FileFormDataPart(),&#xA; New BinaryFormDataPart(),&#xA; New TextFormDataPart()&#xA;}]" Headers="[New Dictionary(Of System.String, System.String) From { {&quot;Content-Type&quot;, &quot;application/json&quot;} }]" sap2010:WorkflowViewState.IdRef="NetHttpRequest_1" InitialDelay="500" MaxRedirects="3" MaxRetryAfterDelay="30000" Method="GET" Multiplier="2" PreferRetryAfterValue="True" RequestBodyType="None" RequestUrl="https://dhl-incident-backend.onrender.com/api/uploads/queue?status=pending" Result="[pendingRecordsResponse]" RetryCount="3" RetryPolicyType="Basic" RetryStatusCodes="[New List (Of System.Net.HttpStatusCode) From _&#xA;{&#xA; System.Net.HttpStatusCode.RequestTimeout,&#xA; System.Net.HttpStatusCode.TooManyRequests,&#xA; System.Net.HttpStatusCode.InternalServerError,&#xA; System.Net.HttpStatusCode.BadGateway,&#xA; System.Net.HttpStatusCode.ServiceUnavailable,&#xA; System.Net.HttpStatusCode.GatewayTimeout&#xA;}]" SaveRawRequestResponse="False" SaveResponseAsFile="False" TextPayload="[responseBody]" TextPayloadContentType="application/json" TextPayloadEncoding="UTF-8" TlsProtocol="Automatic" UseJitter="True" UseOsNegotiatedAuthCredentials="True">
+      <uwah:NetHttpRequest.TimeoutInMiliseconds>
+        <InArgument x:TypeArguments="s:Nullable(x:Int32)">
+          <Literal x:TypeArguments="s:Nullable(x:Int32)" Value="120000" />
+        </InArgument>
+      </uwah:NetHttpRequest.TimeoutInMiliseconds>
+    </uwah:NetHttpRequest>
+    <Assign DisplayName="Assign Variable Value" sap2010:WorkflowViewState.IdRef="Assign_8">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[responseBody]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[pendingRecordsResponse.TextContent]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <ui:LogMessage DisplayName="Log Message" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[responseBody]" />
+    <ui:ForEach x:TypeArguments="njl:JToken" CurrentIndex="{x:Null}" sap:WorkflowViewStateService.ViewState="{x:Null}" DisplayName="For Each record" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[Newtonsoft.Json.Linq.JArray.Parse(responseBody)]">
+      <ui:ForEach.Body>
+        <ActivityAction x:TypeArguments="njl:JToken">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="njl:JToken" Name="record" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <Assign DisplayName="Assign Variable Value 1" sap2010:WorkflowViewState.IdRef="Assign_5">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:Object">[currentId]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:Object">[record("id").ToString()]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <Assign DisplayName="Assign Variable Value 2" sap2010:WorkflowViewState.IdRef="Assign_6">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:Object">[currentFilePath]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:Object">[record("filename").ToString()]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <Assign DisplayName="Assign Variable Value 3" sap2010:WorkflowViewState.IdRef="Assign_7">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:Object">[currentContentType]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:Object" xml:space="preserve">[record("content_type").ToString()
+]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <Assign DisplayName="Assign Variable Value 6" sap2010:WorkflowViewState.IdRef="Assign_11">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[currentFileName]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">[record("filename").ToString()]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <Assign DisplayName="Assign Variable Value 7" sap2010:WorkflowViewState.IdRef="Assign_12">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[base64Content]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">[""]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <Assign DisplayName="Assign Variable Value 8" sap2010:WorkflowViewState.IdRef="Assign_13">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[tempFilePath]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">[""]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <uwah:NetHttpRequest BasicAuthPassword="{x:Null}" BasicAuthSecurePassword="{x:Null}" BasicAuthUsername="{x:Null}" BinaryPayload="{x:Null}" ClientCertPassword="{x:Null}" ClientCertPath="{x:Null}" ClientCertSecurePassword="{x:Null}" Cookies="{x:Null}" CustomNegotiatedAuthCredentials="{x:Null}" FilePath="{x:Null}" FormData="{x:Null}" LocalFiles="{x:Null}" OAuthToken="{x:Null}" OutputFileName="{x:Null}" OutputFileTargetFolder="{x:Null}" Parameters="{x:Null}" PathResource="{x:Null}" ProxyConfiguration="{x:Null}" ResourceFiles="{x:Null}" AuthenticationType="None" ContinueOnError="True" DisableSslVerification="False" DisplayName="HTTP Request 1" EnableCookies="True" FileOverwrite="AutoRename" FollowRedirects="True" FormDataParts="[New List (Of FormDataPart) From _&#xA;{&#xA; New FileFormDataPart(),&#xA; New BinaryFormDataPart(),&#xA; New TextFormDataPart()&#xA;}]" Headers="[New Dictionary(Of System.String, System.String) From { {&quot;Content-Type&quot;, &quot;application/json&quot;} }]" sap2010:WorkflowViewState.IdRef="NetHttpRequest_2" InitialDelay="500" MaxRedirects="3" MaxRetryAfterDelay="30000" Method="PATCH" Multiplier="2" PreferRetryAfterValue="True" RequestBodyType="Text" RequestUrl="[&quot;https://dhl-incident-backend.onrender.com/api/uploads/&quot; + currentId.ToString() + &quot;/status&quot;]" Result="[fileResponse]" RetryCount="3" RetryPolicyType="Basic" RetryStatusCodes="[New List (Of System.Net.HttpStatusCode) From _&#xA;{&#xA; System.Net.HttpStatusCode.RequestTimeout,&#xA; System.Net.HttpStatusCode.TooManyRequests,&#xA; System.Net.HttpStatusCode.InternalServerError,&#xA; System.Net.HttpStatusCode.BadGateway,&#xA; System.Net.HttpStatusCode.ServiceUnavailable,&#xA; System.Net.HttpStatusCode.GatewayTimeout&#xA;}]" SaveRawRequestResponse="False" SaveResponseAsFile="False" TextPayload="{}{&quot;processing_status&quot;: &quot;processing&quot;}" TextPayloadContentType="application/json" TextPayloadEncoding="UTF-8" TlsProtocol="Automatic" UseJitter="True" UseOsNegotiatedAuthCredentials="True">
+              <uwah:NetHttpRequest.TimeoutInMiliseconds>
+                <InArgument x:TypeArguments="s:Nullable(x:Int32)">
+                  <Literal x:TypeArguments="s:Nullable(x:Int32)" Value="10000" />
+                </InArgument>
+              </uwah:NetHttpRequest.TimeoutInMiliseconds>
+            </uwah:NetHttpRequest>
+            <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[currentContentType.ToString()]" sap2010:WorkflowViewState.IdRef="Switch`1_1">
+              <Switch.Default>
+                <Sequence sap2010:WorkflowViewState.IdRef="Sequence_3" />
+              </Switch.Default>
+              <Sequence x:Key="text" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                <uwah:NetHttpRequest BasicAuthPassword="{x:Null}" BasicAuthSecurePassword="{x:Null}" BasicAuthUsername="{x:Null}" BinaryPayload="{x:Null}" ClientCertPassword="{x:Null}" ClientCertPath="{x:Null}" ClientCertSecurePassword="{x:Null}" Cookies="{x:Null}" CustomNegotiatedAuthCredentials="{x:Null}" FilePath="{x:Null}" FormData="{x:Null}" Headers="{x:Null}" LocalFiles="{x:Null}" OAuthToken="{x:Null}" OutputFileName="{x:Null}" OutputFileTargetFolder="{x:Null}" Parameters="{x:Null}" PathResource="{x:Null}" ProxyConfiguration="{x:Null}" ResourceFiles="{x:Null}" TextPayload="{x:Null}" AuthenticationType="None" ContinueOnError="True" DisableSslVerification="False" DisplayName="HTTP Request 2" EnableCookies="True" FileOverwrite="AutoRename" FollowRedirects="True" FormDataParts="[New List (Of FormDataPart) From _&#xA;{&#xA; New FileFormDataPart(),&#xA; New BinaryFormDataPart(),&#xA; New TextFormDataPart()&#xA;}]" sap2010:WorkflowViewState.IdRef="NetHttpRequest_3" InitialDelay="500" MaxRedirects="3" MaxRetryAfterDelay="30000" Method="GET" Multiplier="2" PreferRetryAfterValue="True" RequestBodyType="None" RequestUrl="[&quot;https://dhl-incident-backend.onrender.com/api/uploads/&quot; + currentId.ToString() + &quot;/content&quot;]" Result="[fileResponse]" RetryCount="3" RetryPolicyType="Basic" RetryStatusCodes="[New List (Of System.Net.HttpStatusCode) From _&#xA;{&#xA; System.Net.HttpStatusCode.RequestTimeout,&#xA; System.Net.HttpStatusCode.TooManyRequests,&#xA; System.Net.HttpStatusCode.InternalServerError,&#xA; System.Net.HttpStatusCode.BadGateway,&#xA; System.Net.HttpStatusCode.ServiceUnavailable,&#xA; System.Net.HttpStatusCode.GatewayTimeout&#xA;}]" SaveRawRequestResponse="False" SaveResponseAsFile="False" TextPayloadContentType="application/json" TextPayloadEncoding="UTF-8" TlsProtocol="Automatic" UseJitter="True" UseOsNegotiatedAuthCredentials="True">
+                  <uwah:NetHttpRequest.TimeoutInMiliseconds>
+                    <InArgument x:TypeArguments="s:Nullable(x:Int32)">
+                      <Literal x:TypeArguments="s:Nullable(x:Int32)" Value="10000" />
+                    </InArgument>
+                  </uwah:NetHttpRequest.TimeoutInMiliseconds>
+                </uwah:NetHttpRequest>
+                <Assign DisplayName="Assign Variable Value 4" sap2010:WorkflowViewState.IdRef="Assign_9">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:String">[fileResponseBody]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:String">[fileResponse.TextContent]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <Assign DisplayName="Assign Variable Value 5" sap2010:WorkflowViewState.IdRef="Assign_10">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:String">[extractedText]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:String">[Newtonsoft.Json.Linq.JObject.Parse(fileResponseBody)("content").ToString()]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <ui:LogMessage DisplayName="Log Message 1" sap2010:WorkflowViewState.IdRef="LogMessage_2" Message="[extractedText]" />
+              </Sequence>
+              <Sequence x:Key="image" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                <uwah:NetHttpRequest BasicAuthPassword="{x:Null}" BasicAuthSecurePassword="{x:Null}" BasicAuthUsername="{x:Null}" BinaryPayload="{x:Null}" ClientCertPassword="{x:Null}" ClientCertPath="{x:Null}" ClientCertSecurePassword="{x:Null}" Cookies="{x:Null}" CustomNegotiatedAuthCredentials="{x:Null}" FilePath="{x:Null}" FormData="{x:Null}" Headers="{x:Null}" LocalFiles="{x:Null}" OAuthToken="{x:Null}" OutputFileName="{x:Null}" OutputFileTargetFolder="{x:Null}" Parameters="{x:Null}" PathResource="{x:Null}" ProxyConfiguration="{x:Null}" ResourceFiles="{x:Null}" TextPayload="{x:Null}" AuthenticationType="None" ContinueOnError="True" DisableSslVerification="False" DisplayName="HTTP Request 3" EnableCookies="True" FileOverwrite="AutoRename" FollowRedirects="True" FormDataParts="[New List (Of FormDataPart) From _&#xA;{&#xA; New FileFormDataPart(),&#xA; New BinaryFormDataPart(),&#xA; New TextFormDataPart()&#xA;}]" sap2010:WorkflowViewState.IdRef="NetHttpRequest_5" InitialDelay="500" MaxRedirects="3" MaxRetryAfterDelay="30000" Method="GET" Multiplier="2" PreferRetryAfterValue="True" RequestBodyType="None" RequestUrl="[&quot;https://dhl-incident-backend.onrender.com/api/uploads/&quot; + currentId.ToString() + &quot;/file&quot;]" Result="[fileResponse]" RetryCount="3" RetryPolicyType="Basic" RetryStatusCodes="[New List (Of System.Net.HttpStatusCode) From _&#xA;{&#xA; System.Net.HttpStatusCode.RequestTimeout,&#xA; System.Net.HttpStatusCode.TooManyRequests,&#xA; System.Net.HttpStatusCode.InternalServerError,&#xA; System.Net.HttpStatusCode.BadGateway,&#xA; System.Net.HttpStatusCode.ServiceUnavailable,&#xA; System.Net.HttpStatusCode.GatewayTimeout&#xA;}]" SaveRawRequestResponse="False" SaveResponseAsFile="False" TextPayloadContentType="application/json" TextPayloadEncoding="UTF-8" TlsProtocol="Automatic" UseJitter="True" UseOsNegotiatedAuthCredentials="True">
+                  <uwah:NetHttpRequest.TimeoutInMiliseconds>
+                    <InArgument x:TypeArguments="s:Nullable(x:Int32)">
+                      <Literal x:TypeArguments="s:Nullable(x:Int32)" Value="10000" />
+                    </InArgument>
+                  </uwah:NetHttpRequest.TimeoutInMiliseconds>
+                </uwah:NetHttpRequest>
+                <Assign DisplayName="Assign Variable Value 9" sap2010:WorkflowViewState.IdRef="Assign_17">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:String">[fileResponseBody]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:String">[fileResponse.TextContent]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <Assign DisplayName="Assign Variable Value 10" sap2010:WorkflowViewState.IdRef="Assign_18">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:String">[base64Content]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:String">[Newtonsoft.Json.Linq.JObject.Parse(fileResponseBody)("base64").ToString()]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <Assign DisplayName="Assign Variable Value 11" sap2010:WorkflowViewState.IdRef="Assign_19">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:String">[tempFilePath]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:String">[System.IO.Path.Combine(System.IO.Path.GetTempPath(), currentFileName)]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <ui:InvokeCode ContinueOnError="{x:Null}" Code="System.IO.File.WriteAllBytes(tempFilePath, System.Convert.FromBase64String(base64Content))" DisplayName="Invoke Code" sap2010:WorkflowViewState.IdRef="InvokeCode_2">
+                  <ui:InvokeCode.Arguments>
+                    <InArgument x:TypeArguments="x:String" x:Key="tempFilePath">[string.Format("{0}", tempFilePath)]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="base64Content">[string.Format("{0}", base64Content)]</InArgument>
+                  </ui:InvokeCode.Arguments>
+                </ui:InvokeCode>
+                <isactr:ConnectorActivity Configuration="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" ConnectionId="ef733be9-e34f-4feb-9cdf-1c02aec1701c" DisplayName="Image Analysis" sap2010:WorkflowViewState.IdRef="ConnectorActivity_1" UiPathActivityTypeId="267d190b-590f-304a-a865-e9d3722fa772">
+                  <isactr:ConnectorActivity.FieldObjects>
+                    <isactr:FieldObject Name="prompt" Type="FieldArgument">
+                      <isactr:FieldObject.Value>
+                        <InArgument x:TypeArguments="x:String">Extract all text visible in this image. If it is a handwritten note, transcribe it exactly. Describe any damage or visual evidence relevant to a logistics incident report.</InArgument>
+                      </isactr:FieldObject.Value>
+                    </isactr:FieldObject>
+                    <isactr:FieldObject Name="image_type" Type="FieldArgument">
+                      <isactr:FieldObject.Value>
+                        <InArgument x:TypeArguments="x:String">Public URL</InArgument>
+                      </isactr:FieldObject.Value>
+                    </isactr:FieldObject>
+                    <isactr:FieldObject Name="image_url" Type="FieldArgument">
+                      <isactr:FieldObject.Value>
+                        <InArgument x:TypeArguments="x:String">["data:image/png;base64," + base64Content]</InArgument>
+                      </isactr:FieldObject.Value>
+                    </isactr:FieldObject>
+                    <isactr:FieldObject Name="_file" Type="FieldArgument" />
+                    <isactr:FieldObject Name="topK" Type="FieldArgument" />
+                    <isactr:FieldObject Name="topP" Type="FieldArgument" />
+                    <isactr:FieldObject Name="max_tokens" Type="FieldArgument" />
+                    <isactr:FieldObject Name="temperature" Type="FieldArgument" />
+                    <isactr:FieldObject Name="frequency_penalty" Type="FieldArgument" />
+                    <isactr:FieldObject Name="presence_penalty" Type="FieldArgument" />
+                    <isactr:FieldObject Name="n" Type="FieldArgument" />
+                    <isactr:FieldObject Name="top_p" Type="FieldArgument" />
+                    <isactr:FieldObject Name="_stop" Type="FieldArgument" />
+                    <isactr:FieldObject Name="modelName" Type="FieldArgument">
+                      <isactr:FieldObject.Value>
+                        <InArgument x:TypeArguments="x:String">gpt-5.1-2025-11-13</InArgument>
+                      </isactr:FieldObject.Value>
+                    </isactr:FieldObject>
+                    <isactr:FieldObject Name="instruction" Type="FieldArgument">
+                      <isactr:FieldObject.Value>
+                        <InArgument x:TypeArguments="x:String">You are a helpful assistant</InArgument>
+                      </isactr:FieldObject.Value>
+                    </isactr:FieldObject>
+                    <isactr:FieldObject Name="out_text" Type="FieldArgument">
+                      <isactr:FieldObject.Value>
+                        <OutArgument x:TypeArguments="x:String">[extractedText]</OutArgument>
+                      </isactr:FieldObject.Value>
+                    </isactr:FieldObject>
+                    <isactr:FieldObject Name="Jit_v1_sub_chat_sub_completion" Type="FieldArgument">
+                      <isactr:FieldObject.Value>
+                        <OutArgument x:TypeArguments="uiascb:v1_sub_chat_sub_completion_Create" />
+                      </isactr:FieldObject.Value>
+                    </isactr:FieldObject>
+                  </isactr:ConnectorActivity.FieldObjects>
+                </isactr:ConnectorActivity>
+              </Sequence>
+              <Sequence x:Key="pdf" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                <uwah:NetHttpRequest BasicAuthPassword="{x:Null}" BasicAuthSecurePassword="{x:Null}" BasicAuthUsername="{x:Null}" BinaryPayload="{x:Null}" ClientCertPassword="{x:Null}" ClientCertPath="{x:Null}" ClientCertSecurePassword="{x:Null}" Cookies="{x:Null}" CustomNegotiatedAuthCredentials="{x:Null}" FilePath="{x:Null}" FormData="{x:Null}" Headers="{x:Null}" LocalFiles="{x:Null}" OAuthToken="{x:Null}" OutputFileName="{x:Null}" OutputFileTargetFolder="{x:Null}" Parameters="{x:Null}" PathResource="{x:Null}" ProxyConfiguration="{x:Null}" ResourceFiles="{x:Null}" TextPayload="{x:Null}" AuthenticationType="None" ContinueOnError="True" DisableSslVerification="False" DisplayName="HTTP Request 6" EnableCookies="True" FileOverwrite="AutoRename" FollowRedirects="True" FormDataParts="[New List (Of FormDataPart) From _&#xA;{&#xA; New FileFormDataPart(),&#xA; New BinaryFormDataPart(),&#xA; New TextFormDataPart()&#xA;}]" sap2010:WorkflowViewState.IdRef="NetHttpRequest_9" InitialDelay="500" MaxRedirects="3" MaxRetryAfterDelay="30000" Method="GET" Multiplier="2" PreferRetryAfterValue="True" RequestBodyType="None" RequestUrl="[&quot;https://dhl-incident-backend.onrender.com/api/uploads/&quot; + currentId.ToString() + &quot;/content&quot;]" Result="[fileResponse]" RetryCount="3" RetryPolicyType="Basic" RetryStatusCodes="[New List (Of System.Net.HttpStatusCode) From _&#xA;{&#xA; System.Net.HttpStatusCode.RequestTimeout,&#xA; System.Net.HttpStatusCode.TooManyRequests,&#xA; System.Net.HttpStatusCode.InternalServerError,&#xA; System.Net.HttpStatusCode.BadGateway,&#xA; System.Net.HttpStatusCode.ServiceUnavailable,&#xA; System.Net.HttpStatusCode.GatewayTimeout&#xA;}]" SaveRawRequestResponse="False" SaveResponseAsFile="False" TextPayloadContentType="application/json" TextPayloadEncoding="UTF-8" TlsProtocol="Automatic" UseJitter="True" UseOsNegotiatedAuthCredentials="True">
+                  <uwah:NetHttpRequest.TimeoutInMiliseconds>
+                    <InArgument x:TypeArguments="s:Nullable(x:Int32)">
+                      <Literal x:TypeArguments="s:Nullable(x:Int32)" Value="10000" />
+                    </InArgument>
+                  </uwah:NetHttpRequest.TimeoutInMiliseconds>
+                </uwah:NetHttpRequest>
+                <Assign DisplayName="Assign Variable Value 15" sap2010:WorkflowViewState.IdRef="Assign_23">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:String">[fileResponseBody]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:String">[fileResponse.TextContent]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <Assign DisplayName="Assign Variable Value 16" sap2010:WorkflowViewState.IdRef="Assign_24">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:String">[extractedText]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:String">[Newtonsoft.Json.Linq.JObject.Parse(fileResponseBody)("content").ToString()]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <ui:LogMessage DisplayName="Log Message 12" sap2010:WorkflowViewState.IdRef="LogMessage_15" Message="[extractedText]" />
+              </Sequence>
+              <Sequence x:Key="docx" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                <uwah:NetHttpRequest BasicAuthPassword="{x:Null}" BasicAuthSecurePassword="{x:Null}" BasicAuthUsername="{x:Null}" BinaryPayload="{x:Null}" ClientCertPassword="{x:Null}" ClientCertPath="{x:Null}" ClientCertSecurePassword="{x:Null}" Cookies="{x:Null}" CustomNegotiatedAuthCredentials="{x:Null}" FilePath="{x:Null}" FormData="{x:Null}" Headers="{x:Null}" LocalFiles="{x:Null}" OAuthToken="{x:Null}" OutputFileName="{x:Null}" OutputFileTargetFolder="{x:Null}" Parameters="{x:Null}" PathResource="{x:Null}" ProxyConfiguration="{x:Null}" ResourceFiles="{x:Null}" TextPayload="{x:Null}" AuthenticationType="None" ContinueOnError="True" DisableSslVerification="False" DisplayName="HTTP Request 7" EnableCookies="True" FileOverwrite="AutoRename" FollowRedirects="True" FormDataParts="[New List (Of FormDataPart) From _&#xA;{&#xA; New FileFormDataPart(),&#xA; New BinaryFormDataPart(),&#xA; New TextFormDataPart()&#xA;}]" sap2010:WorkflowViewState.IdRef="NetHttpRequest_11" InitialDelay="500" MaxRedirects="3" MaxRetryAfterDelay="30000" Method="GET" Multiplier="2" PreferRetryAfterValue="True" RequestBodyType="None" RequestUrl="[&quot;https://dhl-incident-backend.onrender.com/api/uploads/&quot; + currentId.ToString() + &quot;/content&quot;]" Result="[fileResponse]" RetryCount="3" RetryPolicyType="Basic" RetryStatusCodes="[New List (Of System.Net.HttpStatusCode) From _&#xA;{&#xA; System.Net.HttpStatusCode.RequestTimeout,&#xA; System.Net.HttpStatusCode.TooManyRequests,&#xA; System.Net.HttpStatusCode.InternalServerError,&#xA; System.Net.HttpStatusCode.BadGateway,&#xA; System.Net.HttpStatusCode.ServiceUnavailable,&#xA; System.Net.HttpStatusCode.GatewayTimeout&#xA;}]" SaveRawRequestResponse="False" SaveResponseAsFile="False" TextPayloadContentType="application/json" TextPayloadEncoding="UTF-8" TlsProtocol="Automatic" UseJitter="True" UseOsNegotiatedAuthCredentials="True">
+                  <uwah:NetHttpRequest.TimeoutInMiliseconds>
+                    <InArgument x:TypeArguments="s:Nullable(x:Int32)">
+                      <Literal x:TypeArguments="s:Nullable(x:Int32)" Value="10000" />
+                    </InArgument>
+                  </uwah:NetHttpRequest.TimeoutInMiliseconds>
+                </uwah:NetHttpRequest>
+                <Assign DisplayName="Assign Variable Value 17" sap2010:WorkflowViewState.IdRef="Assign_25">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:String">[fileResponseBody]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:String">[fileResponse.TextContent]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <Assign DisplayName="Assign Variable Value 18" sap2010:WorkflowViewState.IdRef="Assign_26">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:String">[extractedText]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:String">[Newtonsoft.Json.Linq.JObject.Parse(fileResponseBody)("content").ToString()]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <ui:LogMessage DisplayName="Log Message 13" sap2010:WorkflowViewState.IdRef="LogMessage_16" Message="[extractedText]" />
+              </Sequence>
+            </Switch>
+            <ui:LogMessage DisplayName="Log Message 11" sap2010:WorkflowViewState.IdRef="LogMessage_14" Message="[extractedText]" />
+            <isactr:ConnectorActivity Configuration="H4sIAAAAAAAAA5VWbXPiNhD+Kxp/amds14YwmTCTD0CSHi05aOGu0+ncZIS8YB1G8ukFjmby37uSbeIE2qSTD7Gk3dWz+zy74jG441BkeiSFoVyACvqPwRyoYjldFlAdBv2/voTBWJTWHDceg490C0E/2MoMCv8dBjdclwU91Cf37oSI+gg0U7w0XAo8WuRA1oDXUcN3QAZj4sMQqcj4hhhJrIaYLHKuCWVows2BZLCitjDaHRv0rzz23OR+mfN1DtqQb5YWzlwuNagdZERag8BDkss97ECFhJKMr1agQJg6CKOCLIFoKIAZdFlS7RwF3qm5OsZAMCIjBm/hYh2TOd7NcvysomgfJqeYD9+WCFu7CA5a5R1jFRaH0lVGG4VuuJ5LZaYqc2WP0sRVyef4mRbW2a1LE/XiNOoknV6UplHaRZ+JlBtbOp6my6+It82DPp43Ifw27s6oyXH50xrM/UtL5+8YDbIWe1+ePGV8LdxFE0mz4aEGF/SNshAGt8Ip5BNWeYplVTyD5mQmNa+Jnim+peoQYDgvnQFzB7Wi/M5EMlob/2YBTcNgKkZU7Khu4o31PZhcZjOqEJtx1XIHT+FRhAa+mxP9LerNE+U5a7JCre1zzir1FFSsLV0jdV5fKIYML3JiOEfbsTKY1u/wzTqNNGBfJzWUGaaP2U69Ck4bqLn6BP9NjYC0LU6SyV5bvaGztIKMIg76K1pocGtdIilH/pr1yGJ//ntmVUInfLVo+YWbhwZWVAF1rucTJZOGA+l1fTZbVUOrbQir5pb2JJ6UIvTbaLNCdQqGHc6kwl3fxm3WGbZEq26fuGuXeCwMrJVPd46zhDOIB9U04qDj+R+3wlSfo6QzuB2ll0k6Oua75cLqB6eTY+IPIwVY0HhoRVZA/LZlSM5Fjnd6uh9c9G52X4fpbnJ/t+l25/TPRRqSz6A0ul+nceL+0B8b1iq4FmCNokVIZnZZcPYrHBZyA+Ja2MJNh7cU8U7qXasi5966FoMbJGOhDcXyH/tXu6FSY8VoHi0Gw0dIYP5SITzctrxEFqL6H+Uq26BRzcChpqrRaPhyGp5V3QdjymqSuMkkMd8nNwQZPhh/Q9YEPi9KB4+yHLLWePVpPL9/rqfHLjQVJley5CxmBbUZRDnlGxtdRD0/ydMkSaNd2k+eG2EkC7v1Y/HdzuSHkT//McDZMveNfifVlprXIYOTfvv/V3gaq/yHSu5x5o8NbHU1AesZj6TVc31G2QZL1ia403vJcI2kajTyMwj8CfDcW23LdpTLqzi9PFL9n0PkXYKYlqAaSVcdd6KS6XzRej3PRpljpd0nNo20ioHXAKwuu90lXEXQvVhFFytYRlcsW0UpSzoUmOto5p7gBi56uFj39PsMl3MUZNDvJPiT4APVQ4S2QX5HOVo71dVd6h64YSHZxtf96R84wkckzAkAAA==" ConnectionId="ef733be9-e34f-4feb-9cdf-1c02aec1701c" DisplayName="Detect Language" sap2010:WorkflowViewState.IdRef="ConnectorActivity_2" UiPathActivityTypeId="a5718756-c0e8-37e8-b2b4-5f9bd0e3896f">
+              <isactr:ConnectorActivity.FieldObjects>
+                <isactr:FieldObject Name="text" Type="FieldArgument">
+                  <isactr:FieldObject.Value>
+                    <InArgument x:TypeArguments="x:String">[extractedText]</InArgument>
+                  </isactr:FieldObject.Value>
+                </isactr:FieldObject>
+                <isactr:FieldObject Name="modelName" Type="FieldArgument">
+                  <isactr:FieldObject.Value>
+                    <InArgument x:TypeArguments="x:String">anthropic.claude-haiku-4-5-20251001-v1:0</InArgument>
+                  </isactr:FieldObject.Value>
+                </isactr:FieldObject>
+                <isactr:FieldObject Name="out_language" Type="FieldArgument">
+                  <isactr:FieldObject.Value>
+                    <OutArgument x:TypeArguments="x:String">[detectedLanguage]</OutArgument>
+                  </isactr:FieldObject.Value>
+                </isactr:FieldObject>
+                <isactr:FieldObject Name="Jit_languageminus_signdetection" Type="FieldArgument">
+                  <isactr:FieldObject.Value>
+                    <OutArgument x:TypeArguments="uiascb1:languageminus_signdetection_Create" />
+                  </isactr:FieldObject.Value>
+                </isactr:FieldObject>
+              </isactr:ConnectorActivity.FieldObjects>
+            </isactr:ConnectorActivity>
+            <If Condition="[String.IsNullOrEmpty(detectedLanguage)]" DisplayName="If" sap2010:WorkflowViewState.IdRef="If_1">
+              <If.Then>
+                <Sequence sap2010:WorkflowViewState.IdRef="Sequence_16">
+                  <Assign DisplayName="Assign Variable Value 19" sap2010:WorkflowViewState.IdRef="Assign_29">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:Boolean">[fallbackActivated]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence sap2010:WorkflowViewState.IdRef="Sequence_17" />
+              </If.Else>
+            </If>
+            <ui:LogMessage DisplayName="Log Message 2" sap2010:WorkflowViewState.IdRef="LogMessage_3" Message="[detectedLanguage]" />
+            <isactr:ConnectorActivity Configuration="H4sIAAAAAAAAA51WbVPjNhD+Kxp/amds105gODKlMyTQkhZIjuSgnc7NjWJvYjWO5JPkcIHJf+9KfomdcEA7fAjyrvbl2Wd39ez8yiCN1UBwTRkH6fSenQlQGSV0lkIhdHp/f3adIc9yXX94dm7pCpyesxIxpPZ/17lgKkvpppTcGAnhpQhUJFmmmeAomiZAFoDuqGZrIOdDYs0QIcnwgmhBcgU+mSZMERqhCtMbEsOc5qlWRqzxfnHjkenEHhO2SEBp8jWnqVEXMwVyDTERucbAXZKIR1iDdAklMZvPQQLXpZGIcjIDoiCFSOOVGVXmIkefisnaBgbDY6LRC+MLn0zQd5Tgv4UVZc0kFPNhqwzDVsaCCa247SMK001mkFFa4jU8T4TUIxkb2L0wMCjZHO9pmhu9Raa9Yz/0OkHn2AtDL+zinWshlnlm6jSa/YPxNuuganllwn7Gr2OqEzz+tAB909Y0901FnbhRvc9bWzK24MbRtaBxf1MG5/S0zMF1LrlhyCdEeYSwShZDJRkLxcpCjyVbUblx0JylznlkBCWj7JdrEdFS+WMOqOo6Iz6gfE1VZW+obkAnIh5TibFpg5YRbN2ahBq+6QP+WcKSSnTAPyMwXKKcppsnIHMknyFrTJAYGD+o1wsWNhF6OeU7+Job/lSJ7CfcF7HRq9NoOG6nctkQHCSSMqS9mNdhFyxNgEnD30rZ9o2ynW1JadPHnHdJCkundpJdDFrIFcWqIz9s8TC3nws83OLnF2efuM/bN7BxnYFYZYJjyPj1ojZsE68ODyxGthoLD4zH4nHKdLoHRiFoQzKWYo1k/P9wDESar/gfsGk53FSTrBa33ZpKmSoYY9b1pql7xWymryhZ6CqPTdMthbbPxuk1q6Xz72tv381V7NqRnWaHi6DCu5C/n8LX+/SVEIkFZ09mEG9smLeXd+WkZsVEZc3Wfr1HTV44sZ3enKYKzFkh8VQ9rKrzIMdl9P3066zaw6nRvL8z/cUs0P3Eb+1MKTl0V+RWFrYNxC6VT8yMa3/INSykjWCCu4xF4J8X2xBh8icPFaT+IOicXw7CkyAcmBC+DCRgLn4/53EK/u6LS17S9J86k/uTbucv2vkY/vk0CT50Rh+C4ObIJfcgFXo/C/3A/OF9bPJcwhmHXEuaumScz1IWmWYRS+BnPE/NtnkL9Heia0Y/wmq1S7zNYhpypSmPoN4HygyJMla0ZqO1LcA5TjQhMTz8nLMMUfXKH8pkvESlEtFNCX1FA7e9XYvCXmmdFavIzBmBCW7NFo3wxYFsrSy9XfcBjRKIG4vaJrB7SZmuGhoflOtEioxFfpTSPAYvoWyZe0fesX0ThEEQeuuwF+xIV7S93efvvUx+GFj5jw5298R2UTHz9006B9z+7y5sAYv8+1I84uthqGGlip1RrgcsV/lCGNNoSRfQLG3nuF3bMpKiZchvwPExueuSpmbTysmpH57URX53w77AiVEGsqJx0WUHRBlNpo0XWHFtgqCaW9gZIpcR2HLD/KTbncGpB92juXc0h5l3GsVzL4yCDoXItG1k3m2UL3KExQ5dPN/Qb2M8TpCETq8T4Dvyiqo+xrLEUg4S1DYEK1txikOzn4poaSHe/guxQ5KvAQwAAA==" ConnectionId="ef733be9-e34f-4feb-9cdf-1c02aec1701c" DisplayName="Named Entity Recognition" sap2010:WorkflowViewState.IdRef="ConnectorActivity_4" UiPathActivityTypeId="0382f08f-15b5-306a-8f82-cf3ac367436d">
+              <isactr:ConnectorActivity.FieldObjects>
+                <isactr:FieldObject Name="text" Type="FieldArgument">
+                  <isactr:FieldObject.Value>
+                    <InArgument x:TypeArguments="x:String">[extractedText]</InArgument>
+                  </isactr:FieldObject.Value>
+                </isactr:FieldObject>
+                <isactr:FieldObject Name="entities" Type="FieldArgument">
+                  <isactr:FieldObject.Value>
+                    <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)">[New Dictionary(Of System.String, System.String) From { {"Tracking Number", "Shipment or parcel tracking reference"},{"Amount", "Financial or COD monetary value"},{"Date", "Any date or time reference"},{"Location", "Address, city, warehouse, or delivery point"},{"Department", "Finance, Warehouse, Customer Service, Operations"},{"Issue Type", "COD Dispute, Late Delivery, Damaged Parcel, Missing Parcel, Wrong Address, System Error, Customer Complaint"},{"Urgency Indicator", "Words signalling urgency — ASAP, urgent, immediate, threatening escalation"},{"Customer Action Requested", "What customer demands — refund, address change, investigation, compensation"},{"Evidence Source", "Channel of input — email, WhatsApp, phone log, handwritten note, warehouse note, invoice, handwritten receipt"},{"System Reference", "Internal system names, ticket numbers, order IDs"},{"Responsible Party", "Who is being blamed or held accountable"},{"Product/Item", "The shipped item being disputed — coffee machine, parcel contents"},{"Escalation Threat", "Customer threatening social media, legal action, or formal complaint"},{"Missing Process Step", "Process failures that should have happened but didn't — no ticket created, no exception scan, not tagged to insurance"} }]</InArgument>
+                  </isactr:FieldObject.Value>
+                </isactr:FieldObject>
+                <isactr:FieldObject Name="modelName" Type="FieldArgument">
+                  <isactr:FieldObject.Value>
+                    <InArgument x:TypeArguments="x:String">anthropic.claude-haiku-4-5-20251001-v1:0</InArgument>
+                  </isactr:FieldObject.Value>
+                </isactr:FieldObject>
+                <isactr:FieldObject Name="out_entitiesOutput" Type="FieldArgument">
+                  <isactr:FieldObject.Value>
+                    <OutArgument x:TypeArguments="x:String">[entities]</OutArgument>
+                  </isactr:FieldObject.Value>
+                </isactr:FieldObject>
+                <isactr:FieldObject Name="Jit_ner" Type="FieldArgument">
+                  <isactr:FieldObject.Value>
+                    <OutArgument x:TypeArguments="uiascb2:ner_Create" />
+                  </isactr:FieldObject.Value>
+                </isactr:FieldObject>
+              </isactr:ConnectorActivity.FieldObjects>
+            </isactr:ConnectorActivity>
+            <If Condition="[String.IsNullOrEmpty(entities)]" DisplayName="If 1" sap2010:WorkflowViewState.IdRef="If_2">
+              <If.Then>
+                <Sequence sap2010:WorkflowViewState.IdRef="Sequence_18">
+                  <Assign DisplayName="Assign Variable Value 20" sap2010:WorkflowViewState.IdRef="Assign_30">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:Boolean">[fallbackActivated]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence sap2010:WorkflowViewState.IdRef="Sequence_19" />
+              </If.Else>
+            </If>
+            <ui:LogMessage DisplayName="Log Message 3" sap2010:WorkflowViewState.IdRef="LogMessage_5" Message="[entities]" />
+            <isactr:ConnectorActivity Configuration="H4sIAAAAAAAAA81XbW/bNhD+K4Q+bYOkWk7SoAb6wVa6zVsye1PSASuKgKbOFmuZVPni1Cvy33ekXmxXSZZ9yhDAkcTj8e55njudvgY/cihznUphKBeggtHXIAOqWEEXJdSLwejDxzCYisqa7sHX4De6gWAUbGQOpb8Ogwuuq5LumpUrt0JEswSaKV4ZLgUuXRdAVoDHUcO3QMZT4t0Qqcj0ghhJrIaYXBdcE8rQhJsdyWFJbWm0Wza4v95xx03hbwu+KkAb8tnS0pnLhQa1hZxIazDwkBTyDragQkJJzpdLUCBM44RRQRZANJTADG5ZUO02CjxTc9X5wGBETgyewsUqJhmezQq8rL1o76agmA/fVBi2dh5caPXuGFG43lUOGW0UbsP7TCozU7mDPUoGDiWf43taWme3qkx0FifRcDA8i5IkSk5wz6WUa1s5nmaLTxjvIQ+6W29d+Mf4dE5NgbevVmCuji3dfsdokB+w9/HeU8ZXwh10KWk+2TXBBSOjLITBO+EUcoMozxBWxXNoV+ZS84boueIbqnYBuvPSGTO30CjKP7mUjDbGv1tA0zCYiZSKLdWtv6m+AlPIfE4VxmYcWm7hPuxEaOCL6envunnYU56zdipCyqmg5e5vZHiJ0tOoCL7Bn6eZSsLgD/hsnTDaCL/NZCJzzBlTnHnq+1XTHTV2AWiuY4kg0rLM2oXMqF5Gs9qGZAeBHqfX1LH2uusOIZpJBV69JV14PTydX0f9fZ0rSj4YLWmpwd3rCins2G7vU4vV/DgkNRI9dg9I7GPSPZkooOtc3omHUOnQIJ3ZA7hY4QpySSovzi2ERMCKtlfWILBhXd/S0JJog8k4p/ppsIYvChCTYomFJxhcYm8re9Ck3TrpDHrl0CiP7J2R0hk7tJyMaHPaHgguDKxAHSNxgilJtaGmNnh9GrwoNGvYzQuFjVyjZj788LGHza+wI41FD5Yxqbl2EKAjUtV2xMFj+JJjw+DimxprYfqXPn/6v6muA16PkRkfLBzBcgHYXEpMHr6gufCHtyrpA/E0DmcvmrsVGISR4lF13HQGPRQyuzAlkL0LHBNMPTg0ovAvmHYy4aqZB57G4/UL6eIXbm63yWjUYRQ9qot9o31UIfscb7gbOeKpaxXKh5PhPMYZxON6ouOg4+zPd+jSX6aD4fhdmpwPkhTjudV2cduFtOHC6lsHThvbbYqt3kA8QRZKiJ+9ISQPnRPbv95Pb04+sd3NZTK8mEh2epZOxGYYkvegNMb+NokH7g/34whkFbzt3hlzuyg5w25yLdcg3gpbls/ofM8kyg0/yJC3bqhzo9lU4PsJG3U3EWk3pjWxojcfLTrD/i9QmVJhePjY8go5iZp/lKt8jUYNH7uGuFZR4fF8+ahGfjamquczN+9JzPnejZYMx3AcrFrnT0kopayA/GBu9dnsPyzc3DR13qkwhZIVZzErqc0hKihf2+g0OvMjcjIYJBHGOdgrN5Wl3fh589mbyXepX/8+wPkt85Vav9e+dRn0CuS/H+HZrPOfKHmHw/QUxw5d94BmeEbumoF5TtmaruCQ5+HZMdFt+/LVR34Cgd9W+4I7tDz0cv4mTs47xp9R9c+TxqwC1Qq8rr+eXmbZ9cHXyTZ59aCjDDF3frCKpFUMvBpgeX5ysoA3EZycLqPTJSyiNyxfRgkbDCkwV+LMfeVQsbKImtvhBsMr+mWOtxmqE8e3AX51/Uy1nxyR6bRAa6e/pmzdN8SklGztGbj/B+esArYvDwAA" ConnectionId="ef733be9-e34f-4feb-9cdf-1c02aec1701c" DisplayName="Sentiment Analysis" sap2010:WorkflowViewState.IdRef="ConnectorActivity_5" UiPathActivityTypeId="2141cadf-6675-3876-bd1f-14adadee2c79">
+              <isactr:ConnectorActivity.FieldObjects>
+                <isactr:FieldObject Name="text" Type="FieldArgument">
+                  <isactr:FieldObject.Value>
+                    <InArgument x:TypeArguments="x:String">[extractedText]</InArgument>
+                  </isactr:FieldObject.Value>
+                </isactr:FieldObject>
+                <isactr:FieldObject Name="modelName" Type="FieldArgument">
+                  <isactr:FieldObject.Value>
+                    <InArgument x:TypeArguments="x:String">anthropic.claude-haiku-4-5-20251001-v1:0</InArgument>
+                  </isactr:FieldObject.Value>
+                </isactr:FieldObject>
+                <isactr:FieldObject Name="out_sentimentAnalysis_sub_overallSentimentStr" Type="FieldArgument">
+                  <isactr:FieldObject.Value>
+                    <OutArgument x:TypeArguments="x:String">[sentimentScore]</OutArgument>
+                  </isactr:FieldObject.Value>
+                </isactr:FieldObject>
+                <isactr:FieldObject Name="out_sentimentAnalysis_sub_sentimentBreakdownStr" Type="FieldArgument">
+                  <isactr:FieldObject.Value>
+                    <OutArgument x:TypeArguments="x:String" />
+                  </isactr:FieldObject.Value>
+                </isactr:FieldObject>
+                <isactr:FieldObject Name="out_sentimentAnalysis_sub_confidenceLevel" Type="FieldArgument">
+                  <isactr:FieldObject.Value>
+                    <OutArgument x:TypeArguments="s:Nullable(x:Int64)" />
+                  </isactr:FieldObject.Value>
+                </isactr:FieldObject>
+                <isactr:FieldObject Name="out_sentimentAnalysis_sub_keyPhrasesStr_array" Type="FieldArgument">
+                  <isactr:FieldObject.Value>
+                    <OutArgument x:TypeArguments="s:String[]" />
+                  </isactr:FieldObject.Value>
+                </isactr:FieldObject>
+                <isactr:FieldObject Name="out_sentimentAnalysis_sub_analysis" Type="FieldArgument">
+                  <isactr:FieldObject.Value>
+                    <OutArgument x:TypeArguments="x:String" />
+                  </isactr:FieldObject.Value>
+                </isactr:FieldObject>
+                <isactr:FieldObject Name="out_sentimentAnalysis_sub_undertonesStr_array" Type="FieldArgument">
+                  <isactr:FieldObject.Value>
+                    <OutArgument x:TypeArguments="s:String[]" />
+                  </isactr:FieldObject.Value>
+                </isactr:FieldObject>
+                <isactr:FieldObject Name="Jit_v1_sub_sentimentminus_signanalysis" Type="FieldArgument">
+                  <isactr:FieldObject.Value>
+                    <OutArgument x:TypeArguments="uiascb3:v1_sub_sentimentminus_signanalysis_Create" />
+                  </isactr:FieldObject.Value>
+                </isactr:FieldObject>
+              </isactr:ConnectorActivity.FieldObjects>
+            </isactr:ConnectorActivity>
+            <If Condition="[String.IsNullOrEmpty(sentimentScore)]" DisplayName="If 2" sap2010:WorkflowViewState.IdRef="If_3">
+              <If.Then>
+                <Sequence sap2010:WorkflowViewState.IdRef="Sequence_20">
+                  <Assign DisplayName="Assign Variable Value 21" sap2010:WorkflowViewState.IdRef="Assign_31">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:Boolean">[fallbackActivated]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence sap2010:WorkflowViewState.IdRef="Sequence_21" />
+              </If.Else>
+            </If>
+            <ui:LogMessage DisplayName="Log Message 4" sap2010:WorkflowViewState.IdRef="LogMessage_6" Message="[sentimentScore]" />
+            <isactr:ConnectorActivity Configuration="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" ConnectionId="ef733be9-e34f-4feb-9cdf-1c02aec1701c" DisplayName="Rewrite" sap2010:WorkflowViewState.IdRef="ConnectorActivity_6" UiPathActivityTypeId="f424001a-ba9c-3cb1-bfd4-5b71e081b17a">
+              <isactr:ConnectorActivity.FieldObjects>
+                <isactr:FieldObject Name="content_to_rewrite" Type="FieldArgument">
+                  <isactr:FieldObject.Value>
+                    <InArgument x:TypeArguments="x:String">[extractedText]</InArgument>
+                  </isactr:FieldObject.Value>
+                </isactr:FieldObject>
+                <isactr:FieldObject Name="detectInputLanguage" Type="FieldArgument">
+                  <isactr:FieldObject.Value>
+                    <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                  </isactr:FieldObject.Value>
+                </isactr:FieldObject>
+                <isactr:FieldObject Name="outputLanguage" Type="FieldArgument" />
+                <isactr:FieldObject Name="out_rewrittenContent" Type="FieldArgument">
+                  <isactr:FieldObject.Value>
+                    <OutArgument x:TypeArguments="x:String">[rewrittenText]</OutArgument>
+                  </isactr:FieldObject.Value>
+                </isactr:FieldObject>
+                <isactr:FieldObject Name="modelName" Type="FieldArgument">
+                  <isactr:FieldObject.Value>
+                    <InArgument x:TypeArguments="x:String">anthropic.claude-haiku-4-5-20251001-v1:0</InArgument>
+                  </isactr:FieldObject.Value>
+                </isactr:FieldObject>
+                <isactr:FieldObject Name="rewrite_instructions" Type="FieldArgument">
+                  <isactr:FieldObject.Value>
+                    <InArgument x:TypeArguments="x:String">[string.Format("You are a DHL Operations documentation specialist. Rewrite the following incident report into clean, formal, professional English suitable for internal DHL operations records.{0}Rules:{1}- Remove all informal language, slang, emotional tone, and punctuation like ""???"" or ""!!!""{2}- Preserve every tracking number, date, financial amount, location, and factual detail exactly as stated{3}- Maintain all evidence sources (email, WhatsApp, phone log, warehouse note){4}- Structure the output as a coherent chronological incident narrative{5}- Do not add information that is not in the original text{6}- Do not summarize — rewrite at similar length", Environment.NewLine, Environment.NewLine, Environment.NewLine, Environment.NewLine, Environment.NewLine, Environment.NewLine, Environment.NewLine)]</InArgument>
+                  </isactr:FieldObject.Value>
+                </isactr:FieldObject>
+                <isactr:FieldObject Name="example" Type="FieldArgument" />
+                <isactr:FieldObject Name="total_words" Type="FieldArgument" />
+              </isactr:ConnectorActivity.FieldObjects>
+            </isactr:ConnectorActivity>
+            <If Condition="[String.IsNullOrEmpty(rewrittenText)]" DisplayName="If 5" sap2010:WorkflowViewState.IdRef="If_6">
+              <If.Then>
+                <Sequence sap2010:WorkflowViewState.IdRef="Sequence_27">
+                  <Assign DisplayName="Assign Variable Value 27" sap2010:WorkflowViewState.IdRef="Assign_38">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:Boolean">[fallbackActivated]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence sap2010:WorkflowViewState.IdRef="Sequence_28" />
+              </If.Else>
+            </If>
+            <ui:LogMessage DisplayName="Log Message 5" sap2010:WorkflowViewState.IdRef="LogMessage_7" Message="[rewrittenText]" />
+            <isactr:ConnectorActivity Configuration="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" ConnectionId="ef733be9-e34f-4feb-9cdf-1c02aec1701c" DisplayName="Summarize Text" sap2010:WorkflowViewState.IdRef="ConnectorActivity_7" UiPathActivityTypeId="d82ffa74-9757-317d-8c48-1a3a1b4be976">
+              <isactr:ConnectorActivity.FieldObjects>
+                <isactr:FieldObject Name="prompt" Type="FieldArgument">
+                  <isactr:FieldObject.Value>
+                    <InArgument x:TypeArguments="x:String">[rewrittenText]</InArgument>
+                  </isactr:FieldObject.Value>
+                </isactr:FieldObject>
+                <isactr:FieldObject Name="detectInputLanguage" Type="FieldArgument">
+                  <isactr:FieldObject.Value>
+                    <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                  </isactr:FieldObject.Value>
+                </isactr:FieldObject>
+                <isactr:FieldObject Name="outputLanguage" Type="FieldArgument" />
+                <isactr:FieldObject Name="modelName" Type="FieldArgument">
+                  <isactr:FieldObject.Value>
+                    <InArgument x:TypeArguments="x:String">anthropic.claude-haiku-4-5-20251001-v1:0</InArgument>
+                  </isactr:FieldObject.Value>
+                </isactr:FieldObject>
+                <isactr:FieldObject Name="maxWordCount" Type="FieldArgument">
+                  <isactr:FieldObject.Value>
+                    <InArgument x:TypeArguments="x:Int64">100</InArgument>
+                  </isactr:FieldObject.Value>
+                </isactr:FieldObject>
+                <isactr:FieldObject Name="summaryFormat" Type="FieldArgument">
+                  <isactr:FieldObject.Value>
+                    <InArgument x:TypeArguments="x:String">Paragraph</InArgument>
+                  </isactr:FieldObject.Value>
+                </isactr:FieldObject>
+                <isactr:FieldObject Name="out_summary" Type="FieldArgument">
+                  <isactr:FieldObject.Value>
+                    <OutArgument x:TypeArguments="x:String">[cleanSummary]</OutArgument>
+                  </isactr:FieldObject.Value>
+                </isactr:FieldObject>
+                <isactr:FieldObject Name="Jit_summarise" Type="FieldArgument">
+                  <isactr:FieldObject.Value>
+                    <OutArgument x:TypeArguments="uiascb4:summarise_Create" />
+                  </isactr:FieldObject.Value>
+                </isactr:FieldObject>
+              </isactr:ConnectorActivity.FieldObjects>
+            </isactr:ConnectorActivity>
+            <If Condition="[String.IsNullOrEmpty(cleanSummary)]" DisplayName="If 6" sap2010:WorkflowViewState.IdRef="If_7">
+              <If.Then>
+                <Sequence sap2010:WorkflowViewState.IdRef="Sequence_29">
+                  <Assign DisplayName="Assign Variable Value 28" sap2010:WorkflowViewState.IdRef="Assign_39">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:Boolean">[fallbackActivated]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence sap2010:WorkflowViewState.IdRef="Sequence_30" />
+              </If.Else>
+            </If>
+            <ui:LogMessage DisplayName="Log Message 6" sap2010:WorkflowViewState.IdRef="LogMessage_8" Message="[cleanSummary]" />
+            <uwah:NetHttpRequest BasicAuthPassword="{x:Null}" BasicAuthSecurePassword="{x:Null}" BasicAuthUsername="{x:Null}" BinaryPayload="{x:Null}" ClientCertPassword="{x:Null}" ClientCertPath="{x:Null}" ClientCertSecurePassword="{x:Null}" Cookies="{x:Null}" CustomNegotiatedAuthCredentials="{x:Null}" FilePath="{x:Null}" FormData="{x:Null}" Headers="{x:Null}" LocalFiles="{x:Null}" OAuthToken="{x:Null}" OutputFileName="{x:Null}" OutputFileTargetFolder="{x:Null}" Parameters="{x:Null}" PathResource="{x:Null}" ProxyConfiguration="{x:Null}" ResourceFiles="{x:Null}" TextPayload="{x:Null}" AuthenticationType="None" ContinueOnError="True" DisableSslVerification="False" DisplayName="HTTP Request 4" EnableCookies="True" FileOverwrite="AutoRename" FollowRedirects="True" FormDataParts="[New List (Of FormDataPart) From _&#xA;{&#xA; New FileFormDataPart(),&#xA; New BinaryFormDataPart(),&#xA; New TextFormDataPart()&#xA;}]" sap2010:WorkflowViewState.IdRef="NetHttpRequest_6" InitialDelay="500" MaxRedirects="3" MaxRetryAfterDelay="30000" Method="GET" Multiplier="2" PreferRetryAfterValue="True" RequestBodyType="None" RequestUrl="https://dhl-incident-backend.onrender.com/api/incidents/recent-summaries" Result="[recentSummariesResponse]" RetryCount="3" RetryPolicyType="Basic" RetryStatusCodes="[New List (Of System.Net.HttpStatusCode) From _&#xA;{&#xA; System.Net.HttpStatusCode.RequestTimeout,&#xA; System.Net.HttpStatusCode.TooManyRequests,&#xA; System.Net.HttpStatusCode.InternalServerError,&#xA; System.Net.HttpStatusCode.BadGateway,&#xA; System.Net.HttpStatusCode.ServiceUnavailable,&#xA; System.Net.HttpStatusCode.GatewayTimeout&#xA;}]" SaveRawRequestResponse="False" SaveResponseAsFile="False" TextPayloadContentType="application/json" TextPayloadEncoding="UTF-8" TlsProtocol="Automatic" UseJitter="True" UseOsNegotiatedAuthCredentials="True">
+              <uwah:NetHttpRequest.TimeoutInMiliseconds>
+                <InArgument x:TypeArguments="s:Nullable(x:Int32)">
+                  <Literal x:TypeArguments="s:Nullable(x:Int32)" Value="10000" />
+                </InArgument>
+              </uwah:NetHttpRequest.TimeoutInMiliseconds>
+            </uwah:NetHttpRequest>
+            <Assign DisplayName="Assign Variable Value 12" sap2010:WorkflowViewState.IdRef="Assign_20">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[recentSummaries]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">[recentSummariesResponse.TextContent]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <isactr:ConnectorActivity Configuration="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" ConnectionId="ef733be9-e34f-4feb-9cdf-1c02aec1701c" DisplayName="Semantic Similarity" sap2010:WorkflowViewState.IdRef="ConnectorActivity_8" UiPathActivityTypeId="89a94adc-0ec1-36b0-9862-97db1723dcce">
+              <isactr:ConnectorActivity.FieldObjects>
+                <isactr:FieldObject Name="similarityType" Type="FieldArgument">
+                  <isactr:FieldObject.Value>
+                    <InArgument x:TypeArguments="x:String">String to string</InArgument>
+                  </isactr:FieldObject.Value>
+                </isactr:FieldObject>
+                <isactr:FieldObject Name="outputFormat" Type="FieldArgument" />
+                <isactr:FieldObject Name="firstComparisonInput" Type="FieldArgument">
+                  <isactr:FieldObject.Value>
+                    <InArgument x:TypeArguments="x:String">[cleanSummary]</InArgument>
+                  </isactr:FieldObject.Value>
+                </isactr:FieldObject>
+                <isactr:FieldObject Name="secondComparisonInput" Type="FieldArgument">
+                  <isactr:FieldObject.Value>
+                    <InArgument x:TypeArguments="x:String">[recentSummaries]</InArgument>
+                  </isactr:FieldObject.Value>
+                </isactr:FieldObject>
+                <isactr:FieldObject Name="comparisonArray" Type="FieldArgument" />
+                <isactr:FieldObject Name="modelName" Type="FieldArgument">
+                  <isactr:FieldObject.Value>
+                    <InArgument x:TypeArguments="x:String">anthropic.claude-haiku-4-5-20251001-v1:0</InArgument>
+                  </isactr:FieldObject.Value>
+                </isactr:FieldObject>
+                <isactr:FieldObject Name="out_semanticSimilarity_sub_similarityScore" Type="FieldArgument">
+                  <isactr:FieldObject.Value>
+                    <OutArgument x:TypeArguments="s:Nullable(x:Double)">[similarityScore]</OutArgument>
+                  </isactr:FieldObject.Value>
+                </isactr:FieldObject>
+                <isactr:FieldObject Name="out_semanticSimilarity_sub_similarityExplanation" Type="FieldArgument">
+                  <isactr:FieldObject.Value>
+                    <OutArgument x:TypeArguments="x:String">[similarityResult]</OutArgument>
+                  </isactr:FieldObject.Value>
+                </isactr:FieldObject>
+                <isactr:FieldObject Name="out_semanticSimilarity_sub_string" Type="FieldArgument">
+                  <isactr:FieldObject.Value>
+                    <OutArgument x:TypeArguments="x:String" />
+                  </isactr:FieldObject.Value>
+                </isactr:FieldObject>
+                <isactr:FieldObject Name="out_semanticSimilarity_sub_listOfScores" Type="FieldArgument">
+                  <isactr:FieldObject.Value>
+                    <OutArgument x:TypeArguments="x:String" />
+                  </isactr:FieldObject.Value>
+                </isactr:FieldObject>
+                <isactr:FieldObject Name="Jit_semanticminus_signsimilarity" Type="FieldArgument">
+                  <isactr:FieldObject.Value>
+                    <OutArgument x:TypeArguments="uiascb5:semanticminus_signsimilarity_Create">[semanticSimilarity]</OutArgument>
+                  </isactr:FieldObject.Value>
+                </isactr:FieldObject>
+              </isactr:ConnectorActivity.FieldObjects>
+            </isactr:ConnectorActivity>
+            <ui:LogMessage DisplayName="Log Message 7" sap2010:WorkflowViewState.IdRef="LogMessage_9" Message="[similarityResult + &quot; The similarity is : &quot; + similarityScore.ToString()]" />
+            <isactr:ConnectorActivity Configuration="H4sIAAAAAAAAA5VWbW/bNhD+K4Q+bYCkWU6yIMY6IHGzxm1Se7XbfhiKgqbOFmeZVPnixAn833ekJFuynWSFP1jkvfDunueOfAr+4pCnui+FoVyACnpPwRioYhmd5lAKg94/38JgIAprthtPwUe6hKAXLGUKuf8Og7dcFzldV5I7JyGiEoFmiheGS4GiSQZkDngcNXwF5HJAvBsiFRm8JUYSqyEmk4xrQhmqcLMmKcyozY12YoP2pcU9N5lfZnyegTbkh6W5U5dTDWoFKZHWYOAhyeQ9rECFhJKUz2agQJjKCaOCTIFoyIEZNJlS7QwFnqm52vrAYERKDJ7CxTwmYzybZfhZetHeTUYxH74sMGztPLjQSusYqzBZF64y2ig0w/VYKjNUqSt7lHRclXyOX2hund68MNFZnETdTvcsSpIoOUGbWykXtnA4Daf/YrxNHPRWXrvw27g7oibD5W9zMHdtTWfvEA3SBnrfNh4yPhfuoFtJ06t1FVzQM8pCGFwLx5DPWOUhllXxFGrJSGpeAT1SfEnVOkB3njqXzAkqRvmdW8lopfy3BVQNg6HoU7GiuvY30HdgMpmOqMLYjKuWE2zCLQkZ0hfhPKBgf7d/wL/KxtEJI4C5VPyxJt3SIpOQEYWSK0wsJRSxJyVsr+B41izc8Up8Al1gEbb1+gQ/rKNZvd6vy5VMnd0u2ypc0IcJt0StnFuiKgHpGdRO4HcMQKolRaCREh4vjPuPMtew/Psz2Ofq0+aVvEMEY4lpOzh6GHXt2KdQL77yFAnqPHzlIpX3E27yg7RKUTu5UQkUaZWmL3O7FB9gvedm3ZS1/bgyEjnzbcuOaN9wH/6Lar4i9ZFN9y2F9rmN1ct+qwBe0t9sfp5SaSvMNqf2zmLP9NQ4Qw6R9EhgVaNNwc3KXa+lMSHINAIPdFnkELpuSy0zRNuicL4MZwswOiQM21EuQREFKw73uAOGvdKH56/34dGi7I+fDQ6qoR/gh3ffe26+7/J5thkfDy/AXeyfuRvN8QBrNFc+kjHeW5xBfFnefMjlePz1Wpjys9/pXl73k/NO0m+c/b2vABfxlRVpDvGBICTH7OLrs8ds/T57926UfLwZ5J+S1eDk4rQbki+gNIbyJok77ofm2OpWwRsB1iiah2RkpzlnrrnkAsQbYXN3zTje4f0Y9GY013A46vZLXlb26MzH4nrtw2G/a4yj077ZOYdjnwu8+t2dXmvt0fQIq7Y82ryeYL3uWwTz+f57Ju+Nu3cHQhsqGGyvO+0oXCGCth4TPxWEwOktFYKA25YXSKSo+qNcpQtUqki0rnKqwwrbj4cWiW+MKcoL17WLxGQ37q3A8F2FTVs7PMbxPmUZpI0HiI9890J0rTNwXqkwmZIFZzHLqU0hyihf2Og0OvNvnaTTSaJV0uvsIC5HoH+n/F9j8kvfy38NsIXHHszyYtt3GRww6eeP8MiV+V8peY+vooGBpS5JU80cxKl6+YwoW9A5NDHtnrVBrSIpxwN5BwIfybuJ0NRsejm/iJPzLbovjKPn4R8WoGqalsPjgBPD8aTxpGxZj7Gozhj7QFrFwMMNs/OTkylcRHByOotOZzCNLlg6ixLW6VJgbigx9x6lYm6xLM7CXUN39GGEy7Hz3Ot28H18Q/UVhrRAKPsZajuCVY04gQdzlUu28CXe/Acab+0N2QwAAA==" ConnectionId="ef733be9-e34f-4feb-9cdf-1c02aec1701c" DisplayName="Categorize" sap2010:WorkflowViewState.IdRef="ConnectorActivity_9" UiPathActivityTypeId="f6c9a20f-7e4c-3114-977f-69cc35299639">
+              <isactr:ConnectorActivity.FieldObjects>
+                <isactr:FieldObject Name="content" Type="FieldArgument">
+                  <isactr:FieldObject.Value>
+                    <InArgument x:TypeArguments="x:String">[cleanSummary]</InArgument>
+                  </isactr:FieldObject.Value>
+                </isactr:FieldObject>
+                <isactr:FieldObject Name="categories" Type="FieldArgument">
+                  <isactr:FieldObject.Value>
+                    <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)">[New Dictionary(Of System.String, System.String) From { {"COD Dispute", "Incorrect COD amount collected or disputed"},{"Late Delivery", "Parcel delivered later than expected"},{"Damaged Parcel", "Parcel arrived damaged or broken"},{"Missing Parcel", "Parcel lost or not received"},{"Wrong Address", "Delivery to wrong or outdated address"},{"System Error", "Internal system failure or data not updated"},{"Customer Complaint", "General complaint not fitting other categories"},{"Other", "Incidents not matching any defined category"} }]</InArgument>
+                  </isactr:FieldObject.Value>
+                </isactr:FieldObject>
+                <isactr:FieldObject Name="modelName" Type="FieldArgument">
+                  <isactr:FieldObject.Value>
+                    <InArgument x:TypeArguments="x:String">anthropic.claude-haiku-4-5-20251001-v1:0</InArgument>
+                  </isactr:FieldObject.Value>
+                </isactr:FieldObject>
+                <isactr:FieldObject Name="description" Type="FieldArgument">
+                  <isactr:FieldObject.Value>
+                    <InArgument x:TypeArguments="x:String">DHL logistics incident report requiring classification into operational categories</InArgument>
+                  </isactr:FieldObject.Value>
+                </isactr:FieldObject>
+                <isactr:FieldObject Name="Jit_categorize" Type="FieldArgument">
+                  <isactr:FieldObject.Value>
+                    <OutArgument x:TypeArguments="uiascb6:categorize_Create">[categorize]</OutArgument>
+                  </isactr:FieldObject.Value>
+                </isactr:FieldObject>
+                <isactr:FieldObject Name="out_category" Type="FieldArgument">
+                  <isactr:FieldObject.Value>
+                    <OutArgument x:TypeArguments="x:String">[contentCategory]</OutArgument>
+                  </isactr:FieldObject.Value>
+                </isactr:FieldObject>
+              </isactr:ConnectorActivity.FieldObjects>
+            </isactr:ConnectorActivity>
+            <If Condition="[String.IsNullOrEmpty(contentCategory)]" DisplayName="If 7" sap2010:WorkflowViewState.IdRef="If_8">
+              <If.Then>
+                <Sequence sap2010:WorkflowViewState.IdRef="Sequence_31">
+                  <Assign DisplayName="Assign Variable Value 29" sap2010:WorkflowViewState.IdRef="Assign_40">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:Boolean">[fallbackActivated]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence sap2010:WorkflowViewState.IdRef="Sequence_32" />
+              </If.Else>
+            </If>
+            <ui:LogMessage DisplayName="Log Message 8" sap2010:WorkflowViewState.IdRef="LogMessage_10" Message="[contentCategory]" />
+            <isactr:ConnectorActivity Configuration="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" ConnectionId="ef733be9-e34f-4feb-9cdf-1c02aec1701c" DisplayName="Content Generation" sap2010:WorkflowViewState.IdRef="ConnectorActivity_10" UiPathActivityTypeId="aba52a00-4c05-318d-8f99-5ad924b2f277">
+              <isactr:ConnectorActivity.FieldObjects>
+                <isactr:FieldObject Name="prompt" Type="FieldArgument">
+                  <isactr:FieldObject.Value>
+                    <InArgument x:TypeArguments="x:String" xml:space="preserve">[string.Format("You are a DHL Operations incident analysis expert. Based on the following information, generate a structured incident analysis in valid JSON format only. No explanation, no markdown, just raw JSON.{0}Incident Summary: {1}{2}Category: {3}{4}Sentiment: {5}{6}Detected Language: {7}{8}Named Entities: {9}{10}Similarity Analysis: {11}{12}Similarity Score: {13}{14}Return this exact JSON structure:{15}{{{16}  ""title"": ""short title under 10 words"",{17}   ""summary"": ""Use exactly this summary: {18}"",{19}   ""category"": ""Use exactly this category: {20}"",{21}  ""severity"": ""Critical or High or Medium or Low"",{22}  ""primary_department"": ""Finance or Warehouse or Customer Service or Operations"",{23}  ""supporting_departments"": [{24}    {{{25}      ""department"": ""department name"",{26}      ""problem_statement"": ""specific problem for this department"",{27}      ""action_required"": ""specific action needed"",{28}      ""expected_output"": ""what they must produce""{29}    }}{30}  ],{31}  ""root_cause_hypothesis"": ""one sentence root cause"",{32}  ""root_cause_evidence"": ""supporting evidence from the text"",{33}  ""root_cause_confidence"": 0.85,{34}  ""llm_confidence"": 0.85,{35}  ""is_duplicate_likely"": false,{36}  ""duplicate_reason"": null{37}  ""processed_via_fallback"": false{38}}}", Environment.NewLine, cleanSummary, Environment.NewLine, contentCategory, Environment.NewLine, sentimentScore, Environment.NewLine, detectedLanguage, Environment.NewLine, entities, Environment.NewLine, similarityResult, Environment.NewLine, similarityScore.ToString(), Environment.NewLine, Environment.NewLine, Environment.NewLine, Environment.NewLine, cleanSummary, Environment.NewLine, contentCategory, Environment.NewLine, Environment.NewLine, Environment.NewLine, Environment.NewLine, Environment.NewLine, Environment.NewLine, Environment.NewLine, Environment.NewLine, Environment.NewLine, Environment.NewLine, Environment.NewLine, Environment.NewLine, Environment.NewLine, Environment.NewLine, Environment.NewLine, Environment.NewLine, Environment.NewLine, Environment.NewLine)]</InArgument>
+                  </isactr:FieldObject.Value>
+                </isactr:FieldObject>
+                <isactr:FieldObject Name="isPIIEnabled" Type="FieldArgument">
+                  <isactr:FieldObject.Value>
+                    <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+                  </isactr:FieldObject.Value>
+                </isactr:FieldObject>
+                <isactr:FieldObject Name="isFilterPIIEnabled" Type="FieldArgument" />
+                <isactr:FieldObject Name="languageCode" Type="FieldArgument" />
+                <isactr:FieldObject Name="piiEntityCategories_array" Type="FieldArgument" />
+                <isactr:FieldObject Name="confidenceThreshold" Type="FieldArgument" />
+                <isactr:FieldObject Name="topK" Type="FieldArgument">
+                  <isactr:FieldObject.Value>
+                    <InArgument x:TypeArguments="x:Int32">40</InArgument>
+                  </isactr:FieldObject.Value>
+                </isactr:FieldObject>
+                <isactr:FieldObject Name="contextGrounding" Type="FieldArgument">
+                  <isactr:FieldObject.Value>
+                    <InArgument x:TypeArguments="x:String">None</InArgument>
+                  </isactr:FieldObject.Value>
+                </isactr:FieldObject>
+                <isactr:FieldObject Name="_file" Type="FieldArgument" />
+                <isactr:FieldObject Name="folderKey" Type="FieldArgument" />
+                <isactr:FieldObject Name="topP" Type="FieldArgument">
+                  <isactr:FieldObject.Value>
+                    <InArgument x:TypeArguments="x:Double">0.8</InArgument>
+                  </isactr:FieldObject.Value>
+                </isactr:FieldObject>
+                <isactr:FieldObject Name="indexID" Type="FieldArgument" />
+                <isactr:FieldObject Name="max_tokens" Type="FieldArgument" />
+                <isactr:FieldObject Name="temperature" Type="FieldArgument" />
+                <isactr:FieldObject Name="frequency_penalty" Type="FieldArgument">
+                  <isactr:FieldObject.Value>
+                    <InArgument x:TypeArguments="x:Int64">0</InArgument>
+                  </isactr:FieldObject.Value>
+                </isactr:FieldObject>
+                <isactr:FieldObject Name="numberOfResults" Type="FieldArgument" />
+                <isactr:FieldObject Name="presence_penalty" Type="FieldArgument">
+                  <isactr:FieldObject.Value>
+                    <InArgument x:TypeArguments="x:Int64">0</InArgument>
+                  </isactr:FieldObject.Value>
+                </isactr:FieldObject>
+                <isactr:FieldObject Name="n" Type="FieldArgument">
+                  <isactr:FieldObject.Value>
+                    <InArgument x:TypeArguments="x:Int64">1</InArgument>
+                  </isactr:FieldObject.Value>
+                </isactr:FieldObject>
+                <isactr:FieldObject Name="top_p" Type="FieldArgument" />
+                <isactr:FieldObject Name="_stop" Type="FieldArgument" />
+                <isactr:FieldObject Name="modelName" Type="FieldArgument">
+                  <isactr:FieldObject.Value>
+                    <InArgument x:TypeArguments="x:String">anthropic.claude-sonnet-4-5-20250929-v1:0</InArgument>
+                  </isactr:FieldObject.Value>
+                </isactr:FieldObject>
+                <isactr:FieldObject Name="instruction" Type="FieldArgument">
+                  <isactr:FieldObject.Value>
+                    <InArgument x:TypeArguments="x:String">You are a DHL Operations incident analysis expert. You analyze logistics incident reports and return structured JSON only. Never include markdown, code blocks, or explanation. Return raw JSON exclusively.</InArgument>
+                  </isactr:FieldObject.Value>
+                </isactr:FieldObject>
+                <isactr:FieldObject Name="out_text" Type="FieldArgument">
+                  <isactr:FieldObject.Value>
+                    <OutArgument x:TypeArguments="x:String">[incidentCardJson]</OutArgument>
+                  </isactr:FieldObject.Value>
+                </isactr:FieldObject>
+                <isactr:FieldObject Name="out_maskedText" Type="FieldArgument">
+                  <isactr:FieldObject.Value>
+                    <OutArgument x:TypeArguments="x:String" />
+                  </isactr:FieldObject.Value>
+                </isactr:FieldObject>
+                <isactr:FieldObject Name="Jit_v2_sub_generateChatCompletion" Type="FieldArgument">
+                  <isactr:FieldObject.Value>
+                    <OutArgument x:TypeArguments="uiascb7:v2_sub_generateChatCompletion_Create" />
+                  </isactr:FieldObject.Value>
+                </isactr:FieldObject>
+                <isactr:FieldObject Name="out_contextGroundingCitationsString" Type="FieldArgument">
+                  <isactr:FieldObject.Value>
+                    <OutArgument x:TypeArguments="x:String" />
+                  </isactr:FieldObject.Value>
+                </isactr:FieldObject>
+              </isactr:ConnectorActivity.FieldObjects>
+            </isactr:ConnectorActivity>
+            <If Condition="[String.IsNullOrEmpty(incidentCardJson) Or fallbackActivated = True]" DisplayName="If 3" sap2010:WorkflowViewState.IdRef="If_4">
+              <If.Then>
+                <Sequence sap2010:WorkflowViewState.IdRef="Sequence_22">
+                  <Assign DisplayName="Assign Variable Value 22" sap2010:WorkflowViewState.IdRef="Assign_33">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[fallbackCategory]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">[If(extractedText.ToLower().Contains("cod") OrElse extractedText.ToLower().Contains("invoice") OrElse extractedText.ToLower().Contains("payment") OrElse extractedText.ToLower().Contains("overcharged") OrElse extractedText.ToLower().Contains("refund") OrElse extractedText.ToLower().Contains("cod amount") OrElse extractedText.ToLower().Contains("charged") OrElse extractedText.ToLower().Contains("receipt"), "COD Dispute", If(extractedText.ToLower().Contains("late") OrElse extractedText.ToLower().Contains("delay") OrElse extractedText.ToLower().Contains("not arrived") OrElse extractedText.ToLower().Contains("overdue") OrElse extractedText.ToLower().Contains("still waiting") OrElse extractedText.ToLower().Contains("not delivered") OrElse extractedText.ToLower().Contains("expected delivery") OrElse extractedText.ToLower().Contains("estimated delivery"), "Late Delivery", If(extractedText.ToLower().Contains("damaged") OrElse extractedText.ToLower().Contains("broken") OrElse extractedText.ToLower().Contains("crushed") OrElse extractedText.ToLower().Contains("torn") OrElse extractedText.ToLower().Contains("wet") OrElse extractedText.ToLower().Contains("cracked") OrElse extractedText.ToLower().Contains("dented") OrElse extractedText.ToLower().Contains("destroyed") OrElse extractedText.ToLower().Contains("poor condition"), "Damaged Parcel", If(extractedText.ToLower().Contains("missing") OrElse extractedText.ToLower().Contains("lost") OrElse extractedText.ToLower().Contains("not received") OrElse extractedText.ToLower().Contains("cannot find") OrElse extractedText.ToLower().Contains("no delivery") OrElse extractedText.ToLower().Contains("where is") OrElse extractedText.ToLower().Contains("stolen"), "Missing Parcel", If(extractedText.ToLower().Contains("wrong address") OrElse extractedText.ToLower().Contains("incorrect address") OrElse extractedText.ToLower().Contains("change address") OrElse extractedText.ToLower().Contains("update address") OrElse extractedText.ToLower().Contains("redirect") OrElse extractedText.ToLower().Contains("wrong location") OrElse extractedText.ToLower().Contains("delivered to wrong"), "Wrong Address", If(extractedText.ToLower().Contains("system") OrElse extractedText.ToLower().Contains("error") OrElse extractedText.ToLower().Contains("portal") OrElse extractedText.ToLower().Contains("bug") OrElse extractedText.ToLower().Contains("not working") OrElse extractedText.ToLower().Contains("down") OrElse extractedText.ToLower().Contains("cannot login") OrElse extractedText.ToLower().Contains("crash") OrElse extractedText.ToLower().Contains("failed") OrElse extractedText.ToLower().Contains("timeout"), "System Error", "Customer Complaint"))))))]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <Assign DisplayName="Assign Variable Value 23" sap2010:WorkflowViewState.IdRef="Assign_34">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[fallbackSeverity]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">[If(extractedText.ToLower().Contains("urgent") OrElse extractedText.ToLower().Contains("asap") OrElse extractedText.ToLower().Contains("critical") OrElse extractedText.ToLower().Contains("immediately") OrElse extractedText.ToLower().Contains("legal action") OrElse extractedText.ToLower().Contains("social media") OrElse extractedText.ToLower().Contains("escalate") OrElse extractedText.ToLower().Contains("threaten") OrElse extractedText.ToLower().Contains("demand refund") OrElse extractedText.ToLower().Contains("formal complaint"), "High", If(extractedText.ToLower().Contains("no rush") OrElse extractedText.ToLower().Contains("not urgent") OrElse extractedText.ToLower().Contains("whenever possible") OrElse extractedText.ToLower().Contains("low priority") OrElse extractedText.ToLower().Contains("just checking") OrElse extractedText.ToLower().Contains("when you get a chance") OrElse extractedText.ToLower().Contains("minor issue") OrElse extractedText.ToLower().Contains("no hurry"), "Low", "Medium"))]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <Assign DisplayName="Assign Variable Value 24" sap2010:WorkflowViewState.IdRef="Assign_35">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[fallbackDepartment]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">[If(fallbackCategory = "COD Dispute", "Finance", If(fallbackCategory = "Damaged Parcel", "Warehouse", If(fallbackCategory = "Missing Parcel" OrElse fallbackCategory = "Wrong Address", "Operations", If(fallbackCategory = "System Error", "IT", If(fallbackCategory = "Late Delivery", "Customer Support", If(fallbackCategory = "Customer Complaint", "Customer Support", "Customer Support"))))))]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <Assign DisplayName="Assign Variable Value 25" sap2010:WorkflowViewState.IdRef="Assign_36">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[fallbackSummary]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">[extractedText.Substring(0, Math.Min(400, extractedText.Length)).Replace(Chr(10), " ").Replace(Chr(13), " ").Replace("\", " ").Replace("""", "'") + "... [Fallback - manual review required]"]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <Assign DisplayName="Assign Variable Value 30" sap2010:WorkflowViewState.IdRef="Assign_41">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[fallbackSupportingDepts]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">[If(fallbackCategory = "COD Dispute", "[{""department"": ""Warehouse"", ""problem_statement"": ""Verify COD amount collected matches invoice"", ""action_required"": ""Check physical COD sticker and collection records"", ""expected_output"": ""Confirmed COD amount with evidence""}, {""department"": ""Customer Support"", ""problem_statement"": ""Customer awaiting refund resolution"", ""action_required"": ""Contact customer and acknowledge dispute"", ""expected_output"": ""Customer informed of investigation timeline""}]", If(fallbackCategory = "Damaged Parcel", "[{""department"": ""Operations"", ""problem_statement"": ""Damaged parcel requires investigation"", ""action_required"": ""Trace parcel handling route"", ""expected_output"": ""Damage report with responsible stage""}, {""department"": ""Customer Support"", ""problem_statement"": ""Customer requires compensation update"", ""action_required"": ""Inform customer of claim process"", ""expected_output"": ""Compensation claim initiated""}]", If(fallbackCategory = "Missing Parcel", "[{""department"": ""Warehouse"", ""problem_statement"": ""Parcel not located in system"", ""action_required"": ""Physical search and last scan location check"", ""expected_output"": ""Parcel located or lost confirmation""}, {""department"": ""Customer Support"", ""problem_statement"": ""Customer has not received parcel"", ""action_required"": ""Update customer on investigation status"", ""expected_output"": ""Customer acknowledgement sent""}]", If(fallbackCategory = "Wrong Address", "[{""department"": ""Operations"", ""problem_statement"": ""Delivery routed to incorrect address"", ""action_required"": ""Intercept parcel and update delivery route"", ""expected_output"": ""Parcel redirected to correct address""}, {""department"": ""Customer Support"", ""problem_statement"": ""Customer requested address change"", ""action_required"": ""Confirm new address and update system"", ""expected_output"": ""Address updated and confirmed""}]", If(fallbackCategory = "System Error", "[{""department"": ""Operations"", ""problem_statement"": ""System error affecting operations"", ""action_required"": ""Identify affected workflows and implement workaround"", ""expected_output"": ""Workaround in place and incident logged""}, {""department"": ""Customer Support"", ""problem_statement"": ""Customers may be impacted by system unavailability"", ""action_required"": ""Notify affected customers and provide manual alternatives"", ""expected_output"": ""Customers informed with expected resolution time""}]", If(fallbackCategory = "Late Delivery", "[{""department"": ""Operations"", ""problem_statement"": ""Delivery has not arrived within expected timeframe"", ""action_required"": ""Trace shipment route and identify delay point"", ""expected_output"": ""Updated delivery timeline with delay reason""}, {""department"": ""Customer Support"", ""problem_statement"": ""Customer waiting for overdue delivery"", ""action_required"": ""Contact customer with updated delivery estimate"", ""expected_output"": ""Customer informed and complaint acknowledged""}]", If(fallbackCategory = "Customer Complaint", "[{""department"": ""Customer Support"", ""problem_statement"": ""Customer has raised a general complaint requiring investigation"", ""action_required"": ""Review complaint details, contact customer and escalate if needed"", ""expected_output"": ""Complaint acknowledged with resolution timeline provided""}, {""department"": ""Operations"", ""problem_statement"": ""Operational process may have caused customer dissatisfaction"", ""action_required"": ""Identify process failure point and document findings"", ""expected_output"": ""Root cause identified and corrective action initiated""}]", "[{""department"": ""Customer Support"", ""problem_statement"": ""Unclassified incident requires manual review"", ""action_required"": ""Review incident details and assign to correct department"", ""expected_output"": ""Incident correctly classified and reassigned""}]")))))))]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <Assign DisplayName="Assign Variable Value 31" sap2010:WorkflowViewState.IdRef="Assign_42">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[fallbackEvidence]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">["Triggering text: " + If(extractedText.Split(New String(){". "}, StringSplitOptions.None).FirstOrDefault(Function(s) s.ToLower().Contains(If(fallbackCategory = "COD Dispute", "cod", If(fallbackCategory = "Damaged Parcel", "damaged", If(fallbackCategory = "Missing Parcel", "missing", If(fallbackCategory = "Wrong Address", "address", If(fallbackCategory = "System Error", "system", If(fallbackCategory = "Late Delivery", "late", If(fallbackCategory = "Customer Complaint", "complaint", "issue"))))))))) IsNot Nothing, extractedText.Split(New String(){". "}, StringSplitOptions.None).FirstOrDefault(Function(s) s.ToLower().Contains(If(fallbackCategory = "COD Dispute", "cod", If(fallbackCategory = "Damaged Parcel", "damaged", If(fallbackCategory = "Missing Parcel", "missing", If(fallbackCategory = "Wrong Address", "address", If(fallbackCategory = "System Error", "system", If(fallbackCategory = "Late Delivery", "late", If(fallbackCategory = "Customer Complaint", "complaint", "issue"))))))))), "See full summary above")]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <Assign DisplayName="Assign Variable Value 32" sap2010:WorkflowViewState.IdRef="Assign_43">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[fallbackHypothesis]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">["Rule-based classification detected " + fallbackCategory + " indicators - GenAI pipeline unavailable, manual review recommended"]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <Assign DisplayName="Assign Variable Value 26" sap2010:WorkflowViewState.IdRef="Assign_37">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[incidentCardJson]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">["{""title"": ""[Fallback] " + fallbackCategory + " - Manual Review Required"", ""summary"": """ + fallbackSummary + """, ""category"": """ + fallbackCategory + """, ""severity"": """ + fallbackSeverity + """, ""primary_department"": """ + fallbackDepartment + """, ""supporting_departments"": " + fallbackSupportingDepts + ", ""root_cause_hypothesis"": """ + fallbackHypothesis + """, ""root_cause_evidence"": """ + fallbackEvidence.Replace(Chr(10), " ").Replace(Chr(13), " ").Replace("\", " ").Replace("""", "'") + """, ""root_cause_confidence"": 0.3, ""llm_confidence"": 0.0, ""is_duplicate_likely"": false, ""duplicate_reason"": null, ""processed_via_fallback"": true}"]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence sap2010:WorkflowViewState.IdRef="Sequence_23" />
+              </If.Else>
+            </If>
+            <If Condition="[fallbackActivated = True]" DisplayName="If 4" sap2010:WorkflowViewState.IdRef="If_5">
+              <If.Then>
+                <Sequence sap2010:WorkflowViewState.IdRef="Sequence_24">
+                  <ui:LogMessage DisplayName="Log Message 14" sap2010:WorkflowViewState.IdRef="LogMessage_18" Message="[&quot;FALLBACK ACTIVATED: &quot; + fallbackCategory + &quot; | &quot; + fallbackSeverity + &quot; | &quot; + fallbackDepartment]" />
+                  <Assign DisplayName="Assign 1" sap2010:WorkflowViewState.IdRef="Assign_45">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:Int32">[countFallback]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:Int32">[countFallback + 1]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence sap2010:WorkflowViewState.IdRef="Sequence_25" />
+              </If.Else>
+            </If>
+            <ui:LogMessage DisplayName="Log Message 9" sap2010:WorkflowViewState.IdRef="LogMessage_11" Message="[incidentCardJson]" />
+            <Assign DisplayName="Assign Variable Value 13" sap2010:WorkflowViewState.IdRef="Assign_21">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[postBody]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">["{""raw_input_ids"": [" + currentId.ToString() + "], ""structured_incident"": " + incidentCardJson + ", ""ocr_confidence"": null, ""detected_language"": """ + detectedLanguage + """, ""missing_fields"": null, ""error"": null}"]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <uwah:NetHttpRequest BasicAuthPassword="{x:Null}" BasicAuthSecurePassword="{x:Null}" BasicAuthUsername="{x:Null}" BinaryPayload="{x:Null}" ClientCertPassword="{x:Null}" ClientCertPath="{x:Null}" ClientCertSecurePassword="{x:Null}" Cookies="{x:Null}" CustomNegotiatedAuthCredentials="{x:Null}" FilePath="{x:Null}" FormData="{x:Null}" LocalFiles="{x:Null}" OAuthToken="{x:Null}" OutputFileName="{x:Null}" OutputFileTargetFolder="{x:Null}" Parameters="{x:Null}" PathResource="{x:Null}" ProxyConfiguration="{x:Null}" ResourceFiles="{x:Null}" AuthenticationType="None" ContinueOnError="True" DisableSslVerification="False" DisplayName="HTTP Request 5" EnableCookies="True" FileOverwrite="AutoRename" FollowRedirects="True" FormDataParts="[New List (Of FormDataPart) From _&#xA;{&#xA; New FileFormDataPart(),&#xA; New BinaryFormDataPart(),&#xA; New TextFormDataPart()&#xA;}]" Headers="[New Dictionary(Of System.String, System.String) From { {&quot;Content-Type&quot;, &quot;application/json&quot;} }]" sap2010:WorkflowViewState.IdRef="NetHttpRequest_7" InitialDelay="500" MaxRedirects="3" MaxRetryAfterDelay="30000" Method="POST" Multiplier="2" PreferRetryAfterValue="True" RequestBodyType="Text" RequestUrl="https://dhl-incident-backend.onrender.com/api/uploads/uipath" Result="[postResponse]" RetryCount="3" RetryPolicyType="Basic" RetryStatusCodes="[New List (Of System.Net.HttpStatusCode) From _&#xA;{&#xA; System.Net.HttpStatusCode.RequestTimeout,&#xA; System.Net.HttpStatusCode.TooManyRequests,&#xA; System.Net.HttpStatusCode.InternalServerError,&#xA; System.Net.HttpStatusCode.BadGateway,&#xA; System.Net.HttpStatusCode.ServiceUnavailable,&#xA; System.Net.HttpStatusCode.GatewayTimeout&#xA;}]" SaveRawRequestResponse="False" SaveResponseAsFile="False" TextPayload="[postBody]" TextPayloadContentType="application/json" TextPayloadEncoding="UTF-8" TlsProtocol="Automatic" UseJitter="True" UseOsNegotiatedAuthCredentials="True">
+              <uwah:NetHttpRequest.TimeoutInMiliseconds>
+                <InArgument x:TypeArguments="s:Nullable(x:Int32)">
+                  <Literal x:TypeArguments="s:Nullable(x:Int32)" Value="10000" />
+                </InArgument>
+              </uwah:NetHttpRequest.TimeoutInMiliseconds>
+            </uwah:NetHttpRequest>
+            <Assign DisplayName="Assign Variable Value 14" sap2010:WorkflowViewState.IdRef="Assign_22">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[postResponseBody]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">[postResponse.TextContent]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <ui:LogMessage DisplayName="Log Message 10" sap2010:WorkflowViewState.IdRef="LogMessage_12" Message="[postResponseBody]" />
+            <Assign DisplayName="Assign" sap2010:WorkflowViewState.IdRef="Assign_44">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:Int32">[countCreated]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:Int32">[countCreated + 1]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <If Condition="[incidentCardJson.Contains(&quot;is_duplicate_likely&quot;&quot;: true&quot;) Or incidentCardJson.Contains(&quot;is_duplicate_likely&quot;&quot;:true&quot;)]" DisplayName="If 8" sap2010:WorkflowViewState.IdRef="If_9">
+              <If.Then>
+                <Sequence sap2010:WorkflowViewState.IdRef="Sequence_33">
+                  <Assign DisplayName="Assign 2" sap2010:WorkflowViewState.IdRef="Assign_46">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:Int32">[countDuplicate]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:Int32">[countDuplicate + 1]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence sap2010:WorkflowViewState.IdRef="Sequence_34" />
+              </If.Else>
+            </If>
+            <If Condition="[postResponseBody.Contains(&quot;error&quot;) Or postResponseBody.Contains(&quot;Error&quot;)]" DisplayName="If 9" sap2010:WorkflowViewState.IdRef="If_10">
+              <If.Then>
+                <Sequence sap2010:WorkflowViewState.IdRef="Sequence_35">
+                  <Assign DisplayName="Assign 4" sap2010:WorkflowViewState.IdRef="Assign_48">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:Int32">[countFailed]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:Int32">[countFailed + 1]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence sap2010:WorkflowViewState.IdRef="Sequence_36" />
+              </If.Else>
+            </If>
+          </Sequence>
+        </ActivityAction>
+      </ui:ForEach.Body>
+    </ui:ForEach>
+    <If Condition="[countCreated &gt; 0 Or countFailed &gt; 0]" DisplayName="If 10" sap2010:WorkflowViewState.IdRef="If_11">
+      <If.Then>
+        <Sequence sap2010:WorkflowViewState.IdRef="Sequence_37">
+          <uga:SendEmailConnections ArgumentAttachmentPaths="{x:Null}" ArgumentAttachments="{x:Null}" AttachmentPaths="{x:Null}" Attachments="{x:Null}" Bcc="{x:Null}" Cc="{x:Null}" ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" ReplyTo="{x:Null}" SingleAttachment="{x:Null}" TextBody="{x:Null}" AttachmentInputMode="UseExisting" AuthScopesInvalid="False" Body="[&quot;&lt;html&gt;&lt;body style='font-family:Arial,sans-serif;font-size:14px;color:#333;'&gt;&lt;div style='background:#D40511;padding:15px;'&gt;&lt;h2 style='color:white;margin:0;'&gt;DHL Incident Processing Summary&lt;/h2&gt;&lt;/div&gt;&lt;div style='padding:20px;border:1px solid #ddd;'&gt;&lt;p&gt;&lt;strong&gt;Processing Run:&lt;/strong&gt; &quot; + Now.ToString(&quot;dd MMM yyyy, hh:mm tt&quot;) + &quot;&lt;/p&gt;&lt;hr/&gt;&lt;table style='width:100%;border-collapse:collapse;'&gt;&lt;tr style='background:#f5f5f5;'&gt;&lt;td style='padding:10px;border:1px solid #ddd;'&gt;&lt;strong&gt;Incidents Created&lt;/strong&gt;&lt;/td&gt;&lt;td style='padding:10px;border:1px solid #ddd;text-align:center;color:green;'&gt;&lt;strong&gt;&quot; + countCreated.ToString() + &quot;&lt;/strong&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style='padding:10px;border:1px solid #ddd;'&gt;&lt;strong&gt;Duplicates Detected&lt;/strong&gt;&lt;/td&gt;&lt;td style='padding:10px;border:1px solid #ddd;text-align:center;color:#e67e22;'&gt;&lt;strong&gt;&quot; + countDuplicate.ToString() + &quot;&lt;/strong&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr style='background:#f5f5f5;'&gt;&lt;td style='padding:10px;border:1px solid #ddd;'&gt;&lt;strong&gt;Processed via Fallback&lt;/strong&gt;&lt;/td&gt;&lt;td style='padding:10px;border:1px solid #ddd;text-align:center;color:#8e44ad;'&gt;&lt;strong&gt;&quot; + countFallback.ToString() + &quot;&lt;/strong&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style='padding:10px;border:1px solid #ddd;'&gt;&lt;strong&gt;Failed&lt;/strong&gt;&lt;/td&gt;&lt;td style='padding:10px;border:1px solid #ddd;text-align:center;color:#D40511;'&gt;&lt;strong&gt;&quot; + countFailed.ToString() + &quot;&lt;/strong&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;hr/&gt;&lt;p style='color:#888;font-size:12px;'&gt;This is an automated message from the DHL Incident Management Pipeline.&lt;/p&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;&quot;]" ConnectionId="12d74c7a-b8dd-4d77-a3a8-75110798d540" DisplayName="Send Email" sap2010:WorkflowViewState.IdRef="SendEmailConnections_1" Importance="Normal" InputType="HTML" SaveAsDraft="False" Subject="[&quot;DHL Incident Processing Summary — &quot; + Now.ToString(&quot;dd MMM yyyy, hh:mm tt&quot;)]" To="[New String(){&quot;nafisrashadul@gmail.com&quot;}]" UseConnectionService="True">
+            <uga:SendEmailConnections.AttachmentsBackup>
+              <usau:BackupSlot x:TypeArguments="ugage:AttachmentInputMode" StoredValue="UseExisting">
+                <usau:BackupSlot.BackupValues>
+                  <scg:Dictionary x:TypeArguments="ugage:AttachmentInputMode, scg:List(x:Object)" />
+                </usau:BackupSlot.BackupValues>
+              </usau:BackupSlot>
+            </uga:SendEmailConnections.AttachmentsBackup>
+            <uga:SendEmailConnections.InputTypeBackup>
+              <usau:BackupSlot x:TypeArguments="ugage:BodyInputType" StoredValue="HTML">
+                <usau:BackupSlot.BackupValues>
+                  <scg:Dictionary x:TypeArguments="ugage:BodyInputType, scg:List(x:Object)" />
+                </usau:BackupSlot.BackupValues>
+              </usau:BackupSlot>
+            </uga:SendEmailConnections.InputTypeBackup>
+          </uga:SendEmailConnections>
+        </Sequence>
+      </If.Then>
+      <If.Else>
+        <Sequence sap2010:WorkflowViewState.IdRef="Sequence_38" />
+      </If.Else>
+    </If>
+  </Sequence>
+</Activity>
