@@ -12,3 +12,6 @@ uipath_files/.tmh/
 
 # Logs
 *.log
+
+# Keys
+uipath_files/keys/
