@@ -1,0 +1,24 @@
+Subject: DHL KB Source Submission - Delivery Address Change SOP
+
+Hi Digital Automation Center Team, Please convert the following operational
+notes into a Knowledge Base article. During shipment processing, customers
+sometimes request a delivery address change after the parcel has already
+been created in the system. The support team must first verify that the
+shipment is not out for delivery. If the parcel is still at the facility or
+in transit, the agent should confirm the customer's identity, check whether
+the new address is within the same service area, and then raise an address
+amendment request. If the parcel is already out for delivery, the agent
+should not promise same-day redirection. The customer should be informed
+that the courier may attempt the original address first, and the
+redirection will be handled in the next available delivery cycle. Please
+include these points in the SOP:
+
+   - Verify shipment status before making any promise.
+   - Confirm customer identity and shipment ownership.
+   - Check whether the new address is serviceable.
+   - Create an address amendment request.
+   - Notify warehouse or delivery operations if manual handling is needed.
+   - Update the customer with the expected next action.
+
+Suggested tags: Delivery, Customer Support, SOP Regards, Operations Support
+Team

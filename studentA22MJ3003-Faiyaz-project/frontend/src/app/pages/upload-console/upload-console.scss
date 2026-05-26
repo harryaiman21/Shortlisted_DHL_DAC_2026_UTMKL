@@ -1,0 +1,236 @@
+.upload-page {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.page-header h1 {
+    margin: 0;
+    color: #d40511;
+    font-size: 32px;
+    font-weight: 900;
+}
+
+.page-header p {
+    margin: 8px 0 0;
+    color: #666;
+}
+
+.eyebrow {
+    display: inline-block;
+    background: #ffcc00;
+    color: #202020;
+    font-weight: 900;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    padding: 7px 10px;
+    border-radius: 999px;
+    margin-bottom: 10px;
+}
+
+.upload-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 18px;
+}
+
+.upload-card,
+.draft-card {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 24px;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.07);
+}
+
+.upload-card h2,
+.draft-card h2 {
+    margin: 0;
+    color: #d40511;
+    font-size: 24px;
+    font-weight: 900;
+}
+
+.card-subtitle {
+    margin: 6px 0 20px;
+    color: #666;
+    line-height: 1.5;
+}
+
+.file-drop {
+    border: 2px dashed #ffcc00;
+    background: #fff9d9;
+    border-radius: 18px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 18px;
+}
+
+.file-drop input {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 12px;
+    border: 1px solid #ffcc00;
+}
+
+.file-help strong {
+    display: block;
+    color: #d40511;
+    font-weight: 900;
+}
+
+.file-help span {
+    color: #6b4b00;
+    font-size: 13px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    font-weight: 900;
+    color: #333;
+    font-size: 14px;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    border: 1px solid #d8d8d8;
+    border-radius: 12px;
+    padding: 13px 14px;
+    font-size: 14px;
+    outline: none;
+    background: #ffffff;
+}
+
+.form-group textarea {
+    resize: vertical;
+    line-height: 1.5;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    border-color: #d40511;
+    box-shadow: 0 0 0 3px rgba(212, 5, 17, 0.1);
+}
+
+.tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.tag-chip {
+    border: 1px solid #ffcc00;
+    background: #fff4bf;
+    color: #333;
+    border-radius: 999px;
+    padding: 9px 13px;
+    cursor: pointer;
+    font-weight: 800;
+}
+
+.tag-chip.selected {
+    background: #d40511;
+    border-color: #d40511;
+    color: #ffffff;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+.primary-btn {
+    border: none;
+    border-radius: 12px;
+    padding: 14px 22px;
+    background: #d40511;
+    color: #ffffff;
+    font-weight: 900;
+    cursor: pointer;
+}
+
+.primary-btn:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+}
+
+.alert {
+    padding: 14px 16px;
+    border-radius: 12px;
+    font-weight: 800;
+}
+
+.alert.error {
+    background: #ffe5e7;
+    color: #9b0008;
+    border-left: 5px solid #d40511;
+}
+
+.alert.success {
+    background: #dcfce7;
+    color: #166534;
+    border-left: 5px solid #1f9d55;
+}
+
+.alert.success a {
+    margin-left: 12px;
+    color: #166534;
+    font-weight: 900;
+}
+
+.alert.ai-status {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: #fff9d9;
+    color: #6b4b00;
+    border-left: 5px solid #ffcc00;
+}
+
+.ai-spinner {
+    width: 18px;
+    height: 18px;
+    border: 3px solid #ffcc00;
+    border-top-color: #d40511;
+    border-radius: 50%;
+    animation: ai-spin 0.8s linear infinite;
+    flex-shrink: 0;
+}
+
+@keyframes ai-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.file-drop.ai-busy {
+    opacity: 0.92;
+}
+
+.form-group input.typing-active,
+.form-group textarea.typing-active {
+    border-color: #d40511;
+    box-shadow: 0 0 0 3px rgba(212, 5, 17, 0.08);
+}
+
+.form-group input[readonly],
+.form-group textarea[readonly],
+.form-group select:disabled {
+    background: #fafafa;
+}
+
+.tag-chip:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+}

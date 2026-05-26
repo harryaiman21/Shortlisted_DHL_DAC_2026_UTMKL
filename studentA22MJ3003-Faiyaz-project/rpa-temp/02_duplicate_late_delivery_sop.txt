@@ -1,0 +1,22 @@
+TITLE: Late Delivery Standard Operating Procedure
+SOURCE TYPE: TEXT
+TAGS: Delivery, Customer Support, SOP
+
+RAW SOURCE INPUT:
+Customer support received repeated messages about delayed parcels during peak delivery period. Agents need a standard way to respond so customers receive consistent updates.
+
+IMPORTANT NOTES:
+- Check the latest tracking status first.
+- Verify the delivery address and contact number.
+- Check whether the shipment is delayed at warehouse, linehaul, customs, or last-mile delivery.
+- If the delay is more than 24 hours, escalate to the operations team.
+- Give the customer a clear next update time.
+
+STRUCTURED SOP CONTENT:
+1. Open the shipment record and check the latest tracking status.
+2. Verify the customer's delivery address and contact number.
+3. Identify the delay point: warehouse, linehaul, customs, or delivery route.
+4. If the parcel is delayed more than 24 hours, raise an escalation to operations.
+5. Record the escalation reference number in the customer case.
+6. Inform the customer of the latest status and expected follow-up time.
+7. Close the case only after the customer has received an update or the parcel is delivered.

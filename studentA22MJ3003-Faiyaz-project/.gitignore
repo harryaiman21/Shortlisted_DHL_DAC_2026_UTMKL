@@ -1,0 +1,10 @@
+# environment files
+.env
+backend/.env
+frontend/.env
+
+# Docker database data, if ever created locally
+postgres_data/
+
+# OS/editor
+.DS_Store

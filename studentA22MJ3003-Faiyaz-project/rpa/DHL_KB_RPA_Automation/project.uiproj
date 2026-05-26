@@ -1,0 +1,6 @@
+{
+  "Name": "DHL_KB_RPA_Automation",
+  "ProjectType": "Process",
+  "Description": "Automates DHL knowledge base article creation by reading source content, checking duplicates, creating draft articles, and logging automation results.",
+  "MainFile": "Main.xaml"
+}

@@ -1,0 +1,136 @@
+<div class="automation-page">
+    <div class="page-header">
+        <div>
+            <span class="eyebrow">RPA Monitor</span>
+            <h1>Automation Runs</h1>
+            <p>
+                Monitor UiPath execution results, duplicate checks, created drafts,
+                failed files, logs, and summary email status.
+            </p>
+        </div>
+
+        <button class="primary-btn" type="button" (click)="loadRuns()">
+            Refresh
+        </button>
+    </div>
+
+    <div *ngIf="errorMessage" class="alert error">
+        {{ errorMessage }}
+    </div>
+
+    <div *ngIf="loading" class="info-box">
+        Loading automation runs...
+    </div>
+
+    <section *ngIf="!loading" class="automation-grid">
+        <div class="runs-card">
+            <h2>Execution History</h2>
+
+            <div *ngIf="runs.length === 0" class="empty-box">
+                No automation runs recorded yet.
+            </div>
+
+            <button class="run-row" type="button" *ngFor="let run of runs" [class.active]="selectedRun?.id === run.id"
+                (click)="selectRun(run)">
+                <div>
+                    <strong>Run #{{ run.id }}</strong>
+                    <span>{{ run.startedAt | date: 'medium' }}</span>
+                </div>
+
+                <span class="status-badge" [ngClass]="getStatusClass(run.status)">
+                    {{ run.status }}
+                </span>
+            </button>
+        </div>
+
+        <div class="details-card" *ngIf="selectedRun">
+            <div class="details-header">
+                <div>
+                    <h2>Run #{{ selectedRun.id }} Summary</h2>
+                    <p>
+                        Executed by
+                        <strong>{{ selectedRun.runBy?.name || 'Unknown' }}</strong>
+                    </p>
+                </div>
+
+                <span class="status-badge large" [ngClass]="getStatusClass(selectedRun.status)">
+                    {{ selectedRun.status }}
+                </span>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span>Scanned</span>
+                    <strong>{{ selectedRun.totalScanned }}</strong>
+                </div>
+
+                <div class="stat-card success">
+                    <span>Created</span>
+                    <strong>{{ selectedRun.totalCreated }}</strong>
+                </div>
+
+                <div class="stat-card">
+                    <span>Updated</span>
+                    <strong>{{ selectedRun.totalUpdated }}</strong>
+                </div>
+
+                <div class="stat-card warning">
+                    <span>Duplicates</span>
+                    <strong>{{ selectedRun.totalDuplicates }}</strong>
+                </div>
+
+                <div class="stat-card danger">
+                    <span>Failed</span>
+                    <strong>{{ selectedRun.totalFailed }}</strong>
+                </div>
+            </div>
+
+            <div class="run-meta">
+                <div class="meta-row">
+                    <span>Started At</span>
+                    <strong>{{ selectedRun.startedAt | date: 'medium' }}</strong>
+                </div>
+
+                <div class="meta-row">
+                    <span>Finished At</span>
+                    <strong>
+                        {{ selectedRun.finishedAt ? (selectedRun.finishedAt | date: 'medium') : '-' }}
+                    </strong>
+                </div>
+
+                <div class="meta-row">
+                    <span>Summary Email</span>
+                    <strong>
+                        {{ selectedRun.summaryEmailSent ? 'Sent' : 'Not Sent' }}
+                    </strong>
+                </div>
+
+                <div class="meta-row">
+                    <span>Total Processed</span>
+                    <strong>{{ getTotalProcessed(selectedRun) }}</strong>
+                </div>
+            </div>
+
+            <div class="logs-section">
+                <h2>Execution Logs</h2>
+
+                <div *ngIf="!selectedRun.logs?.length" class="empty-box">
+                    No logs recorded for this automation run.
+                </div>
+
+                <div class="log-row" *ngFor="let log of selectedRun.logs">
+                    <div>
+                        <span class="log-level" [ngClass]="log.level.toLowerCase()">
+                            {{ log.level }}
+                        </span>
+                        <strong>{{ log.message }}</strong>
+                        <p *ngIf="log.fileName">File: {{ log.fileName }}</p>
+                        <p *ngIf="log.screenshotPath">Screenshot: {{ log.screenshotPath }}</p>
+                    </div>
+
+                    <span>{{ log.createdAt | date: 'medium' }}</span>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

@@ -1,0 +1,1123 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" VisualBasic.Settings="{x:Null}" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:njl="clr-namespace:Newtonsoft.Json.Linq;assembly=Newtonsoft.Json" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:uga="clr-namespace:UiPath.GSuite.Activities;assembly=UiPath.GSuite.Activities" xmlns:ugade="clr-namespace:UiPath.GSuite.Activities.Drive.Enums;assembly=UiPath.GSuite.Activities" xmlns:ugae="clr-namespace:UiPath.GSuite.Activities.Enums;assembly=UiPath.GSuite.Activities" xmlns:ugage="clr-namespace:UiPath.GSuite.Activities.Gmail.Enums;assembly=UiPath.GSuite.Activities" xmlns:ugagm="clr-namespace:UiPath.GSuite.Activities.Gmail.Models;assembly=UiPath.GSuite.Activities" xmlns:ugam="clr-namespace:UiPath.GSuite.Activities.Models;assembly=UiPath.GSuite.Activities" xmlns:ugdm="clr-namespace:UiPath.GSuite.Drive.Models;assembly=UiPath.GSuite" xmlns:ugm="clr-namespace:UiPath.GSuite.Models;assembly=UiPath.GSuite" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:upr="clr-namespace:UiPath.Platform.ResourceHandling;assembly=UiPath.Platform" xmlns:usau="clr-namespace:UiPath.Shared.Activities.Utils;assembly=UiPath.GSuite.Activities" xmlns:uwah="clr-namespace:UiPath.Web.Activities.Http;assembly=UiPath.Web.Activities" xmlns:uwahm="clr-namespace:UiPath.Web.Activities.Http.Models;assembly=UiPath.Web.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>Newtonsoft.Json.Linq</x:String>
+      <x:String>Newtonsoft.Json</x:String>
+      <x:String>System.Dynamic</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Collections.Specialized</x:String>
+      <x:String>UiPath.Web.Activities.Http.Models</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.Net</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>UiPath.Web.Activities.Http</x:String>
+      <x:String>UiPath.Sdk.Activities</x:String>
+      <x:String>UiPath.Sdk.Activities.DependencyInjection.Contracts</x:String>
+      <x:String>UiPath.Sdk.Activities.DependencyInjection</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>UiPath.Web.Activities</x:String>
+      <x:String>System.Numerics</x:String>
+      <x:String>System.Security.Cryptography</x:String>
+      <x:String>System.Text</x:String>
+      <x:String>UiPath.GSuite.Drive.Models</x:String>
+      <x:String>UiPath.GSuite.Activities.Models</x:String>
+      <x:String>UiPath.GSuite.Activities.Drive.Enums</x:String>
+      <x:String>UiPath.GSuite.Activities.Enums</x:String>
+      <x:String>UiPath.Shared.Activities.Utils</x:String>
+      <x:String>UiPath.GSuite.Activities.Drive.Filters</x:String>
+      <x:String>UiPath.GSuite.Activities.Filters</x:String>
+      <x:String>UiPath.GSuite.Drive.Enums</x:String>
+      <x:String>UiPath.GSuite.Activities</x:String>
+      <x:String>UiPath.Shared.Activities.ConnectionService.Contracts</x:String>
+      <x:String>UiPath.Shared.Activities.Business</x:String>
+      <x:String>UiPath.GSuite</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.Activities.Runtime.Collections</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Platform.SyncObjects</x:String>
+      <x:String>UiPath.GSuite.Activities.Gmail.Enums</x:String>
+      <x:String>UiPath.GSuite.Activities.Gmail.Models</x:String>
+      <x:String>UiPath.GSuite.Models</x:String>
+      <x:String>UiPath.Shared.Api.Google.Gmail.Models</x:String>
+      <x:String>UiPath.GSuite.Activities.Gmail.Filters</x:String>
+      <x:String>UiPath.GSuite.Gmail.Enums</x:String>
+      <x:String>UiPath.Platform</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Reflection.MetadataLoadContext</AssemblyReference>
+      <AssemblyReference>Newtonsoft.Json</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Collections.Specialized</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.Net.WebClient</AssemblyReference>
+      <AssemblyReference>System.Net.Primitives</AssemblyReference>
+      <AssemblyReference>System.Net.HttpListener</AssemblyReference>
+      <AssemblyReference>System.Net.WebProxy</AssemblyReference>
+      <AssemblyReference>System.Net.NameResolution</AssemblyReference>
+      <AssemblyReference>System.Net.WebHeaderCollection</AssemblyReference>
+      <AssemblyReference>System.Net.Requests</AssemblyReference>
+      <AssemblyReference>System.Net.ServicePoint</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
+      <AssemblyReference>System.Security.Cryptography.Pkcs</AssemblyReference>
+      <AssemblyReference>System.Security.Cryptography</AssemblyReference>
+      <AssemblyReference>System.Security.Cryptography.ProtectedData</AssemblyReference>
+      <AssemblyReference>System.Text.Encoding.CodePages</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>UiPath.GSuite</AssemblyReference>
+      <AssemblyReference>UiPath.GSuite.Activities</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.Watcher</AssemblyReference>
+      <AssemblyReference>System.IO.Packaging</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.AccessControl</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>System.Linq.Async.Queryable</AssemblyReference>
+      <AssemblyReference>System.Collections.Immutable</AssemblyReference>
+      <AssemblyReference>System.Linq.Parallel</AssemblyReference>
+      <AssemblyReference>System.Linq.Queryable</AssemblyReference>
+      <AssemblyReference>UiPath.CodedWorkflows</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <sap:WorkflowViewStateService.ViewState>
+    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+      <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
+    </scg:Dictionary>
+  </sap:WorkflowViewStateService.ViewState>
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="897.2,21218.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="s:String[]" Name="emailAttachmentFiles" />
+      <Variable x:TypeArguments="x:String" Default="D:\DHL Task\rpa-email-attachments" Name="emailAttachmentFolder" />
+      <Variable x:TypeArguments="x:String" Name="safeEmailFileName" />
+      <Variable x:TypeArguments="x:String" Name="emailBodyFilePath" />
+      <Variable x:TypeArguments="x:String" Default="D:\DHL Task\rpa-email-export" Name="emailExportFolder" />
+      <Variable x:TypeArguments="x:String" Name="emailBody" />
+      <Variable x:TypeArguments="x:String" Name="emailSubject" />
+      <Variable x:TypeArguments="x:String" Name="articleSourceText" />
+      <Variable x:TypeArguments="x:String" Name="articleSourceType" />
+      <Variable x:TypeArguments="x:String" Name="fileExtension" />
+      <Variable x:TypeArguments="x:String" Name="aiTagNamesJson" />
+      <Variable x:TypeArguments="njl:JObject" Name="aiGenerateJson" />
+      <Variable x:TypeArguments="x:String" Name="aiGenerateResponse" />
+      <Variable x:TypeArguments="uwahm:HttpResponseSummary" Name="aiGenerateHttpResponse" />
+      <Variable x:TypeArguments="x:Boolean" Default="False" Name="summaryEmailSent" />
+      <Variable x:TypeArguments="x:String" Name="summaryBody" />
+      <Variable x:TypeArguments="x:String" Name="screenshotPath" />
+      <Variable x:TypeArguments="x:String" Default="D:\DHL Task\rpa-screenshots" Name="screenshotFolder" />
+      <Variable x:TypeArguments="x:String" Name="errorMessage" />
+      <Variable x:TypeArguments="x:Int32" Default="0" Name="totalFailed" />
+      <Variable x:TypeArguments="x:Int32" Default="[0]" Name="totalDuplicates" />
+      <Variable x:TypeArguments="x:Int32" Default="0" Name="totalCreated" />
+      <Variable x:TypeArguments="x:Int32" Default="0" Name="totalScanned" />
+      <Variable x:TypeArguments="x:String" Name="uploadAttachmentResponse" />
+      <Variable x:TypeArguments="uwahm:HttpResponseSummary" Name="uploadAttachmentHttpResponse" />
+      <Variable x:TypeArguments="x:Int32" Name="duplicateArticleId" />
+      <Variable x:TypeArguments="x:Boolean" Name="isDuplicate" />
+      <Variable x:TypeArguments="njl:JObject" Name="checkDuplicateJson" />
+      <Variable x:TypeArguments="x:String" Name="checkDuplicateResponse" />
+      <Variable x:TypeArguments="uwahm:HttpResponseSummary" Name="checkDuplicateHttpResponse" />
+      <Variable x:TypeArguments="x:String" Name="articleContent" />
+      <Variable x:TypeArguments="x:String" Name="articleSummary" />
+      <Variable x:TypeArguments="x:String" Name="articleTitle" />
+      <Variable x:TypeArguments="x:String" Name="rawSourceText" />
+      <Variable x:TypeArguments="x:String" Name="updateRunResponse" />
+      <Variable x:TypeArguments="uwahm:HttpResponseSummary" Name="updateRunHttpResponse" />
+      <Variable x:TypeArguments="x:String" Name="createLogResponse" />
+      <Variable x:TypeArguments="uwahm:HttpResponseSummary" Name="createLogHttpResponse" />
+      <Variable x:TypeArguments="x:Int32" Name="articleId" />
+      <Variable x:TypeArguments="njl:JObject" Name="createArticleJson" />
+      <Variable x:TypeArguments="x:String" Name="createArticleResponse" />
+      <Variable x:TypeArguments="uwahm:HttpResponseSummary" Name="createArticleHttpResponse" />
+      <Variable x:TypeArguments="x:String" Name="sourceHash" />
+      <Variable x:TypeArguments="x:Int32" Name="automationRunId" />
+      <Variable x:TypeArguments="njl:JObject" Name="createRunJson" />
+      <Variable x:TypeArguments="x:String" Name="createRunResponse" />
+      <Variable x:TypeArguments="uwahm:HttpResponseSummary" Name="createRunHttpResponse" />
+      <Variable x:TypeArguments="uwahm:HttpResponseSummary" Name="loginHttpResponse" />
+      <Variable x:TypeArguments="x:Int32" Name="statusCode" />
+      <Variable x:TypeArguments="x:String" Name="accessToken" />
+      <Variable x:TypeArguments="njl:JObject" Name="loginJson" />
+      <Variable x:TypeArguments="x:String" Name="loginResponse" />
+      <Variable x:TypeArguments="x:String" Name="inputFileName" />
+      <Variable x:TypeArguments="x:String" Name="downloadedFilePath" />
+      <Variable x:TypeArguments="x:String" Default="D:\DHL Task\rpa-temp" Name="tempFolder" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="512,122.4" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="DHL RPA started">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </WriteLine>
+    <uwah:NetHttpRequest BasicAuthPassword="{x:Null}" BasicAuthSecurePassword="{x:Null}" BasicAuthUsername="{x:Null}" BinaryPayload="{x:Null}" ClientCertPassword="{x:Null}" ClientCertPath="{x:Null}" ClientCertSecurePassword="{x:Null}" Cookies="{x:Null}" CustomNegotiatedAuthCredentials="{x:Null}" FilePath="{x:Null}" FormData="{x:Null}" LocalFiles="{x:Null}" OAuthToken="{x:Null}" OutputFileName="{x:Null}" OutputFileTargetFolder="{x:Null}" Parameters="{x:Null}" PathResource="{x:Null}" ProxyConfiguration="{x:Null}" ResourceFiles="{x:Null}" AuthenticationType="None" ContinueOnError="True" DisableSslVerification="False" DisplayName="HTTP Request" EnableCookies="True" FileOverwrite="AutoRename" FollowRedirects="True" FormDataParts="[New List (Of FormDataPart) From _&#xA;{&#xA;&#x9;New FileFormDataPart(),&#xA;&#x9;New BinaryFormDataPart(),&#xA;&#x9;New TextFormDataPart()&#xA;}]" Headers="[new System.Collections.Generic.Dictionary(Of System.String, System.String) From { { &quot;Content-Type&quot;, &quot;application/json&quot; } }]" sap:VirtualizedContainerService.HintSize="512,432.8" sap2010:WorkflowViewState.IdRef="NetHttpRequest_1" InitialDelay="500" MaxRedirects="3" MaxRetryAfterDelay="30000" Method="POST" Multiplier="2" PreferRetryAfterValue="True" RequestBodyType="Text" RequestUrl="http://localhost:3000/auth/login" Result="[loginHttpResponse]" RetryCount="3" RetryPolicyType="Basic" RetryStatusCodes="[New List (Of System.Net.HttpStatusCode) From _&#xA;{&#xA;&#x9;System.Net.HttpStatusCode.RequestTimeout,&#xA;&#x9;System.Net.HttpStatusCode.TooManyRequests,&#xA;&#x9;System.Net.HttpStatusCode.InternalServerError,&#xA;&#x9;System.Net.HttpStatusCode.BadGateway,&#xA;&#x9;System.Net.HttpStatusCode.ServiceUnavailable,&#xA;&#x9;System.Net.HttpStatusCode.GatewayTimeout&#xA;}]" SaveRawRequestResponse="False" SaveResponseAsFile="False" TextPayload="{}{&quot;email&quot;:&quot;rpa-bot@dhl-kb.com&quot;,&quot;password&quot;:&quot;rpa123&quot;}" TextPayloadContentType="application/json" TextPayloadEncoding="UTF-8" TlsProtocol="Automatic" UseJitter="True" UseOsNegotiatedAuthCredentials="True">
+      <uwah:NetHttpRequest.TimeoutInMiliseconds>
+        <InArgument x:TypeArguments="s:Nullable(x:Int32)">
+          <Literal x:TypeArguments="s:Nullable(x:Int32)" Value="10000" />
+        </InArgument>
+      </uwah:NetHttpRequest.TimeoutInMiliseconds>
+    </uwah:NetHttpRequest>
+    <Assign sap:VirtualizedContainerService.HintSize="512,174.4" sap2010:WorkflowViewState.IdRef="Assign_1">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[loginResponse]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[loginHttpResponse.TextContent]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="512,122.4" sap2010:WorkflowViewState.IdRef="WriteLine_2" Text="[loginResponse]" />
+    <Assign sap:VirtualizedContainerService.HintSize="512,174.4" sap2010:WorkflowViewState.IdRef="Assign_2">
+      <Assign.To>
+        <OutArgument x:TypeArguments="njl:JObject">[loginJson]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="njl:JObject">[Newtonsoft.Json.Linq.JObject.Parse(loginResponse)]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign sap:VirtualizedContainerService.HintSize="512,174.4" sap2010:WorkflowViewState.IdRef="Assign_3">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[accessToken]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[loginJson("accessToken").ToString]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="512,122.4" sap2010:WorkflowViewState.IdRef="WriteLine_3" Text="Login successful. Token extracted." />
+    <uwah:NetHttpRequest BasicAuthPassword="{x:Null}" BasicAuthSecurePassword="{x:Null}" BasicAuthUsername="{x:Null}" BinaryPayload="{x:Null}" ClientCertPassword="{x:Null}" ClientCertPath="{x:Null}" ClientCertSecurePassword="{x:Null}" Cookies="{x:Null}" CustomNegotiatedAuthCredentials="{x:Null}" FilePath="{x:Null}" FormData="{x:Null}" LocalFiles="{x:Null}" OAuthToken="{x:Null}" OutputFileName="{x:Null}" OutputFileTargetFolder="{x:Null}" Parameters="{x:Null}" PathResource="{x:Null}" ProxyConfiguration="{x:Null}" ResourceFiles="{x:Null}" AuthenticationType="None" ContinueOnError="True" DisableSslVerification="False" DisplayName="HTTP Request" EnableCookies="True" FileOverwrite="AutoRename" FollowRedirects="True" FormDataParts="[New List (Of FormDataPart) From _&#xA;{&#xA;&#x9;New FileFormDataPart(),&#xA;&#x9;New BinaryFormDataPart(),&#xA;&#x9;New TextFormDataPart()&#xA;}]" Headers="[new System.Collections.Generic.Dictionary(Of System.String, System.String) From { { &quot;Content-Type&quot;, &quot;application/json&quot; },{ &quot;Authorization&quot;, &quot;Bearer &quot; + accessToken } }]" sap:VirtualizedContainerService.HintSize="512,432.8" sap2010:WorkflowViewState.IdRef="NetHttpRequest_2" InitialDelay="500" MaxRedirects="3" MaxRetryAfterDelay="30000" Method="POST" Multiplier="2" PreferRetryAfterValue="True" RequestBodyType="Text" RequestUrl="http://localhost:3000/automation/runs" Result="[createRunHttpResponse]" RetryCount="3" RetryPolicyType="Basic" RetryStatusCodes="[New List (Of System.Net.HttpStatusCode) From _&#xA;{&#xA;&#x9;System.Net.HttpStatusCode.RequestTimeout,&#xA;&#x9;System.Net.HttpStatusCode.TooManyRequests,&#xA;&#x9;System.Net.HttpStatusCode.InternalServerError,&#xA;&#x9;System.Net.HttpStatusCode.BadGateway,&#xA;&#x9;System.Net.HttpStatusCode.ServiceUnavailable,&#xA;&#x9;System.Net.HttpStatusCode.GatewayTimeout&#xA;}]" SaveRawRequestResponse="False" SaveResponseAsFile="False" TextPayload="{}{&quot;runById&quot;:4,&quot;status&quot;:&quot;RUNNING&quot;}" TextPayloadContentType="application/json" TextPayloadEncoding="UTF-8" TlsProtocol="Automatic" UseJitter="True" UseOsNegotiatedAuthCredentials="True">
+      <uwah:NetHttpRequest.TimeoutInMiliseconds>
+        <InArgument x:TypeArguments="s:Nullable(x:Int32)">
+          <Literal x:TypeArguments="s:Nullable(x:Int32)" Value="10000" />
+        </InArgument>
+      </uwah:NetHttpRequest.TimeoutInMiliseconds>
+    </uwah:NetHttpRequest>
+    <Assign sap:VirtualizedContainerService.HintSize="512,174.4" sap2010:WorkflowViewState.IdRef="Assign_4">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[createRunResponse]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[createRunHttpResponse.TextContent]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign sap:VirtualizedContainerService.HintSize="512,174.4" sap2010:WorkflowViewState.IdRef="Assign_5">
+      <Assign.To>
+        <OutArgument x:TypeArguments="njl:JObject">[createRunJson]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="njl:JObject">[Newtonsoft.Json.Linq.JObject.Parse(createRunResponse)]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign sap:VirtualizedContainerService.HintSize="512,174.4" sap2010:WorkflowViewState.IdRef="Assign_6">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:Int32">[automationRunId]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:Int32">[CInt(createRunJson("id"))]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="512,122.4" sap2010:WorkflowViewState.IdRef="WriteLine_4" Text="[&quot;Automation run created. ID: &quot; + automationRunId.ToString]" />
+    <Assign sap:VirtualizedContainerService.HintSize="512,174.4" sap2010:WorkflowViewState.IdRef="Assign_53">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:Int32">[totalScanned]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:Int32">[0]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign sap:VirtualizedContainerService.HintSize="512,174.4" sap2010:WorkflowViewState.IdRef="Assign_54">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:Int32">[totalCreated]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:Int32">[0]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign sap:VirtualizedContainerService.HintSize="512,174.4" sap2010:WorkflowViewState.IdRef="Assign_55">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:Int32">[totalDuplicates]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:Int32">[0]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign sap:VirtualizedContainerService.HintSize="512,174.4" sap2010:WorkflowViewState.IdRef="Assign_56">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:Int32">[totalFailed]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:Int32">[0]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign sap:VirtualizedContainerService.HintSize="512,174.4" sap2010:WorkflowViewState.IdRef="Assign_57">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:Boolean">[summaryEmailSent]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:Boolean">[False]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <ui:CreateDirectory ContinueOnError="{x:Null}" Output="{x:Null}" DisplayName="Create Folder" sap:VirtualizedContainerService.HintSize="512,122.4" sap2010:WorkflowViewState.IdRef="CreateDirectory_2" Path="[screenshotFolder]" />
+    <uga:ForEachEmailConnections ConnectionAccountName="{x:Null}" CurrentIndex="{x:Null}" Filter="{x:Null}" FolderIdBackup="{x:Reference __ReferenceID2}" Length="{x:Null}" ManualEntryFolder="{x:Null}" QueryFilter="{x:Null}" AllLabels="W3siSWQiOiJDSEFUIiwiTmFtZSI6IkNIQVQiLCJUeXBlIjoic3lzdGVtIn0seyJJZCI6IlNFTlQiLCJOYW1lIjoiU0VOVCIsIlR5cGUiOiJzeXN0ZW0ifSx7IklkIjoiSU5CT1giLCJOYW1lIjoiSU5CT1giLCJUeXBlIjoic3lzdGVtIn0seyJJZCI6IklNUE9SVEFOVCIsIk5hbWUiOiJJTVBPUlRBTlQiLCJUeXBlIjoic3lzdGVtIn0seyJJZCI6IlRSQVNIIiwiTmFtZSI6IlRSQVNIIiwiVHlwZSI6InN5c3RlbSJ9LHsiSWQiOiJEUkFGVCIsIk5hbWUiOiJEUkFGVCIsIlR5cGUiOiJzeXN0ZW0ifSx7IklkIjoiU1BBTSIsIk5hbWUiOiJTUEFNIiwiVHlwZSI6InN5c3RlbSJ9LHsiSWQiOiJDQVRFR09SWV9GT1JVTVMiLCJOYW1lIjoiQ0FURUdPUllfRk9SVU1TIiwiVHlwZSI6InN5c3RlbSJ9LHsiSWQiOiJDQVRFR09SWV9VUERBVEVTIiwiTmFtZSI6IkNBVEVHT1JZX1VQREFURVMiLCJUeXBlIjoic3lzdGVtIn0seyJJZCI6IkNBVEVHT1JZX1BFUlNPTkFMIiwiTmFtZSI6IkNBVEVHT1JZX1BFUlNPTkFMIiwiVHlwZSI6InN5c3RlbSJ9LHsiSWQiOiJDQVRFR09SWV9QUk9NT1RJT05TIiwiTmFtZSI6IkNBVEVHT1JZX1BST01PVElPTlMiLCJUeXBlIjoic3lzdGVtIn0seyJJZCI6IkNBVEVHT1JZX1NPQ0lBTCIsIk5hbWUiOiJDQVRFR09SWV9TT0NJQUwiLCJUeXBlIjoic3lzdGVtIn0seyJJZCI6IlNUQVJSRUQiLCJOYW1lIjoiU1RBUlJFRCIsIlR5cGUiOiJzeXN0ZW0ifSx7IklkIjoiVU5SRUFEIiwiTmFtZSI6IlVOUkVBRCIsIlR5cGUiOiJzeXN0ZW0ifSx7IklkIjoiTGFiZWxfMjEyMzczMjU1ODAxMzczMDYxMyIsIk5hbWUiOiJESEwtUlBBLU5ldyIsIlR5cGUiOiJ1c2VyIn0seyJJZCI6IkxhYmVsXzQ4ODE2NTI3MzUyMjAzOTQ4NjEiLCJOYW1lIjoiREhMLVJQQS1Qcm9jZXNzZWQiLCJUeXBlIjoidXNlciJ9LHsiSWQiOiJMYWJlbF82NzU2NjEyNzk5NDQ1NDY0NzA5IiwiTmFtZSI6IkRITC1SUEEtRmFpbGVkIiwiVHlwZSI6InVzZXIifSx7IklkIjoiTGFiZWxfODI5MDMwMDcxNzgyMTU0OTExMCIsIk5hbWUiOiJESEwtUlBBLUR1cGxpY2F0ZSIsIlR5cGUiOiJ1c2VyIn1d" AuthScopesInvalid="False" BrowserFolder="DHL-RPA-New" BrowserFolderLabelId="Label_2123732558013730613" ConnectionId="c4a4f233-0d69-458a-97e7-daa92fc5e187" CurrentItemVariableName="CurrentEmail" DisplayName="For Each Email" FilterSelectionMode="ConditionBuilder" FolderInputSelectionMode="Browse" sap:VirtualizedContainerService.HintSize="512,2092.8" sap2010:WorkflowViewState.IdRef="ForEachEmailConnections_1" ImportantOnly="False" IncludeSubfolders="False" MarkAsRead="False" MaxResults="10" StarredOnly="False" UnreadOnly="False" UseConnectionService="True" WithAttachmentsOnly="False">
+      <uga:ForEachEmailConnections.Body>
+        <ActivityAction x:TypeArguments="ugm:GmailMessage, x:Int32">
+          <ActivityAction.Argument1>
+            <DelegateInArgument x:TypeArguments="ugm:GmailMessage" Name="CurrentEmail" />
+          </ActivityAction.Argument1>
+          <ActivityAction.Argument2>
+            <DelegateInArgument x:TypeArguments="x:Int32" Name="CurrentEmailIndex" />
+          </ActivityAction.Argument2>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="483.2,1848" sap2010:WorkflowViewState.IdRef="Sequence_11">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Sequence DisplayName="Process Email To Drive" sap:VirtualizedContainerService.HintSize="449.6,1788" sap2010:WorkflowViewState.IdRef="Sequence_12">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:CreateDirectory ContinueOnError="{x:Null}" Output="{x:Null}" DisplayName="Create Folder" sap:VirtualizedContainerService.HintSize="416,122.4" sap2010:WorkflowViewState.IdRef="CreateDirectory_3" Path="[emailExportFolder]" />
+              <ui:CreateDirectory ContinueOnError="{x:Null}" Output="{x:Null}" DisplayName="Create Folder" sap:VirtualizedContainerService.HintSize="416,122.4" sap2010:WorkflowViewState.IdRef="CreateDirectory_4" Path="[emailAttachmentFolder]" />
+              <Assign sap:VirtualizedContainerService.HintSize="416,174.4" sap2010:WorkflowViewState.IdRef="Assign_79">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:String">[emailSubject]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:String">[CurrentEmail.Subject]</InArgument>
+                </Assign.Value>
+              </Assign>
+              <Assign sap:VirtualizedContainerService.HintSize="416,174.4" sap2010:WorkflowViewState.IdRef="Assign_80">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:String">[emailBody]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:String">[CurrentEmail.Body.ToString]</InArgument>
+                </Assign.Value>
+              </Assign>
+              <Assign sap:VirtualizedContainerService.HintSize="416,174.4" sap2010:WorkflowViewState.IdRef="Assign_81">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:String">[safeEmailFileName]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:String">["email-body-" + DateTime.Now.ToString("yyyyMMdd_HHmmss") + ".txt"]</InArgument>
+                </Assign.Value>
+              </Assign>
+              <Assign sap:VirtualizedContainerService.HintSize="416,174.4" sap2010:WorkflowViewState.IdRef="Assign_82">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:String">[emailBodyFilePath]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:String">[System.IO.Path.Combine(emailExportFolder, safeEmailFileName)]</InArgument>
+                </Assign.Value>
+              </Assign>
+              <ui:WriteTextFile File="{x:Null}" Output="{x:Null}" DisplayName="Write Text File" FileName="[emailBodyFilePath]" sap:VirtualizedContainerService.HintSize="416,175.2" sap2010:WorkflowViewState.IdRef="WriteTextFile_1" Text="[&quot;Subject: &quot; + emailSubject + Environment.NewLine + Environment.NewLine + emailBody]" />
+              <uga:UploadFilesConnections AllResults="{x:Null}" ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" DestinationFolder="{x:Null}" FilesList="{x:Null}" FirstResult="{x:Null}" FolderIdBackup="{x:Reference __ReferenceID0}" ManualFolderId="{x:Null}" OverwriteExistingFile="{x:Null}" SingleFileToUpload="{x:Null}" AuthScopesInvalid="False" BrowseFolderId="https://drive.google.com/drive/folders/1HEQMNuXMAn4TAa1e0XDYm8ff3ZNtUk5v" ConflictResolution="Replace" ConnectionId="a494af79-e803-4062-948e-fd934adb5859" Convert="False" DisplayName="Upload Files" FilesInputMode="MultipleByVariable" FolderInputMode="Browse" sap:VirtualizedContainerService.HintSize="416,236.8" sap2010:WorkflowViewState.IdRef="UploadFilesConnections_1" MultipleFilesToUpload="[New List(Of IResource) From {&#xA;    LocalResource.FromPath(emailBodyFilePath)&#xA;}]" SaveToFolderName="New" UseConnectionService="True">
+                <uga:UploadFilesConnections.FilesBackup>
+                  <usau:BackupSlot x:TypeArguments="ugade:FilesInputMode" StoredValue="MultipleByVariable">
+                    <usau:BackupSlot.BackupValues>
+                      <scg:List x:TypeArguments="x:Object" x:Key="MultipleByVariable" Capacity="1">
+                        <InArgument x:TypeArguments="scg:IEnumerable(upr:IResource)">[New List(Of String) From {emailBodyFilePath}]</InArgument>
+                      </scg:List>
+                      <scg:List x:TypeArguments="x:Object" x:Key="MultipleByBuilder" Capacity="1">
+                        <scg:List x:TypeArguments="InArgument(upr:IResource)" Capacity="4">
+                          <InArgument x:TypeArguments="upr:IResource">[New List(Of String) From {emailBodyFilePath}]</InArgument>
+                        </scg:List>
+                      </scg:List>
+                    </usau:BackupSlot.BackupValues>
+                  </usau:BackupSlot>
+                </uga:UploadFilesConnections.FilesBackup>
+                <uga:UploadFilesConnections.Folder>
+                  <ugam:DriveItemArgument ConnectionDescriptor="{x:Null}" Existing="{x:Null}" FullPath="{x:Null}" IdOrUrl="{x:Null}" ParentId="{x:Null}" ParentIdFriendlyName="{x:Null}" RelativePath="{x:Null}" BrowserId="https://drive.google.com/drive/folders/1HEQMNuXMAn4TAa1e0XDYm8ff3ZNtUk5v" ConnectionKey="a494af79-e803-4062-948e-fd934adb5859" FriendlyName="New" FullPathHint="My Drive/DHL RPA Input/New" InputMode="Browse">
+                    <ugam:DriveItemArgument.Backup>
+                      <usau:BackupSlot x:TypeArguments="ugade:EDriveItemMode" x:Name="__ReferenceID0" StoredValue="Browse">
+                        <usau:BackupSlot.BackupValues>
+                          <scg:Dictionary x:TypeArguments="ugade:EDriveItemMode, scg:List(x:Object)" />
+                        </usau:BackupSlot.BackupValues>
+                      </usau:BackupSlot>
+                    </ugam:DriveItemArgument.Backup>
+                    <ugam:DriveItemArgument.DriveId>
+                      <InArgument x:TypeArguments="x:String" />
+                    </ugam:DriveItemArgument.DriveId>
+                    <ugam:DriveItemArgument.ParentIdFullPathHint>
+                      <InArgument x:TypeArguments="x:String">
+                        <Literal x:TypeArguments="x:String" Value="" />
+                      </InArgument>
+                    </ugam:DriveItemArgument.ParentIdFullPathHint>
+                  </ugam:DriveItemArgument>
+                </uga:UploadFilesConnections.Folder>
+              </uga:UploadFilesConnections>
+              <uga:MoveEmailConnections ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" FolderIdBackup="{x:Reference __ReferenceID1}" ManualFolderPath="{x:Null}" Result="{x:Null}" AuthScopesInvalid="False" BrowseFolderPath="DHL-RPA-TransferredToDrive" BrowserFolderLabelId="Label_4881652735220394861" ConnectionId="c4a4f233-0d69-458a-97e7-daa92fc5e187" DisplayName="Move Email" Email="[CurrentEmail]" FolderInputSelectionMode="Browse" sap:VirtualizedContainerService.HintSize="416,236.8" sap2010:WorkflowViewState.IdRef="MoveEmailConnections_1" UseConnectionService="True">
+                <uga:MoveEmailConnections.Folder>
+                  <ugagm:FolderArgument ConnectionDescriptor="{x:Null}" ManualEntryFolderName="{x:Null}" BrowserFolderId="Label_4881652735220394861" BrowserFolderName="DHL-RPA-TransferredToDrive" ConnectionKey="c4a4f233-0d69-458a-97e7-daa92fc5e187" InputMode="Browse">
+                    <ugagm:FolderArgument.Backup>
+                      <usau:BackupSlot x:TypeArguments="ugage:FolderInputMode" x:Name="__ReferenceID1" StoredValue="Browse">
+                        <usau:BackupSlot.BackupValues>
+                          <scg:Dictionary x:TypeArguments="ugage:FolderInputMode, scg:List(x:Object)" />
+                        </usau:BackupSlot.BackupValues>
+                      </usau:BackupSlot>
+                    </ugagm:FolderArgument.Backup>
+                  </ugagm:FolderArgument>
+                </uga:MoveEmailConnections.Folder>
+              </uga:MoveEmailConnections>
+              <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="416,113.6" sap2010:WorkflowViewState.IdRef="WriteLine_37" Text="[&quot;Gmail email exported to Drive queue: &quot; + emailSubject]" />
+            </Sequence>
+          </Sequence>
+        </ActivityAction>
+      </uga:ForEachEmailConnections.Body>
+      <uga:ForEachEmailConnections.FilterSelectionBackup>
+        <usau:BackupSlot x:TypeArguments="ugae:FilterMode" StoredValue="ConditionBuilder">
+          <usau:BackupSlot.BackupValues>
+            <scg:Dictionary x:TypeArguments="ugae:FilterMode, scg:List(x:Object)" />
+          </usau:BackupSlot.BackupValues>
+        </usau:BackupSlot>
+      </uga:ForEachEmailConnections.FilterSelectionBackup>
+      <uga:ForEachEmailConnections.Folder>
+        <ugagm:FolderArgument ConnectionDescriptor="{x:Null}" ManualEntryFolderName="{x:Null}" BrowserFolderId="Label_2123732558013730613" BrowserFolderName="DHL-RPA-New" ConnectionKey="c4a4f233-0d69-458a-97e7-daa92fc5e187" InputMode="Browse">
+          <ugagm:FolderArgument.Backup>
+            <usau:BackupSlot x:TypeArguments="ugage:FolderInputMode" x:Name="__ReferenceID2" StoredValue="Browse">
+              <usau:BackupSlot.BackupValues>
+                <scg:Dictionary x:TypeArguments="ugage:FolderInputMode, scg:List(x:Object)" />
+              </usau:BackupSlot.BackupValues>
+            </usau:BackupSlot>
+          </ugagm:FolderArgument.Backup>
+        </ugagm:FolderArgument>
+      </uga:ForEachEmailConnections.Folder>
+    </uga:ForEachEmailConnections>
+    <uga:ForEachFileFolderConnections ConnectionAccountName="{x:Null}" ExistingLocation="{x:Null}" Filter="{x:Null}" FolderIdBackup="{x:Null}" Length="{x:Null}" ManualEntryLocation="{x:Null}" QueryFilter="{x:Null}" AllLabels="W10=" AuthScopesInvalid="False" BrowserLocation="https://drive.google.com/drive/folders/1HEQMNuXMAn4TAa1e0XDYm8ff3ZNtUk5v" ConnectionId="a494af79-e803-4062-948e-fd934adb5859" CurrentItemVariableName="CurrentItem" DisplayName="For Each File or Folder" FilterSelectionMode="ConditionBuilder" sap:VirtualizedContainerService.HintSize="512,14001.6" sap2010:WorkflowViewState.IdRef="ForEachFileFolderConnections_2" LocationFriendlyName="New" LocationInputMode="Browse" MaxResults="200" StarredOnly="False" UseConnectionService="True" WhatToReturn="FilesAndFolders">
+      <uga:ForEachFileFolderConnections.Body>
+        <ActivityAction x:TypeArguments="ugdm:GDriveRemoteItem, x:Int32">
+          <ActivityAction.Argument1>
+            <DelegateInArgument x:TypeArguments="ugdm:GDriveRemoteItem" Name="CurrentItem" />
+          </ActivityAction.Argument1>
+          <ActivityAction.Argument2>
+            <DelegateInArgument x:TypeArguments="x:Int32" Name="CurrentItemIndex" />
+          </ActivityAction.Argument2>
+          <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="486.4,13738.4" sap2010:WorkflowViewState.IdRef="TryCatch_4">
+            <TryCatch.Try>
+              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="484.8,11618.4" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <Assign sap:VirtualizedContainerService.HintSize="451.2,174.4" sap2010:WorkflowViewState.IdRef="Assign_58">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:Int32">[totalScanned]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:Int32">[totalScanned + 1]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="451.2,122.4" sap2010:WorkflowViewState.IdRef="WriteLine_18" Text="[CurrentItem.Name]" />
+                <Assign sap:VirtualizedContainerService.HintSize="451.2,174.4" sap2010:WorkflowViewState.IdRef="Assign_68">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:String">[inputFileName]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:String">[If(String.IsNullOrWhiteSpace(inputFileName), CurrentItem.Name, inputFileName)]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <Assign sap:VirtualizedContainerService.HintSize="451.2,174.4" sap2010:WorkflowViewState.IdRef="Assign_47">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:String">[inputFileName]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:String">[CurrentItem.Name]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <ui:CreateDirectory ContinueOnError="{x:Null}" Output="{x:Null}" DisplayName="Create Folder" sap:VirtualizedContainerService.HintSize="451.2,122.4" sap2010:WorkflowViewState.IdRef="CreateDirectory_1" Path="[tempFolder]" />
+                <uga:DownloadFileConnections BrowserFileId="{x:Null}" ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" FileFriendlyName="{x:Null}" ManualEntryFileId="{x:Null}" ManualFileId="{x:Null}" NewResult="{x:Null}" Result="{x:Null}" AuthScopesInvalid="False" ConflictResolution="Replace" ConnectionId="a494af79-e803-4062-948e-fd934adb5859" DestinationPath="[tempFolder]" DisplayName="Download File" DownloadDocumentAs="Word" DownloadDrawingAs="Jpeg" DownloadPresentationAs="Ppt" DownloadSpreadsheetAs="Xlsx" File="[CurrentItem]" FileInputMode="UseExisting" sap:VirtualizedContainerService.HintSize="451.2,184.8" sap2010:WorkflowViewState.IdRef="DownloadFileConnections_1" UseConnectionService="True">
+                  <uga:DownloadFileConnections.FileIdBackup>
+                    <usau:BackupSlot x:TypeArguments="ugade:EDriveItemMode" x:Name="__ReferenceID3" StoredValue="UseExisting">
+                      <usau:BackupSlot.BackupValues>
+                        <scg:List x:TypeArguments="x:Object" x:Key="Browse" Capacity="3">
+                          <x:Null />
+                          <x:Null />
+                          <x:Null />
+                        </scg:List>
+                        <scg:List x:TypeArguments="x:Object" x:Key="UseExisting" Capacity="1">
+                          <InArgument x:TypeArguments="ugdm:GDriveRemoteItem">[CurrentItem]</InArgument>
+                        </scg:List>
+                        <scg:List x:TypeArguments="x:Object" x:Key="UrlOrId" Capacity="1">
+                          <x:Null />
+                        </scg:List>
+                      </usau:BackupSlot.BackupValues>
+                    </usau:BackupSlot>
+                  </uga:DownloadFileConnections.FileIdBackup>
+                  <uga:DownloadFileConnections.Item>
+                    <ugam:DriveItemArgument Backup="{x:Reference __ReferenceID3}" BrowserId="{x:Null}" ConnectionDescriptor="{x:Null}" ConnectionKey="{x:Null}" DriveId="{x:Null}" FriendlyName="{x:Null}" FullPath="{x:Null}" IdOrUrl="{x:Null}" ParentId="{x:Null}" ParentIdFriendlyName="{x:Null}" RelativePath="{x:Null}" Existing="[CurrentItem]" InputMode="UseExisting">
+                      <ugam:DriveItemArgument.FullPathHint>
+                        <InArgument x:TypeArguments="x:String">
+                          <Literal x:TypeArguments="x:String" Value="" />
+                        </InArgument>
+                      </ugam:DriveItemArgument.FullPathHint>
+                      <ugam:DriveItemArgument.ParentIdFullPathHint>
+                        <InArgument x:TypeArguments="x:String">
+                          <Literal x:TypeArguments="x:String" Value="" />
+                        </InArgument>
+                      </ugam:DriveItemArgument.ParentIdFullPathHint>
+                    </ugam:DriveItemArgument>
+                  </uga:DownloadFileConnections.Item>
+                </uga:DownloadFileConnections>
+                <Assign sap:VirtualizedContainerService.HintSize="451.2,174.4" sap2010:WorkflowViewState.IdRef="Assign_49">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:String">[inputFileName]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:String">[CurrentItem.Name]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <Assign sap:VirtualizedContainerService.HintSize="451.2,174.4" sap2010:WorkflowViewState.IdRef="Assign_50">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:String">[downloadedFilePath]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:String">[System.IO.Directory.GetFiles(tempFolder).OrderByDescending(Function(f) New System.IO.FileInfo(f).LastWriteTime).First()]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <Assign sap:VirtualizedContainerService.HintSize="451.2,174.4" sap2010:WorkflowViewState.IdRef="Assign_70">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:String">[fileExtension]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:String">[System.IO.Path.GetExtension(downloadedFilePath).ToLower]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <Assign sap:VirtualizedContainerService.HintSize="451.2,174.4" sap2010:WorkflowViewState.IdRef="Assign_71">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:String">[articleSourceType]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:String">[If(inputFileName.StartsWith("email-body-"), "EMAIL", If(fileExtension = ".txt", "TEXT", If(fileExtension = ".docx", "DOCX", If(fileExtension = ".pdf", "PDF", If(fileExtension = ".png" Or fileExtension = ".jpg" Or fileExtension = ".jpeg", "IMAGE", "OTHER")))))]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <Assign sap:VirtualizedContainerService.HintSize="451.2,174.4" sap2010:WorkflowViewState.IdRef="Assign_30">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:String">[sourceHash]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:String">[BitConverter.ToString(System.Security.Cryptography.SHA256.Create().ComputeHash(System.IO.File.ReadAllBytes(downloadedFilePath))).Replace("-", "").ToLower]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <uwah:NetHttpRequest BasicAuthPassword="{x:Null}" BasicAuthSecurePassword="{x:Null}" BasicAuthUsername="{x:Null}" BinaryPayload="{x:Null}" ClientCertPassword="{x:Null}" ClientCertPath="{x:Null}" ClientCertSecurePassword="{x:Null}" Cookies="{x:Null}" CustomNegotiatedAuthCredentials="{x:Null}" FilePath="{x:Null}" FormData="{x:Null}" LocalFiles="{x:Null}" OAuthToken="{x:Null}" OutputFileName="{x:Null}" OutputFileTargetFolder="{x:Null}" Parameters="{x:Null}" PathResource="{x:Null}" ProxyConfiguration="{x:Null}" ResourceFiles="{x:Null}" AuthenticationType="None" ContinueOnError="True" DisableSslVerification="False" DisplayName="HTTP Request" EnableCookies="True" FileOverwrite="AutoRename" FollowRedirects="True" FormDataParts="[New List (Of FormDataPart) From _&#xA;{&#xA;&#x9;New FileFormDataPart(),&#xA;&#x9;New BinaryFormDataPart(),&#xA;&#x9;New TextFormDataPart()&#xA;}]" Headers="[new System.Collections.Generic.Dictionary(Of System.String, System.String) From { { &quot;Content-Type&quot;, &quot;application/json&quot; },{ &quot;Authorization&quot;, &quot;Bearer &quot; + accessToken } }]" sap:VirtualizedContainerService.HintSize="451.2,432.8" sap2010:WorkflowViewState.IdRef="NetHttpRequest_13" InitialDelay="500" MaxRedirects="3" MaxRetryAfterDelay="30000" Method="POST" Multiplier="2" PreferRetryAfterValue="True" RequestBodyType="Text" RequestUrl="http://localhost:3000/articles/check-duplicate" Result="[checkDuplicateHttpResponse]" RetryCount="3" RetryPolicyType="Basic" RetryStatusCodes="[New List (Of System.Net.HttpStatusCode) From _&#xA;{&#xA;&#x9;System.Net.HttpStatusCode.RequestTimeout,&#xA;&#x9;System.Net.HttpStatusCode.TooManyRequests,&#xA;&#x9;System.Net.HttpStatusCode.InternalServerError,&#xA;&#x9;System.Net.HttpStatusCode.BadGateway,&#xA;&#x9;System.Net.HttpStatusCode.ServiceUnavailable,&#xA;&#x9;System.Net.HttpStatusCode.GatewayTimeout&#xA;}]" SaveRawRequestResponse="False" SaveResponseAsFile="False" TextPayload="[&quot;{&quot;&quot;sourceHash&quot;&quot;:&quot;&quot;&quot; + sourceHash + &quot;&quot;&quot;}&quot;]" TextPayloadContentType="application/json" TextPayloadEncoding="UTF-8" TlsProtocol="Automatic" UseJitter="True" UseOsNegotiatedAuthCredentials="True">
+                  <uwah:NetHttpRequest.TimeoutInMiliseconds>
+                    <InArgument x:TypeArguments="s:Nullable(x:Int32)">
+                      <Literal x:TypeArguments="s:Nullable(x:Int32)" Value="10000" />
+                    </InArgument>
+                  </uwah:NetHttpRequest.TimeoutInMiliseconds>
+                </uwah:NetHttpRequest>
+                <Assign sap:VirtualizedContainerService.HintSize="451.2,174.4" sap2010:WorkflowViewState.IdRef="Assign_36">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:String">[checkDuplicateResponse]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:String">[checkDuplicateHttpResponse.TextContent]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="451.2,122.4" sap2010:WorkflowViewState.IdRef="WriteLine_19" Text="[checkDuplicateResponse]" />
+                <Assign sap:VirtualizedContainerService.HintSize="451.2,174.4" sap2010:WorkflowViewState.IdRef="Assign_37">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="njl:JObject">[checkDuplicateJson]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="njl:JObject">[Newtonsoft.Json.Linq.JObject.Parse(checkDuplicateResponse)]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <Assign sap:VirtualizedContainerService.HintSize="451.2,174.4" sap2010:WorkflowViewState.IdRef="Assign_38">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:Boolean">[isDuplicate]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:Boolean">[Convert.ToBoolean(checkDuplicateJson("isDuplicate").ToString)]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="451.2,122.4" sap2010:WorkflowViewState.IdRef="WriteLine_20" Text="[&quot;Duplicate check result: &quot; + isDuplicate.ToString]" />
+                <If Condition="[isDuplicate = True]" sap:VirtualizedContainerService.HintSize="451.2,8532.8" sap2010:WorkflowViewState.IdRef="If_2">
+                  <If.Then>
+                    <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="449.6,2444.8" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <Assign sap:VirtualizedContainerService.HintSize="416,174.4" sap2010:WorkflowViewState.IdRef="Assign_39">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:Int32">[duplicateArticleId]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:Int32">[CInt(checkDuplicateJson("article")("id"))]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="416,122.4" sap2010:WorkflowViewState.IdRef="WriteLine_21" Text="[&quot;Duplicate found. Existing article ID: &quot; + duplicateArticleId.ToString]" />
+                      <uwah:NetHttpRequest BasicAuthPassword="{x:Null}" BasicAuthSecurePassword="{x:Null}" BasicAuthUsername="{x:Null}" BinaryPayload="{x:Null}" ClientCertPassword="{x:Null}" ClientCertPath="{x:Null}" ClientCertSecurePassword="{x:Null}" Cookies="{x:Null}" CustomNegotiatedAuthCredentials="{x:Null}" FilePath="{x:Null}" FormData="{x:Null}" LocalFiles="{x:Null}" OAuthToken="{x:Null}" OutputFileName="{x:Null}" OutputFileTargetFolder="{x:Null}" Parameters="{x:Null}" PathResource="{x:Null}" ProxyConfiguration="{x:Null}" ResourceFiles="{x:Null}" AuthenticationType="None" ContinueOnError="True" DisableSslVerification="False" DisplayName="HTTP Request" EnableCookies="True" FileOverwrite="AutoRename" FollowRedirects="True" FormDataParts="[New List (Of FormDataPart) From _&#xA;{&#xA;&#x9;New FileFormDataPart(),&#xA;&#x9;New BinaryFormDataPart(),&#xA;&#x9;New TextFormDataPart()&#xA;}]" Headers="[new System.Collections.Generic.Dictionary(Of System.String, System.String) From { { &quot;Content-Type&quot;, &quot;application/json&quot; },{ &quot;Authorization&quot;, &quot;Bearer &quot; + accessToken } }]" sap:VirtualizedContainerService.HintSize="416,432.8" sap2010:WorkflowViewState.IdRef="NetHttpRequest_14" InitialDelay="500" MaxRedirects="3" MaxRetryAfterDelay="30000" Method="POST" Multiplier="2" PreferRetryAfterValue="True" RequestBodyType="Text" RequestUrl="http://localhost:3000/automation/logs" Result="[createLogHttpResponse]" RetryCount="3" RetryPolicyType="Basic" RetryStatusCodes="[New List (Of System.Net.HttpStatusCode) From _&#xA;{&#xA;&#x9;System.Net.HttpStatusCode.RequestTimeout,&#xA;&#x9;System.Net.HttpStatusCode.TooManyRequests,&#xA;&#x9;System.Net.HttpStatusCode.InternalServerError,&#xA;&#x9;System.Net.HttpStatusCode.BadGateway,&#xA;&#x9;System.Net.HttpStatusCode.ServiceUnavailable,&#xA;&#x9;System.Net.HttpStatusCode.GatewayTimeout&#xA;}]" SaveRawRequestResponse="False" SaveResponseAsFile="False" TextPayload="[&quot;{&quot;&quot;automationRunId&quot;&quot;:&quot; + automationRunId.ToString + &quot;,&quot;&quot;level&quot;&quot;:&quot;&quot;WARNING&quot;&quot;,&quot;&quot;message&quot;&quot;:&quot;&quot;Duplicate source skipped. Existing article ID: &quot; + duplicateArticleId.ToString + &quot;&quot;&quot;,&quot;&quot;fileName&quot;&quot;:&quot; + Newtonsoft.Json.JsonConvert.SerializeObject(inputFileName) + &quot;}&quot;]" TextPayloadContentType="application/json" TextPayloadEncoding="UTF-8" TlsProtocol="Automatic" UseJitter="True" UseOsNegotiatedAuthCredentials="True">
+                        <uwah:NetHttpRequest.TimeoutInMiliseconds>
+                          <InArgument x:TypeArguments="s:Nullable(x:Int32)">
+                            <Literal x:TypeArguments="s:Nullable(x:Int32)" Value="10000" />
+                          </InArgument>
+                        </uwah:NetHttpRequest.TimeoutInMiliseconds>
+                      </uwah:NetHttpRequest>
+                      <Assign sap:VirtualizedContainerService.HintSize="416,174.4" sap2010:WorkflowViewState.IdRef="Assign_40">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">[createLogResponse]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String">[createLogHttpResponse.TextContent]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="416,122.4" sap2010:WorkflowViewState.IdRef="WriteLine_27" Text="Duplicate log created." />
+                      <uwah:NetHttpRequest BasicAuthPassword="{x:Null}" BasicAuthSecurePassword="{x:Null}" BasicAuthUsername="{x:Null}" BinaryPayload="{x:Null}" ClientCertPassword="{x:Null}" ClientCertPath="{x:Null}" ClientCertSecurePassword="{x:Null}" Cookies="{x:Null}" CustomNegotiatedAuthCredentials="{x:Null}" FilePath="{x:Null}" FormData="{x:Null}" LocalFiles="{x:Null}" OAuthToken="{x:Null}" OutputFileName="{x:Null}" OutputFileTargetFolder="{x:Null}" Parameters="{x:Null}" PathResource="{x:Null}" ProxyConfiguration="{x:Null}" ResourceFiles="{x:Null}" AuthenticationType="None" ContinueOnError="True" DisableSslVerification="False" DisplayName="HTTP Request" EnableCookies="True" FileOverwrite="AutoRename" FollowRedirects="True" FormDataParts="[New List (Of FormDataPart) From _&#xA;{&#xA;&#x9;New FileFormDataPart(),&#xA;&#x9;New BinaryFormDataPart(),&#xA;&#x9;New TextFormDataPart()&#xA;}]" Headers="[new System.Collections.Generic.Dictionary(Of System.String, System.String) From { { &quot;Content-Type&quot;, &quot;application/json&quot; },{ &quot;Authorization&quot;, &quot;Bearer &quot; + accessToken } }]" sap:VirtualizedContainerService.HintSize="416,432.8" sap2010:WorkflowViewState.IdRef="NetHttpRequest_18" InitialDelay="500" MaxRedirects="3" MaxRetryAfterDelay="30000" Method="PATCH" Multiplier="2" PreferRetryAfterValue="True" RequestBodyType="Text" RequestUrl="[&quot;http://localhost:3000/automation/runs/&quot; + automationRunId.ToString]" Result="[updateRunHttpResponse]" RetryCount="3" RetryPolicyType="Basic" RetryStatusCodes="[New List (Of System.Net.HttpStatusCode) From _&#xA;{&#xA;&#x9;System.Net.HttpStatusCode.RequestTimeout,&#xA;&#x9;System.Net.HttpStatusCode.TooManyRequests,&#xA;&#x9;System.Net.HttpStatusCode.InternalServerError,&#xA;&#x9;System.Net.HttpStatusCode.BadGateway,&#xA;&#x9;System.Net.HttpStatusCode.ServiceUnavailable,&#xA;&#x9;System.Net.HttpStatusCode.GatewayTimeout&#xA;}]" SaveRawRequestResponse="False" SaveResponseAsFile="False" TextPayload="{}{&quot;status&quot;:&quot;SUCCESS&quot;,&quot;totalScanned&quot;:1,&quot;totalCreated&quot;:0,&quot;totalUpdated&quot;:0,&quot;totalDuplicates&quot;:1,&quot;totalFailed&quot;:0,&quot;summaryEmailSent&quot;:false}" TextPayloadContentType="application/json" TextPayloadEncoding="UTF-8" TlsProtocol="Automatic" UseJitter="True" UseOsNegotiatedAuthCredentials="True">
+                        <uwah:NetHttpRequest.TimeoutInMiliseconds>
+                          <InArgument x:TypeArguments="s:Nullable(x:Int32)">
+                            <Literal x:TypeArguments="s:Nullable(x:Int32)" Value="10000" />
+                          </InArgument>
+                        </uwah:NetHttpRequest.TimeoutInMiliseconds>
+                      </uwah:NetHttpRequest>
+                      <Assign sap:VirtualizedContainerService.HintSize="416,174.4" sap2010:WorkflowViewState.IdRef="Assign_46">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">[updateRunResponse]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String">[updateRunHttpResponse.TextContent]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="416,122.4" sap2010:WorkflowViewState.IdRef="WriteLine_26" Text="Automation run marked as SUCCESS with duplicate skipped." />
+                      <uga:MoveFileConnections BrowserFileId="{x:Null}" ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" FileFriendlyName="{x:Null}" Folder="{x:Null}" FolderIdBackup="{x:Reference __ReferenceID4}" ManualFileId="{x:Null}" ManualFolderId="{x:Null}" NewFileName="{x:Null}" Result="{x:Null}" AuthScopesInvalid="False" BrowserFolderId="https://drive.google.com/drive/folders/1ZMZCZ6Irk3azZOzGJrEBUdo_SFBq_zIM" ConflictResolution="AddSeparate" ConnectionId="a494af79-e803-4062-948e-fd934adb5859" DisplayName="Move File or Folder" File="[CurrentItem]" FileInputMode="UseExisting" FolderFriendlyName="Duplicate" FolderInputMode="Browse" sap:VirtualizedContainerService.HintSize="416,340.8" sap2010:WorkflowViewState.IdRef="MoveFileConnections_1" UseConnectionService="True">
+                        <uga:MoveFileConnections.Destination>
+                          <ugam:DriveItemArgument ConnectionDescriptor="{x:Null}" Existing="{x:Null}" FullPath="{x:Null}" IdOrUrl="{x:Null}" ParentId="{x:Null}" ParentIdFriendlyName="{x:Null}" RelativePath="{x:Null}" BrowserId="https://drive.google.com/drive/folders/1ZMZCZ6Irk3azZOzGJrEBUdo_SFBq_zIM" ConnectionKey="a494af79-e803-4062-948e-fd934adb5859" FriendlyName="Duplicate" FullPathHint="My Drive/DHL RPA Input/Duplicate" InputMode="Browse">
+                            <ugam:DriveItemArgument.Backup>
+                              <usau:BackupSlot x:TypeArguments="ugade:EDriveItemMode" x:Name="__ReferenceID4" StoredValue="Browse">
+                                <usau:BackupSlot.BackupValues>
+                                  <scg:Dictionary x:TypeArguments="ugade:EDriveItemMode, scg:List(x:Object)" />
+                                </usau:BackupSlot.BackupValues>
+                              </usau:BackupSlot>
+                            </ugam:DriveItemArgument.Backup>
+                            <ugam:DriveItemArgument.DriveId>
+                              <InArgument x:TypeArguments="x:String" />
+                            </ugam:DriveItemArgument.DriveId>
+                            <ugam:DriveItemArgument.ParentIdFullPathHint>
+                              <InArgument x:TypeArguments="x:String">
+                                <Literal x:TypeArguments="x:String" Value="" />
+                              </InArgument>
+                            </ugam:DriveItemArgument.ParentIdFullPathHint>
+                          </ugam:DriveItemArgument>
+                        </uga:MoveFileConnections.Destination>
+                        <uga:MoveFileConnections.FileIdBackup>
+                          <usau:BackupSlot x:TypeArguments="ugade:EDriveItemMode" x:Name="__ReferenceID5" StoredValue="UseExisting">
+                            <usau:BackupSlot.BackupValues>
+                              <scg:List x:TypeArguments="x:Object" x:Key="Browse" Capacity="3">
+                                <InArgument x:TypeArguments="x:String">https://drive.google.com/drive/folders/1ZMZCZ6Irk3azZOzGJrEBUdo_SFBq_zIM</InArgument>
+                                <InArgument x:TypeArguments="x:String" />
+                                <InArgument x:TypeArguments="x:String">Duplicate</InArgument>
+                              </scg:List>
+                            </usau:BackupSlot.BackupValues>
+                          </usau:BackupSlot>
+                        </uga:MoveFileConnections.FileIdBackup>
+                        <uga:MoveFileConnections.Item>
+                          <ugam:DriveItemArgument Backup="{x:Reference __ReferenceID5}" BrowserId="{x:Null}" ConnectionDescriptor="{x:Null}" DriveId="{x:Null}" FriendlyName="{x:Null}" FullPath="{x:Null}" IdOrUrl="{x:Null}" ParentId="{x:Null}" ParentIdFriendlyName="{x:Null}" RelativePath="{x:Null}" ConnectionKey="a494af79-e803-4062-948e-fd934adb5859" Existing="[CurrentItem]" FullPathHint="My Drive/DHL RPA Input/Duplicate" InputMode="UseExisting">
+                            <ugam:DriveItemArgument.ParentIdFullPathHint>
+                              <InArgument x:TypeArguments="x:String">
+                                <Literal x:TypeArguments="x:String" Value="" />
+                              </InArgument>
+                            </ugam:DriveItemArgument.ParentIdFullPathHint>
+                          </ugam:DriveItemArgument>
+                        </uga:MoveFileConnections.Item>
+                      </uga:MoveFileConnections>
+                      <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="416,122.4" sap2010:WorkflowViewState.IdRef="WriteLine_30" Text="Moved duplicate file to Duplicate folder." />
+                      <Assign sap:VirtualizedContainerService.HintSize="416,165.6" sap2010:WorkflowViewState.IdRef="Assign_63">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:Int32">[totalDuplicates]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:Int32">[totalDuplicates + 1]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                    </Sequence>
+                  </If.Then>
+                  <If.Else>
+                    <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="449.6,5958.4" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <uwah:NetHttpRequest BasicAuthPassword="{x:Null}" BasicAuthSecurePassword="{x:Null}" BasicAuthUsername="{x:Null}" BinaryPayload="{x:Null}" ClientCertPassword="{x:Null}" ClientCertPath="{x:Null}" ClientCertSecurePassword="{x:Null}" Cookies="{x:Null}" CustomNegotiatedAuthCredentials="{x:Null}" FilePath="{x:Null}" FormData="{x:Null}" LocalFiles="{x:Null}" OAuthToken="{x:Null}" OutputFileName="{x:Null}" OutputFileTargetFolder="{x:Null}" Parameters="{x:Null}" PathResource="{x:Null}" ProxyConfiguration="{x:Null}" ResourceFiles="{x:Null}" TextPayload="{x:Null}" AuthenticationType="None" ContinueOnError="True" DisableSslVerification="False" DisplayName="HTTP Request" EnableCookies="True" FileOverwrite="AutoRename" FollowRedirects="True" FormDataParts="[New List(Of FormDataPart) From {&#xA;    New FileFormDataPart(downloadedFilePath, &quot;file&quot;, &quot;application/octet-stream&quot;)&#xA;}]" Headers="[new System.Collections.Generic.Dictionary(Of System.String, System.String) From { { &quot;Authorization&quot;, &quot;Bearer &quot; + accessToken } }]" sap:VirtualizedContainerService.HintSize="416,484.8" sap2010:WorkflowViewState.IdRef="NetHttpRequest_22" InitialDelay="500" MaxRedirects="3" MaxRetryAfterDelay="30000" Method="POST" Multiplier="2" PreferRetryAfterValue="True" RequestBodyType="MultipartFormData" RequestUrl="http://localhost:3000/ai/generate-file" Result="[aiGenerateHttpResponse]" RetryCount="3" RetryPolicyType="Basic" RetryStatusCodes="[New List (Of System.Net.HttpStatusCode) From _&#xA;{&#xA;&#x9;System.Net.HttpStatusCode.RequestTimeout,&#xA;&#x9;System.Net.HttpStatusCode.TooManyRequests,&#xA;&#x9;System.Net.HttpStatusCode.InternalServerError,&#xA;&#x9;System.Net.HttpStatusCode.BadGateway,&#xA;&#x9;System.Net.HttpStatusCode.ServiceUnavailable,&#xA;&#x9;System.Net.HttpStatusCode.GatewayTimeout&#xA;}]" SaveRawRequestResponse="False" SaveResponseAsFile="False" TextPayloadContentType="application/json" TextPayloadEncoding="UTF-8" TlsProtocol="Automatic" UseJitter="True" UseOsNegotiatedAuthCredentials="True">
+                        <uwah:NetHttpRequest.TimeoutInMiliseconds>
+                          <InArgument x:TypeArguments="s:Nullable(x:Int32)">
+                            <Literal x:TypeArguments="s:Nullable(x:Int32)" Value="10000" />
+                          </InArgument>
+                        </uwah:NetHttpRequest.TimeoutInMiliseconds>
+                      </uwah:NetHttpRequest>
+                      <Assign sap:VirtualizedContainerService.HintSize="416,174.4" sap2010:WorkflowViewState.IdRef="Assign_72">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">[aiGenerateResponse]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String">[aiGenerateHttpResponse.TextContent]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <Assign sap:VirtualizedContainerService.HintSize="416,174.4" sap2010:WorkflowViewState.IdRef="Assign_73">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="njl:JObject">[aiGenerateJson]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="njl:JObject">[Newtonsoft.Json.Linq.JObject.Parse(aiGenerateResponse)]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <Assign sap:VirtualizedContainerService.HintSize="416,174.4" sap2010:WorkflowViewState.IdRef="Assign_74">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">[articleTitle]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String">[aiGenerateJson("title").ToString]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <Assign sap:VirtualizedContainerService.HintSize="416,174.4" sap2010:WorkflowViewState.IdRef="Assign_75">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">[articleSummary]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String">[aiGenerateJson("summary").ToString]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <Assign sap:VirtualizedContainerService.HintSize="416,174.4" sap2010:WorkflowViewState.IdRef="Assign_76">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">[articleContent]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String">[aiGenerateJson("content").ToString]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <Assign sap:VirtualizedContainerService.HintSize="416,174.4" sap2010:WorkflowViewState.IdRef="Assign_77">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">[articleSourceText]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String">[aiGenerateJson("sourceText").ToString]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <Assign sap:VirtualizedContainerService.HintSize="416,174.4" sap2010:WorkflowViewState.IdRef="Assign_78">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">[aiTagNamesJson]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String">[aiGenerateJson("tagNames").ToString(Newtonsoft.Json.Formatting.None)]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="416,122.4" sap2010:WorkflowViewState.IdRef="WriteLine_36" Text="[&quot;Gemini generated article: &quot; + articleTitle]" />
+                      <uwah:NetHttpRequest BasicAuthPassword="{x:Null}" BasicAuthSecurePassword="{x:Null}" BasicAuthUsername="{x:Null}" BinaryPayload="{x:Null}" ClientCertPassword="{x:Null}" ClientCertPath="{x:Null}" ClientCertSecurePassword="{x:Null}" Cookies="{x:Null}" CustomNegotiatedAuthCredentials="{x:Null}" FilePath="{x:Null}" FormData="{x:Null}" LocalFiles="{x:Null}" OAuthToken="{x:Null}" OutputFileName="{x:Null}" OutputFileTargetFolder="{x:Null}" Parameters="{x:Null}" PathResource="{x:Null}" ProxyConfiguration="{x:Null}" ResourceFiles="{x:Null}" AuthenticationType="None" ContinueOnError="True" DisableSslVerification="False" DisplayName="HTTP Request" EnableCookies="True" FileOverwrite="AutoRename" FollowRedirects="True" FormDataParts="[New List (Of FormDataPart) From _&#xA;{&#xA;&#x9;New FileFormDataPart(),&#xA;&#x9;New BinaryFormDataPart(),&#xA;&#x9;New TextFormDataPart()&#xA;}]" Headers="[new System.Collections.Generic.Dictionary(Of System.String, System.String) From { { &quot;Content-Type&quot;, &quot;application/json&quot; },{ &quot;Authorization&quot;, &quot;Bearer &quot; + accessToken } }]" sap:VirtualizedContainerService.HintSize="416,432.8" sap2010:WorkflowViewState.IdRef="NetHttpRequest_17" InitialDelay="500" MaxRedirects="3" MaxRetryAfterDelay="30000" Method="POST" Multiplier="2" PreferRetryAfterValue="True" RequestBodyType="Text" RequestUrl="http://localhost:3000/articles" Result="[createArticleHttpResponse]" RetryCount="3" RetryPolicyType="Basic" RetryStatusCodes="[New List (Of System.Net.HttpStatusCode) From _&#xA;{&#xA;&#x9;System.Net.HttpStatusCode.RequestTimeout,&#xA;&#x9;System.Net.HttpStatusCode.TooManyRequests,&#xA;&#x9;System.Net.HttpStatusCode.InternalServerError,&#xA;&#x9;System.Net.HttpStatusCode.BadGateway,&#xA;&#x9;System.Net.HttpStatusCode.ServiceUnavailable,&#xA;&#x9;System.Net.HttpStatusCode.GatewayTimeout&#xA;}]" SaveRawRequestResponse="False" SaveResponseAsFile="False" TextPayload="[&quot;{&quot;&quot;title&quot;&quot;:&quot; + Newtonsoft.Json.JsonConvert.SerializeObject(articleTitle) + &quot;,&quot;&quot;summary&quot;&quot;:&quot; + Newtonsoft.Json.JsonConvert.SerializeObject(articleSummary) + &quot;,&quot;&quot;content&quot;&quot;:&quot; + Newtonsoft.Json.JsonConvert.SerializeObject(articleContent) + &quot;,&quot;&quot;sourceText&quot;&quot;:&quot; + Newtonsoft.Json.JsonConvert.SerializeObject(articleSourceText) + &quot;,&quot;&quot;sourceType&quot;&quot;:&quot;&quot;&quot; + articleSourceType + &quot;&quot;&quot;,&quot;&quot;sourceHash&quot;&quot;:&quot;&quot;&quot; + sourceHash + &quot;&quot;&quot;,&quot;&quot;createdById&quot;&quot;:4,&quot;&quot;tagNames&quot;&quot;:&quot; + aiTagNamesJson + &quot;}&quot;]" TextPayloadContentType="application/json" TextPayloadEncoding="UTF-8" TlsProtocol="Automatic" UseJitter="True" UseOsNegotiatedAuthCredentials="True">
+                        <uwah:NetHttpRequest.TimeoutInMiliseconds>
+                          <InArgument x:TypeArguments="s:Nullable(x:Int32)">
+                            <Literal x:TypeArguments="s:Nullable(x:Int32)" Value="10000" />
+                          </InArgument>
+                        </uwah:NetHttpRequest.TimeoutInMiliseconds>
+                      </uwah:NetHttpRequest>
+                      <Assign sap:VirtualizedContainerService.HintSize="416,174.4" sap2010:WorkflowViewState.IdRef="Assign_45">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">[createArticleResponse]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String">[createArticleHttpResponse.TextContent]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="416,122.4" sap2010:WorkflowViewState.IdRef="WriteLine_25" Text="[createArticleResponse]" />
+                      <Assign sap:VirtualizedContainerService.HintSize="416,174.4" sap2010:WorkflowViewState.IdRef="Assign_44">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="njl:JObject">[createArticleJson]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="njl:JObject">[Newtonsoft.Json.Linq.JObject.Parse(createArticleResponse)]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <Assign sap:VirtualizedContainerService.HintSize="416,174.4" sap2010:WorkflowViewState.IdRef="Assign_43">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:Int32">[articleId]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:Int32">[CInt(createArticleJson("id"))]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <uwah:NetHttpRequest BasicAuthPassword="{x:Null}" BasicAuthSecurePassword="{x:Null}" BasicAuthUsername="{x:Null}" BinaryPayload="{x:Null}" ClientCertPassword="{x:Null}" ClientCertPath="{x:Null}" ClientCertSecurePassword="{x:Null}" Cookies="{x:Null}" CustomNegotiatedAuthCredentials="{x:Null}" FilePath="{x:Null}" FormData="{x:Null}" LocalFiles="{x:Null}" OAuthToken="{x:Null}" OutputFileName="{x:Null}" OutputFileTargetFolder="{x:Null}" Parameters="{x:Null}" PathResource="{x:Null}" ProxyConfiguration="{x:Null}" ResourceFiles="{x:Null}" TextPayload="{x:Null}" AuthenticationType="None" ContinueOnError="True" DisableSslVerification="False" DisplayName="HTTP Request" EnableCookies="True" FileOverwrite="AutoRename" FollowRedirects="True" FormDataParts="[New List(Of FormDataPart) From {&#xA;    New FileFormDataPart(downloadedFilePath, &quot;file&quot;, &quot;text/plain&quot;)&#xA;}]" Headers="[new System.Collections.Generic.Dictionary(Of System.String, System.String) From { { &quot;Authorization&quot;, &quot;Bearer &quot; + accessToken } }]" sap:VirtualizedContainerService.HintSize="416,484.8" sap2010:WorkflowViewState.IdRef="NetHttpRequest_19" InitialDelay="500" MaxRedirects="3" MaxRetryAfterDelay="30000" Method="POST" Multiplier="2" PreferRetryAfterValue="True" RequestBodyType="MultipartFormData" RequestUrl="[&quot;http://localhost:3000/attachments/article/&quot; + articleId.ToString]" Result="[uploadAttachmentHttpResponse]" RetryCount="3" RetryPolicyType="Basic" RetryStatusCodes="[New List (Of System.Net.HttpStatusCode) From _&#xA;{&#xA;&#x9;System.Net.HttpStatusCode.RequestTimeout,&#xA;&#x9;System.Net.HttpStatusCode.TooManyRequests,&#xA;&#x9;System.Net.HttpStatusCode.InternalServerError,&#xA;&#x9;System.Net.HttpStatusCode.BadGateway,&#xA;&#x9;System.Net.HttpStatusCode.ServiceUnavailable,&#xA;&#x9;System.Net.HttpStatusCode.GatewayTimeout&#xA;}]" SaveRawRequestResponse="False" SaveResponseAsFile="False" TextPayloadContentType="application/json" TextPayloadEncoding="UTF-8" TlsProtocol="Automatic" UseJitter="True" UseOsNegotiatedAuthCredentials="True">
+                        <uwah:NetHttpRequest.TimeoutInMiliseconds>
+                          <InArgument x:TypeArguments="s:Nullable(x:Int32)">
+                            <Literal x:TypeArguments="s:Nullable(x:Int32)" Value="10000" />
+                          </InArgument>
+                        </uwah:NetHttpRequest.TimeoutInMiliseconds>
+                      </uwah:NetHttpRequest>
+                      <Assign sap:VirtualizedContainerService.HintSize="416,174.4" sap2010:WorkflowViewState.IdRef="Assign_52">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">[uploadAttachmentResponse]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String">[uploadAttachmentHttpResponse.TextContent]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="416,122.4" sap2010:WorkflowViewState.IdRef="WriteLine_32" Text="[&quot;Attachment uploaded for article ID: &quot; + articleId.ToString]" />
+                      <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="416,122.4" sap2010:WorkflowViewState.IdRef="WriteLine_24" Text="[&quot;Article created. ID: &quot; + articleId.ToString]" />
+                      <uwah:NetHttpRequest BasicAuthPassword="{x:Null}" BasicAuthSecurePassword="{x:Null}" BasicAuthUsername="{x:Null}" BinaryPayload="{x:Null}" ClientCertPassword="{x:Null}" ClientCertPath="{x:Null}" ClientCertSecurePassword="{x:Null}" Cookies="{x:Null}" CustomNegotiatedAuthCredentials="{x:Null}" FilePath="{x:Null}" FormData="{x:Null}" LocalFiles="{x:Null}" OAuthToken="{x:Null}" OutputFileName="{x:Null}" OutputFileTargetFolder="{x:Null}" Parameters="{x:Null}" PathResource="{x:Null}" ProxyConfiguration="{x:Null}" ResourceFiles="{x:Null}" AuthenticationType="None" ContinueOnError="True" DisableSslVerification="False" DisplayName="HTTP Request" EnableCookies="True" FileOverwrite="AutoRename" FollowRedirects="True" FormDataParts="[New List (Of FormDataPart) From _&#xA;{&#xA;&#x9;New FileFormDataPart(),&#xA;&#x9;New BinaryFormDataPart(),&#xA;&#x9;New TextFormDataPart()&#xA;}]" Headers="[new System.Collections.Generic.Dictionary(Of System.String, System.String) From { { &quot;Content-Type&quot;, &quot;application/json&quot; },{ &quot;Authorization&quot;, &quot;Bearer &quot; + accessToken } }]" sap:VirtualizedContainerService.HintSize="416,432.8" sap2010:WorkflowViewState.IdRef="NetHttpRequest_16" InitialDelay="500" MaxRedirects="3" MaxRetryAfterDelay="30000" Method="POST" Multiplier="2" PreferRetryAfterValue="True" RequestBodyType="Text" RequestUrl="http://localhost:3000/automation/logs" Result="[createLogHttpResponse]" RetryCount="3" RetryPolicyType="Basic" RetryStatusCodes="[New List (Of System.Net.HttpStatusCode) From _&#xA;{&#xA;&#x9;System.Net.HttpStatusCode.RequestTimeout,&#xA;&#x9;System.Net.HttpStatusCode.TooManyRequests,&#xA;&#x9;System.Net.HttpStatusCode.InternalServerError,&#xA;&#x9;System.Net.HttpStatusCode.BadGateway,&#xA;&#x9;System.Net.HttpStatusCode.ServiceUnavailable,&#xA;&#x9;System.Net.HttpStatusCode.GatewayTimeout&#xA;}]" SaveRawRequestResponse="False" SaveResponseAsFile="False" TextPayload="[&quot;{&quot;&quot;automationRunId&quot;&quot;:&quot; + automationRunId.ToString + &quot;,&quot;&quot;level&quot;&quot;:&quot;&quot;INFO&quot;&quot;,&quot;&quot;message&quot;&quot;:&quot;&quot;Article created successfully by UiPath. Article ID: &quot; + articleId.ToString + &quot;&quot;&quot;,&quot;&quot;fileName&quot;&quot;:&quot; + Newtonsoft.Json.JsonConvert.SerializeObject(inputFileName) + &quot;}&quot;]" TextPayloadContentType="application/json" TextPayloadEncoding="UTF-8" TlsProtocol="Automatic" UseJitter="True" UseOsNegotiatedAuthCredentials="True">
+                        <uwah:NetHttpRequest.TimeoutInMiliseconds>
+                          <InArgument x:TypeArguments="s:Nullable(x:Int32)">
+                            <Literal x:TypeArguments="s:Nullable(x:Int32)" Value="10000" />
+                          </InArgument>
+                        </uwah:NetHttpRequest.TimeoutInMiliseconds>
+                      </uwah:NetHttpRequest>
+                      <Assign sap:VirtualizedContainerService.HintSize="416,174.4" sap2010:WorkflowViewState.IdRef="Assign_42">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">[createLogResponse]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String">[createLogHttpResponse.TextContent]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="416,122.4" sap2010:WorkflowViewState.IdRef="WriteLine_22" Text="Automation log created." />
+                      <uwah:NetHttpRequest BasicAuthPassword="{x:Null}" BasicAuthSecurePassword="{x:Null}" BasicAuthUsername="{x:Null}" BinaryPayload="{x:Null}" ClientCertPassword="{x:Null}" ClientCertPath="{x:Null}" ClientCertSecurePassword="{x:Null}" Cookies="{x:Null}" CustomNegotiatedAuthCredentials="{x:Null}" FilePath="{x:Null}" FormData="{x:Null}" LocalFiles="{x:Null}" OAuthToken="{x:Null}" OutputFileName="{x:Null}" OutputFileTargetFolder="{x:Null}" Parameters="{x:Null}" PathResource="{x:Null}" ProxyConfiguration="{x:Null}" ResourceFiles="{x:Null}" AuthenticationType="None" ContinueOnError="True" DisableSslVerification="False" DisplayName="HTTP Request" EnableCookies="True" FileOverwrite="AutoRename" FollowRedirects="True" FormDataParts="[New List (Of FormDataPart) From _&#xA;{&#xA;&#x9;New FileFormDataPart(),&#xA;&#x9;New BinaryFormDataPart(),&#xA;&#x9;New TextFormDataPart()&#xA;}]" Headers="[new System.Collections.Generic.Dictionary(Of System.String, System.String) From { { &quot;Content-Type&quot;, &quot;application/json&quot; },{ &quot;Authorization&quot;, &quot;Bearer &quot; + accessToken } }]" sap:VirtualizedContainerService.HintSize="416,432.8" sap2010:WorkflowViewState.IdRef="NetHttpRequest_15" InitialDelay="500" MaxRedirects="3" MaxRetryAfterDelay="30000" Method="PATCH" Multiplier="2" PreferRetryAfterValue="True" RequestBodyType="Text" RequestUrl="[&quot;http://localhost:3000/automation/runs/&quot; + automationRunId.ToString]" Result="[updateRunHttpResponse]" RetryCount="3" RetryPolicyType="Basic" RetryStatusCodes="[New List (Of System.Net.HttpStatusCode) From _&#xA;{&#xA;&#x9;System.Net.HttpStatusCode.RequestTimeout,&#xA;&#x9;System.Net.HttpStatusCode.TooManyRequests,&#xA;&#x9;System.Net.HttpStatusCode.InternalServerError,&#xA;&#x9;System.Net.HttpStatusCode.BadGateway,&#xA;&#x9;System.Net.HttpStatusCode.ServiceUnavailable,&#xA;&#x9;System.Net.HttpStatusCode.GatewayTimeout&#xA;}]" SaveRawRequestResponse="False" SaveResponseAsFile="False" TextPayload="{}{&quot;status&quot;:&quot;SUCCESS&quot;,&quot;totalScanned&quot;:1,&quot;totalCreated&quot;:1,&quot;totalUpdated&quot;:0,&quot;totalDuplicates&quot;:0,&quot;totalFailed&quot;:0,&quot;summaryEmailSent&quot;:false}" TextPayloadContentType="application/json" TextPayloadEncoding="UTF-8" TlsProtocol="Automatic" UseJitter="True" UseOsNegotiatedAuthCredentials="True">
+                        <uwah:NetHttpRequest.TimeoutInMiliseconds>
+                          <InArgument x:TypeArguments="s:Nullable(x:Int32)">
+                            <Literal x:TypeArguments="s:Nullable(x:Int32)" Value="10000" />
+                          </InArgument>
+                        </uwah:NetHttpRequest.TimeoutInMiliseconds>
+                      </uwah:NetHttpRequest>
+                      <Assign sap:VirtualizedContainerService.HintSize="416,174.4" sap2010:WorkflowViewState.IdRef="Assign_41">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">[updateRunResponse]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String">[updateRunHttpResponse.TextContent]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="416,122.4" sap2010:WorkflowViewState.IdRef="WriteLine_23" Text="Automation run marked as SUCCESS." />
+                      <uga:MoveFileConnections BrowserFileId="{x:Null}" ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" FileFriendlyName="{x:Null}" Folder="{x:Null}" FolderIdBackup="{x:Reference __ReferenceID6}" ManualFileId="{x:Null}" ManualFolderId="{x:Null}" NewFileName="{x:Null}" Result="{x:Null}" AuthScopesInvalid="False" BrowserFolderId="https://drive.google.com/drive/folders/1Alec2RBdRXwMAYyLV8gwJ2zxbljEh2tL" ConflictResolution="AddSeparate" ConnectionId="a494af79-e803-4062-948e-fd934adb5859" DisplayName="Move File or Folder" File="[CurrentItem]" FileInputMode="UseExisting" FolderFriendlyName="Processed" FolderInputMode="Browse" sap:VirtualizedContainerService.HintSize="416,340.8" sap2010:WorkflowViewState.IdRef="MoveFileConnections_2" UseConnectionService="True">
+                        <uga:MoveFileConnections.Destination>
+                          <ugam:DriveItemArgument ConnectionDescriptor="{x:Null}" Existing="{x:Null}" FullPath="{x:Null}" IdOrUrl="{x:Null}" ParentId="{x:Null}" ParentIdFriendlyName="{x:Null}" RelativePath="{x:Null}" BrowserId="https://drive.google.com/drive/folders/1Alec2RBdRXwMAYyLV8gwJ2zxbljEh2tL" ConnectionKey="a494af79-e803-4062-948e-fd934adb5859" FriendlyName="Processed" FullPathHint="My Drive/DHL RPA Input/Processed" InputMode="Browse">
+                            <ugam:DriveItemArgument.Backup>
+                              <usau:BackupSlot x:TypeArguments="ugade:EDriveItemMode" x:Name="__ReferenceID6" StoredValue="Browse">
+                                <usau:BackupSlot.BackupValues>
+                                  <scg:Dictionary x:TypeArguments="ugade:EDriveItemMode, scg:List(x:Object)" />
+                                </usau:BackupSlot.BackupValues>
+                              </usau:BackupSlot>
+                            </ugam:DriveItemArgument.Backup>
+                            <ugam:DriveItemArgument.DriveId>
+                              <InArgument x:TypeArguments="x:String" />
+                            </ugam:DriveItemArgument.DriveId>
+                            <ugam:DriveItemArgument.ParentIdFullPathHint>
+                              <InArgument x:TypeArguments="x:String">
+                                <Literal x:TypeArguments="x:String" Value="" />
+                              </InArgument>
+                            </ugam:DriveItemArgument.ParentIdFullPathHint>
+                          </ugam:DriveItemArgument>
+                        </uga:MoveFileConnections.Destination>
+                        <uga:MoveFileConnections.FileIdBackup>
+                          <usau:BackupSlot x:TypeArguments="ugade:EDriveItemMode" x:Name="__ReferenceID7" StoredValue="UseExisting">
+                            <usau:BackupSlot.BackupValues>
+                              <scg:List x:TypeArguments="x:Object" x:Key="Browse" Capacity="3">
+                                <InArgument x:TypeArguments="x:String">https://drive.google.com/drive/folders/1ZMZCZ6Irk3azZOzGJrEBUdo_SFBq_zIM</InArgument>
+                                <InArgument x:TypeArguments="x:String" />
+                                <InArgument x:TypeArguments="x:String">Duplicate</InArgument>
+                              </scg:List>
+                            </usau:BackupSlot.BackupValues>
+                          </usau:BackupSlot>
+                        </uga:MoveFileConnections.FileIdBackup>
+                        <uga:MoveFileConnections.Item>
+                          <ugam:DriveItemArgument Backup="{x:Reference __ReferenceID7}" BrowserId="{x:Null}" ConnectionDescriptor="{x:Null}" DriveId="{x:Null}" FriendlyName="{x:Null}" FullPath="{x:Null}" IdOrUrl="{x:Null}" ParentId="{x:Null}" ParentIdFriendlyName="{x:Null}" RelativePath="{x:Null}" ConnectionKey="a494af79-e803-4062-948e-fd934adb5859" Existing="[CurrentItem]" FullPathHint="My Drive/DHL RPA Input/Duplicate" InputMode="UseExisting">
+                            <ugam:DriveItemArgument.ParentIdFullPathHint>
+                              <InArgument x:TypeArguments="x:String">
+                                <Literal x:TypeArguments="x:String" Value="" />
+                              </InArgument>
+                            </ugam:DriveItemArgument.ParentIdFullPathHint>
+                          </ugam:DriveItemArgument>
+                        </uga:MoveFileConnections.Item>
+                      </uga:MoveFileConnections>
+                      <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="416,122.4" sap2010:WorkflowViewState.IdRef="WriteLine_31" Text="Moved processed file to Processed folder." />
+                      <Assign sap:VirtualizedContainerService.HintSize="416,165.6" sap2010:WorkflowViewState.IdRef="Assign_64">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:Int32">[totalCreated]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:Int32">[totalCreated + 1]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                    </Sequence>
+                  </If.Else>
+                </If>
+              </Sequence>
+            </TryCatch.Try>
+            <TryCatch.Catches>
+              <Catch x:TypeArguments="s:Exception" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+                <ActivityAction x:TypeArguments="s:Exception">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="Catch - Exception" sap:VirtualizedContainerService.HintSize="484.8,1921.6" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <Assign sap:VirtualizedContainerService.HintSize="416,174.4" sap2010:WorkflowViewState.IdRef="Assign_59">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:String">[errorMessage]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:String">[If(exception Is Nothing, "Unknown error", exception.Message)]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                    <Assign sap:VirtualizedContainerService.HintSize="416,174.4" sap2010:WorkflowViewState.IdRef="Assign_60">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:Int32">[totalFailed]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:Int32">[totalFailed + 1]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                    <Assign sap:VirtualizedContainerService.HintSize="416,174.4" sap2010:WorkflowViewState.IdRef="Assign_61">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:String">[screenshotPath]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:String">[If(String.IsNullOrWhiteSpace(screenshotFolder), "", System.IO.Path.Combine(screenshotFolder, "error_" + DateTime.Now.ToString("yyyyMMdd_HHmmss") + ".png"))]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                    <uix:NTakeScreenshot DisplayName="Take Screenshot" FileName="[screenshotPath]" FileNameMode="[UiPath.UIAutomationNext.Enums.NFileNameMode.DateTime]" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,276.8" sap2010:WorkflowViewState.IdRef="NTakeScreenshot_1" Version="V5" />
+                    <uwah:NetHttpRequest BasicAuthPassword="{x:Null}" BasicAuthSecurePassword="{x:Null}" BasicAuthUsername="{x:Null}" BinaryPayload="{x:Null}" ClientCertPassword="{x:Null}" ClientCertPath="{x:Null}" ClientCertSecurePassword="{x:Null}" Cookies="{x:Null}" CustomNegotiatedAuthCredentials="{x:Null}" FilePath="{x:Null}" FormData="{x:Null}" LocalFiles="{x:Null}" OAuthToken="{x:Null}" OutputFileName="{x:Null}" OutputFileTargetFolder="{x:Null}" Parameters="{x:Null}" PathResource="{x:Null}" ProxyConfiguration="{x:Null}" ResourceFiles="{x:Null}" AuthenticationType="None" ContinueOnError="True" DisableSslVerification="False" DisplayName="HTTP Request" EnableCookies="True" FileOverwrite="AutoRename" FollowRedirects="True" FormDataParts="[New List (Of FormDataPart) From _&#xA;{&#xA;&#x9;New FileFormDataPart(),&#xA;&#x9;New BinaryFormDataPart(),&#xA;&#x9;New TextFormDataPart()&#xA;}]" Headers="[new System.Collections.Generic.Dictionary(Of System.String, System.String) From { { &quot;Content-Type&quot;, &quot;application/json&quot; },{ &quot;Authorization&quot;, &quot;Bearer &quot; + accessToken } }]" sap:VirtualizedContainerService.HintSize="416,432.8" sap2010:WorkflowViewState.IdRef="NetHttpRequest_20" InitialDelay="500" MaxRedirects="3" MaxRetryAfterDelay="30000" Method="POST" Multiplier="2" PreferRetryAfterValue="True" RequestBodyType="Text" RequestUrl="http://localhost:3000/automation/logs" RetryCount="3" RetryPolicyType="Basic" RetryStatusCodes="[New List (Of System.Net.HttpStatusCode) From _&#xA;{&#xA;&#x9;System.Net.HttpStatusCode.RequestTimeout,&#xA;&#x9;System.Net.HttpStatusCode.TooManyRequests,&#xA;&#x9;System.Net.HttpStatusCode.InternalServerError,&#xA;&#x9;System.Net.HttpStatusCode.BadGateway,&#xA;&#x9;System.Net.HttpStatusCode.ServiceUnavailable,&#xA;&#x9;System.Net.HttpStatusCode.GatewayTimeout&#xA;}]" SaveRawRequestResponse="False" SaveResponseAsFile="False" TextPayload="[&quot;{&quot;&quot;automationRunId&quot;&quot;:&quot; + automationRunId.ToString + &quot;,&quot;&quot;level&quot;&quot;:&quot;&quot;ERROR&quot;&quot;,&quot;&quot;message&quot;&quot;:&quot; + Newtonsoft.Json.JsonConvert.SerializeObject(&quot;File processing failed: &quot; + If(String.IsNullOrWhiteSpace(errorMessage), &quot;Unknown error&quot;, errorMessage)) + &quot;,&quot;&quot;fileName&quot;&quot;:&quot; + Newtonsoft.Json.JsonConvert.SerializeObject(If(String.IsNullOrWhiteSpace(inputFileName), &quot;Unknown file&quot;, inputFileName)) + &quot;,&quot;&quot;screenshotPath&quot;&quot;:&quot; + Newtonsoft.Json.JsonConvert.SerializeObject(If(String.IsNullOrWhiteSpace(screenshotPath), &quot;&quot;, screenshotPath)) + &quot;}&quot;]" TextPayloadContentType="application/json" TextPayloadEncoding="UTF-8" TlsProtocol="Automatic" UseJitter="True" UseOsNegotiatedAuthCredentials="True">
+                      <uwah:NetHttpRequest.TimeoutInMiliseconds>
+                        <InArgument x:TypeArguments="s:Nullable(x:Int32)">
+                          <Literal x:TypeArguments="s:Nullable(x:Int32)" Value="10000" />
+                        </InArgument>
+                      </uwah:NetHttpRequest.TimeoutInMiliseconds>
+                    </uwah:NetHttpRequest>
+                    <Assign sap:VirtualizedContainerService.HintSize="416,174.4" sap2010:WorkflowViewState.IdRef="Assign_62">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:String">[createLogResponse]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:String">[If(createLogHttpResponse Is Nothing, "", createLogHttpResponse.TextContent)]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                    <uga:MoveFileConnections BrowserFileId="{x:Null}" ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" FileFriendlyName="{x:Null}" Folder="{x:Null}" FolderIdBackup="{x:Reference __ReferenceID8}" ManualFileId="{x:Null}" ManualFolderId="{x:Null}" NewFileName="{x:Null}" Result="{x:Null}" AuthScopesInvalid="False" BrowserFolderId="https://drive.google.com/drive/folders/16GNR33OTsxrXRYW_OxprNCd0nTkak0vg" ConflictResolution="AddSeparate" ConnectionId="a494af79-e803-4062-948e-fd934adb5859" DisplayName="Move File or Folder" File="[CurrentItem]" FileInputMode="UseExisting" FolderFriendlyName="Failed" FolderInputMode="Browse" sap:VirtualizedContainerService.HintSize="416,340.8" sap2010:WorkflowViewState.IdRef="MoveFileConnections_3" UseConnectionService="True">
+                      <uga:MoveFileConnections.Destination>
+                        <ugam:DriveItemArgument ConnectionDescriptor="{x:Null}" Existing="{x:Null}" FullPath="{x:Null}" IdOrUrl="{x:Null}" ParentId="{x:Null}" ParentIdFriendlyName="{x:Null}" RelativePath="{x:Null}" BrowserId="https://drive.google.com/drive/folders/16GNR33OTsxrXRYW_OxprNCd0nTkak0vg" ConnectionKey="a494af79-e803-4062-948e-fd934adb5859" FriendlyName="Failed" FullPathHint="My Drive/DHL RPA Input/Failed" InputMode="Browse">
+                          <ugam:DriveItemArgument.Backup>
+                            <usau:BackupSlot x:TypeArguments="ugade:EDriveItemMode" x:Name="__ReferenceID8" StoredValue="Browse">
+                              <usau:BackupSlot.BackupValues>
+                                <scg:Dictionary x:TypeArguments="ugade:EDriveItemMode, scg:List(x:Object)" />
+                              </usau:BackupSlot.BackupValues>
+                            </usau:BackupSlot>
+                          </ugam:DriveItemArgument.Backup>
+                          <ugam:DriveItemArgument.DriveId>
+                            <InArgument x:TypeArguments="x:String" />
+                          </ugam:DriveItemArgument.DriveId>
+                          <ugam:DriveItemArgument.ParentIdFullPathHint>
+                            <InArgument x:TypeArguments="x:String">
+                              <Literal x:TypeArguments="x:String" Value="" />
+                            </InArgument>
+                          </ugam:DriveItemArgument.ParentIdFullPathHint>
+                        </ugam:DriveItemArgument>
+                      </uga:MoveFileConnections.Destination>
+                      <uga:MoveFileConnections.FileIdBackup>
+                        <usau:BackupSlot x:TypeArguments="ugade:EDriveItemMode" x:Name="__ReferenceID9" StoredValue="UseExisting">
+                          <usau:BackupSlot.BackupValues>
+                            <scg:List x:TypeArguments="x:Object" x:Key="Browse" Capacity="3">
+                              <InArgument x:TypeArguments="x:String">https://drive.google.com/drive/folders/16GNR33OTsxrXRYW_OxprNCd0nTkak0vg</InArgument>
+                              <InArgument x:TypeArguments="x:String" />
+                              <InArgument x:TypeArguments="x:String">Failed</InArgument>
+                            </scg:List>
+                          </usau:BackupSlot.BackupValues>
+                        </usau:BackupSlot>
+                      </uga:MoveFileConnections.FileIdBackup>
+                      <uga:MoveFileConnections.Item>
+                        <ugam:DriveItemArgument Backup="{x:Reference __ReferenceID9}" BrowserId="{x:Null}" ConnectionDescriptor="{x:Null}" DriveId="{x:Null}" FriendlyName="{x:Null}" FullPath="{x:Null}" IdOrUrl="{x:Null}" ParentId="{x:Null}" ParentIdFriendlyName="{x:Null}" RelativePath="{x:Null}" ConnectionKey="a494af79-e803-4062-948e-fd934adb5859" Existing="[CurrentItem]" FullPathHint="My Drive/DHL RPA Input/Failed" InputMode="UseExisting">
+                          <ugam:DriveItemArgument.ParentIdFullPathHint>
+                            <InArgument x:TypeArguments="x:String">
+                              <Literal x:TypeArguments="x:String" Value="" />
+                            </InArgument>
+                          </ugam:DriveItemArgument.ParentIdFullPathHint>
+                        </ugam:DriveItemArgument>
+                      </uga:MoveFileConnections.Item>
+                    </uga:MoveFileConnections>
+                    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="416,113.6" sap2010:WorkflowViewState.IdRef="WriteLine_33" Text="Failed file moved to Failed folder." />
+                  </Sequence>
+                </ActivityAction>
+              </Catch>
+            </TryCatch.Catches>
+            <TryCatch.Finally>
+              <Sequence DisplayName="Finally" sap:VirtualizedContainerService.HintSize="484.8,89.6" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </Sequence>
+            </TryCatch.Finally>
+          </TryCatch>
+        </ActivityAction>
+      </uga:ForEachFileFolderConnections.Body>
+      <uga:ForEachFileFolderConnections.FilterSelectionBackup>
+        <usau:BackupSlot x:TypeArguments="ugae:FilterMode" StoredValue="ConditionBuilder">
+          <usau:BackupSlot.BackupValues>
+            <scg:Dictionary x:TypeArguments="ugae:FilterMode, scg:List(x:Object)" />
+          </usau:BackupSlot.BackupValues>
+        </usau:BackupSlot>
+      </uga:ForEachFileFolderConnections.FilterSelectionBackup>
+      <uga:ForEachFileFolderConnections.Item>
+        <ugam:DriveItemArgument ConnectionDescriptor="{x:Null}" Existing="{x:Null}" FullPath="{x:Null}" IdOrUrl="{x:Null}" ParentId="{x:Null}" ParentIdFriendlyName="{x:Null}" RelativePath="{x:Null}" BrowserId="https://drive.google.com/drive/folders/1HEQMNuXMAn4TAa1e0XDYm8ff3ZNtUk5v" ConnectionKey="fc30d4f0-83c2-4718-bd5c-5967dcea892a" FriendlyName="New" FullPathHint="My Drive/DHL RPA Input/New" InputMode="Browse">
+          <ugam:DriveItemArgument.Backup>
+            <usau:BackupSlot x:TypeArguments="ugade:EDriveItemMode" StoredValue="Browse">
+              <usau:BackupSlot.BackupValues>
+                <scg:Dictionary x:TypeArguments="ugade:EDriveItemMode, scg:List(x:Object)" />
+              </usau:BackupSlot.BackupValues>
+            </usau:BackupSlot>
+          </ugam:DriveItemArgument.Backup>
+          <ugam:DriveItemArgument.DriveId>
+            <InArgument x:TypeArguments="x:String" />
+          </ugam:DriveItemArgument.DriveId>
+          <ugam:DriveItemArgument.ParentIdFullPathHint>
+            <InArgument x:TypeArguments="x:String">
+              <Literal x:TypeArguments="x:String" Value="" />
+            </InArgument>
+          </ugam:DriveItemArgument.ParentIdFullPathHint>
+        </ugam:DriveItemArgument>
+      </uga:ForEachFileFolderConnections.Item>
+    </uga:ForEachFileFolderConnections>
+    <Assign sap:VirtualizedContainerService.HintSize="512,174.4" sap2010:WorkflowViewState.IdRef="Assign_65">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[summaryBody]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String" xml:space="preserve">[String.Join(Environment.NewLine, New String() {
+"DHL RPA Automation Summary",
+"Automation Run ID: " + automationRunId.ToString,
+"Total scanned: " + totalScanned.ToString,
+"Total created: " + totalCreated.ToString,
+"Total duplicates: " + totalDuplicates.ToString,
+"Total failed: " + totalFailed.ToString,
+"Completed at: " + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")
+})]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <uga:SendEmailConnections ArgumentAttachmentPaths="{x:Null}" ArgumentAttachments="{x:Null}" AttachmentPaths="{x:Null}" Bcc="{x:Null}" Cc="{x:Null}" ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" ReplyTo="{x:Null}" SingleAttachment="{x:Null}" TextBody="{x:Null}" AttachmentInputMode="UseExisting" AuthScopesInvalid="False" Body="[summaryBody]" ConnectionId="c4a4f233-0d69-458a-97e7-daa92fc5e187" DisplayName="Send Email" sap:VirtualizedContainerService.HintSize="512,512.8" sap2010:WorkflowViewState.IdRef="SendEmailConnections_1" Importance="Normal" InputType="HTML" SaveAsDraft="False" Subject="DHL RPA Automation Run Summary" To="[New String(){&quot;faiyaz1832004@gmail.com&quot;}]" UseConnectionService="True">
+      <uga:SendEmailConnections.Attachments>
+        <InArgument x:TypeArguments="scg:IEnumerable(upr:IResource)" />
+      </uga:SendEmailConnections.Attachments>
+      <uga:SendEmailConnections.AttachmentsBackup>
+        <usau:BackupSlot x:TypeArguments="ugage:AttachmentInputMode" StoredValue="UseExisting">
+          <usau:BackupSlot.BackupValues>
+            <scg:Dictionary x:TypeArguments="ugage:AttachmentInputMode, scg:List(x:Object)" />
+          </usau:BackupSlot.BackupValues>
+        </usau:BackupSlot>
+      </uga:SendEmailConnections.AttachmentsBackup>
+      <uga:SendEmailConnections.InputTypeBackup>
+        <usau:BackupSlot x:TypeArguments="ugage:BodyInputType" StoredValue="HTML">
+          <usau:BackupSlot.BackupValues>
+            <scg:Dictionary x:TypeArguments="ugage:BodyInputType, scg:List(x:Object)" />
+          </usau:BackupSlot.BackupValues>
+        </usau:BackupSlot>
+      </uga:SendEmailConnections.InputTypeBackup>
+    </uga:SendEmailConnections>
+    <Assign sap:VirtualizedContainerService.HintSize="512,174.4" sap2010:WorkflowViewState.IdRef="Assign_66">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:Boolean">[summaryEmailSent]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:Boolean">[True]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="512,122.4" sap2010:WorkflowViewState.IdRef="WriteLine_34" Text="Summary email sent." />
+    <uwah:NetHttpRequest BasicAuthPassword="{x:Null}" BasicAuthSecurePassword="{x:Null}" BasicAuthUsername="{x:Null}" BinaryPayload="{x:Null}" ClientCertPassword="{x:Null}" ClientCertPath="{x:Null}" ClientCertSecurePassword="{x:Null}" Cookies="{x:Null}" CustomNegotiatedAuthCredentials="{x:Null}" FilePath="{x:Null}" FormData="{x:Null}" LocalFiles="{x:Null}" OAuthToken="{x:Null}" OutputFileName="{x:Null}" OutputFileTargetFolder="{x:Null}" Parameters="{x:Null}" PathResource="{x:Null}" ProxyConfiguration="{x:Null}" ResourceFiles="{x:Null}" AuthenticationType="None" ContinueOnError="True" DisableSslVerification="False" DisplayName="HTTP Request" EnableCookies="True" FileOverwrite="AutoRename" FollowRedirects="True" FormDataParts="[New List (Of FormDataPart) From _&#xA;{&#xA;&#x9;New FileFormDataPart(),&#xA;&#x9;New BinaryFormDataPart(),&#xA;&#x9;New TextFormDataPart()&#xA;}]" Headers="[new System.Collections.Generic.Dictionary(Of System.String, System.String) From { { &quot;Content-Type&quot;, &quot;application/json&quot; },{ &quot;Authorization&quot;, &quot;Bearer &quot; + accessToken } }]" sap:VirtualizedContainerService.HintSize="512,432.8" sap2010:WorkflowViewState.IdRef="NetHttpRequest_21" InitialDelay="500" MaxRedirects="3" MaxRetryAfterDelay="30000" Method="PATCH" Multiplier="2" PreferRetryAfterValue="True" RequestBodyType="Text" RequestUrl="[&quot;http://localhost:3000/automation/runs/&quot; + automationRunId.ToString]" Result="[updateRunHttpResponse]" RetryCount="3" RetryPolicyType="Basic" RetryStatusCodes="[New List (Of System.Net.HttpStatusCode) From _&#xA;{&#xA;&#x9;System.Net.HttpStatusCode.RequestTimeout,&#xA;&#x9;System.Net.HttpStatusCode.TooManyRequests,&#xA;&#x9;System.Net.HttpStatusCode.InternalServerError,&#xA;&#x9;System.Net.HttpStatusCode.BadGateway,&#xA;&#x9;System.Net.HttpStatusCode.ServiceUnavailable,&#xA;&#x9;System.Net.HttpStatusCode.GatewayTimeout&#xA;}]" SaveRawRequestResponse="False" SaveResponseAsFile="False" TextPayload="[&quot;{&quot;&quot;status&quot;&quot;:&quot;&quot;&quot; + If(totalFailed &gt; 0 And (totalCreated + totalDuplicates) &gt; 0, &quot;PARTIAL_SUCCESS&quot;, If(totalFailed &gt; 0, &quot;FAILED&quot;, &quot;SUCCESS&quot;)) + &quot;&quot;&quot;,&quot;&quot;totalScanned&quot;&quot;:&quot; + totalScanned.ToString + &quot;,&quot;&quot;totalCreated&quot;&quot;:&quot; + totalCreated.ToString + &quot;,&quot;&quot;totalUpdated&quot;&quot;:0,&quot;&quot;totalDuplicates&quot;&quot;:&quot; + totalDuplicates.ToString + &quot;,&quot;&quot;totalFailed&quot;&quot;:&quot; + totalFailed.ToString + &quot;,&quot;&quot;summaryEmailSent&quot;&quot;:&quot; + summaryEmailSent.ToString.ToLower + &quot;}&quot;]" TextPayloadContentType="application/json" TextPayloadEncoding="UTF-8" TlsProtocol="Automatic" UseJitter="True" UseOsNegotiatedAuthCredentials="True">
+      <uwah:NetHttpRequest.TimeoutInMiliseconds>
+        <InArgument x:TypeArguments="s:Nullable(x:Int32)">
+          <Literal x:TypeArguments="s:Nullable(x:Int32)" Value="10000" />
+        </InArgument>
+      </uwah:NetHttpRequest.TimeoutInMiliseconds>
+    </uwah:NetHttpRequest>
+    <Assign sap:VirtualizedContainerService.HintSize="512,174.4" sap2010:WorkflowViewState.IdRef="Assign_67">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[updateRunResponse]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[updateRunHttpResponse.TextContent]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="512,113.6" sap2010:WorkflowViewState.IdRef="WriteLine_35" Text="Final automation run summary updated." />
+  </Sequence>
+</Activity>

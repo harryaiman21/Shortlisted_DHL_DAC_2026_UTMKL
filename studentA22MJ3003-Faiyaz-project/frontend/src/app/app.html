@@ -1,0 +1,62 @@
+<router-outlet *ngIf="isLoginPage()"></router-outlet>
+
+<div class="app-shell" *ngIf="!isLoginPage()">
+  <aside class="sidebar">
+    <div class="brand-block">
+      <img src="/dhl-logo.png" alt="DHL Logo" class="brand-logo" width="fill-available" height="fill-available" />
+    </div>
+
+    <nav class="nav-menu">
+      <a routerLink="/dashboard" routerLinkActive="active">Dashboard</a>
+    
+      <a routerLink="/articles" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+        Knowledge Articles
+      </a>
+    
+      <a *ngIf="hasRole(['ADMIN', 'EDITOR'])" routerLink="/articles/create" routerLinkActive="active">
+        Create Draft
+      </a>
+    
+      <a *ngIf="hasRole(['ADMIN', 'EDITOR'])" routerLink="/upload" routerLinkActive="active">
+        Upload Console
+      </a>
+    
+      <a *ngIf="hasRole(['ADMIN', 'REVIEWER'])" routerLink="/automation" routerLinkActive="active">
+        Automation Runs
+      </a>
+
+      <a *ngIf="hasRole(['ADMIN'])" routerLink="/admin/users" routerLinkActive="active">
+        User Management
+      </a>
+    </nav>
+
+    <div class="sidebar-footer">
+      <span>DAC 3.0 Challenge</span>
+      <strong>DHL Logistics Operations</strong>
+    </div>
+  </aside>
+
+  <main class="main-area">
+    <header class="topbar">
+      <div>
+        <h2>DHL Knowledge Base Automation Portal</h2>
+        <p>Transforming unstructured logistics input into reusable SOP articles</p>
+      </div>
+
+      <div class="topbar-actions" *ngIf="currentUser">
+        <div class="user-pill">
+          <span class="user-dot"></span>
+          {{ currentUser.name }} · {{ currentUser.role }}
+        </div>
+      
+        <button class="logout-btn" type="button" (click)="logout()">
+          Logout
+        </button>
+      </div>
+    </header>
+
+    <section class="content-area">
+      <router-outlet></router-outlet>
+    </section>
+  </main>
+</div>

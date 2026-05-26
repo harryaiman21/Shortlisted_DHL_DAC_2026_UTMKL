@@ -1,0 +1,1251 @@
+05/19/2026 22:29:05 => [Trace] Execution started for project: DHL_KB_RPA_Automation
+05/19/2026 22:29:07 => [Information] DHL_KB_RPA_Automation execution started
+{
+  "message": "DHL_KB_RPA_Automation execution started",
+  "level": "Information",
+  "logType": "Default",
+  "timeStamp": "22:29:07",
+  "fileName": "Main",
+  "initiatedBy": "Studio",
+  "jobId": "759e6a5c-5c28-44d8-a1d7-a7f63986adc2",
+  "robotName": "faiyaz@graduate.utm.my-attended",
+  "machineId": 293988,
+  "robotVersion": "26.0.193-cloud.23060",
+  "userKey": "d4f5d8cd-55df-40f0-b703-8188af30fb0e",
+  "processVersion": "1.0.3",
+  "organizationUnitId": 958190,
+  "businessOperationId": "3114d24be4134e3c88230d56a586cce9-a726d83b80854dc2864766df13bc3f1a"
+}
+05/19/2026 22:29:07 => [Trace] DHL RPA started
+{
+  "message": "DHL RPA started",
+  "level": "Trace",
+  "logType": "User",
+  "timeStamp": "22:29:07",
+  "jobId": "759e6a5c-5c28-44d8-a1d7-a7f63986adc2",
+  "robotName": "faiyaz@graduate.utm.my-attended",
+  "machineId": 293988,
+  "robotVersion": "26.0.193-cloud.23060",
+  "userKey": "d4f5d8cd-55df-40f0-b703-8188af30fb0e",
+  "processVersion": "1.0.3",
+  "organizationUnitId": 958190,
+  "businessOperationId": "3114d24be4134e3c88230d56a586cce9-a726d83b80854dc2864766df13bc3f1a"
+}
+05/19/2026 22:29:08 => [Trace] {"accessToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjQsImVtYWlsIjoicnBhLWJvdEBkaGwta2IuY29tIiwicm9sZSI6IlJQQV9CT1QiLCJpYXQiOjE3NzkyMDA5NDgsImV4cCI6MTc3OTIwODE0OH0.qPKbWwWZ1VMfLTUokFg4IbDU3jeu792_O6k0X7zVobk","user":{"id":4,"name":"RPA Bot","email":"rpa-bot@dhl-kb.com","role":"RPA_BOT"}}
+{
+  "message": "{\"accessToken\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjQsImVtYWlsIjoicnBhLWJvdEBkaGwta2IuY29tIiwicm9sZSI6IlJQQV9CT1QiLCJpYXQiOjE3NzkyMDA5NDgsImV4cCI6MTc3OTIwODE0OH0.qPKbWwWZ1VMfLTUokFg4IbDU3jeu792_O6k0X7zVobk\",\"user\":{\"id\":4,\"name\":\"RPA Bot\",\"email\":\"rpa-bot@dhl-kb.com\",\"role\":\"RPA_BOT\"}}",
+  "level": "Trace",
+  "logType": "User",
+  "timeStamp": "22:29:08",
+  "jobId": "759e6a5c-5c28-44d8-a1d7-a7f63986adc2",
+  "robotName": "faiyaz@graduate.utm.my-attended",
+  "machineId": 293988,
+  "robotVersion": "26.0.193-cloud.23060",
+  "userKey": "d4f5d8cd-55df-40f0-b703-8188af30fb0e",
+  "processVersion": "1.0.3",
+  "organizationUnitId": 958190,
+  "businessOperationId": "3114d24be4134e3c88230d56a586cce9-a726d83b80854dc2864766df13bc3f1a"
+}
+05/19/2026 22:29:08 => [Trace] Login successful. Token extracted.
+{
+  "message": "Login successful. Token extracted.",
+  "level": "Trace",
+  "logType": "User",
+  "timeStamp": "22:29:08",
+  "jobId": "759e6a5c-5c28-44d8-a1d7-a7f63986adc2",
+  "robotName": "faiyaz@graduate.utm.my-attended",
+  "machineId": 293988,
+  "robotVersion": "26.0.193-cloud.23060",
+  "userKey": "d4f5d8cd-55df-40f0-b703-8188af30fb0e",
+  "processVersion": "1.0.3",
+  "organizationUnitId": 958190,
+  "businessOperationId": "3114d24be4134e3c88230d56a586cce9-a726d83b80854dc2864766df13bc3f1a"
+}
+05/19/2026 22:29:08 => [Trace] Automation run created. ID: 72
+{
+  "message": "Automation run created. ID: 72",
+  "level": "Trace",
+  "logType": "User",
+  "timeStamp": "22:29:08",
+  "jobId": "759e6a5c-5c28-44d8-a1d7-a7f63986adc2",
+  "robotName": "faiyaz@graduate.utm.my-attended",
+  "machineId": 293988,
+  "robotVersion": "26.0.193-cloud.23060",
+  "userKey": "d4f5d8cd-55df-40f0-b703-8188af30fb0e",
+  "processVersion": "1.0.3",
+  "organizationUnitId": 958190,
+  "businessOperationId": "3114d24be4134e3c88230d56a586cce9-a726d83b80854dc2864766df13bc3f1a"
+}
+05/19/2026 22:29:15 => [Trace] Gmail email exported to Drive queue: DHL KB Source Submission - Delivery Address Change SOP
+{
+  "message": "Gmail email exported to Drive queue: DHL KB Source Submission - Delivery Address Change SOP",
+  "level": "Trace",
+  "logType": "User",
+  "timeStamp": "22:29:15",
+  "jobId": "759e6a5c-5c28-44d8-a1d7-a7f63986adc2",
+  "robotName": "faiyaz@graduate.utm.my-attended",
+  "machineId": 293988,
+  "robotVersion": "26.0.193-cloud.23060",
+  "userKey": "d4f5d8cd-55df-40f0-b703-8188af30fb0e",
+  "processVersion": "1.0.3",
+  "organizationUnitId": 958190,
+  "businessOperationId": "3114d24be4134e3c88230d56a586cce9-a726d83b80854dc2864766df13bc3f1a"
+}
+05/19/2026 22:29:17 => [Trace] 02_duplicate_late_delivery_sop
+{
+  "message": "02_duplicate_late_delivery_sop",
+  "level": "Trace",
+  "logType": "User",
+  "timeStamp": "22:29:17",
+  "jobId": "759e6a5c-5c28-44d8-a1d7-a7f63986adc2",
+  "robotName": "faiyaz@graduate.utm.my-attended",
+  "machineId": 293988,
+  "robotVersion": "26.0.193-cloud.23060",
+  "userKey": "d4f5d8cd-55df-40f0-b703-8188af30fb0e",
+  "processVersion": "1.0.3",
+  "organizationUnitId": 958190,
+  "businessOperationId": "3114d24be4134e3c88230d56a586cce9-a726d83b80854dc2864766df13bc3f1a"
+}
+05/19/2026 22:29:19 => [Trace] {"isDuplicate":false,"article":null}
+{
+  "message": "{\"isDuplicate\":false,\"article\":null}",
+  "level": "Trace",
+  "logType": "User",
+  "timeStamp": "22:29:19",
+  "jobId": "759e6a5c-5c28-44d8-a1d7-a7f63986adc2",
+  "robotName": "faiyaz@graduate.utm.my-attended",
+  "machineId": 293988,
+  "robotVersion": "26.0.193-cloud.23060",
+  "userKey": "d4f5d8cd-55df-40f0-b703-8188af30fb0e",
+  "processVersion": "1.0.3",
+  "organizationUnitId": 958190,
+  "businessOperationId": "3114d24be4134e3c88230d56a586cce9-a726d83b80854dc2864766df13bc3f1a"
+}
+05/19/2026 22:29:19 => [Trace] Duplicate check result: False
+{
+  "message": "Duplicate check result: False",
+  "level": "Trace",
+  "logType": "User",
+  "timeStamp": "22:29:19",
+  "jobId": "759e6a5c-5c28-44d8-a1d7-a7f63986adc2",
+  "robotName": "faiyaz@graduate.utm.my-attended",
+  "machineId": 293988,
+  "robotVersion": "26.0.193-cloud.23060",
+  "userKey": "d4f5d8cd-55df-40f0-b703-8188af30fb0e",
+  "processVersion": "1.0.3",
+  "organizationUnitId": 958190,
+  "businessOperationId": "3114d24be4134e3c88230d56a586cce9-a726d83b80854dc2864766df13bc3f1a"
+}
+05/19/2026 22:29:25 => [Trace] Gemini generated article: Late Delivery Standard Operating Procedure
+{
+  "message": "Gemini generated article: Late Delivery Standard Operating Procedure",
+  "level": "Trace",
+  "logType": "User",
+  "timeStamp": "22:29:25",
+  "jobId": "759e6a5c-5c28-44d8-a1d7-a7f63986adc2",
+  "robotName": "faiyaz@graduate.utm.my-attended",
+  "machineId": 293988,
+  "robotVersion": "26.0.193-cloud.23060",
+  "userKey": "d4f5d8cd-55df-40f0-b703-8188af30fb0e",
+  "processVersion": "1.0.3",
+  "organizationUnitId": 958190,
+  "businessOperationId": "3114d24be4134e3c88230d56a586cce9-a726d83b80854dc2864766df13bc3f1a"
+}
+05/19/2026 22:29:25 => [Trace] {"id":26,"title":"Late Delivery Standard Operating Procedure","summary":"This SOP outlines the steps for customer support agents to handle inquiries about delayed parcels, ensuring consistent communication and proper escalation to operations when necessary.","content":"1. Open the shipment record and check the latest tracking status.\n2. Verify the customer's delivery address and contact number.\n3. Identify the delay point: warehouse, linehaul, customs, or delivery route.\n4. If the parcel is delayed more than 24 hours, raise an escalation to operations.\n5. Record the escalation reference number in the customer case.\n6. Inform the customer of the latest status and expected follow-up time.\n7. Close the case only after the customer has received an update or the parcel is delivered.","sourceText":"Customer support received repeated messages about delayed parcels during peak delivery period. Agents need a standard way to respond so customers receive consistent updates. IMPORTANT NOTES: Check the latest tracking status first. Verify the delivery address and contact number. Check whether the shipment is delayed at warehouse, linehaul, customs, or last-mile delivery. If the delay is more than 24 hours, escalate to the operations team. Give the customer a clear next update time.","sourceType":"TEXT","status":"DRAFT","sourceHash":"2d21f67ed8ffe11cb36b1a28a959a13cdebb1fe38eb87f7d30ab23d7ffdd8542","isDuplicate":false,"createdById":4,"reviewedById":null,"publishedById":null,"createdAt":"2026-05-19T14:29:25.609Z","updatedAt":"2026-05-19T14:29:25.609Z","reviewedAt":null,"publishedAt":null,"articleTags":[{"articleId":26,"tagId":1,"tag":{"id":1,"name":"Delivery","createdAt":"2026-05-13T04:22:51.435Z"}},{"articleId":26,"tagId":47,"tag":{"id":47,"name":"Escalation","createdAt":"2026-05-19T08:51:00.692Z"}},{"articleId":26,"tagId":55,"tag":{"id":55,"name":"Parcel Delay","createdAt":"2026-05-19T14:29:25.609Z"}},{"articleId":26,"tagId":42,"tag":{"id":42,"name":"Late Delivery","createdAt":"2026-05-17T17:38:48.822Z"}},{"articleId":26,"tagId":7,"tag":{"id":7,"name":"SOP","createdAt":"2026-05-13T04:22:51.607Z"}},{"articleId":26,"tagId":6,"tag":{"id":6,"name":"Customer Support","createdAt":"2026-05-13T04:22:51.583Z"}}]}
+{
+  "message": "{\"id\":26,\"title\":\"Late Delivery Standard Operating Procedure\",\"summary\":\"This SOP outlines the steps for customer support agents to handle inquiries about delayed parcels, ensuring consistent communication and proper escalation to operations when necessary.\",\"content\":\"1. Open the shipment record and check the latest tracking status.\\n2. Verify the customer's delivery address and contact number.\\n3. Identify the delay point: warehouse, linehaul, customs, or delivery route.\\n4. If the parcel is delayed more than 24 hours, raise an escalation to operations.\\n5. Record the escalation reference number in the customer case.\\n6. Inform the customer of the latest status and expected follow-up time.\\n7. Close the case only after the customer has received an update or the parcel is delivered.\",\"sourceText\":\"Customer support received repeated messages about delayed parcels during peak delivery period. Agents need a standard way to respond so customers receive consistent updates. IMPORTANT NOTES: Check the latest tracking status first. Verify the delivery address and contact number. Check whether the shipment is delayed at warehouse, linehaul, customs, or last-mile delivery. If the delay is more than 24 hours, escalate to the operations team. Give the customer a clear next update time.\",\"sourceType\":\"TEXT\",\"status\":\"DRAFT\",\"sourceHash\":\"2d21f67ed8ffe11cb36b1a28a959a13cdebb1fe38eb87f7d30ab23d7ffdd8542\",\"isDuplicate\":false,\"createdById\":4,\"reviewedById\":null,\"publishedById\":null,\"createdAt\":\"2026-05-19T14:29:25.609Z\",\"updatedAt\":\"2026-05-19T14:29:25.609Z\",\"reviewedAt\":null,\"publishedAt\":null,\"articleTags\":[{\"articleId\":26,\"tagId\":1,\"tag\":{\"id\":1,\"name\":\"Delivery\",\"createdAt\":\"2026-05-13T04:22:51.435Z\"}},{\"articleId\":26,\"tagId\":47,\"tag\":{\"id\":47,\"name\":\"Escalation\",\"createdAt\":\"2026-05-19T08:51:00.692Z\"}},{\"articleId\":26,\"tagId\":55,\"tag\":{\"id\":55,\"name\":\"Parcel Delay\",\"createdAt\":\"2026-05-19T14:29:25.609Z\"}},{\"articleId\":26,\"tagId\":42,\"tag\":{\"id\":42,\"name\":\"Late Delivery\",\"createdAt\":\"2026-05-17T17:38:48.822Z\"}},{\"articleId\":26,\"tagId\":7,\"tag\":{\"id\":7,\"name\":\"SOP\",\"createdAt\":\"2026-05-13T04:22:51.607Z\"}},{\"articleId\":26,\"tagId\":6,\"tag\":{\"id\":6,\"name\":\"Customer Support\",\"createdAt\":\"2026-05-13T04:22:51.583Z\"}}]}",
+  "level": "Trace",
+  "logType": "User",
+  "timeStamp": "22:29:25",
+  "jobId": "759e6a5c-5c28-44d8-a1d7-a7f63986adc2",
+  "robotName": "faiyaz@graduate.utm.my-attended",
+  "machineId": 293988,
+  "robotVersion": "26.0.193-cloud.23060",
+  "userKey": "d4f5d8cd-55df-40f0-b703-8188af30fb0e",
+  "processVersion": "1.0.3",
+  "organizationUnitId": 958190,
+  "businessOperationId": "3114d24be4134e3c88230d56a586cce9-a726d83b80854dc2864766df13bc3f1a"
+}
+05/19/2026 22:29:25 => [Trace] Attachment uploaded for article ID: 26
+{
+  "message": "Attachment uploaded for article ID: 26",
+  "level": "Trace",
+  "logType": "User",
+  "timeStamp": "22:29:25",
+  "jobId": "759e6a5c-5c28-44d8-a1d7-a7f63986adc2",
+  "robotName": "faiyaz@graduate.utm.my-attended",
+  "machineId": 293988,
+  "robotVersion": "26.0.193-cloud.23060",
+  "userKey": "d4f5d8cd-55df-40f0-b703-8188af30fb0e",
+  "processVersion": "1.0.3",
+  "organizationUnitId": 958190,
+  "businessOperationId": "3114d24be4134e3c88230d56a586cce9-a726d83b80854dc2864766df13bc3f1a"
+}
+05/19/2026 22:29:25 => [Trace] Article created. ID: 26
+{
+  "message": "Article created. ID: 26",
+  "level": "Trace",
+  "logType": "User",
+  "timeStamp": "22:29:25",
+  "jobId": "759e6a5c-5c28-44d8-a1d7-a7f63986adc2",
+  "robotName": "faiyaz@graduate.utm.my-attended",
+  "machineId": 293988,
+  "robotVersion": "26.0.193-cloud.23060",
+  "userKey": "d4f5d8cd-55df-40f0-b703-8188af30fb0e",
+  "processVersion": "1.0.3",
+  "organizationUnitId": 958190,
+  "businessOperationId": "3114d24be4134e3c88230d56a586cce9-a726d83b80854dc2864766df13bc3f1a"
+}
+05/19/2026 22:29:25 => [Trace] Automation log created.
+{
+  "message": "Automation log created.",
+  "level": "Trace",
+  "logType": "User",
+  "timeStamp": "22:29:25",
+  "jobId": "759e6a5c-5c28-44d8-a1d7-a7f63986adc2",
+  "robotName": "faiyaz@graduate.utm.my-attended",
+  "machineId": 293988,
+  "robotVersion": "26.0.193-cloud.23060",
+  "userKey": "d4f5d8cd-55df-40f0-b703-8188af30fb0e",
+  "processVersion": "1.0.3",
+  "organizationUnitId": 958190,
+  "businessOperationId": "3114d24be4134e3c88230d56a586cce9-a726d83b80854dc2864766df13bc3f1a"
+}
+05/19/2026 22:29:25 => [Trace] Automation run marked as SUCCESS.
+{
+  "message": "Automation run marked as SUCCESS.",
+  "level": "Trace",
+  "logType": "User",
+  "timeStamp": "22:29:25",
+  "jobId": "759e6a5c-5c28-44d8-a1d7-a7f63986adc2",
+  "robotName": "faiyaz@graduate.utm.my-attended",
+  "machineId": 293988,
+  "robotVersion": "26.0.193-cloud.23060",
+  "userKey": "d4f5d8cd-55df-40f0-b703-8188af30fb0e",
+  "processVersion": "1.0.3",
+  "organizationUnitId": 958190,
+  "businessOperationId": "3114d24be4134e3c88230d56a586cce9-a726d83b80854dc2864766df13bc3f1a"
+}
+05/19/2026 22:29:27 => [Trace] Moved processed file to Processed folder.
+{
+  "message": "Moved processed file to Processed folder.",
+  "level": "Trace",
+  "logType": "User",
+  "timeStamp": "22:29:27",
+  "jobId": "759e6a5c-5c28-44d8-a1d7-a7f63986adc2",
+  "robotName": "faiyaz@graduate.utm.my-attended",
+  "machineId": 293988,
+  "robotVersion": "26.0.193-cloud.23060",
+  "userKey": "d4f5d8cd-55df-40f0-b703-8188af30fb0e",
+  "processVersion": "1.0.3",
+  "organizationUnitId": 958190,
+  "businessOperationId": "3114d24be4134e3c88230d56a586cce9-a726d83b80854dc2864766df13bc3f1a"
+}
+05/19/2026 22:29:27 => [Trace] 03_fail_invalid_source_file
+{
+  "message": "03_fail_invalid_source_file",
+  "level": "Trace",
+  "logType": "User",
+  "timeStamp": "22:29:27",
+  "jobId": "759e6a5c-5c28-44d8-a1d7-a7f63986adc2",
+  "robotName": "faiyaz@graduate.utm.my-attended",
+  "machineId": 293988,
+  "robotVersion": "26.0.193-cloud.23060",
+  "userKey": "d4f5d8cd-55df-40f0-b703-8188af30fb0e",
+  "processVersion": "1.0.3",
+  "organizationUnitId": 958190,
+  "businessOperationId": "3114d24be4134e3c88230d56a586cce9-a726d83b80854dc2864766df13bc3f1a"
+}
+05/19/2026 22:29:29 => [Trace] {"isDuplicate":false,"article":null}
+{
+  "message": "{\"isDuplicate\":false,\"article\":null}",
+  "level": "Trace",
+  "logType": "User",
+  "timeStamp": "22:29:29",
+  "jobId": "759e6a5c-5c28-44d8-a1d7-a7f63986adc2",
+  "robotName": "faiyaz@graduate.utm.my-attended",
+  "machineId": 293988,
+  "robotVersion": "26.0.193-cloud.23060",
+  "userKey": "d4f5d8cd-55df-40f0-b703-8188af30fb0e",
+  "processVersion": "1.0.3",
+  "organizationUnitId": 958190,
+  "businessOperationId": "3114d24be4134e3c88230d56a586cce9-a726d83b80854dc2864766df13bc3f1a"
+}
+05/19/2026 22:29:29 => [Trace] Duplicate check result: False
+{
+  "message": "Duplicate check result: False",
+  "level": "Trace",
+  "logType": "User",
+  "timeStamp": "22:29:29",
+  "jobId": "759e6a5c-5c28-44d8-a1d7-a7f63986adc2",
+  "robotName": "faiyaz@graduate.utm.my-attended",
+  "machineId": 293988,
+  "robotVersion": "26.0.193-cloud.23060",
+  "userKey": "d4f5d8cd-55df-40f0-b703-8188af30fb0e",
+  "processVersion": "1.0.3",
+  "organizationUnitId": 958190,
+  "businessOperationId": "3114d24be4134e3c88230d56a586cce9-a726d83b80854dc2864766df13bc3f1a"
+}
+05/19/2026 22:29:39 => [Trace] Gemini generated article: RPA Procedure for Handling Invalid SOP Source Files
+{
+  "message": "Gemini generated article: RPA Procedure for Handling Invalid SOP Source Files",
+  "level": "Trace",
+  "logType": "User",
+  "timeStamp": "22:29:39",
+  "jobId": "759e6a5c-5c28-44d8-a1d7-a7f63986adc2",
+  "robotName": "faiyaz@graduate.utm.my-attended",
+  "machineId": 293988,
+  "robotVersion": "26.0.193-cloud.23060",
+  "userKey": "d4f5d8cd-55df-40f0-b703-8188af30fb0e",
+  "processVersion": "1.0.3",
+  "organizationUnitId": 958190,
+  "businessOperationId": "3114d24be4134e3c88230d56a586cce9-a726d83b80854dc2864766df13bc3f1a"
+}
+05/19/2026 22:29:39 => [Trace] {"id":27,"title":"RPA Procedure for Handling Invalid SOP Source Files","summary":"This Standard Operating Procedure (SOP) outlines the automated steps for the UiPath process when encountering an intentionally invalid source file for SOP article generation, ensuring proper error handling and logging.","content":"1.  **Identify Invalid Source File:** The UiPath automation will detect that the input file contains the FORCE_RPA_FAILURE: TRUE flag or lacks the required valid title, summary, tag list, and structured SOP content.\n2.  **Trigger Failure Path:** The automation will treat this file as an invalid source, intentionally triggering the designated Catch block for error handling.\n3.  **Capture Screenshot:** A screenshot of the system state at the point of failure will be captured for diagnostic purposes.\n4.  **Log Error:** An ERROR level log entry will be recorded in the automation log, detailing the failure to process the file into a valid SOP article.\n5.  **Update Failure Count:** The total count of failed processing attempts for SOP articles will be incremented by one.\n6.  **Archive Failed File:** The invalid source file will be moved from its current processing location to the designated 'Failed' folder for review and retention.","sourceText":"FORCE_RPA_FAILURE: TRUE\n\nThis file is intentionally prepared for the demo failure path.\n\nIt does not contain a valid title, summary, tag list, or structured SOP content.\nDuring the demo, UiPath should treat this as an invalid source file, trigger the Catch block, take a screenshot, write an ERROR log, increase the failed count, and move this file to the Failed folder.\n\nDemo expected result:\n- File should not become a valid article.\n- Automation log should show failure.\n- Screenshot should be captured.\n- Failed total should increase by 1.","sourceType":"TEXT","status":"DRAFT","sourceHash":"2cf50fbec3efdfc515e2178173164e4b2b104e29c83c1d5dd0729761f467ec4d","isDuplicate":false,"createdById":4,"reviewedById":null,"publishedById":null,"createdAt":"2026-05-19T14:29:39.096Z","updatedAt":"2026-05-19T14:29:39.096Z","reviewedAt":null,"publishedAt":null,"articleTags":[{"articleId":27,"tagId":34,"tag":{"id":34,"name":"RPA","createdAt":"2026-05-16T05:18:17.227Z"}},{"articleId":27,"tagId":56,"tag":{"id":56,"name":"File Processing Failure","createdAt":"2026-05-19T14:29:39.096Z"}},{"articleId":27,"tagId":57,"tag":{"id":57,"name":"SOP Generation","createdAt":"2026-05-19T14:29:39.096Z"}},{"articleId":27,"tagId":36,"tag":{"id":36,"name":"UiPath","createdAt":"2026-05-16T06:51:58.410Z"}},{"articleId":27,"tagId":58,"tag":{"id":58,"name":"Error Handling","createdAt":"2026-05-19T14:29:39.096Z"}},{"articleId":27,"tagId":59,"tag":{"id":59,"name":"Automation","createdAt":"2026-05-19T14:29:39.096Z"}}]}
+{
+  "message": "{\"id\":27,\"title\":\"RPA Procedure for Handling Invalid SOP Source Files\",\"summary\":\"This Standard Operating Procedure (SOP) outlines the automated steps for the UiPath process when encountering an intentionally invalid source file for SOP article generation, ensuring proper error handling and logging.\",\"content\":\"1.  **Identify Invalid Source File:** The UiPath automation will detect that the input file contains the FORCE_RPA_FAILURE: TRUE flag or lacks the required valid title, summary, tag list, and structured SOP content.\\n2.  **Trigger Failure Path:** The automation will treat this file as an invalid source, intentionally triggering the designated Catch block for error handling.\\n3.  **Capture Screenshot:** A screenshot of the system state at the point of failure will be captured for diagnostic purposes.\\n4.  **Log Error:** An ERROR level log entry will be recorded in the automation log, detailing the failure to process the file into a valid SOP article.\\n5.  **Update Failure Count:** The total count of failed processing attempts for SOP articles will be incremented by one.\\n6.  **Archive Failed File:** The invalid source file will be moved from its current processing location to the designated 'Failed' folder for review and retention.\",\"sourceText\":\"FORCE_RPA_FAILURE: TRUE\\n\\nThis file is intentionally prepared for the demo failure path.\\n\\nIt does not contain a valid title, summary, tag list, or structured SOP content.\\nDuring the demo, UiPath should treat this as an invalid source file, trigger the Catch block, take a screenshot, write an ERROR log, increase the failed count, and move this file to the Failed folder.\\n\\nDemo expected result:\\n- File should not become a valid article.\\n- Automation log should show failure.\\n- Screenshot should be captured.\\n- Failed total should increase by 1.\",\"sourceType\":\"TEXT\",\"status\":\"DRAFT\",\"sourceHash\":\"2cf50fbec3efdfc515e2178173164e4b2b104e29c83c1d5dd0729761f467ec4d\",\"isDuplicate\":false,\"createdById\":4,\"reviewedById\":null,\"publishedById\":null,\"createdAt\":\"2026-05-19T14:29:39.096Z\",\"updatedAt\":\"2026-05-19T14:29:39.096Z\",\"reviewedAt\":null,\"publishedAt\":null,\"articleTags\":[{\"articleId\":27,\"tagId\":34,\"tag\":{\"id\":34,\"name\":\"RPA\",\"createdAt\":\"2026-05-16T05:18:17.227Z\"}},{\"articleId\":27,\"tagId\":56,\"tag\":{\"id\":56,\"name\":\"File Processing Failure\",\"createdAt\":\"2026-05-19T14:29:39.096Z\"}},{\"articleId\":27,\"tagId\":57,\"tag\":{\"id\":57,\"name\":\"SOP Generation\",\"createdAt\":\"2026-05-19T14:29:39.096Z\"}},{\"articleId\":27,\"tagId\":36,\"tag\":{\"id\":36,\"name\":\"UiPath\",\"createdAt\":\"2026-05-16T06:51:58.410Z\"}},{\"articleId\":27,\"tagId\":58,\"tag\":{\"id\":58,\"name\":\"Error Handling\",\"createdAt\":\"2026-05-19T14:29:39.096Z\"}},{\"articleId\":27,\"tagId\":59,\"tag\":{\"id\":59,\"name\":\"Automation\",\"createdAt\":\"2026-05-19T14:29:39.096Z\"}}]}",
+  "level": "Trace",
+  "logType": "User",
+  "timeStamp": "22:29:39",
+  "jobId": "759e6a5c-5c28-44d8-a1d7-a7f63986adc2",
+  "robotName": "faiyaz@graduate.utm.my-attended",
+  "machineId": 293988,
+  "robotVersion": "26.0.193-cloud.23060",
+  "userKey": "d4f5d8cd-55df-40f0-b703-8188af30fb0e",
+  "processVersion": "1.0.3",
+  "organizationUnitId": 958190,
+  "businessOperationId": "3114d24be4134e3c88230d56a586cce9-a726d83b80854dc2864766df13bc3f1a"
+}
+05/19/2026 22:29:39 => [Trace] Attachment uploaded for article ID: 27
+{
+  "message": "Attachment uploaded for article ID: 27",
+  "level": "Trace",
+  "logType": "User",
+  "timeStamp": "22:29:39",
+  "jobId": "759e6a5c-5c28-44d8-a1d7-a7f63986adc2",
+  "robotName": "faiyaz@graduate.utm.my-attended",
+  "machineId": 293988,
+  "robotVersion": "26.0.193-cloud.23060",
+  "userKey": "d4f5d8cd-55df-40f0-b703-8188af30fb0e",
+  "processVersion": "1.0.3",
+  "organizationUnitId": 958190,
+  "businessOperationId": "3114d24be4134e3c88230d56a586cce9-a726d83b80854dc2864766df13bc3f1a"
+}
+05/19/2026 22:29:39 => [Trace] Article created. ID: 27
+{
+  "message": "Article created. ID: 27",
+  "level": "Trace",
+  "logType": "User",
+  "timeStamp": "22:29:39",
+  "jobId": "759e6a5c-5c28-44d8-a1d7-a7f63986adc2",
+  "robotName": "faiyaz@graduate.utm.my-attended",
+  "machineId": 293988,
+  "robotVersion": "26.0.193-cloud.23060",
+  "userKey": "d4f5d8cd-55df-40f0-b703-8188af30fb0e",
+  "processVersion": "1.0.3",
+  "organizationUnitId": 958190,
+  "businessOperationId": "3114d24be4134e3c88230d56a586cce9-a726d83b80854dc2864766df13bc3f1a"
+}
+05/19/2026 22:29:39 => [Trace] Automation log created.
+{
+  "message": "Automation log created.",
+  "level": "Trace",
+  "logType": "User",
+  "timeStamp": "22:29:39",
+  "jobId": "759e6a5c-5c28-44d8-a1d7-a7f63986adc2",
+  "robotName": "faiyaz@graduate.utm.my-attended",
+  "machineId": 293988,
+  "robotVersion": "26.0.193-cloud.23060",
+  "userKey": "d4f5d8cd-55df-40f0-b703-8188af30fb0e",
+  "processVersion": "1.0.3",
+  "organizationUnitId": 958190,
+  "businessOperationId": "3114d24be4134e3c88230d56a586cce9-a726d83b80854dc2864766df13bc3f1a"
+}
+05/19/2026 22:29:39 => [Trace] Automation run marked as SUCCESS.
+{
+  "message": "Automation run marked as SUCCESS.",
+  "level": "Trace",
+  "logType": "User",
+  "timeStamp": "22:29:39",
+  "jobId": "759e6a5c-5c28-44d8-a1d7-a7f63986adc2",
+  "robotName": "faiyaz@graduate.utm.my-attended",
+  "machineId": 293988,
+  "robotVersion": "26.0.193-cloud.23060",
+  "userKey": "d4f5d8cd-55df-40f0-b703-8188af30fb0e",
+  "processVersion": "1.0.3",
+  "organizationUnitId": 958190,
+  "businessOperationId": "3114d24be4134e3c88230d56a586cce9-a726d83b80854dc2864766df13bc3f1a"
+}
+05/19/2026 22:29:41 => [Trace] Moved processed file to Processed folder.
+{
+  "message": "Moved processed file to Processed folder.",
+  "level": "Trace",
+  "logType": "User",
+  "timeStamp": "22:29:41",
+  "jobId": "759e6a5c-5c28-44d8-a1d7-a7f63986adc2",
+  "robotName": "faiyaz@graduate.utm.my-attended",
+  "machineId": 293988,
+  "robotVersion": "26.0.193-cloud.23060",
+  "userKey": "d4f5d8cd-55df-40f0-b703-8188af30fb0e",
+  "processVersion": "1.0.3",
+  "organizationUnitId": 958190,
+  "businessOperationId": "3114d24be4134e3c88230d56a586cce9-a726d83b80854dc2864766df13bc3f1a"
+}
+05/19/2026 22:29:41 => [Trace] 04_damaged_parcel_source
+{
+  "message": "04_damaged_parcel_source",
+  "level": "Trace",
+  "logType": "User",
+  "timeStamp": "22:29:41",
+  "jobId": "759e6a5c-5c28-44d8-a1d7-a7f63986adc2",
+  "robotName": "faiyaz@graduate.utm.my-attended",
+  "machineId": 293988,
+  "robotVersion": "26.0.193-cloud.23060",
+  "userKey": "d4f5d8cd-55df-40f0-b703-8188af30fb0e",
+  "processVersion": "1.0.3",
+  "organizationUnitId": 958190,
+  "businessOperationId": "3114d24be4134e3c88230d56a586cce9-a726d83b80854dc2864766df13bc3f1a"
+}
+05/19/2026 22:29:43 => [Trace] {"isDuplicate":false,"article":null}
+{
+  "message": "{\"isDuplicate\":false,\"article\":null}",
+  "level": "Trace",
+  "logType": "User",
+  "timeStamp": "22:29:43",
+  "jobId": "759e6a5c-5c28-44d8-a1d7-a7f63986adc2",
+  "robotName": "faiyaz@graduate.utm.my-attended",
+  "machineId": 293988,
+  "robotVersion": "26.0.193-cloud.23060",
+  "userKey": "d4f5d8cd-55df-40f0-b703-8188af30fb0e",
+  "processVersion": "1.0.3",
+  "organizationUnitId": 958190,
+  "businessOperationId": "3114d24be4134e3c88230d56a586cce9-a726d83b80854dc2864766df13bc3f1a"
+}
+05/19/2026 22:29:43 => [Trace] Duplicate check result: False
+{
+  "message": "Duplicate check result: False",
+  "level": "Trace",
+  "logType": "User",
+  "timeStamp": "22:29:43",
+  "jobId": "759e6a5c-5c28-44d8-a1d7-a7f63986adc2",
+  "robotName": "faiyaz@graduate.utm.my-attended",
+  "machineId": 293988,
+  "robotVersion": "26.0.193-cloud.23060",
+  "userKey": "d4f5d8cd-55df-40f0-b703-8188af30fb0e",
+  "processVersion": "1.0.3",
+  "organizationUnitId": 958190,
+  "businessOperationId": "3114d24be4134e3c88230d56a586cce9-a726d83b80854dc2864766df13bc3f1a"
+}
+05/19/2026 22:29:50 => [Trace] Gemini generated article: SOP: Handling Damaged Parcels Reported by Customer Support
+{
+  "message": "Gemini generated article: SOP: Handling Damaged Parcels Reported by Customer Support",
+  "level": "Trace",
+  "logType": "User",
+  "timeStamp": "22:29:50",
+  "jobId": "759e6a5c-5c28-44d8-a1d7-a7f63986adc2",
+  "robotName": "faiyaz@graduate.utm.my-attended",
+  "machineId": 293988,
+  "robotVersion": "26.0.193-cloud.23060",
+  "userKey": "d4f5d8cd-55df-40f0-b703-8188af30fb0e",
+  "processVersion": "1.0.3",
+  "organizationUnitId": 958190,
+  "businessOperationId": "3114d24be4134e3c88230d56a586cce9-a726d83b80854dc2864766df13bc3f1a"
+}
+05/19/2026 22:29:50 => [Trace] {"id":28,"title":"SOP: Handling Damaged Parcels Reported by Customer Support","summary":"This Standard Operating Procedure outlines the steps for logistics personnel to follow when a damaged parcel is reported by customer support, ensuring proper documentation and resolution.","content":"1.  **Receive Report:** Acknowledge the notification of a damaged parcel from Customer Support.\n2.  **Locate Parcel:** Identify and locate the specific parcel within the DHL network (e.g., warehouse, transit point).\n3.  **Inspect and Document Damage:** Conduct a thorough inspection of the parcel. Document all visible damage with clear photographs or videos.\n4.  **Assess Damage Level:** Determine the extent of the damage (e.g., minor packaging damage, significant structural damage, compromised contents).\n5.  **Notify Relevant Departments:** Based on the assessment, inform the appropriate internal departments (e.g., Claims Department for significant damage, Re-packaging team for minor repairable damage).\n6.  **Update Tracking System:** Record the damage status, inspection details, and actions taken in the DHL tracking and logistics management system.\n7.  **Follow Disposal/Return/Re-delivery Instructions:** Await and follow instructions from the Claims or Customer Support team regarding the parcel's next steps (e.g., return to sender, disposal, re-packaging and re-delivery).","sourceText":"DHL Logistics Operations - Source Image. Raw source image: damaged parcel reported by customer support. The image illustrates a brown parcel with yellow strapping, showing red lines indicating damage and a 'DAMAGED' label.","sourceType":"IMAGE","status":"DRAFT","sourceHash":"3319ebf2f2b5c317d31e6469b2d23ddebb78e64a29828bc8ee3a5e75f530bcbd","isDuplicate":false,"createdById":4,"reviewedById":null,"publishedById":null,"createdAt":"2026-05-19T14:29:50.404Z","updatedAt":"2026-05-19T14:29:50.404Z","reviewedAt":null,"publishedAt":null,"articleTags":[{"articleId":28,"tagId":60,"tag":{"id":60,"name":"Parcel Damage","createdAt":"2026-05-19T14:29:50.404Z"}},{"articleId":28,"tagId":61,"tag":{"id":61,"name":"Shipment Handling","createdAt":"2026-05-19T14:29:50.404Z"}},{"articleId":28,"tagId":62,"tag":{"id":62,"name":"Damaged Goods","createdAt":"2026-05-19T14:29:50.404Z"}},{"articleId":28,"tagId":63,"tag":{"id":63,"name":"Inspection","createdAt":"2026-05-19T14:29:50.404Z"}},{"articleId":28,"tagId":64,"tag":{"id":64,"name":"Claims","createdAt":"2026-05-19T14:29:50.404Z"}},{"articleId":28,"tagId":7,"tag":{"id":7,"name":"SOP","createdAt":"2026-05-13T04:22:51.607Z"}},{"articleId":28,"tagId":40,"tag":{"id":40,"name":"Logistics Operations","createdAt":"2026-05-17T12:24:47.932Z"}},{"articleId":28,"tagId":6,"tag":{"id":6,"name":"Customer Support","createdAt":"2026-05-13T04:22:51.583Z"}}]}
+{
+  "message": "{\"id\":28,\"title\":\"SOP: Handling Damaged Parcels Reported by Customer Support\",\"summary\":\"This Standard Operating Procedure outlines the steps for logistics personnel to follow when a damaged parcel is reported by customer support, ensuring proper documentation and resolution.\",\"content\":\"1.  **Receive Report:** Acknowledge the notification of a damaged parcel from Customer Support.\\n2.  **Locate Parcel:** Identify and locate the specific parcel within the DHL network (e.g., warehouse, transit point).\\n3.  **Inspect and Document Damage:** Conduct a thorough inspection of the parcel. Document all visible damage with clear photographs or videos.\\n4.  **Assess Damage Level:** Determine the extent of the damage (e.g., minor packaging damage, significant structural damage, compromised contents).\\n5.  **Notify Relevant Departments:** Based on the assessment, inform the appropriate internal departments (e.g., Claims Department for significant damage, Re-packaging team for minor repairable damage).\\n6.  **Update Tracking System:** Record the damage status, inspection details, and actions taken in the DHL tracking and logistics management system.\\n7.  **Follow Disposal/Return/Re-delivery Instructions:** Await and follow instructions from the Claims or Customer Support team regarding the parcel's next steps (e.g., return to sender, disposal, re-packaging and re-delivery).\",\"sourceText\":\"DHL Logistics Operations - Source Image. Raw source image: damaged parcel reported by customer support. The image illustrates a brown parcel with yellow strapping, showing red lines indicating damage and a 'DAMAGED' label.\",\"sourceType\":\"IMAGE\",\"status\":\"DRAFT\",\"sourceHash\":\"3319ebf2f2b5c317d31e6469b2d23ddebb78e64a29828bc8ee3a5e75f530bcbd\",\"isDuplicate\":false,\"createdById\":4,\"reviewedById\":null,\"publishedById\":null,\"createdAt\":\"2026-05-19T14:29:50.404Z\",\"updatedAt\":\"2026-05-19T14:29:50.404Z\",\"reviewedAt\":null,\"publishedAt\":null,\"articleTags\":[{\"articleId\":28,\"tagId\":60,\"tag\":{\"id\":60,\"name\":\"Parcel Damage\",\"createdAt\":\"2026-05-19T14:29:50.404Z\"}},{\"articleId\":28,\"tagId\":61,\"tag\":{\"id\":61,\"name\":\"Shipment Handling\",\"createdAt\":\"2026-05-19T14:29:50.404Z\"}},{\"articleId\":28,\"tagId\":62,\"tag\":{\"id\":62,\"name\":\"Damaged Goods\",\"createdAt\":\"2026-05-19T14:29:50.404Z\"}},{\"articleId\":28,\"tagId\":63,\"tag\":{\"id\":63,\"name\":\"Inspection\",\"createdAt\":\"2026-05-19T14:29:50.404Z\"}},{\"articleId\":28,\"tagId\":64,\"tag\":{\"id\":64,\"name\":\"Claims\",\"createdAt\":\"2026-05-19T14:29:50.404Z\"}},{\"articleId\":28,\"tagId\":7,\"tag\":{\"id\":7,\"name\":\"SOP\",\"createdAt\":\"2026-05-13T04:22:51.607Z\"}},{\"articleId\":28,\"tagId\":40,\"tag\":{\"id\":40,\"name\":\"Logistics Operations\",\"createdAt\":\"2026-05-17T12:24:47.932Z\"}},{\"articleId\":28,\"tagId\":6,\"tag\":{\"id\":6,\"name\":\"Customer Support\",\"createdAt\":\"2026-05-13T04:22:51.583Z\"}}]}",
+  "level": "Trace",
+  "logType": "User",
+  "timeStamp": "22:29:50",
+  "jobId": "759e6a5c-5c28-44d8-a1d7-a7f63986adc2",
+  "robotName": "faiyaz@graduate.utm.my-attended",
+  "machineId": 293988,
+  "robotVersion": "26.0.193-cloud.23060",
+  "userKey": "d4f5d8cd-55df-40f0-b703-8188af30fb0e",
+  "processVersion": "1.0.3",
+  "organizationUnitId": 958190,
+  "businessOperationId": "3114d24be4134e3c88230d56a586cce9-a726d83b80854dc2864766df13bc3f1a"
+}
+05/19/2026 22:29:50 => [Trace] Attachment uploaded for article ID: 28
+{
+  "message": "Attachment uploaded for article ID: 28",
+  "level": "Trace",
+  "logType": "User",
+  "timeStamp": "22:29:50",
+  "jobId": "759e6a5c-5c28-44d8-a1d7-a7f63986adc2",
+  "robotName": "faiyaz@graduate.utm.my-attended",
+  "machineId": 293988,
+  "robotVersion": "26.0.193-cloud.23060",
+  "userKey": "d4f5d8cd-55df-40f0-b703-8188af30fb0e",
+  "processVersion": "1.0.3",
+  "organizationUnitId": 958190,
+  "businessOperationId": "3114d24be4134e3c88230d56a586cce9-a726d83b80854dc2864766df13bc3f1a"
+}
+05/19/2026 22:29:50 => [Trace] Article created. ID: 28
+{
+  "message": "Article created. ID: 28",
+  "level": "Trace",
+  "logType": "User",
+  "timeStamp": "22:29:50",
+  "jobId": "759e6a5c-5c28-44d8-a1d7-a7f63986adc2",
+  "robotName": "faiyaz@graduate.utm.my-attended",
+  "machineId": 293988,
+  "robotVersion": "26.0.193-cloud.23060",
+  "userKey": "d4f5d8cd-55df-40f0-b703-8188af30fb0e",
+  "processVersion": "1.0.3",
+  "organizationUnitId": 958190,
+  "businessOperationId": "3114d24be4134e3c88230d56a586cce9-a726d83b80854dc2864766df13bc3f1a"
+}
+05/19/2026 22:29:50 => [Trace] Automation log created.
+{
+  "message": "Automation log created.",
+  "level": "Trace",
+  "logType": "User",
+  "timeStamp": "22:29:50",
+  "jobId": "759e6a5c-5c28-44d8-a1d7-a7f63986adc2",
+  "robotName": "faiyaz@graduate.utm.my-attended",
+  "machineId": 293988,
+  "robotVersion": "26.0.193-cloud.23060",
+  "userKey": "d4f5d8cd-55df-40f0-b703-8188af30fb0e",
+  "processVersion": "1.0.3",
+  "organizationUnitId": 958190,
+  "businessOperationId": "3114d24be4134e3c88230d56a586cce9-a726d83b80854dc2864766df13bc3f1a"
+}
+05/19/2026 22:29:50 => [Trace] Automation run marked as SUCCESS.
+{
+  "message": "Automation run marked as SUCCESS.",
+  "level": "Trace",
+  "logType": "User",
+  "timeStamp": "22:29:50",
+  "jobId": "759e6a5c-5c28-44d8-a1d7-a7f63986adc2",
+  "robotName": "faiyaz@graduate.utm.my-attended",
+  "machineId": 293988,
+  "robotVersion": "26.0.193-cloud.23060",
+  "userKey": "d4f5d8cd-55df-40f0-b703-8188af30fb0e",
+  "processVersion": "1.0.3",
+  "organizationUnitId": 958190,
+  "businessOperationId": "3114d24be4134e3c88230d56a586cce9-a726d83b80854dc2864766df13bc3f1a"
+}
+05/19/2026 22:29:52 => [Trace] Moved processed file to Processed folder.
+{
+  "message": "Moved processed file to Processed folder.",
+  "level": "Trace",
+  "logType": "User",
+  "timeStamp": "22:29:52",
+  "jobId": "759e6a5c-5c28-44d8-a1d7-a7f63986adc2",
+  "robotName": "faiyaz@graduate.utm.my-attended",
+  "machineId": 293988,
+  "robotVersion": "26.0.193-cloud.23060",
+  "userKey": "d4f5d8cd-55df-40f0-b703-8188af30fb0e",
+  "processVersion": "1.0.3",
+  "organizationUnitId": 958190,
+  "businessOperationId": "3114d24be4134e3c88230d56a586cce9-a726d83b80854dc2864766df13bc3f1a"
+}
+05/19/2026 22:29:52 => [Trace] 05_warehouse_scanner_error
+{
+  "message": "05_warehouse_scanner_error",
+  "level": "Trace",
+  "logType": "User",
+  "timeStamp": "22:29:52",
+  "jobId": "759e6a5c-5c28-44d8-a1d7-a7f63986adc2",
+  "robotName": "faiyaz@graduate.utm.my-attended",
+  "machineId": 293988,
+  "robotVersion": "26.0.193-cloud.23060",
+  "userKey": "d4f5d8cd-55df-40f0-b703-8188af30fb0e",
+  "processVersion": "1.0.3",
+  "organizationUnitId": 958190,
+  "businessOperationId": "3114d24be4134e3c88230d56a586cce9-a726d83b80854dc2864766df13bc3f1a"
+}
+05/19/2026 22:29:54 => [Trace] {"isDuplicate":false,"article":null}
+{
+  "message": "{\"isDuplicate\":false,\"article\":null}",
+  "level": "Trace",
+  "logType": "User",
+  "timeStamp": "22:29:54",
+  "jobId": "759e6a5c-5c28-44d8-a1d7-a7f63986adc2",
+  "robotName": "faiyaz@graduate.utm.my-attended",
+  "machineId": 293988,
+  "robotVersion": "26.0.193-cloud.23060",
+  "userKey": "d4f5d8cd-55df-40f0-b703-8188af30fb0e",
+  "processVersion": "1.0.3",
+  "organizationUnitId": 958190,
+  "businessOperationId": "3114d24be4134e3c88230d56a586cce9-a726d83b80854dc2864766df13bc3f1a"
+}
+05/19/2026 22:29:54 => [Trace] Duplicate check result: False
+{
+  "message": "Duplicate check result: False",
+  "level": "Trace",
+  "logType": "User",
+  "timeStamp": "22:29:54",
+  "jobId": "759e6a5c-5c28-44d8-a1d7-a7f63986adc2",
+  "robotName": "faiyaz@graduate.utm.my-attended",
+  "machineId": 293988,
+  "robotVersion": "26.0.193-cloud.23060",
+  "userKey": "d4f5d8cd-55df-40f0-b703-8188af30fb0e",
+  "processVersion": "1.0.3",
+  "organizationUnitId": 958190,
+  "businessOperationId": "3114d24be4134e3c88230d56a586cce9-a726d83b80854dc2864766df13bc3f1a"
+}
+05/19/2026 22:30:03 => [Trace] Gemini generated article: DHL Warehouse Scanner System: Scanner Sync Error (WH-SCAN-504) Troubleshooting
+{
+  "message": "Gemini generated article: DHL Warehouse Scanner System: Scanner Sync Error (WH-SCAN-504) Troubleshooting",
+  "level": "Trace",
+  "logType": "User",
+  "timeStamp": "22:30:03",
+  "jobId": "759e6a5c-5c28-44d8-a1d7-a7f63986adc2",
+  "robotName": "faiyaz@graduate.utm.my-attended",
+  "machineId": 293988,
+  "robotVersion": "26.0.193-cloud.23060",
+  "userKey": "d4f5d8cd-55df-40f0-b703-8188af30fb0e",
+  "processVersion": "1.0.3",
+  "organizationUnitId": 958190,
+  "businessOperationId": "3114d24be4134e3c88230d56a586cce9-a726d83b80854dc2864766df13bc3f1a"
+}
+05/19/2026 22:30:03 => [Trace] {"id":29,"title":"DHL Warehouse Scanner System: Scanner Sync Error (WH-SCAN-504) Troubleshooting","summary":"This Standard Operating Procedure (SOP) outlines the steps to address the 'Scanner Sync Error' (WH-SCAN-504) encountered in the DHL Warehouse Scanner System, which indicates a failure to sync parcel status with the central shipment database.","content":"1.  **Identify the Error:**\n    *   **Error Code:** WH-SCAN-504\n    *   **Description:** The scanner failed to sync the parcel status with the central shipment database during a warehouse parcel scan operation. This error occurs at locations such as 'Penang Logistics Hub - Warehouse Gate 3'.\n\n2.  **Initial Remedial Actions:**\n    *   **Step 2.1: Retry Sync:** Attempt to retry the sync operation on the scanner. This may resolve transient network or database issues.\n    *   **Step 2.2: Verify Network Connectivity:** Check the scanner's network connection. Ensure the device has stable access to the network and can communicate with the central shipment database. Troubleshoot any local network issues if necessary.\n\n3.  **Escalation Procedure:**\n    *   **Step 3.1: Escalate if Repeated:** If the error (WH-SCAN-504) persists after attempting to retry the sync and verifying network connectivity, escalate the issue to IT support or your immediate supervisor. Provide the error code, timestamp (e.g., 2026-05-18 10:42 AM), location, and details of troubleshooting steps already performed.","sourceText":"DHL Warehouse Scanner System User: Ops Agent Dashboard Scan Parcel Shipment Status Error Logs Support Scanner Sync Error Error shown during warehouse parcel scan operation. ERROR CODE: WH-SCAN-504 Scanner could not sync parcel status with central shipment database. Recommended action: retry sync, verify network, escalate if repeated. Timestamp: 2026-05-18 10:42 AM Location: Penang Logistics Hub - Warehouse Gate 3 Source Type: Screenshot / System Error","sourceType":"IMAGE","status":"DRAFT","sourceHash":"b011ebbfdec86d498445ef69d8245fd26f389249ca7a140e4f5e1f2b2c271d68","isDuplicate":false,"createdById":4,"reviewedById":null,"publishedById":null,"createdAt":"2026-05-19T14:30:03.320Z","updatedAt":"2026-05-19T14:30:03.320Z","reviewedAt":null,"publishedAt":null,"articleTags":[{"articleId":29,"tagId":65,"tag":{"id":65,"name":"DHL","createdAt":"2026-05-19T14:30:03.320Z"}},{"articleId":29,"tagId":7,"tag":{"id":7,"name":"SOP","createdAt":"2026-05-13T04:22:51.607Z"}},{"articleId":29,"tagId":66,"tag":{"id":66,"name":"Network","createdAt":"2026-05-19T14:30:03.320Z"}},{"articleId":29,"tagId":67,"tag":{"id":67,"name":"Troubleshooting","createdAt":"2026-05-19T14:30:03.320Z"}},{"articleId":29,"tagId":68,"tag":{"id":68,"name":"Parcel Scan","createdAt":"2026-05-19T14:30:03.320Z"}},{"articleId":29,"tagId":69,"tag":{"id":69,"name":"Operations","createdAt":"2026-05-19T14:30:03.320Z"}},{"articleId":29,"tagId":51,"tag":{"id":51,"name":"Logistics","createdAt":"2026-05-19T10:37:53.271Z"}},{"articleId":29,"tagId":70,"tag":{"id":70,"name":"WH-SCAN-504","createdAt":"2026-05-19T14:30:03.320Z"}},{"articleId":29,"tagId":71,"tag":{"id":71,"name":"Sync","createdAt":"2026-05-19T14:30:03.320Z"}},{"articleId":29,"tagId":72,"tag":{"id":72,"name":"Error","createdAt":"2026-05-19T14:30:03.320Z"}},{"articleId":29,"tagId":73,"tag":{"id":73,"name":"Scanner","createdAt":"2026-05-19T14:30:03.320Z"}},{"articleId":29,"tagId":2,"tag":{"id":2,"name":"Warehouse","createdAt":"2026-05-13T04:22:51.485Z"}}]}
+{
+  "message": "{\"id\":29,\"title\":\"DHL Warehouse Scanner System: Scanner Sync Error (WH-SCAN-504) Troubleshooting\",\"summary\":\"This Standard Operating Procedure (SOP) outlines the steps to address the 'Scanner Sync Error' (WH-SCAN-504) encountered in the DHL Warehouse Scanner System, which indicates a failure to sync parcel status with the central shipment database.\",\"content\":\"1.  **Identify the Error:**\\n    *   **Error Code:** WH-SCAN-504\\n    *   **Description:** The scanner failed to sync the parcel status with the central shipment database during a warehouse parcel scan operation. This error occurs at locations such as 'Penang Logistics Hub - Warehouse Gate 3'.\\n\\n2.  **Initial Remedial Actions:**\\n    *   **Step 2.1: Retry Sync:** Attempt to retry the sync operation on the scanner. This may resolve transient network or database issues.\\n    *   **Step 2.2: Verify Network Connectivity:** Check the scanner's network connection. Ensure the device has stable access to the network and can communicate with the central shipment database. Troubleshoot any local network issues if necessary.\\n\\n3.  **Escalation Procedure:**\\n    *   **Step 3.1: Escalate if Repeated:** If the error (WH-SCAN-504) persists after attempting to retry the sync and verifying network connectivity, escalate the issue to IT support or your immediate supervisor. Provide the error code, timestamp (e.g., 2026-05-18 10:42 AM), location, and details of troubleshooting steps already performed.\",\"sourceText\":\"DHL Warehouse Scanner System User: Ops Agent Dashboard Scan Parcel Shipment Status Error Logs Support Scanner Sync Error Error shown during warehouse parcel scan operation. ERROR CODE: WH-SCAN-504 Scanner could not sync parcel status with central shipment database. Recommended action: retry sync, verify network, escalate if repeated. Timestamp: 2026-05-18 10:42 AM Location: Penang Logistics Hub - Warehouse Gate 3 Source Type: Screenshot / System Error\",\"sourceType\":\"IMAGE\",\"status\":\"DRAFT\",\"sourceHash\":\"b011ebbfdec86d498445ef69d8245fd26f389249ca7a140e4f5e1f2b2c271d68\",\"isDuplicate\":false,\"createdById\":4,\"reviewedById\":null,\"publishedById\":null,\"createdAt\":\"2026-05-19T14:30:03.320Z\",\"updatedAt\":\"2026-05-19T14:30:03.320Z\",\"reviewedAt\":null,\"publishedAt\":null,\"articleTags\":[{\"articleId\":29,\"tagId\":65,\"tag\":{\"id\":65,\"name\":\"DHL\",\"createdAt\":\"2026-05-19T14:30:03.320Z\"}},{\"articleId\":29,\"tagId\":7,\"tag\":{\"id\":7,\"name\":\"SOP\",\"createdAt\":\"2026-05-13T04:22:51.607Z\"}},{\"articleId\":29,\"tagId\":66,\"tag\":{\"id\":66,\"name\":\"Network\",\"createdAt\":\"2026-05-19T14:30:03.320Z\"}},{\"articleId\":29,\"tagId\":67,\"tag\":{\"id\":67,\"name\":\"Troubleshooting\",\"createdAt\":\"2026-05-19T14:30:03.320Z\"}},{\"articleId\":29,\"tagId\":68,\"tag\":{\"id\":68,\"name\":\"Parcel Scan\",\"createdAt\":\"2026-05-19T14:30:03.320Z\"}},{\"articleId\":29,\"tagId\":69,\"tag\":{\"id\":69,\"name\":\"Operations\",\"createdAt\":\"2026-05-19T14:30:03.320Z\"}},{\"articleId\":29,\"tagId\":51,\"tag\":{\"id\":51,\"name\":\"Logistics\",\"createdAt\":\"2026-05-19T10:37:53.271Z\"}},{\"articleId\":29,\"tagId\":70,\"tag\":{\"id\":70,\"name\":\"WH-SCAN-504\",\"createdAt\":\"2026-05-19T14:30:03.320Z\"}},{\"articleId\":29,\"tagId\":71,\"tag\":{\"id\":71,\"name\":\"Sync\",\"createdAt\":\"2026-05-19T14:30:03.320Z\"}},{\"articleId\":29,\"tagId\":72,\"tag\":{\"id\":72,\"name\":\"Error\",\"createdAt\":\"2026-05-19T14:30:03.320Z\"}},{\"articleId\":29,\"tagId\":73,\"tag\":{\"id\":73,\"name\":\"Scanner\",\"createdAt\":\"2026-05-19T14:30:03.320Z\"}},{\"articleId\":29,\"tagId\":2,\"tag\":{\"id\":2,\"name\":\"Warehouse\",\"createdAt\":\"2026-05-13T04:22:51.485Z\"}}]}",
+  "level": "Trace",
+  "logType": "User",
+  "timeStamp": "22:30:03",
+  "jobId": "759e6a5c-5c28-44d8-a1d7-a7f63986adc2",
+  "robotName": "faiyaz@graduate.utm.my-attended",
+  "machineId": 293988,
+  "robotVersion": "26.0.193-cloud.23060",
+  "userKey": "d4f5d8cd-55df-40f0-b703-8188af30fb0e",
+  "processVersion": "1.0.3",
+  "organizationUnitId": 958190,
+  "businessOperationId": "3114d24be4134e3c88230d56a586cce9-a726d83b80854dc2864766df13bc3f1a"
+}
+05/19/2026 22:30:03 => [Trace] Attachment uploaded for article ID: 29
+{
+  "message": "Attachment uploaded for article ID: 29",
+  "level": "Trace",
+  "logType": "User",
+  "timeStamp": "22:30:03",
+  "jobId": "759e6a5c-5c28-44d8-a1d7-a7f63986adc2",
+  "robotName": "faiyaz@graduate.utm.my-attended",
+  "machineId": 293988,
+  "robotVersion": "26.0.193-cloud.23060",
+  "userKey": "d4f5d8cd-55df-40f0-b703-8188af30fb0e",
+  "processVersion": "1.0.3",
+  "organizationUnitId": 958190,
+  "businessOperationId": "3114d24be4134e3c88230d56a586cce9-a726d83b80854dc2864766df13bc3f1a"
+}
+05/19/2026 22:30:03 => [Trace] Article created. ID: 29
+{
+  "message": "Article created. ID: 29",
+  "level": "Trace",
+  "logType": "User",
+  "timeStamp": "22:30:03",
+  "jobId": "759e6a5c-5c28-44d8-a1d7-a7f63986adc2",
+  "robotName": "faiyaz@graduate.utm.my-attended",
+  "machineId": 293988,
+  "robotVersion": "26.0.193-cloud.23060",
+  "userKey": "d4f5d8cd-55df-40f0-b703-8188af30fb0e",
+  "processVersion": "1.0.3",
+  "organizationUnitId": 958190,
+  "businessOperationId": "3114d24be4134e3c88230d56a586cce9-a726d83b80854dc2864766df13bc3f1a"
+}
+05/19/2026 22:30:03 => [Trace] Automation log created.
+{
+  "message": "Automation log created.",
+  "level": "Trace",
+  "logType": "User",
+  "timeStamp": "22:30:03",
+  "jobId": "759e6a5c-5c28-44d8-a1d7-a7f63986adc2",
+  "robotName": "faiyaz@graduate.utm.my-attended",
+  "machineId": 293988,
+  "robotVersion": "26.0.193-cloud.23060",
+  "userKey": "d4f5d8cd-55df-40f0-b703-8188af30fb0e",
+  "processVersion": "1.0.3",
+  "organizationUnitId": 958190,
+  "businessOperationId": "3114d24be4134e3c88230d56a586cce9-a726d83b80854dc2864766df13bc3f1a"
+}
+05/19/2026 22:30:03 => [Trace] Automation run marked as SUCCESS.
+{
+  "message": "Automation run marked as SUCCESS.",
+  "level": "Trace",
+  "logType": "User",
+  "timeStamp": "22:30:03",
+  "jobId": "759e6a5c-5c28-44d8-a1d7-a7f63986adc2",
+  "robotName": "faiyaz@graduate.utm.my-attended",
+  "machineId": 293988,
+  "robotVersion": "26.0.193-cloud.23060",
+  "userKey": "d4f5d8cd-55df-40f0-b703-8188af30fb0e",
+  "processVersion": "1.0.3",
+  "organizationUnitId": 958190,
+  "businessOperationId": "3114d24be4134e3c88230d56a586cce9-a726d83b80854dc2864766df13bc3f1a"
+}
+05/19/2026 22:30:05 => [Trace] Moved processed file to Processed folder.
+{
+  "message": "Moved processed file to Processed folder.",
+  "level": "Trace",
+  "logType": "User",
+  "timeStamp": "22:30:05",
+  "jobId": "759e6a5c-5c28-44d8-a1d7-a7f63986adc2",
+  "robotName": "faiyaz@graduate.utm.my-attended",
+  "machineId": 293988,
+  "robotVersion": "26.0.193-cloud.23060",
+  "userKey": "d4f5d8cd-55df-40f0-b703-8188af30fb0e",
+  "processVersion": "1.0.3",
+  "organizationUnitId": 958190,
+  "businessOperationId": "3114d24be4134e3c88230d56a586cce9-a726d83b80854dc2864766df13bc3f1a"
+}
+05/19/2026 22:30:05 => [Trace] 06_customs_clearance_delay_source
+{
+  "message": "06_customs_clearance_delay_source",
+  "level": "Trace",
+  "logType": "User",
+  "timeStamp": "22:30:05",
+  "jobId": "759e6a5c-5c28-44d8-a1d7-a7f63986adc2",
+  "robotName": "faiyaz@graduate.utm.my-attended",
+  "machineId": 293988,
+  "robotVersion": "26.0.193-cloud.23060",
+  "userKey": "d4f5d8cd-55df-40f0-b703-8188af30fb0e",
+  "processVersion": "1.0.3",
+  "organizationUnitId": 958190,
+  "businessOperationId": "3114d24be4134e3c88230d56a586cce9-a726d83b80854dc2864766df13bc3f1a"
+}
+05/19/2026 22:30:07 => [Trace] {"isDuplicate":false,"article":null}
+{
+  "message": "{\"isDuplicate\":false,\"article\":null}",
+  "level": "Trace",
+  "logType": "User",
+  "timeStamp": "22:30:07",
+  "jobId": "759e6a5c-5c28-44d8-a1d7-a7f63986adc2",
+  "robotName": "faiyaz@graduate.utm.my-attended",
+  "machineId": 293988,
+  "robotVersion": "26.0.193-cloud.23060",
+  "userKey": "d4f5d8cd-55df-40f0-b703-8188af30fb0e",
+  "processVersion": "1.0.3",
+  "organizationUnitId": 958190,
+  "businessOperationId": "3114d24be4134e3c88230d56a586cce9-a726d83b80854dc2864766df13bc3f1a"
+}
+05/19/2026 22:30:07 => [Trace] Duplicate check result: False
+{
+  "message": "Duplicate check result: False",
+  "level": "Trace",
+  "logType": "User",
+  "timeStamp": "22:30:07",
+  "jobId": "759e6a5c-5c28-44d8-a1d7-a7f63986adc2",
+  "robotName": "faiyaz@graduate.utm.my-attended",
+  "machineId": 293988,
+  "robotVersion": "26.0.193-cloud.23060",
+  "userKey": "d4f5d8cd-55df-40f0-b703-8188af30fb0e",
+  "processVersion": "1.0.3",
+  "organizationUnitId": 958190,
+  "businessOperationId": "3114d24be4134e3c88230d56a586cce9-a726d83b80854dc2864766df13bc3f1a"
+}
+05/19/2026 22:30:16 => [Trace] Gemini generated article: Handling Customs Clearance Delays for International Shipments
+{
+  "message": "Gemini generated article: Handling Customs Clearance Delays for International Shipments",
+  "level": "Trace",
+  "logType": "User",
+  "timeStamp": "22:30:16",
+  "jobId": "759e6a5c-5c28-44d8-a1d7-a7f63986adc2",
+  "robotName": "faiyaz@graduate.utm.my-attended",
+  "machineId": 293988,
+  "robotVersion": "26.0.193-cloud.23060",
+  "userKey": "d4f5d8cd-55df-40f0-b703-8188af30fb0e",
+  "processVersion": "1.0.3",
+  "organizationUnitId": 958190,
+  "businessOperationId": "3114d24be4134e3c88230d56a586cce9-a726d83b80854dc2864766df13bc3f1a"
+}
+05/19/2026 22:30:16 => [Trace] {"id":30,"title":"Handling Customs Clearance Delays for International Shipments","summary":"This SOP outlines the process for DHL support agents to manage international shipments delayed due to incomplete or pending customs documents, including how to identify the cause, request necessary information, escalate issues, and communicate effectively with customers.","content":"1. Open the shipment record and confirm that the shipment status is explicitly related to customs clearance (e.g., 'Customs Hold', 'Pending Documentation').\n2. Review the shipment notes and system records to identify the specific missing or pending documents (e.g., invoice, identification, customs declaration).\n3. If the required documents are needed from the customer:\n   a. Send a clear and precise request to the customer, detailing exactly which documents are required.\n   b. Record the request and the list of required documents in the case notes immediately.\n4. If the delay is caused by internal document submission or an incorrect declaration:\n   a. Escalate the case directly to the customs clearance team.\n   b. Prioritize escalation for customs holds exceeding 48 hours or issues with incorrect declarations.\n5. Do not promise a specific delivery date to the customer until customs clearance has been successfully completed and confirmed.\n6. Update the customer promptly with the latest customs clearance status and provide an estimated next follow-up time.","sourceText":"DHL Logistics Operations Source Document\n\nCustoms Clearance Delay Handling Notes\n\nRaw Notes\n\nSome international shipments are delayed because customs documents are incomplete or pending verification.\n\nSupport agents should not immediately promise a delivery date when the parcel is under customs hold.\n\nThe agent must check whether the required invoice, identification, or customs declaration is missing.\n\nIf the customer needs to provide documents, the agent should explain exactly what is required and record the request in the case notes.\n\nIf the delay is caused by internal document submission, the case should be escalated to the customs clearance team.\n\nExpected SOP Steps\n\n1. Open the shipment record and confirm that the status is related to customs clearance.\n\n2. Check the shipment notes to identify missing or pending documents.\n\n3. If documents are needed from the customer, send a clear request and record the required document list.\n\n4. If the issue is internal, escalate the case to the customs clearance team.\n\n5. Avoid promising a delivery date until customs clearance is completed.\n\n6. Update the customer with the latest clearance status and next follow-up time.\n\nPriority Rules\n\nSituation\n\nAction\n\nPriority\n\nMissing customer invoice\n\nRequest document from customer\n\nMedium\n\nCustoms hold over 48 hours\n\nEscalate to customs team\n\nHigh\n\nIncorrect declaration\n\nVerify and update declaration details\n\nHigh","sourceType":"DOCX","status":"DRAFT","sourceHash":"b6b24690fa55e69846ba4a27456167ba51b9a301a27e4c7979214863eab31285","isDuplicate":false,"createdById":4,"reviewedById":null,"publishedById":null,"createdAt":"2026-05-19T14:30:16.159Z","updatedAt":"2026-05-19T14:30:16.159Z","reviewedAt":null,"publishedAt":null,"articleTags":[{"articleId":30,"tagId":3,"tag":{"id":3,"name":"Customs","createdAt":"2026-05-13T04:22:51.515Z"}},{"articleId":30,"tagId":52,"tag":{"id":52,"name":"Documentation","createdAt":"2026-05-19T11:10:47.210Z"}},{"articleId":30,"tagId":47,"tag":{"id":47,"name":"Escalation","createdAt":"2026-05-19T08:51:00.692Z"}},{"articleId":30,"tagId":48,"tag":{"id":48,"name":"International Shipping","createdAt":"2026-05-19T10:37:42.590Z"}},{"articleId":30,"tagId":7,"tag":{"id":7,"name":"SOP","createdAt":"2026-05-13T04:22:51.607Z"}},{"articleId":30,"tagId":6,"tag":{"id":6,"name":"Customer Support","createdAt":"2026-05-13T04:22:51.583Z"}},{"articleId":30,"tagId":1,"tag":{"id":1,"name":"Delivery","createdAt":"2026-05-13T04:22:51.435Z"}}]}
+{
+  "message": "{\"id\":30,\"title\":\"Handling Customs Clearance Delays for International Shipments\",\"summary\":\"This SOP outlines the process for DHL support agents to manage international shipments delayed due to incomplete or pending customs documents, including how to identify the cause, request necessary information, escalate issues, and communicate effectively with customers.\",\"content\":\"1. Open the shipment record and confirm that the shipment status is explicitly related to customs clearance (e.g., 'Customs Hold', 'Pending Documentation').\\n2. Review the shipment notes and system records to identify the specific missing or pending documents (e.g., invoice, identification, customs declaration).\\n3. If the required documents are needed from the customer:\\n   a. Send a clear and precise request to the customer, detailing exactly which documents are required.\\n   b. Record the request and the list of required documents in the case notes immediately.\\n4. If the delay is caused by internal document submission or an incorrect declaration:\\n   a. Escalate the case directly to the customs clearance team.\\n   b. Prioritize escalation for customs holds exceeding 48 hours or issues with incorrect declarations.\\n5. Do not promise a specific delivery date to the customer until customs clearance has been successfully completed and confirmed.\\n6. Update the customer promptly with the latest customs clearance status and provide an estimated next follow-up time.\",\"sourceText\":\"DHL Logistics Operations Source Document\\n\\nCustoms Clearance Delay Handling Notes\\n\\nRaw Notes\\n\\nSome international shipments are delayed because customs documents are incomplete or pending verification.\\n\\nSupport agents should not immediately promise a delivery date when the parcel is under customs hold.\\n\\nThe agent must check whether the required invoice, identification, or customs declaration is missing.\\n\\nIf the customer needs to provide documents, the agent should explain exactly what is required and record the request in the case notes.\\n\\nIf the delay is caused by internal document submission, the case should be escalated to the customs clearance team.\\n\\nExpected SOP Steps\\n\\n1. Open the shipment record and confirm that the status is related to customs clearance.\\n\\n2. Check the shipment notes to identify missing or pending documents.\\n\\n3. If documents are needed from the customer, send a clear request and record the required document list.\\n\\n4. If the issue is internal, escalate the case to the customs clearance team.\\n\\n5. Avoid promising a delivery date until customs clearance is completed.\\n\\n6. Update the customer with the latest clearance status and next follow-up time.\\n\\nPriority Rules\\n\\nSituation\\n\\nAction\\n\\nPriority\\n\\nMissing customer invoice\\n\\nRequest document from customer\\n\\nMedium\\n\\nCustoms hold over 48 hours\\n\\nEscalate to customs team\\n\\nHigh\\n\\nIncorrect declaration\\n\\nVerify and update declaration details\\n\\nHigh\",\"sourceType\":\"DOCX\",\"status\":\"DRAFT\",\"sourceHash\":\"b6b24690fa55e69846ba4a27456167ba51b9a301a27e4c7979214863eab31285\",\"isDuplicate\":false,\"createdById\":4,\"reviewedById\":null,\"publishedById\":null,\"createdAt\":\"2026-05-19T14:30:16.159Z\",\"updatedAt\":\"2026-05-19T14:30:16.159Z\",\"reviewedAt\":null,\"publishedAt\":null,\"articleTags\":[{\"articleId\":30,\"tagId\":3,\"tag\":{\"id\":3,\"name\":\"Customs\",\"createdAt\":\"2026-05-13T04:22:51.515Z\"}},{\"articleId\":30,\"tagId\":52,\"tag\":{\"id\":52,\"name\":\"Documentation\",\"createdAt\":\"2026-05-19T11:10:47.210Z\"}},{\"articleId\":30,\"tagId\":47,\"tag\":{\"id\":47,\"name\":\"Escalation\",\"createdAt\":\"2026-05-19T08:51:00.692Z\"}},{\"articleId\":30,\"tagId\":48,\"tag\":{\"id\":48,\"name\":\"International Shipping\",\"createdAt\":\"2026-05-19T10:37:42.590Z\"}},{\"articleId\":30,\"tagId\":7,\"tag\":{\"id\":7,\"name\":\"SOP\",\"createdAt\":\"2026-05-13T04:22:51.607Z\"}},{\"articleId\":30,\"tagId\":6,\"tag\":{\"id\":6,\"name\":\"Customer Support\",\"createdAt\":\"2026-05-13T04:22:51.583Z\"}},{\"articleId\":30,\"tagId\":1,\"tag\":{\"id\":1,\"name\":\"Delivery\",\"createdAt\":\"2026-05-13T04:22:51.435Z\"}}]}",
+  "level": "Trace",
+  "logType": "User",
+  "timeStamp": "22:30:16",
+  "jobId": "759e6a5c-5c28-44d8-a1d7-a7f63986adc2",
+  "robotName": "faiyaz@graduate.utm.my-attended",
+  "machineId": 293988,
+  "robotVersion": "26.0.193-cloud.23060",
+  "userKey": "d4f5d8cd-55df-40f0-b703-8188af30fb0e",
+  "processVersion": "1.0.3",
+  "organizationUnitId": 958190,
+  "businessOperationId": "3114d24be4134e3c88230d56a586cce9-a726d83b80854dc2864766df13bc3f1a"
+}
+05/19/2026 22:30:16 => [Trace] Attachment uploaded for article ID: 30
+{
+  "message": "Attachment uploaded for article ID: 30",
+  "level": "Trace",
+  "logType": "User",
+  "timeStamp": "22:30:16",
+  "jobId": "759e6a5c-5c28-44d8-a1d7-a7f63986adc2",
+  "robotName": "faiyaz@graduate.utm.my-attended",
+  "machineId": 293988,
+  "robotVersion": "26.0.193-cloud.23060",
+  "userKey": "d4f5d8cd-55df-40f0-b703-8188af30fb0e",
+  "processVersion": "1.0.3",
+  "organizationUnitId": 958190,
+  "businessOperationId": "3114d24be4134e3c88230d56a586cce9-a726d83b80854dc2864766df13bc3f1a"
+}
+05/19/2026 22:30:16 => [Trace] Article created. ID: 30
+{
+  "message": "Article created. ID: 30",
+  "level": "Trace",
+  "logType": "User",
+  "timeStamp": "22:30:16",
+  "jobId": "759e6a5c-5c28-44d8-a1d7-a7f63986adc2",
+  "robotName": "faiyaz@graduate.utm.my-attended",
+  "machineId": 293988,
+  "robotVersion": "26.0.193-cloud.23060",
+  "userKey": "d4f5d8cd-55df-40f0-b703-8188af30fb0e",
+  "processVersion": "1.0.3",
+  "organizationUnitId": 958190,
+  "businessOperationId": "3114d24be4134e3c88230d56a586cce9-a726d83b80854dc2864766df13bc3f1a"
+}
+05/19/2026 22:30:16 => [Trace] Automation log created.
+{
+  "message": "Automation log created.",
+  "level": "Trace",
+  "logType": "User",
+  "timeStamp": "22:30:16",
+  "jobId": "759e6a5c-5c28-44d8-a1d7-a7f63986adc2",
+  "robotName": "faiyaz@graduate.utm.my-attended",
+  "machineId": 293988,
+  "robotVersion": "26.0.193-cloud.23060",
+  "userKey": "d4f5d8cd-55df-40f0-b703-8188af30fb0e",
+  "processVersion": "1.0.3",
+  "organizationUnitId": 958190,
+  "businessOperationId": "3114d24be4134e3c88230d56a586cce9-a726d83b80854dc2864766df13bc3f1a"
+}
+05/19/2026 22:30:16 => [Trace] Automation run marked as SUCCESS.
+{
+  "message": "Automation run marked as SUCCESS.",
+  "level": "Trace",
+  "logType": "User",
+  "timeStamp": "22:30:16",
+  "jobId": "759e6a5c-5c28-44d8-a1d7-a7f63986adc2",
+  "robotName": "faiyaz@graduate.utm.my-attended",
+  "machineId": 293988,
+  "robotVersion": "26.0.193-cloud.23060",
+  "userKey": "d4f5d8cd-55df-40f0-b703-8188af30fb0e",
+  "processVersion": "1.0.3",
+  "organizationUnitId": 958190,
+  "businessOperationId": "3114d24be4134e3c88230d56a586cce9-a726d83b80854dc2864766df13bc3f1a"
+}
+05/19/2026 22:30:18 => [Trace] Moved processed file to Processed folder.
+{
+  "message": "Moved processed file to Processed folder.",
+  "level": "Trace",
+  "logType": "User",
+  "timeStamp": "22:30:18",
+  "jobId": "759e6a5c-5c28-44d8-a1d7-a7f63986adc2",
+  "robotName": "faiyaz@graduate.utm.my-attended",
+  "machineId": 293988,
+  "robotVersion": "26.0.193-cloud.23060",
+  "userKey": "d4f5d8cd-55df-40f0-b703-8188af30fb0e",
+  "processVersion": "1.0.3",
+  "organizationUnitId": 958190,
+  "businessOperationId": "3114d24be4134e3c88230d56a586cce9-a726d83b80854dc2864766df13bc3f1a"
+}
+05/19/2026 22:30:18 => [Trace] email-body-20260519_222105
+{
+  "message": "email-body-20260519_222105",
+  "level": "Trace",
+  "logType": "User",
+  "timeStamp": "22:30:18",
+  "jobId": "759e6a5c-5c28-44d8-a1d7-a7f63986adc2",
+  "robotName": "faiyaz@graduate.utm.my-attended",
+  "machineId": 293988,
+  "robotVersion": "26.0.193-cloud.23060",
+  "userKey": "d4f5d8cd-55df-40f0-b703-8188af30fb0e",
+  "processVersion": "1.0.3",
+  "organizationUnitId": 958190,
+  "businessOperationId": "3114d24be4134e3c88230d56a586cce9-a726d83b80854dc2864766df13bc3f1a"
+}
+05/19/2026 22:30:20 => [Trace] {"isDuplicate":false,"article":null}
+{
+  "message": "{\"isDuplicate\":false,\"article\":null}",
+  "level": "Trace",
+  "logType": "User",
+  "timeStamp": "22:30:20",
+  "jobId": "759e6a5c-5c28-44d8-a1d7-a7f63986adc2",
+  "robotName": "faiyaz@graduate.utm.my-attended",
+  "machineId": 293988,
+  "robotVersion": "26.0.193-cloud.23060",
+  "userKey": "d4f5d8cd-55df-40f0-b703-8188af30fb0e",
+  "processVersion": "1.0.3",
+  "organizationUnitId": 958190,
+  "businessOperationId": "3114d24be4134e3c88230d56a586cce9-a726d83b80854dc2864766df13bc3f1a"
+}
+05/19/2026 22:30:20 => [Trace] Duplicate check result: False
+{
+  "message": "Duplicate check result: False",
+  "level": "Trace",
+  "logType": "User",
+  "timeStamp": "22:30:20",
+  "jobId": "759e6a5c-5c28-44d8-a1d7-a7f63986adc2",
+  "robotName": "faiyaz@graduate.utm.my-attended",
+  "machineId": 293988,
+  "robotVersion": "26.0.193-cloud.23060",
+  "userKey": "d4f5d8cd-55df-40f0-b703-8188af30fb0e",
+  "processVersion": "1.0.3",
+  "organizationUnitId": 958190,
+  "businessOperationId": "3114d24be4134e3c88230d56a586cce9-a726d83b80854dc2864766df13bc3f1a"
+}
+05/19/2026 22:30:27 => [Trace] Gemini generated article: SOP for Post-Shipment Delivery Address Change Requests
+{
+  "message": "Gemini generated article: SOP for Post-Shipment Delivery Address Change Requests",
+  "level": "Trace",
+  "logType": "User",
+  "timeStamp": "22:30:27",
+  "jobId": "759e6a5c-5c28-44d8-a1d7-a7f63986adc2",
+  "robotName": "faiyaz@graduate.utm.my-attended",
+  "machineId": 293988,
+  "robotVersion": "26.0.193-cloud.23060",
+  "userKey": "d4f5d8cd-55df-40f0-b703-8188af30fb0e",
+  "processVersion": "1.0.3",
+  "organizationUnitId": 958190,
+  "businessOperationId": "3114d24be4134e3c88230d56a586cce9-a726d83b80854dc2864766df13bc3f1a"
+}
+05/19/2026 22:30:27 => [Trace] {"id":31,"title":"SOP for Post-Shipment Delivery Address Change Requests","summary":"This SOP outlines the process for handling customer requests to change a delivery address after a shipment has been created in the system, distinguishing procedures based on the shipment's current status (in-transit vs. out for delivery).","content":"1.  **Verify Shipment Status:** Before proceeding or making any promises, check the current status of the shipment in the system to determine if it is still at a facility/in transit or already out for delivery.\n\n2.  **Scenario A: Shipment Not Out For Delivery (At Facility or In Transit):**\n    a.  **Confirm Customer Identity and Ownership:** Verify the customer's identity and confirm their ownership of the shipment.\n    b.  **Check New Address Serviceability:** Ascertain if the new delivery address is within the same service area and is serviceable by DHL.\n    c.  **Create Address Amendment Request:** If feasible, initiate and submit an address amendment request in the logistics system.\n    d.  **Notify Operations (If Needed):** If manual handling or intervention is required, notify the relevant warehouse or delivery operations team.\n    e.  **Update Customer:** Inform the customer about the successful address change and provide the new estimated delivery timeframe.\n\n3.  **Scenario B: Shipment Is Out For Delivery:**\n    a.  **Do Not Promise Same-Day Redirection:** Explicitly inform the customer that same-day redirection is not possible.\n    b.  **Explain Original Attempt:** Advise the customer that the courier may first attempt delivery at the original address.\n    c.  **Explain Redirection Process:** Inform the customer that the redirection will be processed and handled during the next available delivery cycle.\n    d.  **Update Customer:** Provide the customer with this information and outline the expected next steps and potential new delivery timeframe.","sourceText":"During shipment processing, customers sometimes request a delivery address change after the parcel has already been created in the system. The support team must first verify that the shipment is not out for delivery. If the parcel is still at the facility or in transit, the agent should confirm the customer's identity, check whether the new address is within the same service area, and then raise an address amendment request. If the parcel is already out for delivery, the agent should not promise same-day redirection. The customer should be informed that the courier may attempt the original address first, and the redirection will be handled in the next available delivery cycle. Verify shipment status before making any promise. Confirm customer identity and shipment ownership. Check whether the new address is serviceable. Create an address amendment request. Notify warehouse or delivery operations if manual handling is needed. Update the customer with the expected next action.","sourceType":"EMAIL","status":"DRAFT","sourceHash":"fc1c08c98399fb85ec72ccb7d76f1edf7b9b71100d19b144c2f1b96583828918","isDuplicate":false,"createdById":4,"reviewedById":null,"publishedById":null,"createdAt":"2026-05-19T14:30:27.645Z","updatedAt":"2026-05-19T14:30:27.645Z","reviewedAt":null,"publishedAt":null,"articleTags":[{"articleId":31,"tagId":1,"tag":{"id":1,"name":"Delivery","createdAt":"2026-05-13T04:22:51.435Z"}},{"articleId":31,"tagId":74,"tag":{"id":74,"name":"Shipment Management","createdAt":"2026-05-19T14:30:27.645Z"}},{"articleId":31,"tagId":50,"tag":{"id":50,"name":"Address Change","createdAt":"2026-05-19T10:37:53.271Z"}},{"articleId":31,"tagId":7,"tag":{"id":7,"name":"SOP","createdAt":"2026-05-13T04:22:51.607Z"}},{"articleId":31,"tagId":6,"tag":{"id":6,"name":"Customer Support","createdAt":"2026-05-13T04:22:51.583Z"}}]}
+{
+  "message": "{\"id\":31,\"title\":\"SOP for Post-Shipment Delivery Address Change Requests\",\"summary\":\"This SOP outlines the process for handling customer requests to change a delivery address after a shipment has been created in the system, distinguishing procedures based on the shipment's current status (in-transit vs. out for delivery).\",\"content\":\"1.  **Verify Shipment Status:** Before proceeding or making any promises, check the current status of the shipment in the system to determine if it is still at a facility/in transit or already out for delivery.\\n\\n2.  **Scenario A: Shipment Not Out For Delivery (At Facility or In Transit):**\\n    a.  **Confirm Customer Identity and Ownership:** Verify the customer's identity and confirm their ownership of the shipment.\\n    b.  **Check New Address Serviceability:** Ascertain if the new delivery address is within the same service area and is serviceable by DHL.\\n    c.  **Create Address Amendment Request:** If feasible, initiate and submit an address amendment request in the logistics system.\\n    d.  **Notify Operations (If Needed):** If manual handling or intervention is required, notify the relevant warehouse or delivery operations team.\\n    e.  **Update Customer:** Inform the customer about the successful address change and provide the new estimated delivery timeframe.\\n\\n3.  **Scenario B: Shipment Is Out For Delivery:**\\n    a.  **Do Not Promise Same-Day Redirection:** Explicitly inform the customer that same-day redirection is not possible.\\n    b.  **Explain Original Attempt:** Advise the customer that the courier may first attempt delivery at the original address.\\n    c.  **Explain Redirection Process:** Inform the customer that the redirection will be processed and handled during the next available delivery cycle.\\n    d.  **Update Customer:** Provide the customer with this information and outline the expected next steps and potential new delivery timeframe.\",\"sourceText\":\"During shipment processing, customers sometimes request a delivery address change after the parcel has already been created in the system. The support team must first verify that the shipment is not out for delivery. If the parcel is still at the facility or in transit, the agent should confirm the customer's identity, check whether the new address is within the same service area, and then raise an address amendment request. If the parcel is already out for delivery, the agent should not promise same-day redirection. The customer should be informed that the courier may attempt the original address first, and the redirection will be handled in the next available delivery cycle. Verify shipment status before making any promise. Confirm customer identity and shipment ownership. Check whether the new address is serviceable. Create an address amendment request. Notify warehouse or delivery operations if manual handling is needed. Update the customer with the expected next action.\",\"sourceType\":\"EMAIL\",\"status\":\"DRAFT\",\"sourceHash\":\"fc1c08c98399fb85ec72ccb7d76f1edf7b9b71100d19b144c2f1b96583828918\",\"isDuplicate\":false,\"createdById\":4,\"reviewedById\":null,\"publishedById\":null,\"createdAt\":\"2026-05-19T14:30:27.645Z\",\"updatedAt\":\"2026-05-19T14:30:27.645Z\",\"reviewedAt\":null,\"publishedAt\":null,\"articleTags\":[{\"articleId\":31,\"tagId\":1,\"tag\":{\"id\":1,\"name\":\"Delivery\",\"createdAt\":\"2026-05-13T04:22:51.435Z\"}},{\"articleId\":31,\"tagId\":74,\"tag\":{\"id\":74,\"name\":\"Shipment Management\",\"createdAt\":\"2026-05-19T14:30:27.645Z\"}},{\"articleId\":31,\"tagId\":50,\"tag\":{\"id\":50,\"name\":\"Address Change\",\"createdAt\":\"2026-05-19T10:37:53.271Z\"}},{\"articleId\":31,\"tagId\":7,\"tag\":{\"id\":7,\"name\":\"SOP\",\"createdAt\":\"2026-05-13T04:22:51.607Z\"}},{\"articleId\":31,\"tagId\":6,\"tag\":{\"id\":6,\"name\":\"Customer Support\",\"createdAt\":\"2026-05-13T04:22:51.583Z\"}}]}",
+  "level": "Trace",
+  "logType": "User",
+  "timeStamp": "22:30:27",
+  "jobId": "759e6a5c-5c28-44d8-a1d7-a7f63986adc2",
+  "robotName": "faiyaz@graduate.utm.my-attended",
+  "machineId": 293988,
+  "robotVersion": "26.0.193-cloud.23060",
+  "userKey": "d4f5d8cd-55df-40f0-b703-8188af30fb0e",
+  "processVersion": "1.0.3",
+  "organizationUnitId": 958190,
+  "businessOperationId": "3114d24be4134e3c88230d56a586cce9-a726d83b80854dc2864766df13bc3f1a"
+}
+05/19/2026 22:30:27 => [Trace] Attachment uploaded for article ID: 31
+{
+  "message": "Attachment uploaded for article ID: 31",
+  "level": "Trace",
+  "logType": "User",
+  "timeStamp": "22:30:27",
+  "jobId": "759e6a5c-5c28-44d8-a1d7-a7f63986adc2",
+  "robotName": "faiyaz@graduate.utm.my-attended",
+  "machineId": 293988,
+  "robotVersion": "26.0.193-cloud.23060",
+  "userKey": "d4f5d8cd-55df-40f0-b703-8188af30fb0e",
+  "processVersion": "1.0.3",
+  "organizationUnitId": 958190,
+  "businessOperationId": "3114d24be4134e3c88230d56a586cce9-a726d83b80854dc2864766df13bc3f1a"
+}
+05/19/2026 22:30:27 => [Trace] Article created. ID: 31
+{
+  "message": "Article created. ID: 31",
+  "level": "Trace",
+  "logType": "User",
+  "timeStamp": "22:30:27",
+  "jobId": "759e6a5c-5c28-44d8-a1d7-a7f63986adc2",
+  "robotName": "faiyaz@graduate.utm.my-attended",
+  "machineId": 293988,
+  "robotVersion": "26.0.193-cloud.23060",
+  "userKey": "d4f5d8cd-55df-40f0-b703-8188af30fb0e",
+  "processVersion": "1.0.3",
+  "organizationUnitId": 958190,
+  "businessOperationId": "3114d24be4134e3c88230d56a586cce9-a726d83b80854dc2864766df13bc3f1a"
+}
+05/19/2026 22:30:27 => [Trace] Automation log created.
+{
+  "message": "Automation log created.",
+  "level": "Trace",
+  "logType": "User",
+  "timeStamp": "22:30:27",
+  "jobId": "759e6a5c-5c28-44d8-a1d7-a7f63986adc2",
+  "robotName": "faiyaz@graduate.utm.my-attended",
+  "machineId": 293988,
+  "robotVersion": "26.0.193-cloud.23060",
+  "userKey": "d4f5d8cd-55df-40f0-b703-8188af30fb0e",
+  "processVersion": "1.0.3",
+  "organizationUnitId": 958190,
+  "businessOperationId": "3114d24be4134e3c88230d56a586cce9-a726d83b80854dc2864766df13bc3f1a"
+}
+05/19/2026 22:30:27 => [Trace] Automation run marked as SUCCESS.
+{
+  "message": "Automation run marked as SUCCESS.",
+  "level": "Trace",
+  "logType": "User",
+  "timeStamp": "22:30:27",
+  "jobId": "759e6a5c-5c28-44d8-a1d7-a7f63986adc2",
+  "robotName": "faiyaz@graduate.utm.my-attended",
+  "machineId": 293988,
+  "robotVersion": "26.0.193-cloud.23060",
+  "userKey": "d4f5d8cd-55df-40f0-b703-8188af30fb0e",
+  "processVersion": "1.0.3",
+  "organizationUnitId": 958190,
+  "businessOperationId": "3114d24be4134e3c88230d56a586cce9-a726d83b80854dc2864766df13bc3f1a"
+}
+05/19/2026 22:30:29 => [Trace] Moved processed file to Processed folder.
+{
+  "message": "Moved processed file to Processed folder.",
+  "level": "Trace",
+  "logType": "User",
+  "timeStamp": "22:30:29",
+  "jobId": "759e6a5c-5c28-44d8-a1d7-a7f63986adc2",
+  "robotName": "faiyaz@graduate.utm.my-attended",
+  "machineId": 293988,
+  "robotVersion": "26.0.193-cloud.23060",
+  "userKey": "d4f5d8cd-55df-40f0-b703-8188af30fb0e",
+  "processVersion": "1.0.3",
+  "organizationUnitId": 958190,
+  "businessOperationId": "3114d24be4134e3c88230d56a586cce9-a726d83b80854dc2864766df13bc3f1a"
+}
+05/19/2026 22:30:29 => [Trace] email-body-20260519_222124
+{
+  "message": "email-body-20260519_222124",
+  "level": "Trace",
+  "logType": "User",
+  "timeStamp": "22:30:29",
+  "jobId": "759e6a5c-5c28-44d8-a1d7-a7f63986adc2",
+  "robotName": "faiyaz@graduate.utm.my-attended",
+  "machineId": 293988,
+  "robotVersion": "26.0.193-cloud.23060",
+  "userKey": "d4f5d8cd-55df-40f0-b703-8188af30fb0e",
+  "processVersion": "1.0.3",
+  "organizationUnitId": 958190,
+  "businessOperationId": "3114d24be4134e3c88230d56a586cce9-a726d83b80854dc2864766df13bc3f1a"
+}
+05/19/2026 22:30:32 => [Trace] {"isDuplicate":true,"article":{"id":31,"title":"SOP for Post-Shipment Delivery Address Change Requests","status":"DRAFT","sourceHash":"fc1c08c98399fb85ec72ccb7d76f1edf7b9b71100d19b144c2f1b96583828918","createdAt":"2026-05-19T14:30:27.645Z"}}
+{
+  "message": "{\"isDuplicate\":true,\"article\":{\"id\":31,\"title\":\"SOP for Post-Shipment Delivery Address Change Requests\",\"status\":\"DRAFT\",\"sourceHash\":\"fc1c08c98399fb85ec72ccb7d76f1edf7b9b71100d19b144c2f1b96583828918\",\"createdAt\":\"2026-05-19T14:30:27.645Z\"}}",
+  "level": "Trace",
+  "logType": "User",
+  "timeStamp": "22:30:32",
+  "jobId": "759e6a5c-5c28-44d8-a1d7-a7f63986adc2",
+  "robotName": "faiyaz@graduate.utm.my-attended",
+  "machineId": 293988,
+  "robotVersion": "26.0.193-cloud.23060",
+  "userKey": "d4f5d8cd-55df-40f0-b703-8188af30fb0e",
+  "processVersion": "1.0.3",
+  "organizationUnitId": 958190,
+  "businessOperationId": "3114d24be4134e3c88230d56a586cce9-a726d83b80854dc2864766df13bc3f1a"
+}
+05/19/2026 22:30:32 => [Trace] Duplicate check result: True
+{
+  "message": "Duplicate check result: True",
+  "level": "Trace",
+  "logType": "User",
+  "timeStamp": "22:30:32",
+  "jobId": "759e6a5c-5c28-44d8-a1d7-a7f63986adc2",
+  "robotName": "faiyaz@graduate.utm.my-attended",
+  "machineId": 293988,
+  "robotVersion": "26.0.193-cloud.23060",
+  "userKey": "d4f5d8cd-55df-40f0-b703-8188af30fb0e",
+  "processVersion": "1.0.3",
+  "organizationUnitId": 958190,
+  "businessOperationId": "3114d24be4134e3c88230d56a586cce9-a726d83b80854dc2864766df13bc3f1a"
+}
+05/19/2026 22:30:32 => [Trace] Duplicate found. Existing article ID: 31
+{
+  "message": "Duplicate found. Existing article ID: 31",
+  "level": "Trace",
+  "logType": "User",
+  "timeStamp": "22:30:32",
+  "jobId": "759e6a5c-5c28-44d8-a1d7-a7f63986adc2",
+  "robotName": "faiyaz@graduate.utm.my-attended",
+  "machineId": 293988,
+  "robotVersion": "26.0.193-cloud.23060",
+  "userKey": "d4f5d8cd-55df-40f0-b703-8188af30fb0e",
+  "processVersion": "1.0.3",
+  "organizationUnitId": 958190,
+  "businessOperationId": "3114d24be4134e3c88230d56a586cce9-a726d83b80854dc2864766df13bc3f1a"
+}
+05/19/2026 22:30:32 => [Trace] Duplicate log created.
+{
+  "message": "Duplicate log created.",
+  "level": "Trace",
+  "logType": "User",
+  "timeStamp": "22:30:32",
+  "jobId": "759e6a5c-5c28-44d8-a1d7-a7f63986adc2",
+  "robotName": "faiyaz@graduate.utm.my-attended",
+  "machineId": 293988,
+  "robotVersion": "26.0.193-cloud.23060",
+  "userKey": "d4f5d8cd-55df-40f0-b703-8188af30fb0e",
+  "processVersion": "1.0.3",
+  "organizationUnitId": 958190,
+  "businessOperationId": "3114d24be4134e3c88230d56a586cce9-a726d83b80854dc2864766df13bc3f1a"
+}
+05/19/2026 22:30:32 => [Trace] Automation run marked as SUCCESS with duplicate skipped.
+{
+  "message": "Automation run marked as SUCCESS with duplicate skipped.",
+  "level": "Trace",
+  "logType": "User",
+  "timeStamp": "22:30:32",
+  "jobId": "759e6a5c-5c28-44d8-a1d7-a7f63986adc2",
+  "robotName": "faiyaz@graduate.utm.my-attended",
+  "machineId": 293988,
+  "robotVersion": "26.0.193-cloud.23060",
+  "userKey": "d4f5d8cd-55df-40f0-b703-8188af30fb0e",
+  "processVersion": "1.0.3",
+  "organizationUnitId": 958190,
+  "businessOperationId": "3114d24be4134e3c88230d56a586cce9-a726d83b80854dc2864766df13bc3f1a"
+}
+05/19/2026 22:30:34 => [Trace] Moved duplicate file to Duplicate folder.
+{
+  "message": "Moved duplicate file to Duplicate folder.",
+  "level": "Trace",
+  "logType": "User",
+  "timeStamp": "22:30:34",
+  "jobId": "759e6a5c-5c28-44d8-a1d7-a7f63986adc2",
+  "robotName": "faiyaz@graduate.utm.my-attended",
+  "machineId": 293988,
+  "robotVersion": "26.0.193-cloud.23060",
+  "userKey": "d4f5d8cd-55df-40f0-b703-8188af30fb0e",
+  "processVersion": "1.0.3",
+  "organizationUnitId": 958190,
+  "businessOperationId": "3114d24be4134e3c88230d56a586cce9-a726d83b80854dc2864766df13bc3f1a"
+}
+05/19/2026 22:30:34 => [Trace] email-body-20260519_222910
+{
+  "message": "email-body-20260519_222910",
+  "level": "Trace",
+  "logType": "User",
+  "timeStamp": "22:30:34",
+  "jobId": "759e6a5c-5c28-44d8-a1d7-a7f63986adc2",
+  "robotName": "faiyaz@graduate.utm.my-attended",
+  "machineId": 293988,
+  "robotVersion": "26.0.193-cloud.23060",
+  "userKey": "d4f5d8cd-55df-40f0-b703-8188af30fb0e",
+  "processVersion": "1.0.3",
+  "organizationUnitId": 958190,
+  "businessOperationId": "3114d24be4134e3c88230d56a586cce9-a726d83b80854dc2864766df13bc3f1a"
+}
+05/19/2026 22:30:36 => [Trace] {"isDuplicate":true,"article":{"id":31,"title":"SOP for Post-Shipment Delivery Address Change Requests","status":"DRAFT","sourceHash":"fc1c08c98399fb85ec72ccb7d76f1edf7b9b71100d19b144c2f1b96583828918","createdAt":"2026-05-19T14:30:27.645Z"}}
+{
+  "message": "{\"isDuplicate\":true,\"article\":{\"id\":31,\"title\":\"SOP for Post-Shipment Delivery Address Change Requests\",\"status\":\"DRAFT\",\"sourceHash\":\"fc1c08c98399fb85ec72ccb7d76f1edf7b9b71100d19b144c2f1b96583828918\",\"createdAt\":\"2026-05-19T14:30:27.645Z\"}}",
+  "level": "Trace",
+  "logType": "User",
+  "timeStamp": "22:30:36",
+  "jobId": "759e6a5c-5c28-44d8-a1d7-a7f63986adc2",
+  "robotName": "faiyaz@graduate.utm.my-attended",
+  "machineId": 293988,
+  "robotVersion": "26.0.193-cloud.23060",
+  "userKey": "d4f5d8cd-55df-40f0-b703-8188af30fb0e",
+  "processVersion": "1.0.3",
+  "organizationUnitId": 958190,
+  "businessOperationId": "3114d24be4134e3c88230d56a586cce9-a726d83b80854dc2864766df13bc3f1a"
+}
+05/19/2026 22:30:36 => [Trace] Duplicate check result: True
+{
+  "message": "Duplicate check result: True",
+  "level": "Trace",
+  "logType": "User",
+  "timeStamp": "22:30:36",
+  "jobId": "759e6a5c-5c28-44d8-a1d7-a7f63986adc2",
+  "robotName": "faiyaz@graduate.utm.my-attended",
+  "machineId": 293988,
+  "robotVersion": "26.0.193-cloud.23060",
+  "userKey": "d4f5d8cd-55df-40f0-b703-8188af30fb0e",
+  "processVersion": "1.0.3",
+  "organizationUnitId": 958190,
+  "businessOperationId": "3114d24be4134e3c88230d56a586cce9-a726d83b80854dc2864766df13bc3f1a"
+}
+05/19/2026 22:30:36 => [Trace] Duplicate found. Existing article ID: 31
+{
+  "message": "Duplicate found. Existing article ID: 31",
+  "level": "Trace",
+  "logType": "User",
+  "timeStamp": "22:30:36",
+  "jobId": "759e6a5c-5c28-44d8-a1d7-a7f63986adc2",
+  "robotName": "faiyaz@graduate.utm.my-attended",
+  "machineId": 293988,
+  "robotVersion": "26.0.193-cloud.23060",
+  "userKey": "d4f5d8cd-55df-40f0-b703-8188af30fb0e",
+  "processVersion": "1.0.3",
+  "organizationUnitId": 958190,
+  "businessOperationId": "3114d24be4134e3c88230d56a586cce9-a726d83b80854dc2864766df13bc3f1a"
+}
+05/19/2026 22:30:36 => [Trace] Duplicate log created.
+{
+  "message": "Duplicate log created.",
+  "level": "Trace",
+  "logType": "User",
+  "timeStamp": "22:30:36",
+  "jobId": "759e6a5c-5c28-44d8-a1d7-a7f63986adc2",
+  "robotName": "faiyaz@graduate.utm.my-attended",
+  "machineId": 293988,
+  "robotVersion": "26.0.193-cloud.23060",
+  "userKey": "d4f5d8cd-55df-40f0-b703-8188af30fb0e",
+  "processVersion": "1.0.3",
+  "organizationUnitId": 958190,
+  "businessOperationId": "3114d24be4134e3c88230d56a586cce9-a726d83b80854dc2864766df13bc3f1a"
+}
+05/19/2026 22:30:36 => [Trace] Automation run marked as SUCCESS with duplicate skipped.
+{
+  "message": "Automation run marked as SUCCESS with duplicate skipped.",
+  "level": "Trace",
+  "logType": "User",
+  "timeStamp": "22:30:36",
+  "jobId": "759e6a5c-5c28-44d8-a1d7-a7f63986adc2",
+  "robotName": "faiyaz@graduate.utm.my-attended",
+  "machineId": 293988,
+  "robotVersion": "26.0.193-cloud.23060",
+  "userKey": "d4f5d8cd-55df-40f0-b703-8188af30fb0e",
+  "processVersion": "1.0.3",
+  "organizationUnitId": 958190,
+  "businessOperationId": "3114d24be4134e3c88230d56a586cce9-a726d83b80854dc2864766df13bc3f1a"
+}
+05/19/2026 22:30:38 => [Trace] Moved duplicate file to Duplicate folder.
+{
+  "message": "Moved duplicate file to Duplicate folder.",
+  "level": "Trace",
+  "logType": "User",
+  "timeStamp": "22:30:38",
+  "jobId": "759e6a5c-5c28-44d8-a1d7-a7f63986adc2",
+  "robotName": "faiyaz@graduate.utm.my-attended",
+  "machineId": 293988,
+  "robotVersion": "26.0.193-cloud.23060",
+  "userKey": "d4f5d8cd-55df-40f0-b703-8188af30fb0e",
+  "processVersion": "1.0.3",
+  "organizationUnitId": 958190,
+  "businessOperationId": "3114d24be4134e3c88230d56a586cce9-a726d83b80854dc2864766df13bc3f1a"
+}
+05/19/2026 22:30:42 => [Trace] Summary email sent.
+{
+  "message": "Summary email sent.",
+  "level": "Trace",
+  "logType": "User",
+  "timeStamp": "22:30:42",
+  "jobId": "759e6a5c-5c28-44d8-a1d7-a7f63986adc2",
+  "robotName": "faiyaz@graduate.utm.my-attended",
+  "machineId": 293988,
+  "robotVersion": "26.0.193-cloud.23060",
+  "userKey": "d4f5d8cd-55df-40f0-b703-8188af30fb0e",
+  "processVersion": "1.0.3",
+  "organizationUnitId": 958190,
+  "businessOperationId": "3114d24be4134e3c88230d56a586cce9-a726d83b80854dc2864766df13bc3f1a"
+}
+05/19/2026 22:30:42 => [Trace] Final automation run summary updated.
+{
+  "message": "Final automation run summary updated.",
+  "level": "Trace",
+  "logType": "User",
+  "timeStamp": "22:30:42",
+  "jobId": "759e6a5c-5c28-44d8-a1d7-a7f63986adc2",
+  "robotName": "faiyaz@graduate.utm.my-attended",
+  "machineId": 293988,
+  "robotVersion": "26.0.193-cloud.23060",
+  "userKey": "d4f5d8cd-55df-40f0-b703-8188af30fb0e",
+  "processVersion": "1.0.3",
+  "organizationUnitId": 958190,
+  "businessOperationId": "3114d24be4134e3c88230d56a586cce9-a726d83b80854dc2864766df13bc3f1a"
+}
+05/19/2026 22:30:43 => [Information] DHL_KB_RPA_Automation execution ended in: 00:01:35
+{
+  "message": "DHL_KB_RPA_Automation execution ended",
+  "level": "Information",
+  "logType": "Default",
+  "timeStamp": "22:30:43",
+  "fileName": "Main",
+  "totalExecutionTimeInSeconds": 95,
+  "totalExecutionTime": "00:01:35",
+  "jobId": "759e6a5c-5c28-44d8-a1d7-a7f63986adc2",
+  "robotName": "faiyaz@graduate.utm.my-attended",
+  "machineId": 293988,
+  "robotVersion": "26.0.193-cloud.23060",
+  "userKey": "d4f5d8cd-55df-40f0-b703-8188af30fb0e",
+  "processVersion": "1.0.3",
+  "organizationUnitId": 958190,
+  "businessOperationId": "3114d24be4134e3c88230d56a586cce9-a726d83b80854dc2864766df13bc3f1a"
+}

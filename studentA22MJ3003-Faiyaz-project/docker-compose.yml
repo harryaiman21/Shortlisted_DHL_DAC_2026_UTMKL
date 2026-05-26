@@ -1,0 +1,16 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: dhl_postgres
+    restart: always
+    ports:
+      - "5433:5432"
+    environment:
+      POSTGRES_USER: dhl_user
+      POSTGRES_PASSWORD: dhl_password
+      POSTGRES_DB: dhl_db
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:

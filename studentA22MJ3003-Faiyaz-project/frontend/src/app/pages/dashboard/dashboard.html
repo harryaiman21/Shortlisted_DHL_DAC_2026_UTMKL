@@ -1,0 +1,188 @@
+<div class="dashboard-page">
+    <section class="hero-card">
+        <div>
+            <span class="eyebrow">DHL Digital Automation Center</span>
+            <h1>Welcome back, {{ currentUser?.name || 'User' }}</h1>
+            <p>
+                {{ getDashboardMessage() }}
+            </p>
+        </div>
+
+        <div class="system-status">
+            <span>System Status</span>
+            <strong>Operational</strong>
+            <small>Live API data</small>
+        </div>
+    </section>
+
+    <div *ngIf="errorMessage" class="alert error">
+        {{ errorMessage }}
+    </div>
+
+    <div *ngIf="loading" class="info-box">
+        Refreshing dashboard data...
+    </div>
+
+    <section class="stats-grid">
+        <div class="stat-card">
+            <span>Total Articles</span>
+            <strong>{{ totalArticles }}</strong>
+            <p>Knowledge records in the system</p>
+        </div>
+
+        <div class="stat-card">
+            <span>Drafts</span>
+            <strong>{{ draftCount }}</strong>
+            <p>Waiting for editor/reviewer action</p>
+        </div>
+
+        <div class="stat-card">
+            <span>Reviewed</span>
+            <strong>{{ reviewedCount }}</strong>
+            <p>Ready for publishing</p>
+        </div>
+
+        <div class="stat-card">
+            <span>Published</span>
+            <strong>{{ publishedCount }}</strong>
+            <p>Approved SOPs available to users</p>
+        </div>
+
+        <div class="stat-card" *ngIf="hasRole(['ADMIN'])">
+            <span>User Accounts</span>
+            <strong>{{ userCount }}</strong>
+            <p>Managed portal users and roles</p>
+        </div>
+
+        <div class="stat-card" *ngIf="hasRole(['ADMIN', 'REVIEWER'])">
+            <span>RPA Runs</span>
+            <strong>{{ automationRuns.length }}</strong>
+            <p>Automation executions recorded</p>
+        </div>
+    </section>
+
+    <section class="content-grid">
+        <div class="workflow-card">
+            <div class="section-header">
+                <span class="eyebrow small">Workflow</span>
+                <h2>Draft → Reviewed → Published</h2>
+                <p>
+                    A controlled approval flow ensures that messy operational input becomes
+                    reliable and reusable DHL knowledge-base content.
+                </p>
+            </div>
+
+            <div class="workflow-steps">
+                <div class="workflow-step">
+                    <div class="step-number">1</div>
+                    <h3>Ingest Input</h3>
+                    <p>RPA or editors submit text, PDFs, DOCX documents, and screenshots.</p>
+                </div>
+
+                <div class="workflow-step">
+                    <div class="step-number">2</div>
+                    <h3>Create Draft</h3>
+                    <p>Raw information is structured into a draft knowledge article.</p>
+                </div>
+
+                <div class="workflow-step">
+                    <div class="step-number">3</div>
+                    <h3>Review</h3>
+                    <p>Reviewer validates accuracy, tags, content, and attached sources.</p>
+                </div>
+
+                <div class="workflow-step">
+                    <div class="step-number">4</div>
+                    <h3>Publish</h3>
+                    <p>Approved SOPs become searchable for logistics operations teams.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="activity-card" *ngIf="hasRole(['ADMIN', 'REVIEWER'])">
+            <div class="section-header">
+                <span class="eyebrow small">RPA Monitor</span>
+                <h2>Latest Automation Run</h2>
+            </div>
+
+            <ng-container *ngIf="latestRun; else noAutomationRun">
+                <div class="run-status-line">
+                    <span>Status</span>
+                    <strong [class]="getStatusClass(latestRun.status)">
+                        {{ latestRun.status }}
+                    </strong>
+                </div>
+
+                <div class="activity-list">
+                    <div class="activity-row">
+                        <span>Scanned</span>
+                        <strong>{{ latestRun.totalScanned }}</strong>
+                    </div>
+
+                    <div class="activity-row success">
+                        <span>Created</span>
+                        <strong>{{ latestRun.totalCreated }}</strong>
+                    </div>
+
+                    <div class="activity-row">
+                        <span>Updated</span>
+                        <strong>{{ latestRun.totalUpdated }}</strong>
+                    </div>
+
+                    <div class="activity-row warning">
+                        <span>Duplicates</span>
+                        <strong>{{ latestRun.totalDuplicates }}</strong>
+                    </div>
+
+                    <div class="activity-row danger">
+                        <span>Failed</span>
+                        <strong>{{ latestRun.totalFailed }}</strong>
+                    </div>
+                </div>
+
+                <div class="summary-box">
+                    <strong>
+                        Summary email {{ latestRun.summaryEmailSent ? 'sent' : 'not sent' }}
+                    </strong>
+                    <p>
+                        Started {{ latestRun.startedAt | date: 'medium' }}
+                    </p>
+                </div>
+            </ng-container>
+
+            <ng-template #noAutomationRun>
+                <div class="empty-box">
+                    No automation run has been recorded yet.
+                </div>
+            </ng-template>
+        </div>
+    </section>
+
+    <section class="recent-card">
+        <div class="section-header">
+            <span class="eyebrow small">Knowledge Activity</span>
+            <h2>Recent Articles</h2>
+            <p>Latest knowledge-base drafts and SOP records from the system.</p>
+        </div>
+
+        <div class="recent-list" *ngIf="recentArticles.length > 0; else noArticles">
+            <a class="recent-row" *ngFor="let article of recentArticles" [routerLink]="['/articles', article.id]">
+                <div>
+                    <strong>{{ article.title }}</strong>
+                    <span>{{ article.createdBy?.name || 'Unknown creator' }} · {{ article.createdAt | date: 'mediumDate'
+                        }}</span>
+                </div>
+
+                <span class="status-badge" [ngClass]="getStatusClass(article.status)">
+                    {{ article.status }}
+                </span>
+            </a>
+        </div>
+
+        <ng-template #noArticles>
+            <div class="empty-box">
+                No knowledge articles have been created yet.
+            </div>
+        </ng-template>
+    </section>
+</div>

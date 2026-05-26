@@ -1,0 +1,208 @@
+.login-page {
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+    background:
+        linear-gradient(90deg,
+            rgba(255, 204, 0, 0.92) 0%,
+            rgba(255, 204, 0, 0.7) 38%,
+            rgba(0, 0, 0, 0.2) 100%),
+        url('/dhl-penang-hub.jpg') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    padding: 56px 7vw;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.background-overlay {
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.28), transparent 30%),
+        linear-gradient(135deg, rgba(212, 5, 17, 0.08), rgba(0, 0, 0, 0.28));
+    pointer-events: none;
+}
+
+.login-card {
+    position: relative;
+    z-index: 2;
+    width: 460px;
+    background: rgba(255, 255, 255, 0.94);
+    border-radius: 26px;
+    padding: 38px;
+    box-shadow: 0 28px 70px rgba(0, 0, 0, 0.28);
+    border: 1px solid rgba(255, 255, 255, 0.75);
+}
+
+.login-logo {
+    width: 150px;
+    display: block;
+    margin-bottom: 26px;
+}
+
+.login-card h1 {
+    margin: 0 0 30px;
+    color: #d40511;
+    font-size: 30px;
+    line-height: 1.15;
+    font-weight: 900;
+    letter-spacing: 0.2px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    font-size: 14px;
+    font-weight: 900;
+    color: #333333;
+}
+
+.form-group input {
+    height: 52px;
+    border: 1px solid #d7d7d7;
+    border-radius: 14px;
+    padding: 0 16px;
+    font-size: 15px;
+    outline: none;
+    background: #ffffff;
+    transition: 0.2s ease;
+}
+
+.form-group input:focus {
+    border-color: #d40511;
+    box-shadow: 0 0 0 4px rgba(212, 5, 17, 0.1);
+}
+
+button {
+    width: 100%;
+    height: 54px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 14px;
+    background: #d40511;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 900;
+    cursor: pointer;
+    transition: 0.2s ease;
+    box-shadow: 0 12px 24px rgba(212, 5, 17, 0.28);
+}
+
+button:hover {
+    transform: translateY(-1px);
+    background: #b8040f;
+}
+
+button:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.error-box {
+    background: #ffe5e7;
+    color: #9b0008;
+    border-left: 5px solid #d40511;
+    border-radius: 12px;
+    padding: 13px 14px;
+    font-weight: 800;
+    margin-bottom: 18px;
+}
+
+.demo-hint {
+    margin-top: 22px;
+    background: #fff4bf;
+    border: 1px solid #ffcc00;
+    border-radius: 16px;
+    padding: 14px;
+}
+
+.demo-hint strong {
+    display: block;
+    color: #d40511;
+    font-weight: 900;
+    margin-bottom: 4px;
+}
+
+.demo-hint span {
+    color: #5f4700;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.hero-copy {
+    position: absolute;
+    z-index: 2;
+    right: 7vw;
+    bottom: 70px;
+    color: #ffffff;
+    text-align: right;
+    text-shadow: 0 4px 24px rgba(0, 0, 0, 0.45);
+}
+
+.hero-copy h2 {
+    margin: 0;
+    font-size: 42px;
+    font-weight: 900;
+    letter-spacing: 0.4px;
+}
+
+.hero-copy p {
+    margin: 8px 0 0;
+    font-size: 20px;
+    font-weight: 800;
+    color: #ffcc00;
+}
+
+.password-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.password-wrapper input {
+    width: 100%;
+    padding-right: 52px;
+}
+
+.password-toggle {
+    position: absolute;
+    right: 10px;
+    width: 38px;
+    height: 38px;
+    margin: 0;
+    border: none;
+    border-radius: 10px;
+    background: transparent;
+    color: #555;
+    box-shadow: none;
+    font-size: 17px;
+    cursor: pointer;
+}
+
+.password-toggle:hover {
+    transform: none;
+    background: #fff4bf;
+    color: #d40511;
+}
+
+@media (max-width: 900px) {
+    .login-page {
+        justify-content: center;
+        padding: 32px;
+    }
+
+    .login-card {
+        width: 100%;
+        max-width: 460px;
+    }
+
+    .hero-copy {
+        display: none;
+    }
+}

@@ -1,0 +1,90 @@
+<div class="articles-page">
+    <div class="page-header">
+        <div>
+            <span class="eyebrow">Knowledge Base</span>
+            <h1>Knowledge Articles</h1>
+            <p>Search, filter, and monitor SOP articles created from logistics operation inputs.</p>
+        </div>
+
+        <a *ngIf="hasRole(['ADMIN', 'EDITOR'])" class="primary-btn" routerLink="/articles/create">
+            Create Draft
+        </a>
+    </div>
+
+    <section class="filter-card">
+        <div class="filter-group">
+            <label>Search</label>
+            <input type="text" [(ngModel)]="search" placeholder="Search by title, summary, or content" />
+        </div>
+
+        <div class="filter-group">
+            <label>Status</label>
+            <select [(ngModel)]="selectedStatus">
+                <option value="">All statuses</option>
+                <option value="DRAFT">Draft</option>
+                <option value="REVIEWED">Reviewed</option>
+                <option value="PUBLISHED">Published</option>
+                <option value="ARCHIVED">Archived</option>
+            </select>
+        </div>
+
+        <div class="filter-group">
+            <label>Tag</label>
+            <select [(ngModel)]="selectedTag">
+                <option value="">All tags</option>
+                <option *ngFor="let tag of tags" [value]="tag.name">{{ tag.name }}</option>
+            </select>
+        </div>
+
+        <div class="filter-actions">
+            <button class="primary-btn" type="button" (click)="loadArticles()">Apply</button>
+            <button class="secondary-btn" type="button" (click)="resetFilters()">Reset</button>
+        </div>
+    </section>
+
+    <div *ngIf="errorMessage" class="error-box">
+        {{ errorMessage }}
+    </div>
+
+    <div *ngIf="loading" class="loading-box">
+        Loading knowledge articles...
+    </div>
+
+    <section *ngIf="!loading" class="articles-grid">
+        <article class="article-card" *ngFor="let article of articles">
+            <div class="article-top">
+                <span class="status-badge" [ngClass]="getStatusClass(article.status)">
+                    {{ article.status }}
+                </span>
+                <span class="source-type">{{ article.sourceType }}</span>
+            </div>
+
+            <h2>{{ article.title }}</h2>
+            <p class="summary">{{ article.summary }}</p>
+
+            <div class="meta-row">
+                <span>Creator</span>
+                <strong>{{ article.createdBy?.name || 'Unknown' }}</strong>
+            </div>
+
+            <div class="meta-row">
+                <span>Tags</span>
+                <strong>{{ getTagsText(article) }}</strong>
+            </div>
+
+            <div class="meta-row">
+                <span>Created</span>
+                <strong>{{ article.createdAt | date: 'mediumDate' }}</strong>
+            </div>
+
+            <a class="details-link" [routerLink]="['/articles', article.id]">
+                View Article
+            </a>
+        </article>
+
+        <div *ngIf="articles.length === 0" class="empty-state">
+            <h2>No articles found</h2>
+            <p>Try changing your search filters or create a new draft article.</p>
+        </div>
+    </section>
+</div>

@@ -1,0 +1,137 @@
+<div class="admin-users-page">
+    <div class="page-header">
+        <div>
+            <span class="eyebrow">Admin Console</span>
+            <h1>User Management</h1>
+            <p>
+                Manage staff accounts, access roles, and login permissions for the DHL
+                Knowledge Base Automation Portal.
+            </p>
+        </div>
+    </div>
+
+    <div *ngIf="errorMessage" class="alert error">{{ errorMessage }}</div>
+    <div *ngIf="successMessage" class="alert success">{{ successMessage }}</div>
+
+    <section class="create-card">
+        <h2>Create New User</h2>
+
+        <div class="form-grid">
+            <div class="form-group">
+                <label for="name">Full Name</label>
+                <input id="name" name="name" [(ngModel)]="name" placeholder="Example: DHL Reviewer" />
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input id="email" name="email" [(ngModel)]="email" placeholder="name@dhl-kb.com" />
+            </div>
+
+            <div class="form-group">
+                <label for="password">Temporary Password</label>
+                <input id="password" name="password" type="password" [(ngModel)]="password"
+                    placeholder="Set temporary password" />
+            </div>
+
+            <div class="form-group">
+                <label for="role">Role</label>
+                <select id="role" name="role" [(ngModel)]="role">
+                    <option *ngFor="let item of roles" [value]="item">{{ item }}</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="actions">
+            <button class="primary-btn" type="button" (click)="createUser()">
+                Create User
+            </button>
+        </div>
+    </section>
+
+    <section class="users-card">
+        <div class="section-header">
+            <h2>Existing Accounts</h2>
+            <button class="secondary-btn" type="button" (click)="loadUsers()">Refresh</button>
+        </div>
+
+        <div *ngIf="loading" class="empty-box">Loading users...</div>
+
+        <div class="table-wrap" *ngIf="!loading">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>User</th>
+                        <th>Email</th>
+                        <th>Role</th>
+                        <th>Created</th>
+                        <th class="right">Actions</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr *ngFor="let user of users">
+                        <td>{{ user.id }}</td>
+
+                        <td>
+                            <ng-container *ngIf="editingUserId !== user.id; else editNameBox">
+                                <strong>{{ user.name }}</strong>
+                            </ng-container>
+
+                            <ng-template #editNameBox>
+                                <input [(ngModel)]="editName" />
+                            </ng-template>
+                        </td>
+
+                        <td>
+                            <ng-container *ngIf="editingUserId !== user.id; else editEmailBox">
+                                {{ user.email }}
+                            </ng-container>
+
+                            <ng-template #editEmailBox>
+                                <input [(ngModel)]="editEmail" />
+                            </ng-template>
+                        </td>
+
+                        <td>
+                            <ng-container *ngIf="editingUserId !== user.id; else editRoleBox">
+                                <span class="role-badge" [ngClass]="getRoleClass(user.role)">
+                                    {{ user.role }}
+                                </span>
+                            </ng-container>
+
+                            <ng-template #editRoleBox>
+                                <select [(ngModel)]="editRole">
+                                    <option *ngFor="let item of roles" [value]="item">{{ item }}</option>
+                                </select>
+
+                                <input class="password-reset" type="password" [(ngModel)]="editPassword"
+                                    placeholder="New password optional" />
+                            </ng-template>
+                        </td>
+
+                        <td>{{ user.createdAt | date: 'mediumDate' }}</td>
+
+                        <td class="right">
+                            <ng-container *ngIf="editingUserId !== user.id; else editActions">
+                                <button class="small-btn" type="button" (click)="startEdit(user)">Edit</button>
+                                <button class="small-btn danger" type="button" (click)="deleteUser(user)">
+                                    Delete
+                                </button>
+                            </ng-container>
+
+                            <ng-template #editActions>
+                                <button class="small-btn" type="button" (click)="saveEdit(user.id)">
+                                    Save
+                                </button>
+                                <button class="small-btn muted" type="button" (click)="cancelEdit()">
+                                    Cancel
+                                </button>
+                            </ng-template>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+</div>

@@ -1,0 +1,272 @@
+.automation-page {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+    align-items: flex-start;
+}
+
+.eyebrow {
+    display: inline-block;
+    background: #ffcc00;
+    color: #202020;
+    font-weight: 900;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    padding: 7px 10px;
+    border-radius: 999px;
+    margin-bottom: 10px;
+}
+
+.page-header h1 {
+    margin: 0;
+    color: #d40511;
+    font-size: 32px;
+    font-weight: 900;
+}
+
+.page-header p {
+    margin: 8px 0 0;
+    color: #666;
+}
+
+.primary-btn {
+    border: none;
+    border-radius: 12px;
+    padding: 13px 20px;
+    background: #d40511;
+    color: #ffffff;
+    font-weight: 900;
+    cursor: pointer;
+}
+
+.automation-grid {
+    display: grid;
+    grid-template-columns: 360px 1fr;
+    gap: 18px;
+}
+
+.runs-card,
+.details-card {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 22px;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.07);
+}
+
+.runs-card h2,
+.details-card h2,
+.logs-section h2 {
+    margin: 0;
+    color: #d40511;
+    font-weight: 900;
+}
+
+.run-row {
+    width: 100%;
+    margin-top: 12px;
+    border: 1px solid #eeeeee;
+    background: #fafafa;
+    border-radius: 14px;
+    padding: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: left;
+    cursor: pointer;
+}
+
+.run-row.active {
+    border-color: #d40511;
+    background: #fff4bf;
+}
+
+.run-row strong {
+    display: block;
+    color: #222;
+}
+
+.run-row span {
+    color: #666;
+    font-size: 13px;
+}
+
+.status-badge {
+    border-radius: 999px;
+    padding: 7px 10px;
+    font-size: 12px;
+    font-weight: 900;
+    white-space: nowrap;
+}
+
+.status-badge.large {
+    padding: 10px 14px;
+}
+
+.status-badge.running {
+    background: #fff4bf;
+    color: #805800;
+}
+
+.status-badge.success {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.status-badge.failed {
+    background: #ffe5e7;
+    color: #9b0008;
+}
+
+.status-badge.partial-success {
+    background: #ffedd5;
+    color: #9a3412;
+}
+
+.details-header {
+    display: flex;
+    justify-content: space-between;
+    gap: 18px;
+    align-items: flex-start;
+}
+
+.details-header p {
+    margin: 6px 0 0;
+    color: #666;
+}
+
+.stats-grid {
+    margin-top: 22px;
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.stat-card {
+    background: #fafafa;
+    border-radius: 16px;
+    padding: 16px;
+    border-top: 5px solid #ffcc00;
+}
+
+.stat-card.success {
+    border-top-color: #1f9d55;
+}
+
+.stat-card.warning {
+    border-top-color: #ffcc00;
+}
+
+.stat-card.danger {
+    border-top-color: #d40511;
+}
+
+.stat-card span {
+    color: #666;
+    font-size: 12px;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+.stat-card strong {
+    display: block;
+    color: #d40511;
+    font-size: 30px;
+    margin-top: 6px;
+}
+
+.run-meta {
+    margin-top: 22px;
+    border-top: 1px solid #eeeeee;
+}
+
+.meta-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    border-bottom: 1px solid #eeeeee;
+    padding: 12px 0;
+}
+
+.meta-row span {
+    color: #777;
+    font-weight: 800;
+}
+
+.meta-row strong {
+    color: #222;
+    text-align: right;
+}
+
+.logs-section {
+    margin-top: 24px;
+}
+
+.log-row {
+    margin-top: 12px;
+    border: 1px solid #eeeeee;
+    border-radius: 14px;
+    background: #fafafa;
+    padding: 14px;
+    display: flex;
+    justify-content: space-between;
+    gap: 18px;
+}
+
+.log-row strong {
+    display: block;
+    margin-top: 6px;
+    color: #222;
+}
+
+.log-row p {
+    margin: 5px 0 0;
+    color: #666;
+}
+
+.log-level {
+    display: inline-block;
+    border-radius: 999px;
+    padding: 5px 8px;
+    font-size: 11px;
+    font-weight: 900;
+}
+
+.log-level.info {
+    background: #e0f2fe;
+    color: #075985;
+}
+
+.log-level.warning {
+    background: #fff4bf;
+    color: #805800;
+}
+
+.log-level.error {
+    background: #ffe5e7;
+    color: #9b0008;
+}
+
+.empty-box,
+.info-box {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 18px;
+    color: #666;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.07);
+}
+
+.alert.error {
+    background: #ffe5e7;
+    color: #9b0008;
+    border-left: 5px solid #d40511;
+    padding: 14px 16px;
+    border-radius: 12px;
+    font-weight: 800;
+}

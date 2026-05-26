@@ -1,0 +1,1 @@
+Customer reported a late delivery issue. The support agent should verify the tracking number, check the latest shipment status, contact the delivery team if required, update the customer with the latest information, and close the case after confirmation.

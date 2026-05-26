@@ -1,0 +1,185 @@
+{
+  "version": "2.0",
+  "resources": [
+    {
+      "activityDisplayName": "For Each Email",
+      "activityId": "ForEachEmailConnections_1",
+      "resource": "Connection",
+      "key": "c4a4f233-0d69-458a-97e7-daa92fc5e187",
+      "id": "Connectionc4a4f233-0d69-458a-97e7-daa92fc5e187c4a4f233-0d69-458a-97e7-daa92fc5e187False",
+      "value": {
+        "ConnectionId": {
+          "defaultValue": "c4a4f233-0d69-458a-97e7-daa92fc5e187",
+          "isExpression": false,
+          "displayName": "Connection",
+          "description": "The connection to be used"
+        }
+      },
+      "metadata": {
+        "BindingsVersion": "2.2",
+        "Connector": "uipath-google-gmail",
+        "UseConnectionService": "True"
+      }
+    },
+    {
+      "activityDisplayName": "For Each Email",
+      "activityId": "ForEachEmailConnections_1",
+      "resource": "Property",
+      "key": "c4a4f233-0d69-458a-97e7-daa92fc5e187.For Each Email",
+      "id": "Propertyc4a4f233-0d69-458a-97e7-daa92fc5e187.For Each EmailDHL-RPA-NewFalseLabel_2123732558013730613False",
+      "value": {
+        "ParentFolders[*].Name": {
+          "defaultValue": "DHL-RPA-New",
+          "isExpression": false,
+          "displayName": "Email folder or label",
+          "description": "The folder or label to get email messages from"
+        },
+        "ParentFolders[*].ID": {
+          "defaultValue": "Label_2123732558013730613",
+          "isExpression": false,
+          "displayName": "Email folder or label",
+          "description": "The folder or label to get email messages from"
+        }
+      },
+      "metadata": {
+        "BindingsVersion": "2.1",
+        "ActivityName": "For Each Email",
+        "ObjectName": "NormalizedMessage",
+        "DisplayLabel": "ParentFolders[*].Name",
+        "ParentResourceKey": "Connection.c4a4f233-0d69-458a-97e7-daa92fc5e187"
+      }
+    },
+    {
+      "activityDisplayName": "Upload Files",
+      "activityId": "UploadFilesConnections_1",
+      "resource": "Connection",
+      "key": "a494af79-e803-4062-948e-fd934adb5859",
+      "id": "Connectiona494af79-e803-4062-948e-fd934adb5859a494af79-e803-4062-948e-fd934adb5859False",
+      "value": {
+        "ConnectionId": {
+          "defaultValue": "a494af79-e803-4062-948e-fd934adb5859",
+          "isExpression": false,
+          "displayName": "Connection",
+          "description": "The connection to be used"
+        }
+      },
+      "metadata": {
+        "BindingsVersion": "2.2",
+        "Connector": "uipath-google-drive",
+        "UseConnectionService": "True"
+      }
+    },
+    {
+      "activityDisplayName": "Upload Files",
+      "activityId": "UploadFilesConnections_1",
+      "resource": "Property",
+      "key": "a494af79-e803-4062-948e-fd934adb5859.Upload Files",
+      "id": "Propertya494af79-e803-4062-948e-fd934adb5859.Upload FilesNewFalsehttps://drive.google.com/drive/folders/1HEQMNuXMAn4TAa1e0XDYm8ff3ZNtUk5vFalse",
+      "value": {
+        "FullName": {
+          "defaultValue": "New",
+          "isExpression": false,
+          "displayName": "Destination folder",
+          "description": "The destination folder where to upload the files. If not specified, it defaults to Google Drive root folder"
+        },
+        "ID": {
+          "defaultValue": "https://drive.google.com/drive/folders/1HEQMNuXMAn4TAa1e0XDYm8ff3ZNtUk5v",
+          "isExpression": false,
+          "displayName": "Destination folder URL",
+          "description": "The destination folder where to upload the files. If not specified, it defaults to Google Drive root folder"
+        }
+      },
+      "metadata": {
+        "BindingsVersion": "2.1",
+        "ActivityName": "Upload Files",
+        "ObjectName": "CuratedFolder",
+        "DisplayLabel": "FullName",
+        "ParentResourceKey": "Connection.a494af79-e803-4062-948e-fd934adb5859"
+      }
+    },
+    {
+      "activityDisplayName": "Move Email",
+      "activityId": "MoveEmailConnections_1",
+      "resource": "Property",
+      "key": "c4a4f233-0d69-458a-97e7-daa92fc5e187.Move Email",
+      "id": "Propertyc4a4f233-0d69-458a-97e7-daa92fc5e187.Move EmailDHL-RPA-TransferredToDriveFalseLabel_4881652735220394861False",
+      "value": {
+        "ParentFolders[*].Name": {
+          "defaultValue": "DHL-RPA-TransferredToDrive",
+          "isExpression": false,
+          "displayName": "To email folder or label",
+          "description": "The folder or label where to move the email message"
+        },
+        "ParentFolders[*].ID": {
+          "defaultValue": "Label_4881652735220394861",
+          "isExpression": false,
+          "displayName": "To email folder or label",
+          "description": "The folder or label where to move the email message"
+        }
+      },
+      "metadata": {
+        "BindingsVersion": "2.1",
+        "ActivityName": "Move Email",
+        "ObjectName": "NormalizedMessage",
+        "DisplayLabel": "ParentFolders[*].Name",
+        "ParentResourceKey": "Connection.c4a4f233-0d69-458a-97e7-daa92fc5e187"
+      }
+    },
+    {
+      "activityDisplayName": "For Each File or Folder",
+      "activityId": "ForEachFileFolderConnections_2",
+      "resource": "Property",
+      "key": "a494af79-e803-4062-948e-fd934adb5859.For Each File or Folder",
+      "id": "Propertya494af79-e803-4062-948e-fd934adb5859.For Each File or FolderNewFalsehttps://drive.google.com/drive/folders/1HEQMNuXMAn4TAa1e0XDYm8ff3ZNtUk5vFalse",
+      "value": {
+        "FullName": {
+          "defaultValue": "New",
+          "isExpression": false,
+          "displayName": "In location",
+          "description": "The location where to search for files and folders. If left blank, it searches anywhere in Google Drive"
+        },
+        "ID": {
+          "defaultValue": "https://drive.google.com/drive/folders/1HEQMNuXMAn4TAa1e0XDYm8ff3ZNtUk5v",
+          "isExpression": false,
+          "displayName": "In location",
+          "description": "The location where to search for files and folders. If left blank, it searches anywhere in Google Drive"
+        }
+      },
+      "metadata": {
+        "BindingsVersion": "2.1",
+        "ActivityName": "For Each File or Folder",
+        "ObjectName": "CuratedFolder",
+        "DisplayLabel": "FullName",
+        "ParentResourceKey": "Connection.a494af79-e803-4062-948e-fd934adb5859"
+      }
+    },
+    {
+      "activityDisplayName": "Move File or Folder",
+      "activityId": "MoveFileConnections_1",
+      "resource": "Property",
+      "key": "a494af79-e803-4062-948e-fd934adb5859.Move File or Folder.Secondary",
+      "id": "Propertya494af79-e803-4062-948e-fd934adb5859.Move File or Folder.SecondaryDuplicateFalsehttps://drive.google.com/drive/folders/1ZMZCZ6Irk3azZOzGJrEBUdo_SFBq_zIMFalse",
+      "value": {
+        "FullName": {
+          "defaultValue": "Duplicate",
+          "isExpression": false,
+          "displayName": "Destination folder",
+          "description": "The destination folder"
+        },
+        "ID": {
+          "defaultValue": "https://drive.google.com/drive/folders/1ZMZCZ6Irk3azZOzGJrEBUdo_SFBq_zIM",
+          "isExpression": false,
+          "displayName": "Destination folder",
+          "description": "The destination folder"
+        }
+      },
+      "metadata": {
+        "BindingsVersion": "2.1",
+        "ActivityName": "Move File or Folder",
+        "ObjectName": "CuratedFolder",
+        "DisplayLabel": "FullName",
+        "ParentResourceKey": "Connection.a494af79-e803-4062-948e-fd934adb5859"
+      }
+    }
+  ]
+}

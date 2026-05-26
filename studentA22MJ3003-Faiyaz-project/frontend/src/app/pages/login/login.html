@@ -1,0 +1,45 @@
+<div class="login-page">
+    <div class="background-overlay"></div>
+
+    <section class="login-card">
+        <img src="/dhl-logo.png" alt="DHL Logo" class="login-logo" />
+
+        <h1>DHL Knowledge Base Automation Portal</h1>
+
+        <form (ngSubmit)="submitLogin()">
+            <div *ngIf="errorMessage" class="error-box">
+                {{ errorMessage }}
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email address</label>
+                <input id="email" name="email" type="email" [(ngModel)]="email" placeholder="Enter your email"
+                    autocomplete="email" />
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password</label>
+            
+                <div class="password-wrapper">
+                    <input id="password" name="password" [type]="showPassword ? 'text' : 'password'" [(ngModel)]="password"
+                        placeholder="Enter your password" autocomplete="current-password" />
+            
+                    <button class="password-toggle" type="button" (click)="togglePasswordVisibility()"
+                        aria-label="Show or hide password">
+                        <i [class]="showPassword ? 'fa-regular fa-eye-slash' : 'fa-regular fa-eye'"></i>
+                    </button>
+                </div>
+            </div>
+
+            <button type="submit" [disabled]="loading">
+                {{ loading ? 'Signing in...' : 'Sign In' }}
+            </button>
+        </form>
+
+    </section>
+
+    <section class="hero-copy">
+        <h2>Powering Global Logistics</h2>
+        <p>Fast. Reliable. Automated.</p>
+    </section>
+</div>
