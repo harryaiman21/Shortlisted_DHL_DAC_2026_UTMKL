@@ -1,0 +1,14 @@
+# Node modules
+node_modules/
+
+# UiPath junk files
+uipath_files/.local/
+uipath_files/.settings/
+uipath_files/.project/
+uipath_files/.tmh/
+
+# Zip files
+*.zip
+
+# Logs
+*.log
