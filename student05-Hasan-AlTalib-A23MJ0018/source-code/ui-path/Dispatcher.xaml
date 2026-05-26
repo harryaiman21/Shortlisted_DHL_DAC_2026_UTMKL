@@ -1,0 +1,187 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Dispatcher" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:snm="clr-namespace:System.Net.Mail;assembly=System.Net.Mail" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:umae="clr-namespace:UiPath.Mail.Activities.Enums;assembly=UiPath.Mail.Activities" xmlns:usau="clr-namespace:UiPath.Shared.Activities.Utils;assembly=UiPath.Mail.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_Dispatcher</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Text.RegularExpressions</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>UiPath.Mail</x:String>
+      <x:String>UiPath.Mail.Activities</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Text.RegularExpressions</AssemblyReference>
+      <AssemblyReference>System.Workflow</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Dispatcher: Outlook -&gt; Watch Folder + Orchestrator Queue" sap:VirtualizedContainerService.HintSize="900,800" sap2010:WorkflowViewState.IdRef="Sequence_DispatcherRoot">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="watchFolder" />
+      <Variable x:TypeArguments="x:String" Name="outlookAccount" />
+      <Variable x:TypeArguments="x:String" Name="processedFolder" />
+      <Variable x:TypeArguments="x:String" Name="queueName" />
+      <Variable x:TypeArguments="scg:List(snm:MailMessage)" Name="emails" />
+      <Variable x:TypeArguments="x:String" Name="subject" />
+      <Variable x:TypeArguments="x:String" Name="safeSubject" />
+      <Variable x:TypeArguments="x:String" Name="filePath" />
+      <Variable x:TypeArguments="x:String" Name="emailBody" />
+      <Variable x:TypeArguments="x:Int32" Default="0" Name="addedCount" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Assign DisplayName="Read WatchFolder (with default if Config not supplied)" sap2010:WorkflowViewState.IdRef="Assign_1">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[watchFolder]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[If(in_Config IsNot Nothing AndAlso in_Config.ContainsKey("WatchFolder"), in_Config("WatchFolder").ToString(), "C:\NEXUS_Watch")]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign DisplayName="Read OutlookAccount (with default)" sap2010:WorkflowViewState.IdRef="Assign_2">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[outlookAccount]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[If(in_Config IsNot Nothing AndAlso in_Config.ContainsKey("OutlookAccount"), in_Config("OutlookAccount").ToString(), "nexus.incidents@outlook.com")]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign DisplayName="Read ProcessedFolder (with default)" sap2010:WorkflowViewState.IdRef="Assign_3">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[processedFolder]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[If(in_Config IsNot Nothing AndAlso in_Config.ContainsKey("ProcessedFolder"), in_Config("ProcessedFolder").ToString(), "Inbox\NEXUS_Processed")]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign DisplayName="Read OrchestratorQueueName (with default)" sap2010:WorkflowViewState.IdRef="Assign_4">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[queueName]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[If(in_Config IsNot Nothing AndAlso in_Config.ContainsKey("OrchestratorQueueName"), in_Config("OrchestratorQueueName").ToString(), "NEXUS_Incidents")]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <ui:InvokeCode Code="if (!System.IO.Directory.Exists(watchFolder)) System.IO.Directory.CreateDirectory(watchFolder);" ContinueOnError="True" DisplayName="Ensure WatchFolder exists" sap2010:WorkflowViewState.IdRef="InvokeCode_1" Language="CSharp">
+      <ui:InvokeCode.Arguments>
+        <InArgument x:TypeArguments="x:String" x:Key="watchFolder">[watchFolder]</InArgument>
+      </ui:InvokeCode.Arguments>
+    </ui:InvokeCode>
+    <ui:GetOutlookMailMessages Filter="{x:Null}" FilterByMessageIds="{x:Null}" TimeoutMS="{x:Null}" Account="[outlookAccount]" ConnectionMode="LegacyConfiguration" DisplayName="Get unread Outlook emails" GetAttachements="True" sap2010:WorkflowViewState.IdRef="GetOutlookMailMessages_1" MailFolder="Inbox" MarkAsRead="True" Messages="[emails]" OnlyUnreadMessages="True" OrderByDate="NewestFirst" Top="25" UseISConnection="False">
+      <ui:GetOutlookMailMessages.ConnectionDetailsBackupSlot>
+        <usau:BackupSlot x:TypeArguments="umae:ConnectionDetails" StoredValue="{x:Null}">
+          <usau:BackupSlot.BackupValues>
+            <scg:Dictionary x:TypeArguments="umae:ConnectionDetails, scg:List(x:Object)" />
+          </usau:BackupSlot.BackupValues>
+        </usau:BackupSlot>
+      </ui:GetOutlookMailMessages.ConnectionDetailsBackupSlot>
+    </ui:GetOutlookMailMessages>
+    <ui:LogMessage DisplayName="Log: emails found" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;[NEXUS DISPATCHER] Found &quot; + If(emails Is Nothing, 0, emails.Count).ToString() + &quot; unread email(s) to dispatch&quot;]" />
+    <If Condition="[emails IsNot Nothing AndAlso emails.Count &gt; 0]" DisplayName="If: any emails to dispatch?" sap2010:WorkflowViewState.IdRef="If_1">
+      <If.Then>
+        <ui:ForEach x:TypeArguments="snm:MailMessage" CurrentIndex="{x:Null}" DisplayName="For each email" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[emails]">
+          <ui:ForEach.Body>
+            <ActivityAction x:TypeArguments="snm:MailMessage">
+              <ActivityAction.Argument>
+                <DelegateInArgument x:TypeArguments="snm:MailMessage" Name="email" />
+              </ActivityAction.Argument>
+              <Sequence DisplayName="Stage email + AddQueueItem" sap2010:WorkflowViewState.IdRef="Sequence_1">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <Assign DisplayName="Capture subject" sap2010:WorkflowViewState.IdRef="Assign_5">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:String">[subject]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:String">[email.Subject]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <Assign DisplayName="Sanitise subject for filename" sap2010:WorkflowViewState.IdRef="Assign_6">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:String">[safeSubject]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:String">[Regex.Replace(If(email.Subject Is Nothing, "no_subject", email.Subject), "[^a-zA-Z0-9]", "_")]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <Assign DisplayName="Build target file path" sap2010:WorkflowViewState.IdRef="Assign_7">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:String">[filePath]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:String">[Path.Combine(watchFolder, safeSubject &amp; "_" &amp; Date.Now.ToString("yyyyMMddHHmmss") &amp; ".txt")]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <Assign DisplayName="Build NEXUS-formatted body" sap2010:WorkflowViewState.IdRef="Assign_8">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:String">[emailBody]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:String">["=== DHL INCIDENT REPORT (Email Channel) ===" &amp; Environment.NewLine &amp; "Subject: " &amp; email.Subject &amp; Environment.NewLine &amp; "From: " &amp; email.From.ToString() &amp; Environment.NewLine &amp; "Received: " &amp; Date.UtcNow.ToString("yyyy-MM-dd HH:mm") &amp; " UTC" &amp; Environment.NewLine &amp; "============================================" &amp; Environment.NewLine &amp; "DESCRIPTION:" &amp; Environment.NewLine &amp; email.Body]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <ui:WriteTextFile File="{x:Null}" Output="{x:Null}" DisplayName="Write email body to watch folder" FileName="[filePath]" sap2010:WorkflowViewState.IdRef="WriteTextFile_1" Text="[emailBody]" />
+                <ui:InvokeCode Code="string attachmentFolder = System.IO.Path.Combine(watchFolder, &quot;attachments&quot;); if (!System.IO.Directory.Exists(attachmentFolder)) System.IO.Directory.CreateDirectory(attachmentFolder); string fileBase = System.IO.Path.GetFileNameWithoutExtension(filePath); foreach (var attachment in email.Attachments) { try { string[] allowedExts = { &quot;.jpg&quot;, &quot;.jpeg&quot;, &quot;.png&quot;, &quot;.pdf&quot;, &quot;.docx&quot; }; string attachExt = System.IO.Path.GetExtension(attachment.Name ?? &quot;&quot;).ToLower(); bool isAllowed = false; foreach (string e in allowedExts) if (attachExt == e) { isAllowed = true; break; } if (!isAllowed) continue; string safeAttachName = fileBase + &quot;_&quot; + System.Text.RegularExpressions.Regex.Replace( attachment.Name ?? &quot;attachment&quot;, &quot;[^a-zA-Z0-9._-]&quot;, &quot;_&quot;); string attachPath = System.IO.Path.Combine(attachmentFolder, safeAttachName); using (var fs = new System.IO.FileStream(attachPath, System.IO.FileMode.Create, System.IO.FileAccess.Write)) { attachment.ContentStream.CopyTo(fs); } } catch { /* attachment save failure must not stop the email loop */ } }" ContinueOnError="True" DisplayName="Save jpg/png/pdf/docx attachments (for Document Understanding step)" sap2010:WorkflowViewState.IdRef="InvokeCode_SaveAttachments" Language="CSharp">
+                  <ui:InvokeCode.Arguments>
+                    <InArgument x:TypeArguments="x:String" x:Key="watchFolder">[watchFolder]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="filePath">[filePath]</InArgument>
+                    <InArgument x:TypeArguments="snm:MailMessage" x:Key="email">[email]</InArgument>
+                  </ui:InvokeCode.Arguments>
+                </ui:InvokeCode>
+                <ui:MoveOutlookMessage Account="[outlookAccount]" DisplayName="Move email to processed folder" sap2010:WorkflowViewState.IdRef="MoveOutlookMessage_1" MailFolder="[processedFolder]" MailMessage="[email]" />
+                <Assign DisplayName="Increment added counter" sap2010:WorkflowViewState.IdRef="Assign_9">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:Int32">[addedCount]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:Int32">[addedCount + 1]</InArgument>
+                  </Assign.Value>
+                </Assign>
+              </Sequence>
+            </ActivityAction>
+          </ui:ForEach.Body>
+        </ui:ForEach>
+      </If.Then>
+    </If>
+    <ui:LogMessage DisplayName="Log: dispatcher done" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;[NEXUS DISPATCHER] Done — &quot; + addedCount.ToString() + &quot; queue item(s) added to &quot; + queueName]" />
+  </Sequence>
+</Activity>

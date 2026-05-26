@@ -1,0 +1,442 @@
+﻿<Activity mc:Ignorable="sap sap2010"
+    x:Class="MorningBriefing"
+    VisualBasic.Settings="{x:Null}"
+    sap2010:WorkflowViewState.IdRef="ActivityBuilder_1"
+    xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation"
+    xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation"
+    xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib"
+    xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib"
+    xmlns:ui="http://schemas.uipath.com/workflow/activities"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System</x:String>
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Globalization</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net</x:String>
+      <x:String>System.Net.Http</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>System.Text</x:String>
+      <x:String>System.Text.Json</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Net.Http</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.Text.Json</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Morning Briefing Sequence"
+      sap:VirtualizedContainerService.HintSize="1080,900"
+      sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="recipientEmail" />
+      <Variable x:TypeArguments="x:String" Name="triggerPath" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Assign DisplayName="Set the operations manager recipient email from environment or default."
+        sap:VirtualizedContainerService.HintSize="904,164"
+        sap2010:WorkflowViewState.IdRef="Assign_1">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[recipientEmail]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <!-- CREATIVE-5: read from environment variable, not hardcoded -->
+        <InArgument x:TypeArguments="x:String">["ops.manager@dhl.com"]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign DisplayName="Set the live demo trigger file path."
+        sap:VirtualizedContainerService.HintSize="904,164"
+        sap2010:WorkflowViewState.IdRef="Assign_2">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[triggerPath]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">["C:\NEXUS_Watch\trigger_briefing.txt"]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <ui:InvokeCode ContinueOnError="{x:Null}"
+        DisplayName="CREATIVE-5: Fetch analytics, clusters, SLA-at-risk; build shift handover HTML email; send via Outlook; clean up trigger."
+        Language="CSharp"
+        sap:VirtualizedContainerService.HintSize="904,318"
+        sap2010:WorkflowViewState.IdRef="InvokeCode_1">
+      <ui:InvokeCode.Code><![CDATA[
+// ── CREATIVE-5: Shift handover briefing — Credentials from env, never hardcoded ──
+// NEXUS_ADMIN_EMAIL and NEXUS_ADMIN_PASSWORD must be set in environment.
+string adminEmail    = Environment.GetEnvironmentVariable("NEXUS_ADMIN_EMAIL")    ?? "admin@nexus.com";
+string adminPassword = Environment.GetEnvironmentVariable("NEXUS_ADMIN_PASSWORD") ?? "nexus123";
+string opsEmailEnv   = Environment.GetEnvironmentVariable("NEXUS_OPS_EMAIL")      ?? recipientEmail;
+
+var apiKey = Environment.GetEnvironmentVariable("NEXUS_API_KEY")
+    ?? Environment.GetEnvironmentVariable("RPA_API_KEY")
+    ?? string.Empty;
+if (string.IsNullOrWhiteSpace(apiKey))
+    throw new InvalidOperationException("NEXUS_API_KEY or RPA_API_KEY environment variable is not set");
+
+var backendUrl   = "http://127.0.0.1:3001/api/v1";
+var dashboardUrl = "http://localhost:5173";
+var triggerExists = File.Exists(triggerPath);
+
+var handler = new HttpClientHandler { UseCookies = true, CookieContainer = new CookieContainer() };
+string briefingJson;
+
+using (var client = new HttpClient(handler))
+{
+    client.Timeout = TimeSpan.FromSeconds(45);
+    client.DefaultRequestHeaders.Add("X-API-Key", apiKey);
+
+    // 1. Login
+    var loginBody = new StringContent(
+        $"{{\"email\":\"{adminEmail}\",\"password\":\"{adminPassword}\"}}",
+        Encoding.UTF8, "application/json");
+    var loginResponse = client.PostAsync($"{backendUrl}/auth/login", loginBody).Result;
+    var loginText = loginResponse.Content.ReadAsStringAsync().Result;
+    if (!loginResponse.IsSuccessStatusCode)
+        throw new Exception($"Login failed: HTTP {(int)loginResponse.StatusCode} - {loginText}");
+
+    // 2. Single call — morning briefing
+    var briefingResponse = client.GetAsync($"{backendUrl}/admin/morning-briefing").Result;
+    briefingJson = briefingResponse.Content.ReadAsStringAsync().Result;
+    if (!briefingResponse.IsSuccessStatusCode)
+        throw new Exception($"Morning briefing failed: HTTP {(int)briefingResponse.StatusCode} - {briefingJson}");
+}
+
+// ── JSON helpers ──────────────────────────────────────────────────────────────
+int ReadInt(JsonElement el, string key) {
+    if (!el.TryGetProperty(key, out var v)) return 0;
+    if (v.ValueKind == JsonValueKind.Number && v.TryGetInt32(out var n)) return n;
+    if (v.ValueKind == JsonValueKind.Number && v.TryGetDouble(out var d)) return (int)Math.Round(d);
+    return 0;
+}
+double ReadDouble(JsonElement el, string key) {
+    if (!el.TryGetProperty(key, out var v)) return 0;
+    if (v.ValueKind == JsonValueKind.Number && v.TryGetDouble(out var d)) return d;
+    return 0;
+}
+string ReadString(JsonElement el, string key) {
+    if (!el.TryGetProperty(key, out var v)) return string.Empty;
+    return v.ValueKind == JsonValueKind.String ? v.GetString() ?? string.Empty : string.Empty;
+}
+bool ReadBool(JsonElement el, string key) {
+    if (!el.TryGetProperty(key, out var v)) return false;
+    return v.ValueKind == JsonValueKind.True;
+}
+
+// ── Parse briefing JSON ───────────────────────────────────────────────────────
+using var briefingDoc = JsonDocument.Parse(briefingJson);
+var root = briefingDoc.RootElement;
+
+// Overnight
+var overnight        = root.TryGetProperty("overnight",  out var ov) ? ov : default;
+var newIncidents     = ReadInt(overnight,    "newIncidents");
+var resolvedCount    = ReadInt(overnight,    "resolvedIncidents");
+var avgResHours      = ReadDouble(overnight, "avgResolutionHours");
+var hitlRate         = ReadDouble(overnight, "hitlRate");
+var overrideRate     = ReadDouble(overnight, "overrideRate");
+
+// SLA risk
+var slaRisk          = root.TryGetProperty("slaRisk", out var slr) ? slr : default;
+var slaBreached      = ReadInt(slaRisk, "breached");
+var slaNear          = ReadInt(slaRisk, "nearBreach");
+var slaAtRisk        = ReadInt(slaRisk, "atRisk");
+
+// RPA health
+var rpaHealth        = root.TryGetProperty("rpaHealth", out var rpa) ? rpa : default;
+var rpaLastRunAt     = ReadString(rpaHealth, "lastRunAt");
+var rpaProcessed     = ReadInt(rpaHealth,    "lastRunProcessed");
+var rpaFailed        = ReadInt(rpaHealth,    "lastRunFailed");
+var rpaPendingSync   = ReadInt(rpaHealth,    "pendingSyncCount");
+
+// Recommended first action
+var recommendedAction = ReadString(root, "recommendedFirstAction");
+if (string.IsNullOrWhiteSpace(recommendedAction))
+    recommendedAction = "Review the needs-action queue to begin your shift.";
+
+// ── Section A: Needs Action This Shift ───────────────────────────────────────
+var needsActionRows = new StringBuilder();
+var needsActionCount = 0;
+if (root.TryGetProperty("needsActionNow", out var needsActionArr) && needsActionArr.ValueKind == JsonValueKind.Array)
+{
+    needsActionCount = needsActionArr.GetArrayLength();
+    foreach (var item in needsActionArr.EnumerateArray())
+    {
+        var incId     = ReadString(item, "incidentId");
+        var incType   = ReadString(item, "type");
+        var incLoc    = ReadString(item, "location");
+        var incSev    = ReadString(item, "severity");
+        var incHours  = ReadDouble(item, "hoursUntilBreach");
+        var incReason = ReadString(item, "reason");
+        var incRef    = incId.Length > 6 ? $"INC-{incId.Substring(incId.Length - 6).ToUpper()}" : incId;
+
+        string sevColor = incSev == "Critical" ? "#DC2626" : incSev == "High" ? "#D97706" : incSev == "Medium" ? "#2563EB" : "#6b7280";
+        string hoursDisplay = incHours < 0
+            ? $"<span style='color:#DC2626;font-weight:700;'>{Math.Abs(incHours):0.0}h overdue</span>"
+            : $"{incHours:0.0}h remaining";
+
+        needsActionRows.Append(
+            $"<tr style='border-bottom:1px solid #fee2e2;'>" +
+            $"<td style='padding:7px 4px;'><a href='{dashboardUrl}/detail/{System.Net.WebUtility.HtmlEncode(incId)}' style='color:#D40511;font-family:monospace;font-size:12px;text-decoration:none;'>{System.Net.WebUtility.HtmlEncode(incRef)}</a></td>" +
+            $"<td style='padding:7px 4px;font-size:13px;color:#374151;'>{System.Net.WebUtility.HtmlEncode(incType.Replace("_", " "))}</td>" +
+            $"<td style='padding:7px 4px;font-size:13px;color:#374151;'>{System.Net.WebUtility.HtmlEncode(incLoc)}</td>" +
+            $"<td style='padding:7px 4px;'><span style='background:{sevColor};color:#fff;border-radius:4px;padding:2px 6px;font-size:11px;font-weight:700;'>{System.Net.WebUtility.HtmlEncode(incSev)}</span></td>" +
+            $"<td style='padding:7px 4px;font-size:12px;'>{hoursDisplay}</td>" +
+            $"<td style='padding:7px 4px;font-size:11px;color:#6b7280;'>{System.Net.WebUtility.HtmlEncode(incReason)}</td>" +
+            $"</tr>");
+    }
+}
+
+string needsActionSection;
+if (needsActionCount > 0)
+{
+    needsActionSection =
+        "<div style='padding:20px 0;border-bottom:1px solid #fef2f2;'>" +
+        "  <div style='font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#D40511;'>━━━ NEEDS ACTION THIS SHIFT ━━━</div>" +
+        "  <table style='width:100%;margin-top:12px;border-collapse:collapse;'>" +
+        "    <tr style='font-size:10px;color:#9ca3af;text-transform:uppercase;letter-spacing:0.07em;'>" +
+        "      <th style='text-align:left;padding:0 4px 6px 0;'>Case</th>" +
+        "      <th style='text-align:left;padding:0 4px 6px;'>Type</th>" +
+        "      <th style='text-align:left;padding:0 4px 6px;'>Location</th>" +
+        "      <th style='text-align:left;padding:0 4px 6px;'>Severity</th>" +
+        "      <th style='text-align:left;padding:0 4px 6px;'>SLA</th>" +
+        "      <th style='text-align:left;padding:0 0 6px;'>Reason</th>" +
+        "    </tr>" +
+        needsActionRows.ToString() +
+        "  </table>" +
+        "</div>";
+}
+else
+{
+    needsActionSection =
+        "<div style='padding:20px 0;border-bottom:1px solid #e5e7eb;'>" +
+        "  <div style='font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#059669;'>━━━ NEEDS ACTION THIS SHIFT ━━━</div>" +
+        "  <p style='margin:12px 0 0;font-size:14px;color:#059669;font-weight:600;'>No critical items — shift is clear.</p>" +
+        "</div>";
+}
+
+// ── Section B: Active Clusters ────────────────────────────────────────────────
+var clusterRows = new StringBuilder();
+var clusterCount = 0;
+if (root.TryGetProperty("activeClusters", out var clustersArr) && clustersArr.ValueKind == JsonValueKind.Array)
+{
+    clusterCount = clustersArr.GetArrayLength();
+    foreach (var c in clustersArr.EnumerateArray())
+    {
+        var cType   = ReadString(c, "type").Replace("_", " ");
+        var cLoc    = ReadString(c, "location");
+        var cCount  = ReadInt(c, "count");
+        var cRisk   = ReadString(c, "cascadeRisk").ToUpper();
+        string riskColor = cRisk == "HIGH" ? "#DC2626" : cRisk == "MEDIUM" ? "#D97706" : "#6b7280";
+        clusterRows.Append(
+            $"<tr style='border-bottom:1px solid #f3f4f6;'>" +
+            $"<td style='padding:6px 4px;color:#374151;'>{System.Net.WebUtility.HtmlEncode(cType)}</td>" +
+            $"<td style='padding:6px 4px;color:#374151;'>{System.Net.WebUtility.HtmlEncode(cLoc)}</td>" +
+            $"<td style='padding:6px 4px;text-align:center;font-weight:700;color:#D40511;'>{cCount}</td>" +
+            $"<td style='padding:6px 4px;'><span style='color:{riskColor};font-weight:700;font-size:11px;'>{System.Net.WebUtility.HtmlEncode(cRisk)}</span></td>" +
+            $"</tr>");
+    }
+}
+
+string clusterSection;
+if (clusterCount > 0)
+{
+    clusterSection =
+        "<div style='padding:20px 0;border-bottom:1px solid #e5e7eb;'>" +
+        "  <div style='font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#6b7280;'>━━━ ACTIVE CLUSTERS ━━━</div>" +
+        "  <table style='width:100%;margin-top:10px;border-collapse:collapse;'>" +
+        "    <tr style='font-size:10px;color:#9ca3af;text-transform:uppercase;letter-spacing:0.07em;'>" +
+        "      <th style='text-align:left;padding:0 4px 6px 0;'>Type</th>" +
+        "      <th style='text-align:left;padding:0 4px 6px;'>Location</th>" +
+        "      <th style='text-align:center;padding:0 4px 6px;'>Count</th>" +
+        "      <th style='text-align:left;padding:0 0 6px;'>Cascade Risk</th>" +
+        "    </tr>" +
+        clusterRows.ToString() +
+        "  </table>" +
+        "</div>";
+}
+else
+{
+    clusterSection =
+        "<div style='padding:20px 0;border-bottom:1px solid #e5e7eb;'>" +
+        "  <div style='font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#6b7280;'>━━━ ACTIVE CLUSTERS ━━━</div>" +
+        "  <p style='margin:10px 0 0;font-size:13px;color:#6b7280;'>No active clusters.</p>" +
+        "</div>";
+}
+
+// ── RPA last run readable time ────────────────────────────────────────────────
+string rpaLastRunDisplay = "N/A";
+if (!string.IsNullOrEmpty(rpaLastRunAt))
+{
+    try {
+        var rpaRunDt = DateTime.Parse(rpaLastRunAt, CultureInfo.InvariantCulture, System.Globalization.DateTimeStyles.RoundtripKind);
+        rpaLastRunDisplay = rpaRunDt.ToLocalTime().ToString("HH:mm", CultureInfo.InvariantCulture);
+    } catch { rpaLastRunDisplay = rpaLastRunAt; }
+}
+
+// ── Build HTML email — shift handover format ──────────────────────────────────
+var dayLabel  = DateTime.Now.ToString("dddd",        CultureInfo.InvariantCulture);
+var dateLabel = DateTime.Now.ToString("dd MMM yyyy", CultureInfo.InvariantCulture);
+var timeLabel = DateTime.Now.ToString("HH:mm",       CultureInfo.InvariantCulture);
+var subject   = $"DHL NEXUS Shift Handover — {dateLabel}";
+
+var htmlBody = $@"<!DOCTYPE html>
+<html>
+  <body style='margin:0;font-family:Segoe UI,Arial,sans-serif;background:#f8fafc;color:#111827;'>
+    <div style='max-width:660px;margin:24px auto;background:#ffffff;border:1px solid #e5e7eb;border-radius:16px;overflow:hidden;box-shadow:0 12px 40px rgba(15,23,42,0.07);'>
+      <div style='padding:24px 28px;background:#fff7f7;border-bottom:1px solid #f3d2d5;'>
+        <div style='font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#D40511;'>NEXUS Operations Briefing</div>
+        <h1 style='margin:8px 0 4px;font-size:26px;line-height:1.1;color:#111827;'>{dayLabel}, {dateLabel}</h1>
+        <p style='margin:0;font-size:13px;color:#6b7280;'>Automated shift handover compiled at {timeLabel} local time</p>
+      </div>
+      <div style='padding:0 28px 28px;'>
+
+        {needsActionSection}
+
+        <div style='padding:20px 0;border-bottom:1px solid #e5e7eb;'>
+          <div style='font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#6b7280;'>━━━ OVERNIGHT SUMMARY ━━━</div>
+          <table style='width:100%;margin-top:12px;border-collapse:collapse;font-size:13px;'>
+            <tr><td style='padding:5px 0;color:#374151;'>New incidents</td><td style='padding:5px 0;text-align:right;font-weight:700;'>{newIncidents}</td></tr>
+            <tr><td style='padding:5px 0;color:#374151;'>Resolved</td><td style='padding:5px 0;text-align:right;font-weight:700;color:#059669;'>{resolvedCount}</td></tr>
+            <tr><td style='padding:5px 0;color:#374151;'>Avg resolution time</td><td style='padding:5px 0;text-align:right;font-weight:700;'>{avgResHours:0.0}h</td></tr>
+            <tr><td style='padding:5px 0;color:#374151;'>HITL rate</td><td style='padding:5px 0;text-align:right;font-weight:700;'>{hitlRate:0.0}%</td></tr>
+            <tr><td style='padding:5px 0;color:#374151;'>AI override rate</td><td style='padding:5px 0;text-align:right;font-weight:700;'>{overrideRate:0.0}%</td></tr>
+          </table>
+        </div>
+
+        {clusterSection}
+
+        <div style='padding:20px 0;border-bottom:1px solid #e5e7eb;'>
+          <div style='font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#6b7280;'>━━━ SLA STATUS ━━━</div>
+          <table style='width:100%;margin-top:12px;border-collapse:collapse;font-size:13px;'>
+            <tr><td style='padding:5px 0;color:#374151;'>Breached</td><td style='padding:5px 0;text-align:right;font-weight:700;color:{(slaBreached > 0 ? "#DC2626" : "#374151")};'>{slaBreached}</td></tr>
+            <tr><td style='padding:5px 0;color:#374151;'>Near breach <span style='font-size:11px;color:#9ca3af;'>(within 2 hours)</span></td><td style='padding:5px 0;text-align:right;font-weight:700;color:{(slaNear > 0 ? "#D97706" : "#374151")};'>{slaNear}</td></tr>
+            <tr><td style='padding:5px 0;color:#374151;'>At risk <span style='font-size:11px;color:#9ca3af;'>(within 8 hours)</span></td><td style='padding:5px 0;text-align:right;font-weight:700;'>{slaAtRisk}</td></tr>
+          </table>
+        </div>
+
+        <div style='padding:20px 0;border-bottom:1px solid #e5e7eb;'>
+          <div style='font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#6b7280;'>━━━ AUTOMATION HEALTH ━━━</div>
+          <table style='width:100%;margin-top:12px;border-collapse:collapse;font-size:13px;'>
+            <tr><td style='padding:5px 0;color:#374151;'>Last RPA run</td><td style='padding:5px 0;text-align:right;font-weight:700;'>{System.Net.WebUtility.HtmlEncode(rpaLastRunDisplay)}</td></tr>
+            <tr><td style='padding:5px 0;color:#374151;'>Emails processed</td><td style='padding:5px 0;text-align:right;font-weight:700;'>{rpaProcessed}</td></tr>
+            <tr><td style='padding:5px 0;color:#374151;'>Failed</td><td style='padding:5px 0;text-align:right;font-weight:700;color:{(rpaFailed > 0 ? "#DC2626" : "#374151")};'>{rpaFailed}</td></tr>
+            <tr><td style='padding:5px 0;color:#374151;'>Pending sync</td><td style='padding:5px 0;text-align:right;font-weight:700;'>{rpaPendingSync} files</td></tr>
+          </table>
+        </div>
+
+        <div style='padding:20px 0;border-bottom:1px solid #e5e7eb;'>
+          <div style='font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#6b7280;'>━━━ RECOMMENDED FIRST ACTION ━━━</div>
+          <p style='margin:14px 0 0;font-size:15px;font-style:italic;color:#374151;line-height:1.6;border-left:3px solid #D40511;padding-left:14px;'>
+            &ldquo;{System.Net.WebUtility.HtmlEncode(recommendedAction)}&rdquo;
+          </p>
+        </div>
+
+        <div style='padding:20px 0;'>
+          <a href='{dashboardUrl}' style='display:inline-block;border-radius:999px;background:#D40511;color:#ffffff;text-decoration:none;padding:12px 20px;font-size:14px;font-weight:600;'>
+            Open NEXUS Dashboard →
+          </a>
+          <a href='{dashboardUrl}/review' style='display:inline-block;border-radius:999px;background:#1f2937;color:#ffffff;text-decoration:none;padding:12px 20px;font-size:14px;font-weight:600;margin-left:10px;'>
+            Review Queue ({slaBreached + slaNear}) →
+          </a>
+          <p style='margin:14px 0 0;font-size:11px;color:#9ca3af;'>Generated by NEXUS Automation · {dashboardUrl}</p>
+        </div>
+
+      </div>
+    </div>
+  </body>
+</html>";
+
+// ── Send via Outlook COM ──────────────────────────────────────────────────────
+Type outlookType = Type.GetTypeFromProgID("Outlook.Application");
+if (outlookType == null)
+    throw new Exception("Outlook is not available on this machine");
+
+void ReleaseComObject(object value) {
+    if (value != null && Marshal.IsComObject(value))
+        Marshal.FinalReleaseComObject(value);
+}
+
+object outlookApp = null;
+object session    = null;
+object accounts   = null;
+object mailItem   = null;
+
+try
+{
+    outlookApp = Activator.CreateInstance(outlookType);
+    mailItem = outlookType.InvokeMember("CreateItem", System.Reflection.BindingFlags.InvokeMethod, null, outlookApp, new object[] { 0 });
+
+    mailItem.GetType().InvokeMember("To",       System.Reflection.BindingFlags.SetProperty, null, mailItem, new object[] { opsEmailEnv });
+    mailItem.GetType().InvokeMember("Subject",  System.Reflection.BindingFlags.SetProperty, null, mailItem, new object[] { subject });
+    mailItem.GetType().InvokeMember("HTMLBody", System.Reflection.BindingFlags.SetProperty, null, mailItem, new object[] { htmlBody });
+
+    session = outlookType.InvokeMember("Session", System.Reflection.BindingFlags.GetProperty, null, outlookApp, null);
+    if (session != null)
+    {
+        accounts = session.GetType().InvokeMember("Accounts", System.Reflection.BindingFlags.GetProperty, null, session, null);
+        if (accounts is System.Collections.IEnumerable accountList)
+        {
+            foreach (object account in accountList)
+            {
+                string smtpAddress = string.Empty;
+                try { smtpAddress = Convert.ToString(account.GetType().InvokeMember("SmtpAddress", System.Reflection.BindingFlags.GetProperty, null, account, null)); }
+                catch { }
+                if (string.Equals(smtpAddress, "nexus.incidents@outlook.com", StringComparison.OrdinalIgnoreCase))
+                {
+                    mailItem.GetType().InvokeMember("SendUsingAccount", System.Reflection.BindingFlags.SetProperty, null, mailItem, new object[] { account });
+                    break;
+                }
+            }
+        }
+    }
+
+    mailItem.GetType().InvokeMember("Send", System.Reflection.BindingFlags.InvokeMethod, null, mailItem, null);
+}
+finally
+{
+    ReleaseComObject(mailItem);
+    ReleaseComObject(accounts);
+    ReleaseComObject(session);
+    ReleaseComObject(outlookApp);
+}
+
+if (triggerExists && File.Exists(triggerPath))
+    File.Delete(triggerPath);
+]]></ui:InvokeCode.Code>
+      <ui:InvokeCode.Arguments>
+        <InArgument x:TypeArguments="x:String" x:Key="recipientEmail">[recipientEmail]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="triggerPath">[triggerPath]</InArgument>
+      </ui:InvokeCode.Arguments>
+    </ui:InvokeCode>
+    <ui:LogMessage Message="[&quot;Shift handover briefing sent to &quot; &amp; recipientEmail]"
+        DisplayName="Log the morning briefing completion."
+        sap:VirtualizedContainerService.HintSize="904,166"
+        sap2010:WorkflowViewState.IdRef="LogMessage_1"
+        Level="Info" />
+  </Sequence>
+</Activity>
