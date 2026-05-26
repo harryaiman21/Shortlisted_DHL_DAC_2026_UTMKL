@@ -1,0 +1,161 @@
+/* ═══════════════════════════════════════════════
+   DHL Incident Reporting System — Design Tokens
+   Based on Stitch Design System (DESIGN.md)
+   ═══════════════════════════════════════════════ */
+
+:root {
+  /* ── Brand Colors ── */
+  --primary: #a70009;
+  --primary-container: #d40511;
+  --on-primary: #ffffff;
+  --on-primary-container: #ffe4e0;
+
+  --secondary: #745b00;
+  --secondary-container: #fecb00;
+  --on-secondary: #ffffff;
+  --on-secondary-container: #6e5700;
+
+  --tertiary: #504f66;
+  --tertiary-container: #68677f;
+  --on-tertiary: #ffffff;
+  --on-tertiary-fixed: #1a1a2e;
+  --on-tertiary-fixed-variant: #45455b;
+
+  /* ── Surface / Neutral ── */
+  --surface: #f9f9f9;
+  --surface-dim: #dadada;
+  --surface-bright: #f9f9f9;
+  --surface-container-lowest: #ffffff;
+  --surface-container-low: #f3f3f3;
+  --surface-container: #eeeeee;
+  --surface-container-high: #e8e8e8;
+  --surface-container-highest: #e2e2e2;
+  --surface-variant: #e2e2e2;
+  --surface-tint: #c0000d;
+  --on-surface: #1a1c1c;
+  --on-surface-variant: #5e3f3b;
+  --background: #f9f9f9;
+  --on-background: #1a1c1c;
+
+  /* ── Error ── */
+  --error: #ba1a1a;
+  --error-container: #ffdad6;
+  --on-error: #ffffff;
+  --on-error-container: #93000a;
+
+  /* ── Outline / Border ── */
+  --outline: #926e6a;
+  --outline-variant: #e8bdb7;
+  --border-subtle: #e8e8e8;
+
+  /* ── Elevation ── */
+  --shadow-card: 0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.06);
+  --shadow-lg: 0 4px 12px rgba(0,0,0,.12);
+  --shadow-modal: 0 8px 24px rgba(0,0,0,.16);
+
+  /* ── Radius ── */
+  --radius-sm: 8px;
+  --radius-default: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-full: 9999px;
+
+  /* ── Font ── */
+  --font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* ═══════════════════════════════════════════════
+   Global Reset & Base
+   ═══════════════════════════════════════════════ */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family);
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+  color: var(--on-surface);
+  background: var(--background);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  font-family: var(--font-family);
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+input, textarea, select {
+  font-family: var(--font-family);
+  font-size: 14px;
+  outline: none;
+}
+
+/* ═══════════════════════════════════════════════
+   Typography Utilities
+   ═══════════════════════════════════════════════ */
+
+.text-headline-xl {
+  font-size: 32px;
+  line-height: 40px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+.text-headline-lg {
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+.text-headline-md {
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 600;
+}
+.text-body-lg {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+}
+.text-body-md {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+}
+.text-label-bold {
+  font-size: 11px;
+  line-height: 16px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.text-label-md {
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 500;
+}
+
+/* ═══════════════════════════════════════════════
+   Material Symbols
+   ═══════════════════════════════════════════════ */
+
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  vertical-align: middle;
+}

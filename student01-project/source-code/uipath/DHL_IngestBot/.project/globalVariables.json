@@ -1,0 +1,10 @@
+[
+  {
+    "Constant": false,
+    "Name": "httpResponse",
+    "TypeFullyQualifiedName": "UiPath.Web.Activities.Http.Models.HttpResponseSummary, UiPath.Web.Activities, Version=2.5.0.0, Culture=neutral, PublicKeyToken=null",
+    "UnresolvedTypeFullyQualifiedName": null,
+    "Expression": null,
+    "IsLiteral": false
+  }
+]
