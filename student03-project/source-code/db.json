@@ -1,0 +1,409 @@
+{
+  "users": [
+    {
+      "id": "user-1",
+      "username": "admin",
+      "password": "admin123",
+      "role": "admin",
+      "name": "Admin User"
+    },
+    {
+      "id": "user-2",
+      "username": "editor",
+      "password": "editor123",
+      "role": "editor",
+      "name": "DHL Editor"
+    },
+    {
+      "id": "user-3",
+      "username": "uipath-bot",
+      "password": "uipath123",
+      "role": "bot",
+      "name": "UiPath Bot"
+    }
+  ],
+  "articles": [
+    {
+      "id": "9c13c093-6bbd-443f-856d-1d0fc43d2411",
+      "title": "Handling Customer Complaints for Undelivered Parcels",
+      "summary": "This SOP outlines the procedure for addressing customer complaints regarding parcels that are marked as delivered but not received. It includes steps for verifying delivery details and resolving the issue promptly to maintain customer satisfaction.",
+      "steps": [
+        "Step 1: Review the tracking information to confirm the delivery status and time.",
+        "Step 2: Contact the driver to verify the delivery attempt and check for GPS proof of delivery.",
+        "Step 3: Determine if a signature was captured upon delivery; if not, escalate the issue for further investigation.",
+        "Step 4: Offer the customer a reattempt for delivery the next day if the issue is confirmed.",
+        "Step 5: Document the complaint and resolution steps taken for future reference."
+      ],
+      "tags": [
+        "customer service",
+        "delivery issue",
+        "complaint resolution"
+      ],
+      "category": "Delivery",
+      "rawInput": "hey team so basically the customer called again about the parcel not delivered. tracking shows delivered yesterday 3pm but customer says nobody was home and no card was left. driver says he knocked but no answer. we need to sort this out asap because customer is very angry and threatening to complaint. last time this happened we contacted the driver, got the GPS proof, and offered reattempt next day. also need to check if signature was captured. if no signature then we have a problem",
+      "source": "manual",
+      "status": "Published",
+      "statusHistory": [
+        {
+          "status": "Draft",
+          "changedAt": "2026-05-24T09:06:25.062Z",
+          "by": "admin"
+        },
+        {
+          "status": "Reviewed",
+          "changedAt": "2026-05-24T09:07:04.846Z",
+          "by": "admin"
+        },
+        {
+          "status": "Draft",
+          "changedAt": "2026-05-24T09:07:27.172Z",
+          "by": "editor"
+        },
+        {
+          "status": "Published",
+          "changedAt": "2026-05-24T09:07:38.735Z",
+          "by": "admin"
+        }
+      ],
+      "createdBy": "admin",
+      "fileAttachments": [],
+      "createdAt": "2026-05-24T09:06:25.062Z",
+      "updatedAt": "2026-05-24T09:07:38.735Z",
+      "updatedBy": "admin"
+    },
+    {
+      "id": "ea95af73-f6fc-4a0d-9364-998aa8f0fe09",
+      "title": "Correcting Invalid Customer Address",
+      "summary": "This SOP outlines the procedure for correcting an invalid customer address due to a missing postcode. It provides clear steps to manually add the postcode, revalidate the address, and proceed with the booking process.",
+      "steps": [
+        "Step 1: Manually add the missing postcode to the customer address.",
+        "Step 2: Revalidate the address to ensure it is complete and accurate.",
+        "Step 3: Save the updated address and continue with the booking process."
+      ],
+      "tags": [
+        "address correction",
+        "postcode",
+        "booking"
+      ],
+      "category": "General",
+      "rawInput": "Customer address invalid. Team chat says postcode missing. Fix: Add postcode manually, Revalidate address, Save and continue booking.",
+      "source": "uipath-drive",
+      "status": "Draft",
+      "statusHistory": [
+        {
+          "status": "Draft",
+          "changedAt": "2026-05-24T09:08:49.465Z",
+          "by": "uipath-bot"
+        }
+      ],
+      "createdBy": "uipath-bot",
+      "fileAttachments": [],
+      "createdAt": "2026-05-24T09:08:49.465Z",
+      "updatedAt": "2026-05-24T09:08:49.465Z"
+    },
+    {
+      "id": "3c42a702-355d-4a20-ab07-0cdb38d7c844",
+      "title": "Customer Credit Approval and New Customer Onboarding Process",
+      "summary": "This SOP outlines the procedures for approving customer credit and onboarding new customers. It ensures a standardized approach to evaluating creditworthiness and integrating new clients into the system.",
+      "steps": [
+        "Step 1: Gather necessary documentation from the customer, including financial statements and credit history.",
+        "Step 2: Evaluate the customer's creditworthiness using established criteria and scoring methods.",
+        "Step 3: Approve or deny the credit application based on the evaluation and communicate the decision to the customer."
+      ],
+      "tags": [
+        "Customer Service",
+        "Credit Approval",
+        "Onboarding"
+      ],
+      "category": "General",
+      "rawInput": "Word Document: Customer Credit Approval and New Customer Onboarding Process.docx. Please convert the key procedures from this document into a structured SOP.",
+      "source": "uipath-drive",
+      "status": "Draft",
+      "statusHistory": [
+        {
+          "status": "Draft",
+          "changedAt": "2026-05-24T09:08:52.357Z",
+          "by": "uipath-bot"
+        }
+      ],
+      "createdBy": "uipath-bot",
+      "fileAttachments": [],
+      "createdAt": "2026-05-24T09:08:52.357Z",
+      "updatedAt": "2026-05-24T09:08:52.357Z"
+    },
+    {
+      "id": "ccfa0a53-89cb-413e-8286-bf15e0fa8ae0",
+      "title": "User Authorization Error Resolution",
+      "summary": "This SOP outlines the steps to resolve the AUTH_401 error code, which indicates that a user is not authorized to access a specific module. It provides guidance on verifying user group access and re-establishing session credentials.",
+      "steps": [
+        "Step 1: Check the Active Directory (AD) group access for the user.",
+        "Step 2: Ensure that the user is a member of the OPS_FWD_ROLE group.",
+        "Step 3: Logout from the system and log back in to refresh the session."
+      ],
+      "tags": [
+        "Authorization",
+        "Error Resolution",
+        "User Access"
+      ],
+      "category": "System",
+      "rawInput": "Error Code: AUTH_401 User not authorized to access module. Resolution: - Check AD group access - User must be in OPS_FWD_ROLE - Logout and login again",
+      "source": "uipath-drive",
+      "status": "Draft",
+      "statusHistory": [
+        {
+          "status": "Draft",
+          "changedAt": "2026-05-24T09:08:55.958Z",
+          "by": "uipath-bot"
+        }
+      ],
+      "createdBy": "uipath-bot",
+      "fileAttachments": [],
+      "createdAt": "2026-05-24T09:08:55.958Z",
+      "updatedAt": "2026-05-24T09:08:55.958Z"
+    },
+    {
+      "id": "b740bd02-cc77-4e50-8d5d-fb5b1d4c2728",
+      "title": "Troubleshooting Label Printing Issues",
+      "summary": "This SOP outlines the steps to resolve common label printing problems, particularly those related to printer cache issues. It provides a systematic approach to restart the printer service, clear the print queue, and ensure optimal printing quality.",
+      "steps": [
+        "Step 1: Restart the printer service to refresh the printer's settings.",
+        "Step 2: Clear the print queue to remove any stuck print jobs.",
+        "Step 3: Reprint the label to check if the issue is resolved.",
+        "Step 4: If the label is still unclear, change the toner cartridge."
+      ],
+      "tags": [
+        "printing",
+        "troubleshooting",
+        "labels"
+      ],
+      "category": "General",
+      "rawInput": "Label not printing properly. Usually printer cache issue. Restart printer service, Clear queue, Reprint label. If still blur, change toner.",
+      "source": "uipath-drive",
+      "status": "Draft",
+      "statusHistory": [
+        {
+          "status": "Draft",
+          "changedAt": "2026-05-24T09:08:59.204Z",
+          "by": "uipath-bot"
+        }
+      ],
+      "createdBy": "uipath-bot",
+      "fileAttachments": [],
+      "createdAt": "2026-05-24T09:08:59.204Z",
+      "updatedAt": "2026-05-24T09:08:59.204Z"
+    },
+    {
+      "id": "45a33741-874e-403e-90e0-136ee4af5a2f",
+      "title": "New Staff Setup Procedure",
+      "summary": "This SOP outlines the steps required to set up new staff members within the organization. It includes the creation of accounts, granting access to necessary systems, and sharing relevant documentation.",
+      "steps": [
+        "Step 1: Create Active Directory (AD) account for the new staff member.",
+        "Step 2: Provide access to the company email account.",
+        "Step 3: Assign SAP and CW1 roles to the new staff member.",
+        "Step 4: Share the Standard Operating Procedures (SOP) folder with the new staff member.",
+        "Note: Delays in the setup process may occur if the SAP request is not approved."
+      ],
+      "tags": [
+        "staff onboarding",
+        "account setup",
+        "system access"
+      ],
+      "category": "General",
+      "rawInput": "New staff setup steps: ✔ Create AD account ✔ Give email access ✔ SAP + CW1 role ✔ Share SOP folder Delay usually because SAP request not approved",
+      "source": "uipath-drive",
+      "status": "Draft",
+      "statusHistory": [
+        {
+          "status": "Draft",
+          "changedAt": "2026-05-24T09:09:02.896Z",
+          "by": "uipath-bot"
+        }
+      ],
+      "createdBy": "uipath-bot",
+      "fileAttachments": [],
+      "createdAt": "2026-05-24T09:09:02.896Z",
+      "updatedAt": "2026-05-24T09:09:02.896Z"
+    },
+    {
+      "id": "950e0db3-ae00-4b68-86f2-56e3f2b96032",
+      "title": "POD Upload Procedure",
+      "summary": "This SOP outlines the steps to successfully upload Proof of Delivery (POD) images, addressing common issues such as file size limitations. It provides guidance on image format preferences and post-upload actions to ensure successful completion.",
+      "steps": [
+        "Step 1: Compress the image file before uploading to ensure it meets size requirements.",
+        "Step 2: Use JPEG format for better compatibility; PNG may result in larger file sizes.",
+        "Step 3: After uploading the image, refresh the screen twice to confirm the upload was successful."
+      ],
+      "tags": [
+        "POD",
+        "upload",
+        "image compression"
+      ],
+      "category": "System",
+      "rawInput": "POD upload failed again 😓 Error msg: “File size too large” Just compress the image before uploading. JPEG works better than PNG. After upload, refresh screen twice.",
+      "source": "uipath-drive",
+      "status": "Draft",
+      "statusHistory": [
+        {
+          "status": "Draft",
+          "changedAt": "2026-05-24T09:09:06.309Z",
+          "by": "uipath-bot"
+        }
+      ],
+      "createdBy": "uipath-bot",
+      "fileAttachments": [],
+      "createdAt": "2026-05-24T09:09:06.309Z",
+      "updatedAt": "2026-05-24T09:09:06.309Z"
+    },
+    {
+      "id": "f56e82fe-a37c-4264-9315-df453a959980",
+      "title": "Conversion of Key Procedures from Document to SOP",
+      "summary": "This SOP outlines the process for converting key procedures from a Word document into a structured Standard Operating Procedure (SOP). It ensures that all relevant information is accurately captured and formatted for clarity and ease of use.",
+      "steps": [
+        "Step 1: Open the Word document containing the key procedures.",
+        "Step 2: Identify and extract the relevant procedures and information.",
+        "Step 3: Format the extracted information into a structured SOP format."
+      ],
+      "tags": [
+        "SOP",
+        "Document Conversion",
+        "Procedure"
+      ],
+      "category": "General",
+      "rawInput": "Word Document: SOP.docx. Please convert the key procedures from this document into a structured SOP.",
+      "source": "uipath-drive",
+      "status": "Draft",
+      "statusHistory": [
+        {
+          "status": "Draft",
+          "changedAt": "2026-05-24T09:09:09.254Z",
+          "by": "uipath-bot"
+        }
+      ],
+      "createdBy": "uipath-bot",
+      "fileAttachments": [],
+      "createdAt": "2026-05-24T09:09:09.254Z",
+      "updatedAt": "2026-05-24T09:09:09.254Z"
+    },
+    {
+      "id": "798a49ea-ce73-4fe9-9f78-86b02ba0fd90",
+      "title": "Booking Checklist for Shipments",
+      "summary": "This SOP outlines the essential steps for preparing a booking checklist for shipments. It ensures that all necessary details are confirmed before proceeding with the pickup.",
+      "steps": [
+        "Step 1: Verify the customer's purchase order (PO) for accuracy.",
+        "Step 2: Confirm the correct incoterms are applied.",
+        "Step 3: Ensure the pickup date is confirmed with the customer."
+      ],
+      "tags": [
+        "booking",
+        "checklist",
+        "shipping"
+      ],
+      "category": "Delivery",
+      "rawInput": "Uo ial Booking ChecklistECustomeg POX Correct incotermB Pickup date confirmed @Welght Scineosweriziiagpiisiy felted 5",
+      "source": "uipath-drive",
+      "status": "Draft",
+      "statusHistory": [
+        {
+          "status": "Draft",
+          "changedAt": "2026-05-24T09:09:19.639Z",
+          "by": "uipath-bot"
+        }
+      ],
+      "createdBy": "uipath-bot",
+      "fileAttachments": [],
+      "createdAt": "2026-05-24T09:09:19.639Z",
+      "updatedAt": "2026-05-24T09:09:19.639Z"
+    },
+    {
+      "id": "b2c92155-0302-451d-b3e0-be91e2853129",
+      "title": "Resolving Shipment Routing Code Issues",
+      "summary": "This SOP outlines the steps to take when a shipment is stuck due to an invalid routing code. It provides a clear process for refreshing the shipment ID and reprocessing to resolve the issue.",
+      "steps": [
+        "Step 1: Log out of the system to ensure all session data is cleared.",
+        "Step 2: Log back into the system and locate the shipment ID that is experiencing issues.",
+        "Step 3: Refresh the shipment ID and reprocess the shipment to update the routing code."
+      ],
+      "tags": [
+        "shipment",
+        "routing code",
+        "system issue"
+      ],
+      "category": "System",
+      "rawInput": "Hey teamishipmentiz845 12igotstuckiadainssystem saysginvaiid Routing Code last time this happened we refreshed theishipmentidatallogged outand reprocessed YAlsol",
+      "source": "uipath-drive",
+      "status": "Draft",
+      "statusHistory": [
+        {
+          "status": "Draft",
+          "changedAt": "2026-05-24T09:09:23.674Z",
+          "by": "uipath-bot"
+        }
+      ],
+      "createdBy": "uipath-bot",
+      "fileAttachments": [],
+      "createdAt": "2026-05-24T09:09:23.674Z",
+      "updatedAt": "2026-05-24T09:09:23.674Z"
+    }
+  ],
+  "duplicateHashes": [
+    {
+      "id": "448b9efb-1bd0-4f4a-b1a6-dfed8c55bbce",
+      "hash": "107d7dc6994e897f238e9d963b2ff0a9",
+      "checkedAt": "2026-05-24T09:08:45.257Z"
+    },
+    {
+      "id": "ea238448-cc5c-4a8f-a319-a3f99f78626e",
+      "hash": "a05481855d46eafc10ab6c3d4ad87912",
+      "checkedAt": "2026-05-24T09:08:49.771Z"
+    },
+    {
+      "id": "79cbeb4f-4f10-429d-9c1e-8e35f81eec81",
+      "hash": "2876dddb201d20b42b09dbea54842444",
+      "checkedAt": "2026-05-24T09:08:52.498Z"
+    },
+    {
+      "id": "4f1447b2-f60c-4feb-8e37-26bc0e7aec64",
+      "hash": "f476c2415b1ad81bff8ffdb4b9eda739",
+      "checkedAt": "2026-05-24T09:08:56.027Z"
+    },
+    {
+      "id": "568457f0-c6ce-45b3-a4f8-097b783e4ee2",
+      "hash": "e7ef88c7266c1d0e37a94a923707a4bb",
+      "checkedAt": "2026-05-24T09:08:59.269Z"
+    },
+    {
+      "id": "88c59b69-1c9a-4166-b226-351a6a4b648e",
+      "hash": "9518109ccf5fece0e222ae08f51d5f1f",
+      "checkedAt": "2026-05-24T09:09:02.924Z"
+    },
+    {
+      "id": "03418e89-f8f0-437a-9e02-f6cfd1dec890",
+      "hash": "5efd4261d6cb2e14ddf1c4d26fbba76c",
+      "checkedAt": "2026-05-24T09:09:06.452Z"
+    },
+    {
+      "id": "f5593a51-3806-4f58-98fc-998dac4bab3d",
+      "hash": "7edefe7ee8e9e4a600ce662eaa77604f",
+      "checkedAt": "2026-05-24T09:09:09.424Z"
+    },
+    {
+      "id": "310555a5-d248-4843-8728-6ea1ce62be10",
+      "hash": "72b3e03e2073dabca6b25b7f58281e33",
+      "checkedAt": "2026-05-24T09:09:19.669Z"
+    }
+  ],
+  "logs": [
+    {
+      "id": "ad30131d-88b1-420d-bdf9-9f0b15572563",
+      "message": "DHL KB Automation Run - 24/05/2026 17:09 | ======================== | Created: 9 | Duplicates Skipped: 0 | Errors: 0 | ========================",
+      "level": "info",
+      "createdAt": "2026-05-24T09:09:23.976Z"
+    },
+    {
+      "id": "93bddeff-9a18-40c9-a10e-92615a5927bd",
+      "message": "DHL KB Automation Run - 24/05/2026 17:12 | ======================== | Created: 0 | Duplicates Skipped: 9 | Errors: 0 | ========================",
+      "level": "info",
+      "createdAt": "2026-05-24T09:12:24.181Z"
+    }
+  ]
+}
