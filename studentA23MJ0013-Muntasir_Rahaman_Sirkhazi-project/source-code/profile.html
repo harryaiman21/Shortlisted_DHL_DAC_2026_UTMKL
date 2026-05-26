@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile — ReportFlow</title>
+  <script src="assets/js/auth-gate.js"></script>
+  <script src="assets/js/i18n.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body class="page-shell">
+  <header class="topbar">
+    <a class="brand" href="index.html" aria-label="ReportFlow home">
+      <span class="brand-mark"></span>
+      <span>ReportFlow</span>
+    </a>
+    <nav class="topnav">
+      <div id="protected-links" class="auth-links"></div>
+      <div id="auth-links" class="auth-links"></div>
+    </nav>
+  </header>
+
+  <main class="content-page">
+    <section class="content-header" style="margin-bottom:32px">
+      <p class="eyebrow" data-i18n="profile.eyebrow">Account</p>
+      <h1 data-i18n="profile.title">Your Profile</h1>
+    </section>
+
+    <div class="profile-grid">
+
+      <!-- Identity card -->
+      <div class="form-card profile-card profile-identity-card">
+        <div class="profile-avatar" id="profile-avatar">?</div>
+        <div class="profile-identity-text">
+          <p class="eyebrow" style="margin-bottom:4px" data-i18n="profile.signed_in_as">Signed in as</p>
+          <p class="profile-email" id="profile-email">Loading…</p>
+          <p class="profile-joined" id="profile-joined"></p>
+        </div>
+      </div>
+
+      <!-- Activity stats -->
+      <div class="form-card profile-card">
+        <h2 class="profile-section-title" data-i18n="profile.activity_title">Your Activity</h2>
+        <div class="admin-stats-row" id="profile-stats-row" style="grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:0">
+          <div class="admin-stat-card">
+            <p class="admin-stat-value" id="pstat-total">—</p>
+            <p class="admin-stat-label" data-i18n="profile.stat_reports">Reports</p>
+          </div>
+          <div class="admin-stat-card">
+            <p class="admin-stat-value" id="pstat-pending">—</p>
+            <p class="admin-stat-label" data-i18n="profile.stat_pending">Pending</p>
+          </div>
+          <div class="admin-stat-card">
+            <p class="admin-stat-value" id="pstat-resolved">—</p>
+            <p class="admin-stat-label" data-i18n="profile.stat_resolved">Resolved</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Edit name -->
+      <div class="form-card profile-card">
+        <h2 class="profile-section-title" data-i18n="profile.name_title">Display Name</h2>
+        <label class="field-label" for="profile-name-input" data-i18n="profile.name_label">Full name</label>
+        <input id="profile-name-input" class="text-input" type="text" placeholder="Your full name" data-i18n-placeholder="profile.name_placeholder" autocomplete="name">
+        <div class="form-actions" style="margin-top:0">
+          <button id="save-name-btn" class="primary-button" type="button" data-i18n="profile.save_name">Save name</button>
+        </div>
+        <p id="name-status" class="helper-text form-status" aria-live="polite"></p>
+      </div>
+
+      <!-- Change password -->
+      <div class="form-card profile-card">
+        <h2 class="profile-section-title" data-i18n="profile.password_title">Change Password</h2>
+        <label class="field-label" for="new-password" data-i18n="profile.new_password_label">New password</label>
+        <input id="new-password" class="text-input" type="password" placeholder="At least 6 characters" data-i18n-placeholder="profile.new_password_placeholder" autocomplete="new-password">
+        <label class="field-label" for="confirm-password" data-i18n="profile.confirm_password_label">Confirm password</label>
+        <input id="confirm-password" class="text-input" type="password" placeholder="Repeat new password" data-i18n-placeholder="profile.confirm_password_placeholder" autocomplete="new-password">
+        <div class="form-actions" style="margin-top:0">
+          <button id="save-password-btn" class="primary-button" type="button" data-i18n="profile.update_password">Update password</button>
+        </div>
+        <p id="password-status" class="helper-text form-status" aria-live="polite"></p>
+      </div>
+
+    </div>
+  </main>
+
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

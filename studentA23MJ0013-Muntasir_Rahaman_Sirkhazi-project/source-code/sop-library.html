@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SOP Library — ReportFlow</title>
+  <script src="assets/js/auth-gate.js"></script>
+  <script src="assets/js/i18n.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body class="page-shell">
+  <header class="topbar">
+    <a class="brand" href="index.html" aria-label="ReportFlow home">
+      <span class="brand-mark"></span>
+      <span>ReportFlow</span>
+    </a>
+    <nav class="topnav">
+      <div id="protected-links" class="auth-links"></div>
+      <div id="auth-links" class="auth-links"></div>
+    </nav>
+  </header>
+
+  <main class="content-page">
+    <section class="content-header" style="margin-bottom:28px">
+      <p class="eyebrow" data-i18n="sop.eyebrow">AI-generated</p>
+      <h1 data-i18n="sop.title">SOP Library</h1>
+      <p class="hero-text narrow" data-i18n="sop.text">All Standard Operating Procedures extracted by AI from your reports — ready to copy and reuse.</p>
+    </section>
+
+    <div class="reports-filter-row" style="margin-bottom:28px">
+      <input id="sop-search" class="reports-search-input" type="search" placeholder="Search by title or tag…" data-i18n-placeholder="sop.search_placeholder" aria-label="Search SOPs">
+      <span id="sop-count" class="filter-count"></span>
+    </div>
+
+    <section id="sop-empty" class="empty-state hidden">
+      <div class="empty-state-card">
+        <p class="eyebrow" data-i18n="sop.empty_eyebrow">Nothing here yet</p>
+        <h2 data-i18n="sop.empty_title">No SOPs generated yet</h2>
+        <p class="hero-text empty-copy" data-i18n="sop.empty_text">Submit reports and once the AI processes them their SOPs will appear here for quick reference.</p>
+        <a class="primary-button" href="enter-report.html" data-i18n="sop.empty_cta">Enter a Report</a>
+      </div>
+    </section>
+
+    <div id="sop-grid" class="sop-grid"></div>
+  </main>
+
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

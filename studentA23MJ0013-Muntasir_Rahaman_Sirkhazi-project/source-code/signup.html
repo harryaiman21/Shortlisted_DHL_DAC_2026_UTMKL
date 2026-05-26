@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up</title>
+  <script src="assets/js/auth-gate.js"></script>
+  <script src="assets/js/i18n.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body class="page-shell">
+  <header class="topbar">
+    <a class="brand" href="index.html" aria-label="Report Summarizer home">
+      <span class="brand-mark"></span>
+      <span>ReportFlow</span>
+    </a>
+    <nav class="topnav">
+      <div id="protected-links" class="auth-links"></div>
+      <div id="auth-links" class="auth-links"></div>
+    </nav>
+  </header>
+
+  <main class="auth-layout">
+    <section class="auth-copy">
+      <p class="eyebrow" data-i18n="signup.eyebrow">Create account</p>
+      <h1 data-i18n="signup.title">Start using ReportFlow</h1>
+      <p class="hero-text" data-i18n="signup.text">
+        Create an account so your uploads, explanations, and previews stay connected to you.
+      </p>
+    </section>
+
+    <section class="form-card auth-card">
+      <form id="signup-form">
+        <label class="field-label" for="signup-name" data-i18n="signup.name_label">Full name</label>
+        <input id="signup-name" class="text-input" type="text" placeholder="Your name" data-i18n-placeholder="signup.name_placeholder">
+
+        <label class="field-label" for="signup-email" data-i18n="signup.email_label">Email</label>
+        <input id="signup-email" class="text-input" type="email" placeholder="you@example.com" data-i18n-placeholder="login.email_placeholder" required>
+
+        <label class="field-label" for="signup-password" data-i18n="signup.password_label">Password</label>
+        <input id="signup-password" class="text-input" type="password" placeholder="Create a password" data-i18n-placeholder="signup.password_placeholder" required>
+
+        <div class="form-actions auth-actions">
+          <button class="primary-button" type="submit" data-i18n="signup.submit">Sign Up</button>
+          <a class="secondary-button" href="login.html" data-i18n="signup.have_account">Already have an account</a>
+        </div>
+        <p id="signup-status" class="helper-text form-status" aria-live="polite"></p>
+      </form>
+    </section>
+  </main>
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

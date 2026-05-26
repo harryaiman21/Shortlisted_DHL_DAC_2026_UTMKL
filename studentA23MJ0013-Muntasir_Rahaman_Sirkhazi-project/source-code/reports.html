@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reports</title>
+  <script src="assets/js/auth-gate.js"></script>
+  <script src="assets/js/i18n.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body class="page-shell">
+  <header class="topbar">
+    <a class="brand" href="index.html" aria-label="Report Summarizer home">
+      <span class="brand-mark"></span>
+      <span>ReportFlow</span>
+    </a>
+    <nav class="topnav">
+      <div id="protected-links" class="auth-links"></div>
+      <div id="auth-links" class="auth-links"></div>
+    </nav>
+  </header>
+
+  <main class="content-page">
+    <section class="reports-header">
+      <div>
+        <p class="eyebrow" data-i18n="reports.eyebrow">Report library</p>
+        <h1 data-i18n="reports.title">Welcome to your reports</h1>
+      </div>
+      <div class="reports-actions">
+        <a class="primary-button" href="enter-report.html" data-i18n="reports.create_new">Create New</a>
+        <div class="view-toggle" role="group" aria-label="Choose reports view">
+          <button id="card-view-button" class="view-button active" type="button" aria-label="Card view" data-i18n-aria-label="reports.card_view">⊞</button>
+          <button id="list-view-button" class="view-button" type="button" aria-label="List view" data-i18n-aria-label="reports.list_view">☰</button>
+        </div>
+      </div>
+    </section>
+
+    <div id="reply-notification" class="notification-banner hidden" role="alert">
+      <span data-i18n="reports.new_replies">You have new replies from admin on your reports.</span>
+      <button class="notification-dismiss" type="button" aria-label="Dismiss" data-i18n-aria-label="common.dismiss">×</button>
+    </div>
+
+    <div class="reports-filter-row">
+      <input id="reports-search" class="reports-search-input" type="search" placeholder="Search by title or tag…" data-i18n-placeholder="reports.search_placeholder" aria-label="Search reports" data-i18n-aria-label="reports.search_aria">
+      <select id="reports-type-filter" class="reports-type-filter" aria-label="Filter by type" data-i18n-aria-label="reports.filter_aria">
+        <option value="" data-i18n="reports.all_types">All types</option>
+        <option value="manual" data-i18n="reports.type_text">Text</option>
+        <option value="file" data-i18n="reports.type_file">File</option>
+        <option value="drive" data-i18n="common.google_drive">Google Drive</option>
+        <option value="email" data-i18n="common.email">Email</option>
+      </select>
+      <select id="reports-sort" class="reports-sort-select" aria-label="Sort order" data-i18n-aria-label="reports.sort_aria">
+        <option value="newest" data-i18n="reports.sort_newest">Newest first</option>
+        <option value="oldest" data-i18n="reports.sort_oldest">Oldest first</option>
+      </select>
+      <span id="filter-count" class="filter-count"></span>
+    </div>
+
+    <section id="empty-state" class="empty-state">
+      <div class="empty-state-card">
+        <p class="eyebrow" data-i18n="reports.empty_eyebrow">No reports yet</p>
+        <h2 data-i18n="reports.empty_title">Your report list is empty</h2>
+        <p class="hero-text empty-copy" data-i18n="reports.empty_text">
+          Submit your first report and it will show up here as a card.
+        </p>
+        <a class="primary-button" href="enter-report.html" data-i18n="reports.empty_cta">Enter Your First Report</a>
+      </div>
+    </section>
+
+    <section id="reports-grid" class="reports-grid hidden" aria-label="Saved reports"></section>
+    <section id="reports-list" class="reports-list hidden" aria-label="Saved reports in list view"></section>
+    <div id="pagination" class="pagination" role="navigation" aria-label="Report pages"></div>
+  </main>
+
+  <!-- Edit report modal -->
+  <div id="edit-report-modal" class="modal-overlay hidden" aria-hidden="true">
+    <div class="picker-modal edit-modal">
+      <div class="modal-top">
+        <div>
+          <p class="eyebrow" data-i18n="reports.edit_eyebrow">Edit report</p>
+          <h2 class="modal-title" data-i18n="reports.edit_title">Update details</h2>
+        </div>
+        <button id="close-edit-modal" class="close-modal" type="button" aria-label="Close" data-i18n-aria-label="common.close">×</button>
+      </div>
+      <div class="edit-field-group">
+        <div>
+          <label class="field-label" for="edit-title" data-i18n="common.title">Title</label>
+          <input id="edit-title" class="text-input" type="text" placeholder="Report title" data-i18n-placeholder="reports.title_placeholder">
+        </div>
+        <div>
+          <label class="field-label" for="edit-explanation" data-i18n="reports.explanation_label">Explanation / Notes</label>
+          <textarea id="edit-explanation" class="text-area compact" placeholder="Add or update your explanation…" data-i18n-placeholder="reports.explanation_placeholder"></textarea>
+        </div>
+        <div>
+          <label class="field-label" for="edit-tags" data-i18n="reports.tags_label">Tags (comma-separated)</label>
+          <input id="edit-tags" class="text-input" type="text" placeholder="e.g. urgent, logistics, Q2" data-i18n-placeholder="common.tags_placeholder">
+        </div>
+      </div>
+      <div class="form-actions" style="margin-top:0">
+        <button id="save-edit-btn" class="primary-button" type="button" data-i18n="common.save_changes">Save changes</button>
+        <button id="cancel-edit-btn" class="secondary-button" type="button" data-i18n="common.cancel">Cancel</button>
+      </div>
+      <p id="edit-status" class="helper-text form-status" aria-live="polite"></p>
+    </div>
+  </div>
+
+  <div id="report-preview-modal" class="modal-overlay hidden" aria-hidden="true">
+    <div class="picker-modal preview-modal">
+      <div class="modal-top">
+        <div>
+          <p class="eyebrow" data-i18n="reports.preview_eyebrow">Report preview</p>
+          <h2 id="preview-title" class="modal-title">Preview</h2>
+        </div>
+        <button id="close-preview-modal" class="close-modal" type="button" aria-label="Close" data-i18n-aria-label="common.close">×</button>
+      </div>
+      <div class="preview-meta">
+        <span id="preview-type"></span>
+        <span id="preview-date"></span>
+      </div>
+      <div id="preview-tracker" class="status-tracker-wrap"></div>
+      <div id="preview-body" class="preview-body"></div>
+      <section class="report-chat-section preview-chat-section" data-chat-enabled="false">
+        <div class="summary-section-head">
+          <h3 data-i18n="reports.ask_ai">Ask AI about this report</h3>
+          <button class="chat-clear-btn" type="button" title="Clear conversation">Clear</button>
+        </div>
+        <div class="chat-messages" role="log" aria-live="polite"></div>
+        <form class="chat-input-row" autocomplete="off">
+          <textarea class="chat-input" placeholder="Ask a question about this report..." rows="1" data-i18n-placeholder="reports.chat_placeholder"></textarea>
+          <button class="chat-send-btn primary-button" type="submit" aria-label="Send">
+            <span class="chat-send-label" data-i18n="reports.ask_button">Ask</span>
+          </button>
+        </form>
+        <p class="chat-disabled-note hidden">Chat activates once the report has content.</p>
+      </section>
+    </div>
+  </div>
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

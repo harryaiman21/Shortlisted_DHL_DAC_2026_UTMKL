@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard</title>
+  <script src="assets/js/auth-gate.js"></script>
+  <script src="assets/js/i18n.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body class="page-shell">
+  <header class="topbar">
+    <a class="brand" href="index.html" aria-label="Report Summarizer home">
+      <span class="brand-mark"></span>
+      <span>ReportFlow</span>
+    </a>
+    <nav class="topnav">
+      <div id="protected-links" class="auth-links"></div>
+      <div id="auth-links" class="auth-links"></div>
+    </nav>
+  </header>
+
+  <main class="content-page admin-page">
+    <section class="reports-header">
+      <div>
+        <p class="eyebrow" data-i18n="admin.eyebrow">Admin dashboard</p>
+        <h1 data-i18n="admin.title">Submitted reports and summaries</h1>
+        <p class="hero-text narrow" data-i18n="admin.text">
+          Users submit text, images, PDFs, Word files, and slides. UiPath can extract the text into the database, and the LLM can create a detailed summary for admin review here.
+        </p>
+      </div>
+    </section>
+
+    <div id="admin-security-warning" class="security-warning hidden">
+      <span data-i18n="admin.security_warning">Reminder: rotate any API keys that were ever committed to git history (Gemini, Google Drive Picker) before going to production.</span>
+      <button class="security-warning-dismiss" type="button" aria-label="Dismiss" data-i18n-aria-label="common.dismiss">×</button>
+    </div>
+
+    <div id="admin-stats-row" class="admin-stats-row hidden">
+      <div class="admin-stat-card">
+        <p class="admin-stat-value" id="stat-total">—</p>
+        <p class="admin-stat-label" data-i18n="admin.stat_total">Total Reports</p>
+      </div>
+      <div class="admin-stat-card">
+        <p class="admin-stat-value" id="stat-pending">—</p>
+        <p class="admin-stat-label" data-i18n="common.pending">Pending</p>
+      </div>
+      <div class="admin-stat-card">
+        <p class="admin-stat-value" id="stat-processed">—</p>
+        <p class="admin-stat-label" data-i18n="admin.stat_processed">Processed</p>
+      </div>
+      <div class="admin-stat-card">
+        <p class="admin-stat-value" id="stat-resolved">—</p>
+        <p class="admin-stat-label" data-i18n="common.resolved">Resolved</p>
+      </div>
+      <div class="admin-stat-card admin-stat-critical">
+        <p class="admin-stat-value" id="stat-critical">—</p>
+        <p class="admin-stat-label">Critical (S4–S5)</p>
+      </div>
+    </div>
+
+    <section id="admin-empty-state" class="empty-state">
+      <div class="empty-state-card">
+        <p class="eyebrow" data-i18n="admin.empty_eyebrow">No admin data yet</p>
+        <h2 data-i18n="admin.empty_title">No submitted reports found</h2>
+        <p class="hero-text empty-copy" data-i18n="admin.empty_text">
+          Once users submit reports, the admin dashboard will show raw input, extracted text, and the detailed summary here.
+        </p>
+      </div>
+    </section>
+
+    <div class="admin-toolbar">
+      <div class="admin-filter-row" style="flex:1;margin-bottom:0">
+        <input id="admin-search" class="admin-search-input" type="search" placeholder="Search by title, user name or email…" data-i18n-placeholder="admin.search_placeholder" aria-label="Search reports" data-i18n-aria-label="reports.search_aria">
+        <select id="admin-status-filter" class="admin-status-filter" aria-label="Filter by status">
+          <option value="" data-i18n="admin.all_statuses">All statuses</option>
+          <option value="pending" data-i18n="common.pending">Pending</option>
+          <option value="extracted" data-i18n="admin.status_extracted">Extracted</option>
+          <option value="processed" data-i18n="admin.stat_processed">Processed</option>
+          <option value="under_review" data-i18n="admin.status_review">Under Review</option>
+          <option value="resolved" data-i18n="common.resolved">Resolved</option>
+        </select>
+        <select id="admin-category-filter" class="admin-status-filter" aria-label="Filter by category">
+          <option value="">All categories</option>
+          <option value="delay">Delay</option>
+          <option value="damage">Damage</option>
+          <option value="lost">Lost / Missing</option>
+          <option value="fraud">Fraud / Theft</option>
+          <option value="customs">Customs</option>
+          <option value="address">Address Issue</option>
+          <option value="other">Other</option>
+        </select>
+        <select id="admin-severity-filter" class="admin-status-filter" aria-label="Filter by severity">
+          <option value="">All severities</option>
+          <option value="5">S5 — Critical</option>
+          <option value="4">S4 — High</option>
+          <option value="3">S3 — Medium</option>
+          <option value="2">S2 — Low</option>
+          <option value="1">S1 — Info</option>
+        </select>
+      </div>
+      <button id="backfill-embeddings-btn" class="secondary-button" type="button" title="Generate embeddings for older reports so duplicate detection works on them">🔁 Backfill embeddings</button>
+      <button id="regenerate-all-btn" class="secondary-button" type="button" data-i18n="admin.regenerate_all">Regenerate All</button>
+    </div>
+    <section id="admin-reports" class="admin-reports hidden" aria-label="Admin reports"></section>
+  </main>
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

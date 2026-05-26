@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Report Summarizer</title>
+  <script src="assets/js/auth-gate.js"></script>
+  <script src="assets/js/i18n.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body class="page-shell">
+  <header class="topbar">
+    <a class="brand" href="index.html" aria-label="Report Summarizer home">
+      <span class="brand-mark"></span>
+      <span>ReportFlow</span>
+    </a>
+    <nav class="topnav">
+      <div id="protected-links" class="auth-links"></div>
+      <div id="auth-links" class="auth-links"></div>
+    </nav>
+  </header>
+
+  <main class="hero-layout">
+    <section class="hero-copy">
+      <p class="eyebrow" data-i18n="index.eyebrow">Smart report cleanup</p>
+      <h1 data-i18n="index.title">Welcome. What is your report?</h1>
+      <p class="hero-text" data-i18n="index.text">
+        Turn messy notes and rough reports into a clean, detailed summary with article title,
+        organized sections, and a report history you can revisit later.
+      </p>
+      <div id="hero-auth-actions" class="hero-actions">
+        <a class="primary-button" href="login.html" data-i18n="nav.login">Login</a>
+        <a class="secondary-button" href="signup.html" data-i18n="nav.signup">Sign Up</a>
+      </div>
+    </section>
+
+    <section class="hero-preview" aria-label="Preview cards">
+      <article class="preview-card lavender">
+        <div class="preview-icon">R</div>
+        <h2 data-i18n="index.preview1.title">Incident Summary</h2>
+        <p data-i18n="index.preview1.text">Cleaned report with article name, timeline, and key actions.</p>
+      </article>
+      <article class="preview-card sky">
+        <div class="preview-icon">A</div>
+        <h2 data-i18n="index.preview2.title">Article Draft</h2>
+        <p data-i18n="index.preview2.text">Turn rough input into a readable article-ready summary.</p>
+      </article>
+      <article class="preview-card cream">
+        <div class="preview-icon">L</div>
+        <h2 data-i18n="index.preview3.title">Report Library</h2>
+        <p data-i18n="index.preview3.text">Browse saved reports in a clear notebook-style list.</p>
+      </article>
+    </section>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Analytics — ReportFlow</title>
+  <script src="assets/js/auth-gate.js"></script>
+  <script src="assets/js/i18n.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+          integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="https://unpkg.com/leaflet.heat@0.2.0/dist/leaflet-heat.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body class="page-shell">
+  <header class="topbar">
+    <a class="brand" href="index.html" aria-label="ReportFlow home">
+      <span class="brand-mark"></span>
+      <span>ReportFlow</span>
+    </a>
+    <nav class="topnav">
+      <div id="protected-links" class="auth-links"></div>
+      <div id="auth-links" class="auth-links"></div>
+    </nav>
+  </header>
+
+  <main class="content-page">
+    <section class="content-header" style="margin-bottom:32px">
+      <p class="eyebrow" data-i18n="analytics.eyebrow">Insights</p>
+      <h1 data-i18n="analytics.title">Analytics</h1>
+      <p class="hero-text narrow" data-i18n="analytics.text">A live view of your report activity, statuses, and input sources.</p>
+    </section>
+
+    <div id="analytics-stats" class="admin-stats-row" style="margin-bottom:36px">
+      <div class="admin-stat-card">
+        <p class="admin-stat-value" id="stat-total">—</p>
+        <p class="admin-stat-label" data-i18n="admin.stat_total">Total Reports</p>
+      </div>
+      <div class="admin-stat-card">
+        <p class="admin-stat-value" id="stat-pending">—</p>
+        <p class="admin-stat-label" data-i18n="analytics.stat_pending">Pending Review</p>
+      </div>
+      <div class="admin-stat-card">
+        <p class="admin-stat-value" id="stat-processed">—</p>
+        <p class="admin-stat-label" data-i18n="admin.stat_processed">Processed</p>
+      </div>
+      <div class="admin-stat-card">
+        <p class="admin-stat-value" id="stat-resolved">—</p>
+        <p class="admin-stat-label" data-i18n="common.resolved">Resolved</p>
+      </div>
+      <div class="admin-stat-card">
+        <p class="admin-stat-value" id="stat-avg-resolution">—</p>
+        <p class="admin-stat-label">Avg Resolution Time</p>
+      </div>
+      <div class="admin-stat-card admin-stat-critical">
+        <p class="admin-stat-value" id="stat-critical">—</p>
+        <p class="admin-stat-label">Critical (S4–S5)</p>
+      </div>
+    </div>
+
+    <section class="analytics-chart-card analytics-chart-wide map-card" style="margin-bottom:24px">
+      <div class="map-card-head">
+        <div>
+          <h3 class="analytics-chart-title">📍 Incident Heatmap</h3>
+          <p class="helper-text" id="heatmap-summary">Loading reports…</p>
+        </div>
+        <div class="map-card-actions">
+          <button id="heatmap-toggle-mode" class="secondary-button" type="button">Switch to heatmap</button>
+          <button id="heatmap-seed-demo" class="secondary-button" type="button">📌 Seed demo locations</button>
+          <button id="heatmap-autolocate" class="primary-button" type="button">🪄 Auto-locate reports</button>
+        </div>
+      </div>
+      <div id="incident-map" class="incident-map"></div>
+      <div class="map-legend">
+        <span class="map-legend-item"><span class="map-legend-dot sev-1"></span>S1 Info</span>
+        <span class="map-legend-item"><span class="map-legend-dot sev-2"></span>S2 Low</span>
+        <span class="map-legend-item"><span class="map-legend-dot sev-3"></span>S3 Medium</span>
+        <span class="map-legend-item"><span class="map-legend-dot sev-4"></span>S4 High</span>
+        <span class="map-legend-item"><span class="map-legend-dot sev-5"></span>S5 Critical</span>
+      </div>
+      <p id="heatmap-feedback" class="helper-text" aria-live="polite"></p>
+    </section>
+
+    <div class="analytics-charts-grid">
+      <div class="analytics-chart-card analytics-chart-wide">
+        <h3 class="analytics-chart-title" data-i18n="analytics.chart_timeline">Submissions — last 14 days</h3>
+        <div class="analytics-chart-wrap">
+          <canvas id="chart-timeline"></canvas>
+        </div>
+      </div>
+      <div class="analytics-chart-card">
+        <h3 class="analytics-chart-title" data-i18n="analytics.chart_status">Status breakdown</h3>
+        <div class="analytics-chart-wrap analytics-chart-donut">
+          <canvas id="chart-status"></canvas>
+        </div>
+        <div id="chart-status-legend" class="chart-legend"></div>
+      </div>
+      <div class="analytics-chart-card">
+        <h3 class="analytics-chart-title" data-i18n="analytics.chart_source">Source types</h3>
+        <div class="analytics-chart-wrap analytics-chart-donut">
+          <canvas id="chart-source"></canvas>
+        </div>
+        <div id="chart-source-legend" class="chart-legend"></div>
+      </div>
+      <div class="analytics-chart-card">
+        <h3 class="analytics-chart-title">Category mix</h3>
+        <div class="analytics-chart-wrap">
+          <canvas id="chart-category"></canvas>
+        </div>
+      </div>
+      <div class="analytics-chart-card">
+        <h3 class="analytics-chart-title">Severity breakdown</h3>
+        <div class="analytics-chart-wrap">
+          <canvas id="chart-severity"></canvas>
+        </div>
+      </div>
+      <div class="analytics-chart-card analytics-chart-wide">
+        <h3 class="analytics-chart-title">Top tags</h3>
+        <div class="analytics-chart-wrap">
+          <canvas id="chart-tags"></canvas>
+        </div>
+        <p id="chart-tags-empty" class="chart-empty-note hidden">No tags yet — add tags to your reports to see hotspots here.</p>
+      </div>
+    </div>
+  </main>
+
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script src="assets/js/heatmap.js"></script>
+</body>
+</html>

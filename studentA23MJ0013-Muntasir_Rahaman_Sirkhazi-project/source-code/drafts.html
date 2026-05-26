@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Drafts</title>
+  <script src="assets/js/auth-gate.js"></script>
+  <script src="assets/js/i18n.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body class="page-shell">
+  <header class="topbar">
+    <a class="brand" href="index.html" aria-label="Report Summarizer home">
+      <span class="brand-mark"></span>
+      <span>ReportFlow</span>
+    </a>
+    <nav class="topnav">
+      <div id="protected-links" class="auth-links"></div>
+      <div id="auth-links" class="auth-links"></div>
+    </nav>
+  </header>
+
+  <main class="content-page">
+    <section class="reports-header">
+      <div>
+        <p class="eyebrow" data-i18n="drafts.eyebrow">Draft history</p>
+        <h1 data-i18n="drafts.title">Your drafts</h1>
+      </div>
+      <div class="reports-actions">
+        <a class="primary-button" href="enter-report.html" data-i18n="drafts.new_draft">New Draft</a>
+      </div>
+    </section>
+
+    <section id="drafts-empty-state" class="empty-state">
+      <div class="empty-state-card">
+        <p class="eyebrow" data-i18n="drafts.empty_eyebrow">No drafts yet</p>
+        <h2 data-i18n="drafts.empty_title">Nothing saved yet</h2>
+        <p class="hero-text empty-copy" data-i18n="drafts.empty_text">
+          Start a report and click "Save as Draft" — it will appear here so you can come back and finish it later.
+        </p>
+        <a class="primary-button" href="enter-report.html" data-i18n="drafts.empty_cta">Start a Draft</a>
+      </div>
+    </section>
+
+    <section id="drafts-grid" class="drafts-grid hidden" aria-label="Saved drafts"></section>
+  </main>
+
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

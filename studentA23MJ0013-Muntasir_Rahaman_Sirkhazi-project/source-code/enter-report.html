@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enter Report</title>
+  <script src="assets/js/auth-gate.js"></script>
+  <script src="assets/js/i18n.js"></script>
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+  <script src="https://apis.google.com/js/api.js" async defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body class="page-shell">
+  <header class="topbar">
+    <a class="brand" href="index.html" aria-label="Report Summarizer home">
+      <span class="brand-mark"></span>
+      <span>ReportFlow</span>
+    </a>
+    <nav class="topnav">
+      <div id="protected-links" class="auth-links"></div>
+      <div id="auth-links" class="auth-links"></div>
+    </nav>
+  </header>
+
+  <main class="content-page">
+    <section class="content-header">
+      <p class="eyebrow" data-i18n="enter.eyebrow">Step 1</p>
+      <h1 data-i18n="enter.title">Enter your report</h1>
+      <p class="hero-text narrow" data-i18n="enter.text">
+        Choose how you want to add your report: type it manually, upload files,
+        connect a Google Drive link, or paste an email source.
+      </p>
+    </section>
+
+    <div class="enter-layout">
+    <section class="form-card">
+      <form id="report-form">
+        <label class="field-label" for="report-title" data-i18n="enter.title_label">Report title</label>
+        <input id="report-title" class="text-input" type="text" placeholder="Example: Warehouse delivery delay" data-i18n-placeholder="enter.title_placeholder">
+
+        <div class="field-group">
+          <span class="field-label" data-i18n="enter.method_label">Choose input method</span>
+          <div class="source-picker" role="tablist" aria-label="Report source options">
+            <button class="source-option active" type="button" data-source-target="manual-panel" data-i18n="enter.method_manual">Manual</button>
+            <button class="source-option" type="button" data-source-target="file-panel" data-i18n="enter.method_files">Files</button>
+            <button class="source-option" type="button" data-source-target="drive-panel" data-i18n="common.google_drive">Google Drive</button>
+            <button class="source-option" type="button" data-source-target="email-panel" data-i18n="common.email">Email</button>
+            <button class="source-option" type="button" data-source-target="voice-panel">🎤 Voice</button>
+            <button class="source-option" type="button" data-source-target="photo-panel">📸 Photo</button>
+          </div>
+        </div>
+
+        <section id="manual-panel" class="source-panel active">
+          <label class="field-label" for="report-text" data-i18n="enter.messy_label">Messy report</label>
+          <textarea id="report-text" class="text-area compact" placeholder="Paste the messy report here..." data-i18n-placeholder="enter.messy_placeholder"></textarea>
+        </section>
+
+        <section id="file-panel" class="source-panel hidden">
+          <label class="field-label" for="report-file" data-i18n="enter.upload_label">Upload report files</label>
+          <label class="upload-box" for="report-file">
+            <input id="report-file" class="hidden-file-input" type="file" multiple accept=".pdf,.txt,.md,.doc,.docx,.ppt,.pptx,.xls,.xlsx,.png,.jpg,.jpeg">
+            <span class="upload-icon">↑</span>
+            <strong data-i18n="enter.choose_files">Choose files</strong>
+            <span class="upload-copy" data-i18n="enter.file_types">PDF, TXT, Word, Excel, PowerPoint, PNG, JPG</span>
+          </label>
+          <p id="file-selection" class="helper-text" data-i18n="enter.no_files">No files selected yet.</p>
+          <button id="clear-file-selection" class="delete-button hidden" type="button" data-i18n="enter.clear_files">Clear selected files</button>
+          <label class="field-label" for="file-note" data-i18n="enter.file_note_label">Explanation for this file</label>
+          <textarea id="file-note" class="text-area compact source-note" placeholder="Example: These slides explain the warehouse delay and next steps." data-i18n-placeholder="enter.file_note_placeholder"></textarea>
+        </section>
+
+        <section id="drive-panel" class="source-panel hidden">
+          <div class="integration-card">
+            <div class="integration-copy">
+              <p class="field-label" data-i18n="enter.drive_source">Google Drive source</p>
+              <p class="helper-text" data-i18n="enter.drive_help">Sign in with Google, give permission, and then pick one file from the selected Drive account.</p>
+            </div>
+            <button id="pick-drive-file" class="upload-box action-box" type="button">
+              <span class="upload-icon">↑</span>
+              <strong data-i18n="enter.choose_drive">Choose from Google Drive</strong>
+              <span class="upload-copy" data-i18n="enter.drive_subhelp">Google login, permission, then file selection</span>
+            </button>
+            <div id="drive-selection" class="selection-summary empty" data-i18n="enter.no_drive">
+              No Google Drive account or file selected yet.
+            </div>
+            <button id="clear-drive-selection" class="delete-button hidden" type="button" data-i18n="enter.clear_drive">Remove selected Drive file</button>
+            <label class="field-label" for="drive-note" data-i18n="enter.drive_note_label">Explanation for this Google Drive file</label>
+            <textarea id="drive-note" class="text-area compact source-note" placeholder="Example: This slide deck contains the incident summary and timeline." data-i18n-placeholder="enter.drive_note_placeholder"></textarea>
+          </div>
+        </section>
+
+        <section id="photo-panel" class="source-panel hidden">
+          <div class="integration-card">
+            <div class="integration-copy">
+              <p class="field-label">Photo of the incident</p>
+              <p class="helper-text">Take or upload a photo of the damaged package, label, or scene. AI will auto-fill the title, description, damage type, severity, and tags.</p>
+            </div>
+            <label class="upload-box action-box" for="photo-input">
+              <span class="upload-icon">📷</span>
+              <strong id="photo-pick-label">Take or choose a photo</strong>
+              <span class="upload-copy">JPG, PNG, WebP, or HEIC — up to 5 MB</span>
+              <input id="photo-input" class="hidden-file-input" type="file" accept="image/*" capture="environment">
+            </label>
+            <div id="photo-preview-wrap" class="photo-preview-wrap hidden">
+              <img id="photo-preview" class="photo-preview" alt="Selected photo preview">
+              <button id="photo-clear" class="delete-button" type="button">Remove photo</button>
+            </div>
+            <label class="field-label" for="photo-hint">Optional hint for the AI</label>
+            <input id="photo-hint" class="text-input" type="text" placeholder="e.g. 'rainy day delivery', 'crushed during sorting'">
+            <div class="voice-actions">
+              <button id="photo-extract" class="primary-button" type="button" disabled>✨ Extract details with AI</button>
+            </div>
+            <p id="photo-feedback" class="helper-text" aria-live="polite"></p>
+            <div id="photo-result" class="photo-result hidden"></div>
+          </div>
+        </section>
+
+        <section id="voice-panel" class="source-panel hidden">
+          <div class="integration-card">
+            <div class="integration-copy">
+              <p class="field-label">Voice dictation</p>
+              <p class="helper-text">Click the mic, describe the incident out loud, and the transcript will appear below and fill the report automatically.</p>
+            </div>
+            <button id="voice-record-btn" class="upload-box action-box" type="button">
+              <span class="upload-icon" id="voice-icon">🎤</span>
+              <strong id="voice-btn-label">Start recording</strong>
+              <span class="upload-copy" id="voice-status">Mic off — click to start</span>
+            </button>
+            <label class="field-label" for="voice-live">Live transcript</label>
+            <div id="voice-live" class="text-area compact voice-live" aria-live="polite" role="status"></div>
+            <div class="voice-actions">
+              <button id="voice-clean-ai" class="secondary-button" type="button">✨ Clean with AI</button>
+              <button id="voice-clear" class="delete-button" type="button">Clear transcript</button>
+            </div>
+            <p id="voice-feedback" class="helper-text" aria-live="polite"></p>
+          </div>
+        </section>
+
+        <section id="email-panel" class="source-panel hidden">
+          <div class="integration-card">
+            <div class="integration-copy">
+              <p class="field-label" data-i18n="enter.gmail_source">Gmail source</p>
+              <p class="helper-text" data-i18n="enter.gmail_help">Sign in with Google, give permission, and then pick one email from the selected Gmail account.</p>
+            </div>
+            <button id="pick-email-message" class="upload-box action-box" type="button">
+              <span class="upload-icon">↑</span>
+              <strong data-i18n="enter.choose_gmail">Choose from Gmail</strong>
+              <span class="upload-copy" data-i18n="enter.gmail_subhelp">Google login, permission, then email selection</span>
+            </button>
+            <div id="email-selection" class="selection-summary empty" data-i18n="enter.no_email">
+              No email account or message selected yet.
+            </div>
+            <button id="clear-email-selection" class="delete-button hidden" type="button" data-i18n="enter.clear_email">Remove selected email</button>
+            <label class="field-label" for="email-note" data-i18n="enter.email_note_label">Explanation for this email</label>
+            <textarea id="email-note" class="text-area compact source-note" placeholder="Example: This email explains the cause of the delay and the required follow-up." data-i18n-placeholder="enter.email_note_placeholder"></textarea>
+          </div>
+        </section>
+
+        <div>
+          <label class="field-label" for="report-tags"><span data-i18n="enter.tags_label">Tags</span> <span style="font-weight:400;color:var(--muted)" data-i18n="enter.tags_optional">(optional, comma-separated)</span></label>
+          <input id="report-tags" class="text-input" type="text" placeholder="e.g. urgent, logistics, Q2" data-i18n-placeholder="common.tags_placeholder">
+          <p class="tags-input-helper" data-i18n="enter.tags_help">Tags help you search and organise your reports later.</p>
+        </div>
+
+        <div class="form-actions">
+          <button class="primary-button" type="button" id="save-draft-btn" data-i18n="enter.save_draft">Save as Draft</button>
+          <a class="secondary-button" href="drafts.html" data-i18n="enter.go_drafts">Go to Drafts</a>
+        </div>
+        <p id="form-status" class="helper-text form-status" aria-live="polite"></p>
+
+        <div id="ai-summary-card" class="ai-summary-card">
+          <div class="ai-summary-head">
+            <div>
+              <p class="eyebrow">AI Preview</p>
+              <h3 class="ai-summary-title">Summary of your report</h3>
+            </div>
+            <button id="generate-summary-btn" class="secondary-button" type="button">✨ Generate summary</button>
+          </div>
+          <div id="ai-summary-body" class="ai-summary-body">
+            <p class="helper-text ai-summary-empty">A 2-sentence AI summary will appear here. Useful as a quick check before you submit.</p>
+          </div>
+        </div>
+      </form>
+    </section>
+
+    <aside class="draft-history-panel" aria-label="Draft history">
+      <div class="draft-history-header">
+        <p class="eyebrow">Draft history</p>
+        <h2 class="draft-history-title">Recent saves</h2>
+        <p class="helper-text draft-history-sub">Each time you press <strong>Save as Draft</strong>, a new entry is added here.</p>
+      </div>
+      <ol id="draft-history-list" class="draft-history-list" aria-live="polite"></ol>
+      <p id="draft-history-empty" class="helper-text draft-history-empty">No drafts saved yet.</p>
+    </aside>
+    </div>
+  </main>
+
+  <div id="picker-modal" class="modal-overlay hidden" aria-hidden="true">
+    <div class="picker-modal">
+      <div class="modal-top">
+        <div>
+          <p id="modal-eyebrow" class="eyebrow" data-i18n="enter.modal_eyebrow">Select</p>
+          <h2 id="modal-title" class="modal-title" data-i18n="enter.modal_title">Choose an option</h2>
+        </div>
+        <button id="close-modal" class="close-modal" type="button" aria-label="Close" data-i18n-aria-label="common.close">×</button>
+      </div>
+      <button id="modal-featured" class="modal-featured" type="button">
+        <span class="upload-icon">↑</span>
+        <strong id="modal-featured-title" data-i18n="enter.modal_featured_title">Choose an item</strong>
+        <span id="modal-featured-copy" class="upload-copy" data-i18n="enter.modal_featured_copy">Pick an account or source below</span>
+      </button>
+      <div id="modal-list" class="modal-list"></div>
+    </div>
+  </div>
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/config.local.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script src="assets/js/voice.js"></script>
+  <script src="assets/js/vision.js"></script>
+</body>
+</html>

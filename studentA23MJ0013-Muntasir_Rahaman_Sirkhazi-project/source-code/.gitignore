@@ -1,0 +1,17 @@
+# Local frontend overrides (copy of config.local.example.js with real keys)
+assets/js/config.local.js
+
+# Backend
+backend/node_modules/
+backend/.env
+backend/.env.local
+backend/.env.*.local
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.log
+
+# Editor / IDE
+.idea/
+*.swp
