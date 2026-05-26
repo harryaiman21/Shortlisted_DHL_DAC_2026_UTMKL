@@ -1,0 +1,420 @@
+[
+  {
+    "row_to_json": {
+      "id": 1,
+      "filename": "COD_Invoice_001.pdf",
+      "file_path": "/uploads/COD_Invoice_001.pdf",
+      "source_type": "manual",
+      "content_type": "pdf",
+      "raw_text": "COD Slip Reference: SHP-2026-88821\nAmount: MYR 1,200.00\nCustomer: Ahmad bin Razak\nDelivery Address: No 12, Jalan Setia, Petaling Jaya\nAgent: Khairul (ID: DHL-A-4421)",
+      "processing_status": "processed",
+      "uploaded_at": 1778551540,
+      "processed_at": 1778555140,
+      "error_message": null,
+      "incident_id": 1,
+      "queue_item_id": null,
+      "detected_language": "Malay",
+      "missing_fields": null,
+      "ocr_confidence": null
+    }
+  },
+  {
+    "row_to_json": {
+      "id": 2,
+      "filename": null,
+      "file_path": null,
+      "source_type": "text_paste",
+      "content_type": "text",
+      "raw_text": "Customer called in to say the amount is wrong. Says original order was RM950 not RM1200. Very angry. Wants manager callback.",
+      "processing_status": "processed",
+      "uploaded_at": 1778558740,
+      "processed_at": 1778558740,
+      "error_message": null,
+      "incident_id": 1,
+      "queue_item_id": null,
+      "detected_language": "English",
+      "missing_fields": "tracking_number",
+      "ocr_confidence": null
+    }
+  },
+  {
+    "row_to_json": {
+      "id": 3,
+      "filename": "delivery_complaint_2.pdf",
+      "file_path": "/uploads/delivery_complaint_2.pdf",
+      "source_type": "uipath",
+      "content_type": "pdf",
+      "raw_text": "Complaint ID: EC-2026-55123\nTracking: MY-DHL-20263391\nConsignee: Lim Wei Ling, Subang Jaya\nLast scan: Out for Delivery\nCustomer note: No one came to my door. I was home all day.",
+      "processing_status": "processed",
+      "uploaded_at": 1778583940,
+      "processed_at": 1778587540,
+      "error_message": null,
+      "incident_id": 2,
+      "queue_item_id": null,
+      "detected_language": "English",
+      "missing_fields": null,
+      "ocr_confidence": null
+    }
+  },
+  {
+    "row_to_json": {
+      "id": 4,
+      "filename": null,
+      "file_path": null,
+      "source_type": "text_paste",
+      "content_type": "text",
+      "raw_text": "[2026-04-29 11:23:41] ERROR 500 /api/track/bulk\nSequelizeConnectionAcquireTimeoutError: Operation timeout\nPool size: 10/10 connections active\nQuery count: 847 in last 60s\nAffected clients: Lazada, Shopee Enterprise, Zalora",
+      "processing_status": "processed",
+      "uploaded_at": 1778623540,
+      "processed_at": 1778623540,
+      "error_message": null,
+      "incident_id": 3,
+      "queue_item_id": null,
+      "detected_language": "English",
+      "missing_fields": "customer_id, tracking_number",
+      "ocr_confidence": null
+    }
+  },
+  {
+    "row_to_json": {
+      "id": 5,
+      "filename": "damaged_parcel_photo.jpg",
+      "file_path": "/uploads/damaged_parcel_photo.jpg",
+      "source_type": "manual",
+      "content_type": "image",
+      "raw_text": "Damaged carton detected. Compression marks visible on all sides. Fragile sticker present but partially torn. Laptop box deformed.",
+      "processing_status": "processed",
+      "uploaded_at": 1778619940,
+      "processed_at": 1778623540,
+      "error_message": null,
+      "incident_id": 4,
+      "queue_item_id": null,
+      "detected_language": "English",
+      "missing_fields": null,
+      "ocr_confidence": 0.45
+    }
+  },
+  {
+    "row_to_json": {
+      "id": 6,
+      "filename": "damage_report_form.pdf",
+      "file_path": "/uploads/damage_report_form.pdf",
+      "source_type": "manual",
+      "content_type": "pdf",
+      "raw_text": "DHL Damage Report\nShipment: MY-DHL-20265544\nItem: Laptop – ASUS VivoBook 15\nDeclared Value: MYR 3,200\nCustomer: Priya Nair, Mont Kiara",
+      "processing_status": "processed",
+      "uploaded_at": 1778619940,
+      "processed_at": 1778623540,
+      "error_message": null,
+      "incident_id": 4,
+      "queue_item_id": null,
+      "detected_language": "English",
+      "missing_fields": null,
+      "ocr_confidence": null
+    }
+  },
+  {
+    "row_to_json": {
+      "id": 7,
+      "filename": "wrong_delivery_complaint.pdf",
+      "file_path": "/uploads/wrong_delivery_complaint.pdf",
+      "source_type": "uipath",
+      "content_type": "pdf",
+      "raw_text": "Shipment: MY-DHL-20261187\nConsignee: Tan Mei Ling, Unit 12-A, Sri Petaling\nPOD Signature: Azman – not recognised by customer\nCustomer note: Package contains medical supplies urgently needed.",
+      "processing_status": "processed",
+      "uploaded_at": 1778605540,
+      "processed_at": 1778609140,
+      "error_message": null,
+      "incident_id": 5,
+      "queue_item_id": null,
+      "detected_language": "English",
+      "missing_fields": null,
+      "ocr_confidence": null
+    }
+  },
+  {
+    "row_to_json": {
+      "id": 8,
+      "filename": "b2b_sla_breach_report.pdf",
+      "file_path": "/uploads/b2b_sla_breach_report.pdf",
+      "source_type": "uipath",
+      "content_type": "pdf",
+      "raw_text": "Client: AutoParts Sdn Bhd\nAgreed Delivery: Apr 27 18:00\nActual Delivery: Apr 28 12:00\nDelay: 18 hours",
+      "processing_status": "processed",
+      "uploaded_at": 1778454340,
+      "processed_at": 1778457940,
+      "error_message": null,
+      "incident_id": 6,
+      "queue_item_id": null,
+      "detected_language": "English",
+      "missing_fields": null,
+      "ocr_confidence": null
+    }
+  },
+  {
+    "row_to_json": {
+      "id": 9,
+      "filename": "double_payment_receipt.pdf",
+      "file_path": "/uploads/double_payment_receipt.pdf",
+      "source_type": "manual",
+      "content_type": "pdf",
+      "raw_text": "Receipt 1: RM250.00 – 10:23AM\nReceipt 2: RM250.00 – 10:24AM\nSame terminal: T-0041\nSame shipment: MY-DHL-20265102\nCustomer: Zulaikha Hassan",
+      "processing_status": "processed",
+      "uploaded_at": 1778461540,
+      "processed_at": 1778465140,
+      "error_message": null,
+      "incident_id": 7,
+      "queue_item_id": null,
+      "detected_language": "English",
+      "missing_fields": null,
+      "ocr_confidence": null
+    }
+  },
+  {
+    "row_to_json": {
+      "id": 10,
+      "filename": null,
+      "file_path": null,
+      "source_type": "text_paste",
+      "content_type": "text",
+      "raw_text": "Customer email: Your delivery man (the one who came to Bukit Jalil area) was extremely rude to me. I asked him nicely to help me carry the box and he just threw it at the door and left. I want a formal apology.",
+      "processing_status": "processed",
+      "uploaded_at": 1778634340,
+      "processed_at": 1778634340,
+      "error_message": null,
+      "incident_id": 8,
+      "queue_item_id": null,
+      "detected_language": "English",
+      "missing_fields": null,
+      "ocr_confidence": null
+    }
+  },
+  {
+    "row_to_json": {
+      "id": 12,
+      "filename": "1778646936134_Customer_email_dated_5_May_requesti.txt",
+      "file_path": "/opt/render/project/src/backend/uploads/1778646936134_Customer_email_dated_5_May_requesti.txt",
+      "source_type": "manual",
+      "content_type": "text",
+      "raw_text": null,
+      "processing_status": "processed",
+      "uploaded_at": 1778646936,
+      "processed_at": 1778647070,
+      "error_message": null,
+      "incident_id": 9,
+      "queue_item_id": null,
+      "detected_language": "English",
+      "missing_fields": null,
+      "ocr_confidence": null
+    }
+  },
+  {
+    "row_to_json": {
+      "id": 19,
+      "filename": "1778655616530_Customer_WhatsApp_message_complains.pdf",
+      "file_path": "/opt/render/project/src/backend/uploads/1778655616530_Customer_WhatsApp_message_complains.pdf",
+      "source_type": "manual",
+      "content_type": "pdf",
+      "raw_text": "\n\nCustomer WhatsApp message complains courier collected RM450 COD instead of\nRM250 shown on invoice. Customer attached photo of handwritten receipt.\nEmail from finance later says system reflects RM450 COD amount.\nWarehouse note: “COD sticker unclear, handwritten?”\nCaller wants refund of extra RM200 urgently. No clarity on who entered wrong\nCOD amount.",
+      "processing_status": "processed",
+      "uploaded_at": 1778655618,
+      "processed_at": 1778656861,
+      "error_message": null,
+      "incident_id": 10,
+      "queue_item_id": null,
+      "detected_language": "English",
+      "missing_fields": null,
+      "ocr_confidence": null
+    }
+  },
+  {
+    "row_to_json": {
+      "id": 20,
+      "filename": "1778657649672_Incoming_email_from_customer_on_22.docx",
+      "file_path": "/opt/render/project/src/backend/uploads/1778657649672_Incoming_email_from_customer_on_22.docx",
+      "source_type": "manual",
+      "content_type": "docx",
+      "raw_text": "Incoming email from customer on 22 March with subject: “Damaged parcel received – unacceptable condition”. \n\n\n\nCustomer attaches 4 images showing a crushed DHL box, torn side panels, and bubble wrap exposed. Product inside appears to be a coffee machine (customer did not confirm brand).\n\n\n\nEmail body states shipment MY987623400 arrived two days late and external box was already damaged when handed over. Customer did not reject delivery because courier mentioned “cannot take back once scanned”. After opening the box, customer noticed water leakage marks and dents on the machine casing.\n\nInternal Teams chat between delivery partner and hub supervisor mentions: “Package already dented when offloaded from linehaul, maybe stacking issue.” Another message says, “No exception scanned at hub, driver might have forgotten.”\n\nCall center notes say customer demanded replacement or refund and is threatening to post photos on social media. Agent marked case as “damage – investigation needed” but forgot to tag the insurance/claims team.\n\nHandwritten warehouse remark uploaded later reads: “Inbound pallet unstable, one carton collapsed, taped back.” No pallet ID referenced.\n\nIssue involves late delivery, damaged item, missing exception scan, and complaint escalation. Multiple teams involved but no clear timeline or responsible department. Priority unclear.\n\n",
+      "processing_status": "processed",
+      "uploaded_at": 1778657650,
+      "processed_at": 1778657726,
+      "error_message": null,
+      "incident_id": 11,
+      "queue_item_id": null,
+      "detected_language": "English",
+      "missing_fields": null,
+      "ocr_confidence": null
+    }
+  },
+  {
+    "row_to_json": {
+      "id": 21,
+      "filename": "1778658215422_test_warehouse_note.png",
+      "file_path": "/opt/render/project/src/backend/uploads/1778658215422_test_warehouse_note.png",
+      "source_type": "manual",
+      "content_type": "image",
+      "raw_text": null,
+      "processing_status": "processed",
+      "uploaded_at": 1778658215,
+      "processed_at": 1778658284,
+      "error_message": null,
+      "incident_id": 12,
+      "queue_item_id": null,
+      "detected_language": "English",
+      "missing_fields": null,
+      "ocr_confidence": null
+    }
+  },
+  {
+    "row_to_json": {
+      "id": 23,
+      "filename": "1778659054703_Email_from__procurement@medisupply.docx",
+      "file_path": "/opt/render/project/src/backend/uploads/1778659054703_Email_from__procurement@medisupply.docx",
+      "source_type": "manual",
+      "content_type": "docx",
+      "raw_text": "Email from: procurement@medisupply.com.my\n\nSubject: Non-arrival of critical medical shipment\n\n\n\nDear DHL Support,\n\n\n\nWe wish to inform you that shipment MY-DHL-20269872 containing an Automated External Defibrillator (AED) unit and surgical consumables valued at RM15,800 has not been delivered as of today, 13 May 2026. The agreed delivery window was 10 May 2026.\n\n\n\nThis equipment is required for a scheduled surgical procedure at KPJ Damansara Specialist Hospital on 15 May 2026. Failure to deliver by 14 May 2026 will result in procedure cancellation affecting patient welfare.\n\n\n\nTracking shows last scan on 9 May at Shah Alam hub. No further updates since.\n\n\n\nWe request immediate escalation and status update.\n\n\n\nRegards,\n\nAhmad Faris\n\nProcurement Manager\n\nMediSupply Sdn Bhd\n\n",
+      "processing_status": "processed",
+      "uploaded_at": 1778659055,
+      "processed_at": 1778659151,
+      "error_message": null,
+      "incident_id": 13,
+      "queue_item_id": null,
+      "detected_language": "English",
+      "missing_fields": null,
+      "ocr_confidence": null
+    }
+  },
+  {
+    "row_to_json": {
+      "id": 27,
+      "filename": "1778732295694_Customer_WhatsApp_message_complains.txt",
+      "file_path": "/opt/render/project/src/backend/uploads/1778732295694_Customer_WhatsApp_message_complains.txt",
+      "source_type": "manual",
+      "content_type": "text",
+      "raw_text": "Customer WhatsApp message complains courier collected RM450 COD instead of RM250 shown on invoice. Customer attached photo of handwritten receipt.\r\nEmail from finance later says system reflects RM450 COD amount.\r\nWarehouse note: “COD sticker unclear, handwritten?”\r\nCaller wants refund of extra RM200 urgently. No clarity on who entered wrong COD amount.",
+      "processing_status": "processed",
+      "uploaded_at": 1778732296,
+      "processed_at": 1778732363,
+      "error_message": null,
+      "incident_id": 16,
+      "queue_item_id": null,
+      "detected_language": "English",
+      "missing_fields": null,
+      "ocr_confidence": null
+    }
+  },
+  {
+    "row_to_json": {
+      "id": 28,
+      "filename": "1778733608171_Missing_Parcle_Incident.pdf",
+      "file_path": "/opt/render/project/src/backend/uploads/1778733608171_Missing_Parcle_Incident.pdf",
+      "source_type": "manual",
+      "content_type": "pdf",
+      "raw_text": "\n\nFrom: Ahmad Fariz bin Zulkifli \nDate: May 12, 2026 \nChannel: Customer Email \n \nSubject: Missing Parcel - Tracking MY78901234 - 7 Days Overdue \n \nDear DHL Customer Support, \n \nI am writing to report that my parcel with tracking number MY78901234  \nhas not been delivered and I have not received it as of today, May 12,  \n2026. The expected delivery date was May 5, 2026 — it is now 7 days  \noverdue with no update. \n \nI ordered electronic equipment (a laptop) valued at RM1,200 from an  \nonline retailer. The retailer confirmed the item was handed to DHL on  \nMay 3, 2026 from Kuala Lumpur. \n \nWhen I check the tracking portal, the last scan shows the parcel  \ndeparted Shah Alam warehouse on May 7, 2026 at 08:45AM. After that  \nthere are no further scans. The parcel seems to have disappeared after  \nleaving Shah Alam. I cannot find any update after that date. \n \nI have contacted your hotline twice — on May 9 and May 11 — but both  \ntimes I was told to wait. I cannot wait any longer as this is an  \nexpensive item and I suspect it may have been lost or stolen at the  \nfacility. \n \nI am requesting an immediate investigation. If the parcel cannot be  \nlocated within 48 hours I will be filing a formal complaint and seeking  \ncompensation for the full value of RM1,200. I also reserve the right to  \nescalate this to the Consumer Claims Tribunal if not resolved urgently. \n \nRegards, \nAhmad Fariz bin Zulkifli \nContact: 012-3456789 ",
+      "processing_status": "processed",
+      "uploaded_at": 1778733610,
+      "processed_at": 1778733683,
+      "error_message": null,
+      "incident_id": 17,
+      "queue_item_id": null,
+      "detected_language": "English",
+      "missing_fields": null,
+      "ocr_confidence": null
+    }
+  },
+  {
+    "row_to_json": {
+      "id": 31,
+      "filename": "1778760335800_Customer_WhatsApp_message_complains.txt",
+      "file_path": "/opt/render/project/src/backend/uploads/1778760335800_Customer_WhatsApp_message_complains.txt",
+      "source_type": "manual",
+      "content_type": "text",
+      "raw_text": "Customer WhatsApp message complains courier collected RM450 COD instead of RM250 shown on invoice. Customer attached photo of handwritten receipt.\r\nEmail from finance later says system reflects RM450 COD amount.\r\nWarehouse note: “COD sticker unclear, handwritten?”\r\nCaller wants refund of extra RM200 urgently. No clarity on who entered wrong COD amount.",
+      "processing_status": "processed",
+      "uploaded_at": 1778760336,
+      "processed_at": 1778760420,
+      "error_message": null,
+      "incident_id": 20,
+      "queue_item_id": null,
+      "detected_language": "English",
+      "missing_fields": null,
+      "ocr_confidence": null
+    }
+  },
+  {
+    "row_to_json": {
+      "id": 29,
+      "filename": null,
+      "file_path": null,
+      "source_type": "text_paste",
+      "content_type": "text",
+      "raw_text": "Customer WhatsApp message complains courier collected RM450 COD instead of RM250 shown on invoice. Customer attached photo of handwritten receipt.\nEmail from finance later says system reflects RM450 COD amount.\nWarehouse note: “COD sticker unclear, handwritten?”\nCaller wants refund of extra RM200 urgently. No clarity on who entered wrong COD amount.",
+      "processing_status": "processed",
+      "uploaded_at": 1778751441,
+      "processed_at": 1778751985,
+      "error_message": null,
+      "incident_id": 18,
+      "queue_item_id": null,
+      "detected_language": "English",
+      "missing_fields": null,
+      "ocr_confidence": null
+    }
+  },
+  {
+    "row_to_json": {
+      "id": 30,
+      "filename": "1778757325887_Customer_WhatsApp_message_complains.txt",
+      "file_path": "/opt/render/project/src/backend/uploads/1778757325887_Customer_WhatsApp_message_complains.txt",
+      "source_type": "manual",
+      "content_type": "text",
+      "raw_text": "Customer WhatsApp message complains courier collected RM450 COD instead of RM250 shown on invoice. Customer attached photo of handwritten receipt.\r\nEmail from finance later says system reflects RM450 COD amount.\r\nWarehouse note: “COD sticker unclear, handwritten?”\r\nCaller wants refund of extra RM200 urgently. No clarity on who entered wrong COD amount.",
+      "processing_status": "processed",
+      "uploaded_at": 1778757326,
+      "processed_at": 1778757428,
+      "error_message": null,
+      "incident_id": 19,
+      "queue_item_id": null,
+      "detected_language": "English",
+      "missing_fields": null,
+      "ocr_confidence": null
+    }
+  },
+  {
+    "row_to_json": {
+      "id": 32,
+      "filename": null,
+      "file_path": null,
+      "source_type": "text_paste",
+      "content_type": "text",
+      "raw_text": "Customer email reports parcel (tracking: MY55678901) not delivered after 5 days despite standard 3-day service. Customer states they were home all day on the expected delivery date but no courier arrived and no delivery attempt notification was received. A neighbour mentioned seeing a DHL van in the area that morning.\nDriver log shows delivery attempted at 10:42 AM but marked as \"customer unavailable.\" Customer disputes this and requests immediate redelivery or collection from nearest DHL service point by end of week.",
+      "processing_status": "processed",
+      "uploaded_at": 1778897579,
+      "processed_at": 1778897716,
+      "error_message": null,
+      "incident_id": 21,
+      "queue_item_id": null,
+      "detected_language": "English",
+      "missing_fields": null,
+      "ocr_confidence": null
+    }
+  },
+  {
+    "row_to_json": {
+      "id": 33,
+      "filename": null,
+      "file_path": null,
+      "source_type": "text_paste",
+      "content_type": "text",
+      "raw_text": "Customer email reports a parcel (tracking: MY55678901) addressed to 12 Jalan Kenanga, Subang Jaya was delivered to 12 Jalan Kenanga, Shah Alam instead. Customer confirmed the parcel was signed for by an unknown person at the wrong address. Customer is requesting the parcel to be retrieved and redelivered to the correct address.",
+      "processing_status": "processed",
+      "uploaded_at": 1778898576,
+      "processed_at": 1778898628,
+      "error_message": null,
+      "incident_id": 22,
+      "queue_item_id": null,
+      "detected_language": "English",
+      "missing_fields": null,
+      "ocr_confidence": null
+    }
+  }
+]
