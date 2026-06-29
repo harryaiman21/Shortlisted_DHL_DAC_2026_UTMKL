@@ -1,6 +1,0 @@
-{
-  "Name": "DHL_RPA",
-  "ProjectType": "Process",
-  "Description": "This project automates the entire process of transforming raw messy input to clean knowledge articles.",
-  "MainFile": "Main.xaml"
-}

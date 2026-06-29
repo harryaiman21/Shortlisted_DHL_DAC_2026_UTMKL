@@ -1,2 +1,0 @@
-- [DHL ReportFlow deploy targets](project_dhl_deploy_targets.md) — backend → Render/Railway, frontend → Vercel/Netlify
-- [ReportFlow competition entry](project_competition.md) — being submitted to a competition; tailor suggestions to demo impact, not generic features
